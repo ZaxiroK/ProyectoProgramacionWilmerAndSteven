@@ -60,12 +60,6 @@
     <Compile Include="Vista\FrmClientes.Designer.cs">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\FrmDerechosPorUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\FrmDerechosPorUsuario.Designer.cs">
-      <DependentUpon>FrmDerechosPorUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\FrmDerechosPorUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +77,12 @@
     </Compile>
     <Compile Include="Vista\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmRegistrarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmRegistrarEmpleado.Designer.cs">
+      <DependentUpon>FrmRegistrarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmRegistroCliente.cs">
       <SubType>Form</SubType>
@@ -152,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmRegistrarEmpleado.resx">
+      <DependentUpon>FrmRegistrarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroCliente.resx">
       <DependentUpon>FrmRegistroCliente.cs</DependentUpon>

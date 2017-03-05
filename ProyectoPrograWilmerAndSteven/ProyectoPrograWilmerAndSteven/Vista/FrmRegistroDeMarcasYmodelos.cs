@@ -16,5 +16,15 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRegistrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

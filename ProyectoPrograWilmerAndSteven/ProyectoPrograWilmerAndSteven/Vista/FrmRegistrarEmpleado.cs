@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoPrograWilmerAndSteven.Vista
 {
-    public partial class FrmDerechosPorUsuario : Form
+    public partial class FrmRegistrarEmpleado : Form
     {
-        public FrmDerechosPorUsuario()
+        public FrmRegistrarEmpleado()
         {
             InitializeComponent();
         }
