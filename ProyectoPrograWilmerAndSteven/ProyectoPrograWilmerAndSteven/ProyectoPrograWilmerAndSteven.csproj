@@ -165,6 +165,9 @@
     <EmbeddedResource Include="Vista\FrmRegistroDeCatalogoDeRepuestos.resx">
       <DependentUpon>FrmRegistroDeCatalogoDeRepuestos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmRegistroDeClasesDeVehiculos.resx">
+      <DependentUpon>FrmRegistroDeClasesDeVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroDeMarcasYmodelos.resx">
       <DependentUpon>FrmRegistroDeMarcasYmodelos.cs</DependentUpon>
     </EmbeddedResource>

@@ -16,5 +16,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
         }
+
+        private void textAño_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
