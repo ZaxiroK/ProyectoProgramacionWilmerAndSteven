@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logica\CatalogoReparacionE.cs" />
+    <Compile Include="Logica\CatalogoRepuestoE.cs" />
+    <Compile Include="Logica\ClienteE.cs" />
+    <Compile Include="Logica\EmpleadoE.cs" />
+    <Compile Include="Logica\MarcaE.cs" />
+    <Compile Include="Logica\ModeloE.cs" />
+    <Compile Include="Logica\OrdenReparacion.cs" />
+    <Compile Include="Logica\OrdenRepuesto.cs" />
+    <Compile Include="Logica\OrdenTrabajoE.cs" />
+    <Compile Include="Logica\PuestoE.cs" />
+    <Compile Include="Logica\UsuarioE.cs" />
+    <Compile Include="Logica\VehiculoE.cs" />
     <Compile Include="Vista\FrmCambioContrasenia.cs">
       <SubType>Form</SubType>
     </Compile>
