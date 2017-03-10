@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class OrdenTrabajoE
+    public class OrdenTrabajoE
     {
         private int idOrdenDetrabajo;
         private List<OrdenRepuesto> ordenRepuesto;

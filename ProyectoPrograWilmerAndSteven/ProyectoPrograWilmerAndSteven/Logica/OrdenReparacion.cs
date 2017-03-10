@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class OrdenReparacion : CatalogoReparacionE
+    public class OrdenReparacion : CatalogoReparacionE
     {
         private int idOrdenReparacion;
         private string cedulaEmpleado;

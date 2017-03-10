@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class ModeloE
+    public class ModeloE
     {
         private int idModelo;
         private string descripcion;

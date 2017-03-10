@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class PuestoE
+    public class PuestoE
     {
         private int idPuesto;
         private double salario;

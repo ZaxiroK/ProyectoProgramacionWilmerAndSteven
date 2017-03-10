@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class OrdenRepuesto : CatalogoRepuestoE
+    public class OrdenRepuesto : CatalogoRepuestoE
     {
         private int cantidad;
 

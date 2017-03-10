@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class MarcaE
+    public class MarcaE
     {
         private int idMarca;
         private string descripcion;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class VehiculoE
+    public class VehiculoE
     {
         private int idVehiculo;
         private string placa;

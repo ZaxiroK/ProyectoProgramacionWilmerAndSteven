@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class ClienteE
+    public class ClienteE
     {
         private string cedula;
         private string nombre;
