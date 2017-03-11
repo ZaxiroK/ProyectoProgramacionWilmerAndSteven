@@ -8,29 +8,29 @@ namespace Logica
 {
     public class CatalogoReparacionE
     {
-        protected int idCatalogoReparacion;
+        protected int id_catalogoReparacion;
         protected string descripcion;
         protected int horasReparacion;
         protected double costoReparacion;
 
-        public CatalogoReparacionE(int pIdCatalogoReparacion, string pDescripcion, int pHorasReparacion,
+        public CatalogoReparacionE(int pId_catalogoReparacion, string pDescripcion, int pHorasReparacion,
                 double pCostoReparacion)
         {
-            this.IdCatalogoReparacion = pIdCatalogoReparacion;
+            this.Id_catalogoReparacion = pId_catalogoReparacion;
             this.Descripcion = pDescripcion;
             this.HorasReparacion = pHorasReparacion;
             this.CostoReparacion = pCostoReparacion;
         }
-        public int IdCatalogoReparacion
+        public int Id_catalogoReparacion
         {
             get
             {
-                return idCatalogoReparacion;
+                return id_catalogoReparacion;
             }
 
             set
             {
-                idCatalogoReparacion = value;
+                id_catalogoReparacion = value;
             }
         }
 
@@ -75,7 +75,7 @@ namespace Logica
 
         public override string ToString()
         {
-            return (this.idCatalogoReparacion +"-"+ this.descripcion + "= ₡" + this.costoReparacion);
+            return (this.id_catalogoReparacion +"-"+ this.descripcion + "= ₡" + this.costoReparacion);
         }
     }
 }

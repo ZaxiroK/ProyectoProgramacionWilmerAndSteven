@@ -8,7 +8,7 @@ namespace Logica
 {
     public class EmpleadoE
     {
-        private string cedula;
+        private int cedula;
         private string nombre;
         private string apellido1;
         private string apellido2;
@@ -17,7 +17,7 @@ namespace Logica
         private string telefono1;
         private string telefono2;
         private string telefono3;
-        public EmpleadoE(string pCedula, string pNombre, string pApellido1, string pApellido2,
+        public EmpleadoE(int pCedula, string pNombre, string pApellido1, string pApellido2,
                string pDireccion, PuestoE pOPuestoE, string pTelefono1, string pTelefono2,
                string pTelefono3)
         {
@@ -32,7 +32,7 @@ namespace Logica
             this.telefono3 = pTelefono3;
         }
 
-        public string Cedula
+        public int Cedula
         {
             get
             {

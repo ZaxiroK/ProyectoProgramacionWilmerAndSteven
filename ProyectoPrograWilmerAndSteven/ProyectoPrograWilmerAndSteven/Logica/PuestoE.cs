@@ -8,14 +8,14 @@ namespace Logica
 {
     public class PuestoE
     {
-        private int idPuesto;
+        private int id_puesto;
         private double salario;
         private char puesto;
         private string descripcion;
 
-        public PuestoE(int pIdPuesto, double pSalario, char pPuesto, string pDescripcion)
+        public PuestoE(int pId_puesto, double pSalario, char pPuesto, string pDescripcion)
         {
-            this.idPuesto = pIdPuesto;
+            this.id_puesto = pId_puesto;
             this.salario = pSalario;
             this.puesto = pPuesto;
             this.descripcion = pDescripcion;
@@ -25,12 +25,12 @@ namespace Logica
         {
             get
             {
-                return idPuesto;
+                return id_puesto;
             }
 
             set
             {
-                idPuesto = value;
+                id_puesto = value;
             }
         }
 
@@ -75,7 +75,7 @@ namespace Logica
 
         public override string ToString()
         {
-            return (this.idPuesto +"-"+ this.descripcion);
+            return (this.id_puesto +"-"+ this.descripcion);
         }
 
     }

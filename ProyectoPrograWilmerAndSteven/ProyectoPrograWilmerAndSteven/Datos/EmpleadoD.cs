@@ -48,7 +48,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                             "e.apellido1 as apellido1, e.apellido2 as apellido2," +
                              "e.direccion as direccion, e.telefono1 as telefono1, e.telefono2 as telefono2,e.telefono3 as telefono3," +
                               "p.id_puesto as id_puesto, p.salario as salario, p.puesto as puesto, p.descripcion as descripcion" +
-                               "from empleado e, puesto p where e.cedula = p.id_puesto";
+                               "from Empleado e, Puesto p where e.cedula = p.id_puesto";
             if (pPuesto != null)
             {
                 sql += "and p.idPuesto = @puesto";
