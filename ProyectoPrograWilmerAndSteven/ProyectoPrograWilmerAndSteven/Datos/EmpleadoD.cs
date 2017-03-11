@@ -40,16 +40,15 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
         public List<EmpleadoE> obtenerEmpleados(PuestoE pPuesto)
         {
-            
+
             this.limpiarError();
             List<EmpleadoE> empleados = new List<EmpleadoE>();
             DataSet dsetEmpleados;
             string sql = "select e.cedula as cedula, e.nombre as nombre," +
-                         "e.apellido1 as apellido1, e.apellido2 as apellido2," +
-                         "e.direccion as direccion, e.telefono1 as telefono1, e.telefono2 as telefono2, e.telefono3 as telefono3 " +
-                         "p.idPuesto as idPuesto, p.salario as salario, p.puesto as puesto, p.descripcion as descripcion "+
-                         "from empleado e, puesto p" +
-                         "where e.cedula = p.idPuesto  ";
+                            "e.apellido1 as apellido1, e.apellido2 as apellido2," +
+                             "e.direccion as direccion, e.telefono1 as telefono1, e.telefono2 as telefono2,e.telefono3 as telefono3," +
+                              "p.id_puesto as id_puesto, p.salario as salario, p.puesto as puesto, p.descripcion as descripcion" +
+                               "from empleado e, puesto p where e.cedula = p.id_puesto";
             if (pPuesto != null)
             {
                 sql += "and p.idPuesto = @puesto";
@@ -63,10 +62,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             foreach (DataRow tupla in dsetEmpleados.Tables[0].Rows)
             {
-                PuestoE oPuesto = new PuestoE(Int32.Parse(tupla["idPuesto"].ToString()), Convert.ToDouble(tupla["salario"].ToString())
+                PuestoE oPuesto = new PuestoE(Int32.Parse(tupla["id_puesto"].ToString()), Convert.ToDouble(tupla["salario"].ToString())
                     , Convert.ToChar(tupla["puesto"].ToString()), tupla["descripcion"].ToString());
                 EmpleadoE oEmpleado = new EmpleadoE(tupla["cedula"].ToString(), tupla["nombre"].ToString(), tupla["apellido1"].ToString()
-                    , tupla["apellido2"].ToString(), tupla["direccion"].ToString(),oPuesto, tupla["telefono1"].ToString(), tupla["telefono2"].ToString()
+                    , tupla["apellido2"].ToString(), tupla["direccion"].ToString(), oPuesto, tupla["telefono1"].ToString(), tupla["telefono2"].ToString()
                     , tupla["telefono3"].ToString());
                 empleados.Add(oEmpleado);
             }
