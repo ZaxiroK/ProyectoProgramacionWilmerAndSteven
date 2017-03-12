@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProyectoPrograWilmerAndSteven.Datos
 {
-    class CatalgoReparacionD
+    public class OrdenRepuestoD
     {
+
     }
 }
