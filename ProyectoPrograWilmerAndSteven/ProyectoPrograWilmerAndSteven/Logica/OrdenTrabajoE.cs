@@ -9,39 +9,45 @@ namespace Logica
     public class OrdenTrabajoE
     {
         private int idOrdenDetrabajo;
-        private List<OrdenRepuesto> ordenRepuesto;
-        private List<OrdenReparacion> ordenReparacion;
-        private string anno;
+        private List<OrdenRepuestoE> ordenRepuesto;
+        private List<OrdenReparacionE> ordenReparacion;
+        private int anno;
         private DateTime fechaDeIngreso;
         private DateTime fechaDeSalida;
+        private DateTime fechaDeFacturacion;
         private EmpleadoE oMecanicoResponsable;
+        /*private Double costoTotal;*/
         private VehiculoE oVehiculo;
         private char estado;
         private int facturaNumero;
-        public OrdenTrabajoE(int pIdOrdenDetrabajo, string pAnno, DateTime pFechaDeIngreso,
-            DateTime pFechaDeSalida, EmpleadoE pOMecanicoResponsable, VehiculoE pOVehiculo,
+        public OrdenTrabajoE(int pIdOrdenDetrabajo, int pAnno, DateTime pFechaDeIngreso,
+            DateTime pFechaDeSalida, DateTime pFechaDeFacturacion, EmpleadoE pOMecanicoResponsable, /*Double pCostoTotal,*/ VehiculoE pOVehiculo,
             char pEstado, int pFacturaNumero)
         {
             this.IdOrdenDetrabajo = pIdOrdenDetrabajo;
             this.Anno = pAnno;
             this.FechaDeIngreso = pFechaDeIngreso;
             this.FechaDeSalida = pFechaDeSalida;
+            this.FechaDeFacturacion = pFechaDeFacturacion;
             this.OMecanicoResponsable = pOMecanicoResponsable;
+            /*this.CostoTotal = pCostoTotal;*/
             this.OVehiculo = pOVehiculo;
             this.Estado = pEstado;
             this.FacturaNumero = pFacturaNumero;
         }
 
-        public OrdenTrabajoE(int pIdOrdenDetrabajo, string pAnno, DateTime pFechaDeIngreso,
-            DateTime pFechaDeSalida, EmpleadoE pOMecanicoResponsable, VehiculoE pOVehiculo,
-            char pEstado, int pFacturaNumero, List<OrdenRepuesto> pOrdenRepuesto,
-            List<OrdenReparacion> pOrdenReparacion)
+        public OrdenTrabajoE(int pIdOrdenDetrabajo, int pAnno, DateTime pFechaDeIngreso,
+            DateTime pFechaDeSalida, DateTime pFechaDeFacturacion, EmpleadoE pOMecanicoResponsable, /*Double pCostoTotal,*/ VehiculoE pOVehiculo,
+            char pEstado, int pFacturaNumero, List<OrdenRepuestoE> pOrdenRepuesto,
+            List<OrdenReparacionE> pOrdenReparacion)
         {
             this.IdOrdenDetrabajo = pIdOrdenDetrabajo;
             this.Anno = pAnno;
             this.FechaDeIngreso = pFechaDeIngreso;
             this.FechaDeSalida = pFechaDeSalida;
+            this.FechaDeFacturacion = pFechaDeFacturacion;
             this.OMecanicoResponsable = pOMecanicoResponsable;
+            /*this.CostoTotal = pCostoTotal;*/
             this.OVehiculo = pOVehiculo;
             this.Estado = pEstado;
             this.FacturaNumero = pFacturaNumero;
@@ -58,7 +64,7 @@ namespace Logica
         {
             double total = 0;
 
-            foreach (OrdenRepuesto oRepuesto in OrdenRepuesto)
+            foreach (OrdenRepuestoE oRepuesto in OrdenRepuesto)
             {
                 total += oRepuesto.Precio * oRepuesto.Cantidad;
             }
@@ -70,7 +76,7 @@ namespace Logica
         {
             double total = 0;
 
-            foreach (OrdenReparacion oReparacion in OrdenReparacion)
+            foreach (OrdenReparacionE oReparacion in OrdenReparacion)
             {
                 total += oReparacion.CostoReparacion;
             }
@@ -84,12 +90,12 @@ namespace Logica
             return (Convert.ToDateTime(diferencia.ToString()));
         }
 
-        public void AgregarOrdenReparacion(OrdenReparacion oOrdenReparacion)
+        public void AgregarOrdenReparacion(OrdenReparacionE oOrdenReparacion)
         {
             this.ordenReparacion.Add(oOrdenReparacion);
         }
 
-        public void AgregarOrdenRepuesto(OrdenRepuesto oOrdenRepuesto)
+        public void AgregarOrdenRepuesto(OrdenRepuestoE oOrdenRepuesto)
         {
             this.OrdenRepuesto.Add(oOrdenRepuesto);
         }
@@ -106,7 +112,7 @@ namespace Logica
             }
         }
 
-        internal List<OrdenRepuesto> OrdenRepuesto
+        internal List<OrdenRepuestoE> OrdenRepuesto
         {
             get
             {
@@ -119,7 +125,7 @@ namespace Logica
             }
         }
 
-        internal List<OrdenReparacion> OrdenReparacion
+        internal List<OrdenReparacionE> OrdenReparacion
         {
             get
             {
@@ -132,7 +138,7 @@ namespace Logica
             }
         }
 
-        public string Anno
+        public int Anno
         {
             get
             {
@@ -223,6 +229,32 @@ namespace Logica
             }
         }
 
+        public DateTime FechaDeFacturacion
+        {
+            get
+            {
+                return fechaDeFacturacion;
+            }
+
+            set
+            {
+                fechaDeFacturacion = value;
+            }
+        }
+
+       /* public double CostoTotal
+        {
+            get
+            {
+                return costoTotal;
+            }
+
+            set
+            {
+                costoTotal = value;
+            }
+        }
+        */
         public override string ToString()
         {
             return (
@@ -230,6 +262,7 @@ namespace Logica
                 "Año: " + this.anno + "\n" +
                 "Fecha de ingreso: " + this.fechaDeIngreso.ToString() + "\n" +
                 "Fecha de salida: " + this.fechaDeSalida.ToString() + "\n" +
+                "Fecha de facturacion: " + this.fechaDeFacturacion.ToString() + "\n" +
                 "Dias totales de reparación: " + this.CalculoFecha().ToString() + "\n" +
                 "Encargado: " + this.oMecanicoResponsable.ToString() + "\n" +
                 "Vehiculo: " + this.oVehiculo.ToString() + "\n" +

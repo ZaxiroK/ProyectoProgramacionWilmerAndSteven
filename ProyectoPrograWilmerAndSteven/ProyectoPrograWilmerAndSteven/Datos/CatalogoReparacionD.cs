@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace ProyectoPrograWilmerAndSteven.Datos
 {
-    public class CatalogoReparacionD
-    {
+    public class CatalogoReparacionD { 
+    
         private AccesoDatosPostgre conexion;
 
         private bool error;
@@ -53,7 +53,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             {
 
             CatalogoReparacionE oCatalogoReparacion = new CatalogoReparacionE(Convert.ToInt32(tupla["id_catalogo_reparacion"].ToString()),tupla["descripcion"].ToString(),
-                    Convert.ToInt32(tupla["horas_reparacion"].ToString()),Convert.ToDouble(tupla["costo_reparacion"].ToString()));
+                    Convert.ToInt32(tupla["horasReparacion"].ToString()),Convert.ToDouble(tupla["costoReparacion"].ToString()));
                 catalogoReparaciones.Add(oCatalogoReparacion);
             }
             return catalogoReparaciones;

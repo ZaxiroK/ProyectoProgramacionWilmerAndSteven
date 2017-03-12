@@ -51,7 +51,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                                "from Empleado e, Puesto p where e.cedula = p.id_puesto";
             if (pPuesto != null)
             {
-                sql += "and p.idPuesto = @puesto";
+                sql += "and p.IdPuesto = @puesto";
                 Parametro oParametro = new Parametro();
                 oParametro.agregarParametro("@puesto", NpgsqlDbType.Varchar, pPuesto.IdPuesto);
                 dsetEmpleados = this.conexion.ejecutarConsultaSQL(sql, "empleado", oParametro.obtenerParametros());
@@ -64,7 +64,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             {
                 PuestoE oPuesto = new PuestoE(Int32.Parse(tupla["id_puesto"].ToString()), Convert.ToDouble(tupla["salario"].ToString())
                     , Convert.ToChar(tupla["puesto"].ToString()), tupla["descripcion"].ToString());
-                EmpleadoE oEmpleado = new EmpleadoE(tupla["cedula"].ToString(), tupla["nombre"].ToString(), tupla["apellido1"].ToString()
+                EmpleadoE oEmpleado = new EmpleadoE(Convert.ToInt32(tupla["cedula"].ToString()), tupla["nombre"].ToString(), tupla["apellido1"].ToString()
                     , tupla["apellido2"].ToString(), tupla["direccion"].ToString(), oPuesto, tupla["telefono1"].ToString(), tupla["telefono2"].ToString()
                     , tupla["telefono3"].ToString());
                 empleados.Add(oEmpleado);
