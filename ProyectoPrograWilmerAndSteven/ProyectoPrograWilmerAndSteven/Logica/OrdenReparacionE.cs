@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class OrdenReparacion : CatalogoReparacionE
+    public class OrdenReparacionE : CatalogoReparacionE
     {
         private int idOrdenReparacion;
         private string cedulaEmpleado;
         private int horasTotalReparacion;
         //preguntar al profe si es necesario un indicador, si la orden ya se realizo????
-        public OrdenReparacion(int pIdOrdenReparacion, string pCedulaEmpleado,
+        public OrdenReparacionE(int pIdOrdenReparacion, string pCedulaEmpleado,
                 int pHorasTotalReparacion, int pIdCatalogoReparacion, string pDescripcion,
                 int pHorasReparacion, double pCostoReparacion) :
                 base(pIdCatalogoReparacion, pDescripcion, pHorasReparacion, pCostoReparacion)

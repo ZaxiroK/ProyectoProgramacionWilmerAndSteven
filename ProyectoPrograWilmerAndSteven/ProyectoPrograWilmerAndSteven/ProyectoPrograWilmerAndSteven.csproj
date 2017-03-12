@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\AccesoDatosPostgre.cs" />
+    <Compile Include="Datos\CatalgoReparacionD.cs" />
     <Compile Include="Datos\CatalogoReparacionD.cs" />
     <Compile Include="Datos\EmpleadoD.cs" />
     <Compile Include="Datos\Parametro.cs" />
@@ -64,8 +65,8 @@
     <Compile Include="Logica\EmpleadoE.cs" />
     <Compile Include="Logica\MarcaE.cs" />
     <Compile Include="Logica\ModeloE.cs" />
-    <Compile Include="Logica\OrdenReparacion.cs" />
-    <Compile Include="Logica\OrdenRepuesto.cs" />
+    <Compile Include="Logica\OrdenReparacionE.cs" />
+    <Compile Include="Logica\OrdenRepuestoE.cs" />
     <Compile Include="Logica\OrdenTrabajoE.cs" />
     <Compile Include="Logica\PuestoE.cs" />
     <Compile Include="Logica\UsuarioE.cs" />

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class OrdenRepuesto : CatalogoRepuestoE
+    public class OrdenRepuestoE : CatalogoRepuestoE
     {
         private int cantidad;
 
-        public OrdenRepuesto(int pCantidad, int pIdCatalogoRepuesto, string pNombreDelRepuesto,
+        public OrdenRepuestoE(int pCantidad, int pIdCatalogoRepuesto, string pNombreDelRepuesto,
             string pAnnoAlQuePertenece, double pPrecio) :
             base(pIdCatalogoRepuesto, pNombreDelRepuesto, pAnnoAlQuePertenece, pPrecio)
         {
