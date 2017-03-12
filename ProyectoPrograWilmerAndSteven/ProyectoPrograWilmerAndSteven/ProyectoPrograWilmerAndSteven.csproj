@@ -57,6 +57,7 @@
     <Compile Include="Datos\EmpleadoD.cs" />
     <Compile Include="Datos\Parametro.cs" />
     <Compile Include="Datos\PuestoD.cs" />
+    <Compile Include="Datos\UsuarioD.cs" />
     <Compile Include="Logica\CatalogoReparacionE.cs" />
     <Compile Include="Logica\CatalogoRepuestoE.cs" />
     <Compile Include="Logica\ClienteE.cs" />
