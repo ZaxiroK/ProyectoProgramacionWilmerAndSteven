@@ -52,10 +52,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                             "t.estado    as estado, t.factura_numero    as facturaNumero" +
 
 
-                                /*empleado    "e. as cedula , e. as nombre, e. as apellido1, e. as apellido2," +
-                               "e. as direccion, e. as telefono1, e. as telefono2, e. as telefono3,"+
-                               p.id_puesto as id_puesto, p.salario as salario, " +
-                               "p.puesto as puesto, p.descripcion as descripcion"+*/
+                             "e.cedula  as cedula , e.nombre  as nombre, e.apellido1  as apellido1, e.apellido2  as apellido2," +
+                               "e.direccion  as direccion, e.telefono1  as telefono1, e.telefono2  as telefono2, e.telefono3  as telefono3,"+
+                               "p.id_puesto as id_puesto, p.salario as salario, " +
+                               "p.puesto as puesto, p.descripcion as descripcion"+
 
 
                                 /*vehiculo  "v. as idVehiculo, v. as placa, v. as claseVehiculo, v. as capacidadPersonas,"+

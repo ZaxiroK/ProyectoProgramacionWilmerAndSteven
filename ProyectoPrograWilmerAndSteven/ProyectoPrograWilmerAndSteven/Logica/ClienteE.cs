@@ -12,16 +12,18 @@ namespace Logica
         private string nombre;
         private string apellido1;
         private string apellido2;
+        private string direccion;
         private string telefono1;
         private string telefono2;
         private string telefono3;
-        public ClienteE(int pCedula, string pNombre, string pApellido1, string pApellido2,
+        public ClienteE(int pCedula, string pNombre, string pApellido1, string pApellido2, string pDireccion,
             string pTelefono1, string pTelefono2, string pTelefono3)
         {
             this.Cedula = pCedula;
             this.Nombre = pNombre;
             this.Apellido1 = pApellido1;
             this.Apellido2 = pApellido2;
+            this.Direccion = pDireccion;
             this.Telefono1 = pTelefono1;
             this.Telefono2 = pTelefono2;
             this.Telefono3 = pTelefono3;
@@ -118,9 +120,22 @@ namespace Logica
             }
         }
 
+        public string Direccion
+        {
+            get
+            {
+                return direccion;
+            }
+
+            set
+            {
+                direccion = value;
+            }
+        }
+
         public override string ToString()
         {
-            return (this.cedula + "-" + this.nombre + " " + this.apellido1 + " " + this.Apellido2);
+            return (this.cedula + "-" + this.nombre + " " + this.apellido1 + " " + this.Apellido2 + " " + this.direccion );
         }
     }
 }
