@@ -8,14 +8,14 @@ namespace Logica
 {
     public class ClienteE
     {
-        private string cedula;
+        private int cedula;
         private string nombre;
         private string apellido1;
         private string apellido2;
         private string telefono1;
         private string telefono2;
         private string telefono3;
-        public ClienteE(string pCedula, string pNombre, string pApellido1, string pApellido2,
+        public ClienteE(int pCedula, string pNombre, string pApellido1, string pApellido2,
             string pTelefono1, string pTelefono2, string pTelefono3)
         {
             this.Cedula = pCedula;
@@ -27,7 +27,7 @@ namespace Logica
             this.Telefono3 = pTelefono3;
         }
 
-        public string Cedula
+        public int Cedula
         {
             get
             {

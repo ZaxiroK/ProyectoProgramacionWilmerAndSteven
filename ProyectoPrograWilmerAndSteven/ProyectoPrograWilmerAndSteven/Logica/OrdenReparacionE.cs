@@ -9,17 +9,19 @@ namespace Logica
     public class OrdenReparacionE : CatalogoReparacionE
     {
         private int idOrdenReparacion;
-        private string cedulaEmpleado;
+        private int cedulaEmpleado;
         private int horasTotalReparacion;
+        private OrdenTrabajoE oOrdenTrabajo;
         //preguntar al profe si es necesario un indicador, si la orden ya se realizo????
-        public OrdenReparacionE(int pIdOrdenReparacion, string pCedulaEmpleado,
-                int pHorasTotalReparacion, int pIdCatalogoReparacion, string pDescripcion,
+        public OrdenReparacionE(int pIdOrdenReparacion, int pCedulaEmpleado,
+                int pHorasTotalReparacion, OrdenTrabajoE pOrdenTrabajo, int pIdCatalogoReparacion, string pDescripcion,
                 int pHorasReparacion, double pCostoReparacion) :
                 base(pIdCatalogoReparacion, pDescripcion, pHorasReparacion, pCostoReparacion)
         {
             this.IdOrdenReparacion = pIdOrdenReparacion;
             this.CedulaEmpleado = pCedulaEmpleado;
             this.HorasTotalReparacion = pHorasTotalReparacion;
+            this.OOrdenTrabajo = pOrdenTrabajo;
         }
         public int IdOrdenReparacion
         {
@@ -34,7 +36,7 @@ namespace Logica
             }
         }
 
-        public string CedulaEmpleado
+        public int CedulaEmpleado
         {
             get
             {
@@ -60,9 +62,22 @@ namespace Logica
             }
         }
 
+        public OrdenTrabajoE OOrdenTrabajo
+        {
+            get
+            {
+                return oOrdenTrabajo;
+            }
+
+            set
+            {
+                oOrdenTrabajo = value;
+            }
+        }
+
         public override string ToString()
         {
-            return (this.idOrdenReparacion +"-"+ this.cedulaEmpleado +":"+ this.descripcion + "\n" +
+            return (this.idOrdenReparacion +"-"+ this.oOrdenTrabajo +"-"+ this.cedulaEmpleado +":"+ this.descripcion + "\n" +
                     base.ToString());
         }
     }
