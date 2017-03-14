@@ -58,7 +58,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             {
                 sql += "and c.cedula = @cliente";
                 Parametro oParametro = new Parametro();
-                oParametro.agregarParametro("@puesto", NpgsqlDbType.Varchar, pClienten.Cedula);
+                oParametro.agregarParametro("@cliente", NpgsqlDbType.Varchar, pClienten.Cedula);
                 dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql, "vehiculo", oParametro.obtenerParametros());
             }
             else
