@@ -41,9 +41,10 @@
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(288, 290);
+            this.btnCerrar.Location = new System.Drawing.Point(216, 195);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(88, 35);
+            this.btnCerrar.Size = new System.Drawing.Size(66, 28);
             this.btnCerrar.TabIndex = 90;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             // btnnRegistrar
             // 
             this.btnnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnRegistrar.Location = new System.Drawing.Point(517, 290);
+            this.btnnRegistrar.Location = new System.Drawing.Point(382, 195);
+            this.btnnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnnRegistrar.Name = "btnnRegistrar";
-            this.btnnRegistrar.Size = new System.Drawing.Size(89, 35);
+            this.btnnRegistrar.Size = new System.Drawing.Size(67, 28);
             this.btnnRegistrar.TabIndex = 89;
             this.btnnRegistrar.Text = "Registrar";
             this.btnnRegistrar.UseVisualStyleBackColor = true;
@@ -62,44 +64,49 @@
             // 
             this.labelAño.AutoSize = true;
             this.labelAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAño.Location = new System.Drawing.Point(67, 118);
+            this.labelAño.Location = new System.Drawing.Point(50, 96);
+            this.labelAño.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAño.Name = "labelAño";
-            this.labelAño.Size = new System.Drawing.Size(187, 20);
+            this.labelAño.Size = new System.Drawing.Size(164, 17);
             this.labelAño.TabIndex = 88;
             this.labelAño.Text = "Año al que pertenece";
             // 
             // txtAnio
             // 
-            this.txtAnio.Location = new System.Drawing.Point(288, 111);
+            this.txtAnio.Location = new System.Drawing.Point(216, 90);
+            this.txtAnio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAnio.Multiline = true;
             this.txtAnio.Name = "txtAnio";
-            this.txtAnio.Size = new System.Drawing.Size(309, 27);
+            this.txtAnio.Size = new System.Drawing.Size(233, 23);
             this.txtAnio.TabIndex = 87;
             this.txtAnio.TextChanged += new System.EventHandler(this.textAño_TextChanged);
             // 
             // txtNobreRepuesto
             // 
-            this.txtNobreRepuesto.Location = new System.Drawing.Point(288, 64);
+            this.txtNobreRepuesto.Location = new System.Drawing.Point(216, 52);
+            this.txtNobreRepuesto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNobreRepuesto.Multiline = true;
             this.txtNobreRepuesto.Name = "txtNobreRepuesto";
-            this.txtNobreRepuesto.Size = new System.Drawing.Size(309, 27);
+            this.txtNobreRepuesto.Size = new System.Drawing.Size(233, 23);
             this.txtNobreRepuesto.TabIndex = 86;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(288, 163);
+            this.txtPrecio.Location = new System.Drawing.Point(216, 132);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(309, 27);
+            this.txtPrecio.Size = new System.Drawing.Size(233, 23);
             this.txtPrecio.TabIndex = 85;
             // 
             // labelModelo
             // 
             this.labelModelo.AutoSize = true;
             this.labelModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelModelo.Location = new System.Drawing.Point(67, 71);
+            this.labelModelo.Location = new System.Drawing.Point(50, 58);
+            this.labelModelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelModelo.Name = "labelModelo";
-            this.labelModelo.Size = new System.Drawing.Size(184, 20);
+            this.labelModelo.Size = new System.Drawing.Size(160, 17);
             this.labelModelo.TabIndex = 84;
             this.labelModelo.Text = "Nombre del repuesto";
             // 
@@ -107,17 +114,18 @@
             // 
             this.labelMarca.AutoSize = true;
             this.labelMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMarca.Location = new System.Drawing.Point(67, 170);
+            this.labelMarca.Location = new System.Drawing.Point(50, 138);
+            this.labelMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMarca.Name = "labelMarca";
-            this.labelMarca.Size = new System.Drawing.Size(63, 20);
+            this.labelMarca.Size = new System.Drawing.Size(54, 17);
             this.labelMarca.TabIndex = 83;
             this.labelMarca.Text = "Precio";
             // 
             // FrmRegistroDeCatalogoDeRepuestos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 434);
+            this.ClientSize = new System.Drawing.Size(473, 249);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnnRegistrar);
             this.Controls.Add(this.labelAño);
@@ -126,6 +134,7 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.labelModelo);
             this.Controls.Add(this.labelMarca);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmRegistroDeCatalogoDeRepuestos";
             this.Text = "Registro de catalogo de repuestos";
             this.ResumeLayout(false);

@@ -41,19 +41,21 @@
             // textBox1
             // 
             this.textBox1.CausesValidation = false;
-            this.textBox1.Location = new System.Drawing.Point(248, 138);
+            this.textBox1.Location = new System.Drawing.Point(186, 112);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(309, 27);
+            this.textBox1.Size = new System.Drawing.Size(233, 23);
             this.textBox1.TabIndex = 80;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(109, 138);
+            this.label3.Location = new System.Drawing.Point(82, 112);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.Size = new System.Drawing.Size(93, 17);
             this.label3.TabIndex = 79;
             this.label3.Text = "Descripcion";
             // 
@@ -61,9 +63,10 @@
             // 
             this.btnCancelar.CausesValidation = false;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(352, 193);
+            this.btnCancelar.Location = new System.Drawing.Point(264, 157);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(88, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(66, 28);
             this.btnCancelar.TabIndex = 78;
             this.btnCancelar.Text = "Cerrar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -72,9 +75,10 @@
             // 
             this.buttonRegistrar.CausesValidation = false;
             this.buttonRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegistrar.Location = new System.Drawing.Point(468, 193);
+            this.buttonRegistrar.Location = new System.Drawing.Point(351, 157);
+            this.buttonRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonRegistrar.Name = "buttonRegistrar";
-            this.buttonRegistrar.Size = new System.Drawing.Size(89, 35);
+            this.buttonRegistrar.Size = new System.Drawing.Size(67, 28);
             this.buttonRegistrar.TabIndex = 77;
             this.buttonRegistrar.Text = "Registrar";
             this.buttonRegistrar.UseVisualStyleBackColor = true;
@@ -82,28 +86,31 @@
             // txtNombre
             // 
             this.txtNombre.CausesValidation = false;
-            this.txtNombre.Location = new System.Drawing.Point(248, 93);
+            this.txtNombre.Location = new System.Drawing.Point(186, 76);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(309, 27);
+            this.txtNombre.Size = new System.Drawing.Size(233, 23);
             this.txtNombre.TabIndex = 76;
             // 
             // txtCedula
             // 
             this.txtCedula.CausesValidation = false;
-            this.txtCedula.Location = new System.Drawing.Point(248, 44);
+            this.txtCedula.Location = new System.Drawing.Point(186, 36);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCedula.Multiline = true;
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(309, 27);
+            this.txtCedula.Size = new System.Drawing.Size(233, 23);
             this.txtCedula.TabIndex = 75;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 100);
+            this.label2.Location = new System.Drawing.Point(82, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(59, 17);
             this.label2.TabIndex = 74;
             this.label2.Text = "Salario";
             // 
@@ -111,17 +118,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 51);
+            this.label1.Location = new System.Drawing.Point(82, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 73;
             this.label1.Text = "Puesto";
             // 
             // FrmRegistroDePuestos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 282);
+            this.ClientSize = new System.Drawing.Size(456, 212);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
@@ -130,6 +138,7 @@
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmRegistroDePuestos";
             this.Text = "Registro de puestos";
             this.ResumeLayout(false);

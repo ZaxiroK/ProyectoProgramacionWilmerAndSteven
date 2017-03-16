@@ -39,35 +39,39 @@
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(361, 212);
+            this.btnCerrar.Location = new System.Drawing.Point(120, 172);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(79, 35);
+            this.btnCerrar.Size = new System.Drawing.Size(59, 28);
             this.btnCerrar.TabIndex = 14;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
             // textUsuario
             // 
-            this.textUsuario.Location = new System.Drawing.Point(252, 60);
+            this.textUsuario.Location = new System.Drawing.Point(189, 49);
+            this.textUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textUsuario.Multiline = true;
             this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Size = new System.Drawing.Size(309, 32);
+            this.textUsuario.Size = new System.Drawing.Size(233, 27);
             this.textUsuario.TabIndex = 13;
             // 
             // textContrasenna
             // 
-            this.textContrasenna.Location = new System.Drawing.Point(252, 122);
+            this.textContrasenna.Location = new System.Drawing.Point(189, 99);
+            this.textContrasenna.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textContrasenna.Multiline = true;
             this.textContrasenna.Name = "textContrasenna";
-            this.textContrasenna.Size = new System.Drawing.Size(309, 32);
+            this.textContrasenna.Size = new System.Drawing.Size(233, 27);
             this.textContrasenna.TabIndex = 12;
             // 
             // btnIngresar
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(486, 212);
+            this.btnIngresar.Location = new System.Drawing.Point(305, 172);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(79, 35);
+            this.btnIngresar.Size = new System.Drawing.Size(65, 28);
             this.btnIngresar.TabIndex = 11;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -76,9 +80,10 @@
             // 
             this.labelContrasenna.AutoSize = true;
             this.labelContrasenna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContrasenna.Location = new System.Drawing.Point(120, 122);
+            this.labelContrasenna.Location = new System.Drawing.Point(90, 99);
+            this.labelContrasenna.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelContrasenna.Name = "labelContrasenna";
-            this.labelContrasenna.Size = new System.Drawing.Size(115, 20);
+            this.labelContrasenna.Size = new System.Drawing.Size(99, 17);
             this.labelContrasenna.TabIndex = 10;
             this.labelContrasenna.Text = "Constraseña";
             // 
@@ -86,23 +91,25 @@
             // 
             this.labelUsuario.AutoSize = true;
             this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuario.Location = new System.Drawing.Point(120, 60);
+            this.labelUsuario.Location = new System.Drawing.Point(90, 49);
+            this.labelUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(74, 20);
+            this.labelUsuario.Size = new System.Drawing.Size(64, 17);
             this.labelUsuario.TabIndex = 9;
             this.labelUsuario.Text = "Usuario";
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 363);
+            this.ClientSize = new System.Drawing.Size(451, 218);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.textUsuario);
             this.Controls.Add(this.textContrasenna);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.labelContrasenna);
             this.Controls.Add(this.labelUsuario);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmPrincipal";
             this.Text = "Principal";
             this.ResumeLayout(false);
