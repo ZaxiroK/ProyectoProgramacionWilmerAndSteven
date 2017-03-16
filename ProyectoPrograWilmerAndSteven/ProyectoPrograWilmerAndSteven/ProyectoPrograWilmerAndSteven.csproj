@@ -56,7 +56,7 @@
     <Compile Include="Datos\ClienteD.cs" />
     <Compile Include="Datos\MarcaD.cs" />
     <Compile Include="Datos\ModeloD.cs" />
-    <Compile Include="Datos\OrdenDeTrabajoD.cs" />
+    <Compile Include="Datos\OrdenTrabajoD.cs" />
     <Compile Include="Datos\OrdenReparacionD.cs" />
     <Compile Include="Datos\OrdenRepuestoD.cs" />
     <Compile Include="Datos\CatalogoReparacionD.cs" />

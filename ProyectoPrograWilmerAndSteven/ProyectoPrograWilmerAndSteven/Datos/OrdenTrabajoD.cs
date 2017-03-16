@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPrograWilmerAndSteven.Datos
 {
-    public class OrdenDeTrabajoD
+    public class OrdenTrabajoD
     {
         private AccesoDatosPostgre conexion;
 
@@ -27,7 +27,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             get { return errorMsg; }
         }
 
-        public OrdenDeTrabajoD()
+        public OrdenTrabajoD()
         {
             this.conexion = AccesoDatosPostgre.Instance;
             this.limpiarError();
