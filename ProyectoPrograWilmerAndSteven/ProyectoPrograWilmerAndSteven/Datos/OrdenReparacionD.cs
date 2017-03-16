@@ -37,31 +37,31 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.errorMsg = "";
         }
 
-        public List<OrdenReparacionE> obtenerOredenesReaparaciones()
-        {
+        //public List<OrdenReparacionE> obtenerOredenesReaparaciones()
+        //{
 
-            this.limpiarError();
-            List<OrdenReparacionE> ordenesReparaciones = new List<OrdenReparacionE>();
-            DataSet dsetOredenesReparaciones;
+        //    this.limpiarError();
+        //    List<OrdenReparacionE> ordenesReparaciones = new List<OrdenReparacionE>();
+        //    DataSet dsetOredenesReparaciones;
             
 
-        string sql = "select o.id_orden_reparacion  as idOrdenReparacion, o.id_orden_de_trabajo  as idOrdenReparacion, o.id_empleado  as cedulaEmpleado" +
-                        "c.id_catalogo_reparacion as id_catalogoReparacion, c.horas   as horasTotalReparacion, c.costo   as costoReparacion" +
-                        //catalogo de reparacion
+        //string sql = "select o.id_orden_reparacion  as idOrdenReparacion, o.id_orden_de_trabajo  as idOrdenReparacion, o.id_empleado  as cedulaEmpleado" +
+        //                "c.id_catalogo_reparacion as id_catalogoReparacion, c.horas   as horasTotalReparacion, c.costo   as costoReparacion" +
+        //                //catalogo de reparacion
 
-              //ordenDeTrabajo         
+        //      //ordenDeTrabajo         
 
-              //empleado         
-                         "from OrdenReparacion o, CatalogoReparacion c where o.id_orden_reparacion = id_catalogo_reparacion ";
+        //      //empleado         
+        //                 "from OrdenReparacion o, CatalogoReparacion c where o.id_orden_reparacion = id_catalogo_reparacion ";
 
-            dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql);
-            foreach (DataRow tupla in dsetOredenesReparaciones.Tables[0].Rows)
-            {
+        //    dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql);
+        //    foreach (DataRow tupla in dsetOredenesReparaciones.Tables[0].Rows)
+        //    {
 
-                OrdenReparacionE oOredenesReparaciones = new OrdenReparacionE();
-                ordenesReparaciones.Add(oOredenesReparaciones);
-            }
-            return ordenesReparaciones;
-        }
+        //        OrdenReparacionE oOredenesReparaciones = new OrdenReparacionE();
+        //        ordenesReparaciones.Add(oOredenesReparaciones);
+        //    }
+        //    return ordenesReparaciones;
+        //}
     }
 }

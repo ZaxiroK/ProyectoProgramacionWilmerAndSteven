@@ -306,7 +306,7 @@ namespace Datos
         }
 
         //Método para manipular Insert, Update pero con parametros
-        public  void ejecutarSQL(string sql, Object[] myParamArray)
+        public  void ejecutarSQL(string sql, NpgsqlParameter[] myParamArray)
         {
             limpiarEstado();
 

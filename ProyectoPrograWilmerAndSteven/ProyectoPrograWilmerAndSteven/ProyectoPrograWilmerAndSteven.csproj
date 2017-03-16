@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Security">
-      <HintPath>..\..\..\..\..\Desktop\Wilmer\Programacion3\semana3\C5\C5\Mono.Security.dll</HintPath>
+      <HintPath>..\..\..\..\..\Google Drive\UTN\IV cuatri\Programación III\C5\Mono.Security.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql">
-      <HintPath>..\..\..\..\..\Desktop\Wilmer\Programacion3\semana3\C5\C5\Npgsql.dll</HintPath>
+      <HintPath>..\..\..\..\..\Google Drive\UTN\IV cuatri\Programación III\C5\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

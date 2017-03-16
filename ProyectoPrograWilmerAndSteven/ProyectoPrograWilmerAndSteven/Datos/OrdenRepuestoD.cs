@@ -50,7 +50,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                               "t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida, t.fecha_de_facturacion as fechaDeFacturacion, t.mecanico_responsable as deoMecanicoResponsablescripcion," +
                              " t.costo_total as costoTotal, t.estado as estado, t.factura_numero as facturaNumero," +
 
-                //CatalogoRepuesto
+                               //CatalogoRepuesto
                                "c.id_catalogo_repuesto as idCatalogoRepuesto, c.nombre_del_repuesto as nombreDelRepuesto, " +
                         "c.anno_al_que_pertenece as annoAlQuePertenece, c.precio as precio" +
                                "from OrdenRepuesto r, OrdenDeTrabajo t, CatalogoRepuesto c" +

@@ -41,8 +41,8 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(311, 216);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(160, 191);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(65, 28);
             this.btnCancelar.TabIndex = 23;
@@ -52,18 +52,18 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(409, 216);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Location = new System.Drawing.Point(283, 191);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(66, 28);
+            this.btnModificar.Size = new System.Drawing.Size(73, 28);
             this.btnModificar.TabIndex = 22;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // txtContraseniaNueva
             // 
-            this.txtContraseniaNueva.Location = new System.Drawing.Point(232, 145);
-            this.txtContraseniaNueva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraseniaNueva.Location = new System.Drawing.Point(194, 135);
+            this.txtContraseniaNueva.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseniaNueva.Multiline = true;
             this.txtContraseniaNueva.Name = "txtContraseniaNueva";
             this.txtContraseniaNueva.Size = new System.Drawing.Size(233, 27);
@@ -73,7 +73,7 @@
             // 
             this.lblContraseniaNueva.AutoSize = true;
             this.lblContraseniaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseniaNueva.Location = new System.Drawing.Point(99, 145);
+            this.lblContraseniaNueva.Location = new System.Drawing.Point(32, 145);
             this.lblContraseniaNueva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContraseniaNueva.Name = "lblContraseniaNueva";
             this.lblContraseniaNueva.Size = new System.Drawing.Size(148, 17);
@@ -82,8 +82,8 @@
             // 
             // textUsuario
             // 
-            this.textUsuario.Location = new System.Drawing.Point(232, 47);
-            this.textUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textUsuario.Location = new System.Drawing.Point(194, 47);
+            this.textUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.textUsuario.Multiline = true;
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.Size = new System.Drawing.Size(233, 27);
@@ -91,8 +91,8 @@
             // 
             // txtContraseniaActual
             // 
-            this.txtContraseniaActual.Location = new System.Drawing.Point(232, 98);
-            this.txtContraseniaActual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraseniaActual.Location = new System.Drawing.Point(194, 88);
+            this.txtContraseniaActual.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseniaActual.Multiline = true;
             this.txtContraseniaActual.Name = "txtContraseniaActual";
             this.txtContraseniaActual.Size = new System.Drawing.Size(233, 27);
@@ -102,7 +102,7 @@
             // 
             this.lblContraseniaActual.AutoSize = true;
             this.lblContraseniaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseniaActual.Location = new System.Drawing.Point(99, 98);
+            this.lblContraseniaActual.Location = new System.Drawing.Point(32, 98);
             this.lblContraseniaActual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContraseniaActual.Name = "lblContraseniaActual";
             this.lblContraseniaActual.Size = new System.Drawing.Size(148, 17);
@@ -113,7 +113,7 @@
             // 
             this.labelUsuario.AutoSize = true;
             this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuario.Location = new System.Drawing.Point(134, 47);
+            this.labelUsuario.Location = new System.Drawing.Point(32, 47);
             this.labelUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUsuario.Name = "labelUsuario";
             this.labelUsuario.Size = new System.Drawing.Size(64, 17);
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 292);
+            this.ClientSize = new System.Drawing.Size(451, 230);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtContraseniaNueva);
@@ -133,7 +133,7 @@
             this.Controls.Add(this.txtContraseniaActual);
             this.Controls.Add(this.lblContraseniaActual);
             this.Controls.Add(this.labelUsuario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Cambio de contraseña";
             this.ResumeLayout(false);
