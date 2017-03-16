@@ -42,15 +42,17 @@
             // dataGridViewClientes
             // 
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientes.Location = new System.Drawing.Point(50, 115);
-            this.dataGridViewClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewClientes.Location = new System.Drawing.Point(0, 47);
+            this.dataGridViewClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
             this.dataGridViewClientes.RowTemplate.Height = 24;
-            this.dataGridViewClientes.Size = new System.Drawing.Size(788, 257);
+            this.dataGridViewClientes.Size = new System.Drawing.Size(1176, 448);
             this.dataGridViewClientes.TabIndex = 13;
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAgregar,
             this.Editar,
@@ -58,7 +60,7 @@
             this.btnActualizar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(882, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(1176, 47);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -67,7 +69,7 @@
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(53, 35);
+            this.btnAgregar.Size = new System.Drawing.Size(67, 44);
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
@@ -76,7 +78,7 @@
             this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
             this.Editar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(41, 35);
+            this.Editar.Size = new System.Drawing.Size(52, 44);
             this.Editar.Text = "Editar";
             this.Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
@@ -85,7 +87,7 @@
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(43, 35);
+            this.btnBorrar.Size = new System.Drawing.Size(54, 44);
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
@@ -94,18 +96,18 @@
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(63, 35);
+            this.btnActualizar.Size = new System.Drawing.Size(79, 44);
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
             // FrmClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 402);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(1176, 495);
             this.Controls.Add(this.dataGridViewClientes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmClientes";
             this.Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();

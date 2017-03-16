@@ -1,5 +1,6 @@
 ﻿using Datos;
 using Logica;
+using Npgsql;
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.errorMsg = "";
         }
 
-        public List<ModeloE> obtenerEmpleados(MarcaE pMarca)
+        public List<ModeloE> obtenerMarca(MarcaE pMarca)
         {
 
             this.limpiarError();
@@ -66,5 +67,95 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return modelos;
         }
+        public bool agregarModelo(ModeloE pModelo)
+        {
+            this.limpiarError();
+            bool estado = true;
+            try
+            {
+                string sql = "INSERT INTO schtaller.modelo(" +
+            "id_modelo, descripcion, anio,id_marca ); ";
+
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+                oP.agregarParametro("@id_modelo", NpgsqlDbType.Integer, pModelo.IdModelo);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pModelo.Descripcion);
+                oP.agregarParametro("@anio", NpgsqlDbType.Integer, pModelo.Anno);
+                oP.agregarParametro("@id_marca", NpgsqlDbType.Integer, pModelo.OMarca);
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+                if (this.conexion.IsError)
+                {
+
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
+        }
+        public bool borrarModelo(ModeloE pModelo)
+        {
+            bool estado = true;
+            try
+            {
+                string sql = "delete from modelo where id_modelo = @id_modelo";
+
+                NpgsqlParameter[] parametros = new NpgsqlParameter[1];
+
+                parametros[0] = new NpgsqlParameter();
+                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
+                parametros[0].ParameterName = "@id_modelo";
+                parametros[0].Value = pModelo.IdModelo;
+
+                this.conexion.ejecutarSQL(sql, parametros);
+                if (this.conexion.IsError)
+                {
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
+        }
+        public bool modificarModelo(ModeloE pModelo)
+        {
+            bool estado = true;
+
+            try
+            {
+                string sql = "update modelo set id_modelo = @id_modelo , descripcion = @descripcion, id_marca = @id_marca where marca = @marca";
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+                oP.agregarParametro("@id_modelo", NpgsqlDbType.Integer, pModelo.IdModelo);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pModelo.Descripcion);
+                oP.agregarParametro("@id_marca", NpgsqlDbType.Integer, pModelo.OMarca);
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+                if (this.conexion.IsError)
+                {
+
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
+        }
     }
 }
+

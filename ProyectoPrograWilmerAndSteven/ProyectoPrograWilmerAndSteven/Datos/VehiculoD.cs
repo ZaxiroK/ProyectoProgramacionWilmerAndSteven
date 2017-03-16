@@ -42,18 +42,18 @@ namespace ProyectoPrograWilmerAndSteven.Datos
         public List<VehiculoE> obtenerVehiculos(ClienteE pClienten, ModeloE pModelo)
         {
             this.limpiarError();
-        List<VehiculoE> vehiculos = new List<VehiculoE>();
-        DataSet dsetVehiculos;
-        string sql = "select v.id_vehiculo as idVehiculo, v.placa as placa, v.clase_de_vehiculo as claseVehiculo, " +
-            "v.capacidad_de_personas as capacidadPersonas, v.numero_de_motor as numeroMotor, v.numero_de_chasis as numeroChasis, " +
-            "v.combustible as combustible," +
-            "c.cedula as cedula, c.nombre as nombre," +
-            "c.apellido1 as apellido1, c.apellido2 as apellido2," +
-            "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3," +
-            "mo.id_modelo  as idModelo, mo.descripcion  as descripcion, mo.anio as anno," +
-            "m.id_marca as idMarca, m.descripcion as descripcion" +
-            "from Vehiculo v, Cliente c,Modelo mo, Marca m" +
-            "where c.cedula = v.id_cliente and v.id_modelo = mo.id_modelo;";
+            List<VehiculoE> vehiculos = new List<VehiculoE>();
+            DataSet dsetVehiculos;
+            string sql = "select v.id_vehiculo as idVehiculo, v.placa as placa, v.clase_de_vehiculo as claseVehiculo, " +
+                "v.capacidad_de_personas as capacidadPersonas, v.numero_de_motor as numeroMotor, v.numero_de_chasis as numeroChasis, " +
+                "v.combustible as combustible," +
+                "c.cedula as cedula, c.nombre as nombre," +
+                "c.apellido1 as apellido1, c.apellido2 as apellido2," +
+                "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3," +
+                "mo.id_modelo  as idModelo, mo.descripcion  as descripcion, mo.anio as anno," +
+                "m.id_marca as idMarca, m.descripcion as descripcion" +
+                "from Vehiculo v, Cliente c,Modelo mo, Marca m" +
+                "where c.cedula = v.id_cliente and v.id_modelo = mo.id_modelo;";
 
             if (pClienten != null)
             {
@@ -88,7 +88,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 ModeloE oModelo = new ModeloE(Convert.ToInt32(tupla["idModelo"].ToString()), tupla["descripcion"].ToString(), oMarca, Convert.ToInt32(tupla["anio"].ToString()));
 
                 VehiculoE oVehiculo = new VehiculoE(Convert.ToInt32(tupla["idVehiculo"].ToString()), tupla["placa"].ToString(), tupla["claseVehiculo"].ToString()
-                    , Convert.ToInt32(tupla["capacidadPersonas"].ToString()),oCliente, oModelo, tupla["numeroMotor"].ToString(), tupla["numeroChasis"].ToString()
+                    , Convert.ToInt32(tupla["capacidadPersonas"].ToString()), oCliente, oModelo, tupla["numeroMotor"].ToString(), tupla["numeroChasis"].ToString()
                     , tupla["combustible"].ToString());
                 vehiculos.Add(oVehiculo);
             }
@@ -120,7 +120,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 oP.agregarParametro("@numero_de_chasis", NpgsqlDbType.Varchar, pVehiculo.NumeroChasis);
                 oP.agregarParametro("@combustible", NpgsqlDbType.Varchar, pVehiculo.Combustible);
 
-                
+
 
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
@@ -143,13 +143,13 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from vehiculo where id_vehiculo = @vehiculo";
+                string sql = "delete from vehiculo where id_vehiculo = @id_vehiculo";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
                 parametros[0] = new NpgsqlParameter();
                 parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
-                parametros[0].ParameterName = "@vehiculo";
+                parametros[0].ParameterName = "@id_vehiculo";
                 parametros[0].Value = pVehiculo.IdVehiculo;
 
                 this.conexion.ejecutarSQL(sql, parametros);
@@ -166,27 +166,30 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public bool modificarMarca(MarcaE pMarca)
+        public bool modificarVehiculo(VehiculoE pVehiculo)
         {
             bool estado = true;
-
+            
             try
             {
-                string sql = "update marca set marca = @marca , descripcion = @descripcion where marca = @marca";
-                NpgsqlParameter[] parametros = new NpgsqlParameter[2];
-                parametros[0] = new NpgsqlParameter();
-                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
-                parametros[0].ParameterName = "@marca";
-                parametros[0].Value = pMarca.IdMarca;
-
-                parametros[1] = new NpgsqlParameter();
-                parametros[1].NpgsqlDbType = NpgsqlDbType.Varchar;
-                parametros[1].ParameterName = "@descripcion";
-                parametros[1].Value = pMarca.Descripcion;
-
-                this.conexion.ejecutarSQL(sql, parametros);
+                string sql = "update vehiculo set id_vehiculo = @id_vehiculo , id_modelo = @id_modelo, placa = @placa, clase_de_vehiculo = @clase_de_vehiculo," +
+                    "capacidad_de_personas = @capacidad_de_personas, numero_de_motor = @numero_de_motor, numero_de_chasis = @numero_de_chasis, combustible = @combustible" +
+                    "where vehiculo = @vehiculo";
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+                oP.agregarParametro("@id_vehiculo", NpgsqlDbType.Integer, pVehiculo.IdVehiculo);
+                oP.agregarParametro("@id_cliente", NpgsqlDbType.Integer, pVehiculo.OClienteE.Cedula);
+                oP.agregarParametro("@id_modelo", NpgsqlDbType.Integer, pVehiculo.IdVehiculo);
+                oP.agregarParametro("@placa", NpgsqlDbType.Varchar, pVehiculo.Placa);
+                oP.agregarParametro("@clase_de_vehiculo", NpgsqlDbType.Varchar, pVehiculo.ClaseVehiculo);
+                oP.agregarParametro("@capacidad_de_personas", NpgsqlDbType.Integer, pVehiculo.CapacidadPersonas);
+                oP.agregarParametro("@numero_de_motor", NpgsqlDbType.Varchar, pVehiculo.NumeroMotor);
+                oP.agregarParametro("@numero_de_chasis", NpgsqlDbType.Varchar, pVehiculo.NumeroChasis);
+                oP.agregarParametro("@combustible", NpgsqlDbType.Varchar, pVehiculo.Combustible);
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {
+
                     estado = false;
                     this.errorMsg = this.conexion.ErrorDescripcion;
                 }
@@ -201,3 +204,4 @@ namespace ProyectoPrograWilmerAndSteven.Datos
         }
     }
 }
+

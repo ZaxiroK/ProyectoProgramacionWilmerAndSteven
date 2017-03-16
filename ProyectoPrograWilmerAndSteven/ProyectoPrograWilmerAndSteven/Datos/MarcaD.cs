@@ -1,5 +1,7 @@
 ﻿using Datos;
 using Logica;
+using Npgsql;
+using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -53,6 +55,92 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 marcas.Add(oMarca);
             }
             return marcas;
+        }
+        public bool agregarMarca(MarcaE pMarca)
+        {
+            this.limpiarError();
+            bool estado = true;
+            try
+            {
+                string sql = "INSERT INTO schtaller.marca(" +
+            "id_marca, id_cliente, descripcion); ";
+
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+                oP.agregarParametro("@id_marca", NpgsqlDbType.Integer, pMarca.IdMarca);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pMarca.Descripcion);
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+                if (this.conexion.IsError)
+                {
+
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
+        }
+        public bool borrarMarca(MarcaE pMarca)
+        {
+            bool estado = true;
+            try
+            {
+                string sql = "delete from marca where id_marca = @id_marca";
+
+                NpgsqlParameter[] parametros = new NpgsqlParameter[1];
+
+                parametros[0] = new NpgsqlParameter();
+                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
+                parametros[0].ParameterName = "@id_marca";
+                parametros[0].Value = pMarca.IdMarca;
+
+                this.conexion.ejecutarSQL(sql, parametros);
+                if (this.conexion.IsError)
+                {
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
+        }
+        public bool modificarMarca(MarcaE pMarca)
+        {
+            bool estado = true;
+
+            try
+            {
+                string sql = "update marca set id_marca = @id_marca , descripcion = @descripcion where marca = @marca";
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+                oP.agregarParametro("@id_marca", NpgsqlDbType.Integer, pMarca.IdMarca);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pMarca.Descripcion);
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+                if (this.conexion.IsError)
+                {
+
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
         }
     }
 }
