@@ -31,5 +31,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
 
         }
+
+        private void ItemRegistroClientes_Click(object sender, EventArgs e)
+        {
+            FrmClientes oFrmCliente = new FrmClientes();
+            oFrmCliente.ShowDialog();
+        }
     }
 }

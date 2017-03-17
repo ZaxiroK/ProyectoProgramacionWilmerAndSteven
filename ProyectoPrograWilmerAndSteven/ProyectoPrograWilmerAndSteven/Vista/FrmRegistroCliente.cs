@@ -53,5 +53,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 this.Visible = false;
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
     }
 }

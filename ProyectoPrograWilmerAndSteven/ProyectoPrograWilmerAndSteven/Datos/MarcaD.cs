@@ -45,13 +45,13 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.limpiarError();
             List<MarcaE> marcas = new List<MarcaE>();
             DataSet dsetMarcas;
-            string sql = "select m.id_marca  as idMarca, m.descripcion  as descripcion" +
-                         "from marca m";
+            string sql = "select id_marca  , descripcion" +
+                         " from marca ";
 
             dsetMarcas = this.conexion.ejecutarConsultaSQL(sql);
             foreach (DataRow tupla in dsetMarcas.Tables[0].Rows)
             {
-                MarcaE oMarca = new MarcaE(Convert.ToInt32(tupla["idMarca"].ToString()),tupla["descripcion"].ToString());
+                MarcaE oMarca = new MarcaE(Convert.ToInt32(tupla[0].ToString()),tupla[1].ToString());
                 marcas.Add(oMarca);
             }
             return marcas;
@@ -62,13 +62,14 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO schtaller.marca(" +
-            "id_marca, id_cliente, descripcion); ";
+                string sql = "INSERT INTO schtaller.marca("+
+            "id_marca, descripcion)"+
+            " VALUES(@id_marca, @descripcion);";
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_marca", NpgsqlDbType.Integer, pMarca.IdMarca);
-                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pMarca.Descripcion);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Varchar, pMarca.Descripcion);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {
@@ -95,7 +96,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
                 parametros[0] = new NpgsqlParameter();
-                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
+                parametros[0].NpgsqlDbType = NpgsqlDbType.Integer;
                 parametros[0].ParameterName = "@id_marca";
                 parametros[0].Value = pMarca.IdMarca;
 
@@ -113,17 +114,18 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public bool modificarMarca(MarcaE pMarca)
+        public bool modificarMarca(MarcaE pMarca, int codigo)
         {
             bool estado = true;
 
             try
             {
-                string sql = "update marca set id_marca = @id_marca , descripcion = @descripcion where marca = @marca";
+                string sql = "update marca set id_marca = @id_marca , descripcion = @descripcion where id_marca = @marca";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_marca", NpgsqlDbType.Integer, pMarca.IdMarca);
-                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pMarca.Descripcion);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Varchar, pMarca.Descripcion);
+                oP.agregarParametro("@marca", NpgsqlDbType.Integer, codigo);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
 
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());

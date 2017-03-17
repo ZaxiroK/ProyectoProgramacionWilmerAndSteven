@@ -16,6 +16,7 @@ namespace Logica
             this.idMarca = pIdMarca;
             this.Descripcion = pDescripcion;
         }
+        
 
         public int IdMarca
         {

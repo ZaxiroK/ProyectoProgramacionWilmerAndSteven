@@ -30,20 +30,21 @@
         {
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administracíonYÓrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestíonGerencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemCambioContrasenia = new System.Windows.Forms.ToolStripMenuItem();
             this.itemRegistroEmpleados = new System.Windows.Forms.ToolStripMenuItem();
             this.itemRegistroPuestos = new System.Windows.Forms.ToolStripMenuItem();
             this.itemDerechosUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemRegistroClientes = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemRegistroMarcasYmodelos = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemRegistroMarcas = new System.Windows.Forms.ToolStripMenuItem();
             this.itemRegistroClasesVehiculos = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemRegistroVehiculos = new System.Windows.Forms.ToolStripMenuItem();
             this.itemRegistroCatalogoRepuestos = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemRegistroCatalogoReparaciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.administracíonYÓrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestíonGerencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItemRegistroDeModelo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@
             this.gestíonGerencialToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(897, 28);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(673, 24);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -70,108 +72,117 @@
             this.itemDerechosUsuarios,
             this.itemSalir});
             this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.sistemaToolStripMenuItem.Text = "Sistema";
-            // 
-            // parametrosToolStripMenuItem
-            // 
-            this.parametrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ItemRegistroClientes,
-            this.itemRegistroMarcasYmodelos,
-            this.itemRegistroClasesVehiculos,
-            this.ItemRegistroVehiculos,
-            this.itemRegistroCatalogoRepuestos,
-            this.ItemRegistroCatalogoReparaciones});
-            this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
-            this.parametrosToolStripMenuItem.Text = "Parámetros";
-            // 
-            // administracíonYÓrdenesToolStripMenuItem
-            // 
-            this.administracíonYÓrdenesToolStripMenuItem.Name = "administracíonYÓrdenesToolStripMenuItem";
-            this.administracíonYÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
-            this.administracíonYÓrdenesToolStripMenuItem.Text = "Administracíon y órdenes";
-            // 
-            // gestíonGerencialToolStripMenuItem
-            // 
-            this.gestíonGerencialToolStripMenuItem.Name = "gestíonGerencialToolStripMenuItem";
-            this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
-            this.gestíonGerencialToolStripMenuItem.Text = "Gestíon gerencial";
             // 
             // itemCambioContrasenia
             // 
             this.itemCambioContrasenia.Name = "itemCambioContrasenia";
-            this.itemCambioContrasenia.Size = new System.Drawing.Size(238, 26);
+            this.itemCambioContrasenia.Size = new System.Drawing.Size(194, 22);
             this.itemCambioContrasenia.Text = "Cambio de contraseña";
             this.itemCambioContrasenia.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // itemRegistroEmpleados
             // 
             this.itemRegistroEmpleados.Name = "itemRegistroEmpleados";
-            this.itemRegistroEmpleados.Size = new System.Drawing.Size(238, 26);
+            this.itemRegistroEmpleados.Size = new System.Drawing.Size(194, 22);
             this.itemRegistroEmpleados.Text = "Registro de empleados";
             this.itemRegistroEmpleados.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // itemRegistroPuestos
             // 
             this.itemRegistroPuestos.Name = "itemRegistroPuestos";
-            this.itemRegistroPuestos.Size = new System.Drawing.Size(238, 26);
+            this.itemRegistroPuestos.Size = new System.Drawing.Size(194, 22);
             this.itemRegistroPuestos.Text = "Registro de puestos";
             // 
             // itemDerechosUsuarios
             // 
             this.itemDerechosUsuarios.Name = "itemDerechosUsuarios";
-            this.itemDerechosUsuarios.Size = new System.Drawing.Size(238, 26);
+            this.itemDerechosUsuarios.Size = new System.Drawing.Size(194, 22);
             this.itemDerechosUsuarios.Text = "Derechos por usuarios";
             // 
             // itemSalir
             // 
             this.itemSalir.Name = "itemSalir";
-            this.itemSalir.Size = new System.Drawing.Size(238, 26);
+            this.itemSalir.Size = new System.Drawing.Size(194, 22);
             this.itemSalir.Text = "Salir";
+            // 
+            // parametrosToolStripMenuItem
+            // 
+            this.parametrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ItemRegistroClientes,
+            this.itemRegistroMarcas,
+            this.itemRegistroClasesVehiculos,
+            this.ItemRegistroVehiculos,
+            this.itemRegistroCatalogoRepuestos,
+            this.ItemRegistroCatalogoReparaciones,
+            this.ItemRegistroDeModelo});
+            this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.parametrosToolStripMenuItem.Text = "Parámetros";
             // 
             // ItemRegistroClientes
             // 
             this.ItemRegistroClientes.Name = "ItemRegistroClientes";
-            this.ItemRegistroClientes.Size = new System.Drawing.Size(320, 26);
+            this.ItemRegistroClientes.Size = new System.Drawing.Size(258, 22);
             this.ItemRegistroClientes.Text = "Registro de clientes";
+            this.ItemRegistroClientes.Click += new System.EventHandler(this.ItemRegistroClientes_Click);
             // 
-            // itemRegistroMarcasYmodelos
+            // itemRegistroMarcas
             // 
-            this.itemRegistroMarcasYmodelos.Name = "itemRegistroMarcasYmodelos";
-            this.itemRegistroMarcasYmodelos.Size = new System.Drawing.Size(320, 26);
-            this.itemRegistroMarcasYmodelos.Text = "Registro de marcas y modelos";
+            this.itemRegistroMarcas.Name = "itemRegistroMarcas";
+            this.itemRegistroMarcas.Size = new System.Drawing.Size(258, 22);
+            this.itemRegistroMarcas.Text = "Registro de marcas";
             // 
             // itemRegistroClasesVehiculos
             // 
             this.itemRegistroClasesVehiculos.Name = "itemRegistroClasesVehiculos";
-            this.itemRegistroClasesVehiculos.Size = new System.Drawing.Size(320, 26);
+            this.itemRegistroClasesVehiculos.Size = new System.Drawing.Size(258, 22);
             this.itemRegistroClasesVehiculos.Text = "Registro de clases vehículos";
             // 
             // ItemRegistroVehiculos
             // 
             this.ItemRegistroVehiculos.Name = "ItemRegistroVehiculos";
-            this.ItemRegistroVehiculos.Size = new System.Drawing.Size(320, 26);
+            this.ItemRegistroVehiculos.Size = new System.Drawing.Size(258, 22);
             this.ItemRegistroVehiculos.Text = "Registro de vehículos";
             // 
             // itemRegistroCatalogoRepuestos
             // 
             this.itemRegistroCatalogoRepuestos.Name = "itemRegistroCatalogoRepuestos";
-            this.itemRegistroCatalogoRepuestos.Size = new System.Drawing.Size(320, 26);
+            this.itemRegistroCatalogoRepuestos.Size = new System.Drawing.Size(258, 22);
             this.itemRegistroCatalogoRepuestos.Text = "Registro de catálogo de repuestos";
             // 
             // ItemRegistroCatalogoReparaciones
             // 
             this.ItemRegistroCatalogoReparaciones.Name = "ItemRegistroCatalogoReparaciones";
-            this.ItemRegistroCatalogoReparaciones.Size = new System.Drawing.Size(320, 26);
+            this.ItemRegistroCatalogoReparaciones.Size = new System.Drawing.Size(258, 22);
             this.ItemRegistroCatalogoReparaciones.Text = "Registro de catálogo de repaciónes";
+            // 
+            // administracíonYÓrdenesToolStripMenuItem
+            // 
+            this.administracíonYÓrdenesToolStripMenuItem.Name = "administracíonYÓrdenesToolStripMenuItem";
+            this.administracíonYÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
+            this.administracíonYÓrdenesToolStripMenuItem.Text = "Administracíon y órdenes";
+            // 
+            // gestíonGerencialToolStripMenuItem
+            // 
+            this.gestíonGerencialToolStripMenuItem.Name = "gestíonGerencialToolStripMenuItem";
+            this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.gestíonGerencialToolStripMenuItem.Text = "Gestíon gerencial";
+            // 
+            // ItemRegistroDeModelo
+            // 
+            this.ItemRegistroDeModelo.Name = "ItemRegistroDeModelo";
+            this.ItemRegistroDeModelo.Size = new System.Drawing.Size(258, 22);
+            this.ItemRegistroDeModelo.Text = "Registro de modelos";
             // 
             // FrmTallerMecanico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 289);
+            this.ClientSize = new System.Drawing.Size(673, 235);
             this.Controls.Add(this.menuStrip2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmTallerMecanico";
             this.Text = "FrmTallerMecanico";
             this.Load += new System.EventHandler(this.FrmTallerMecanico_Load);
@@ -194,10 +205,11 @@
         private System.Windows.Forms.ToolStripMenuItem itemDerechosUsuarios;
         private System.Windows.Forms.ToolStripMenuItem itemSalir;
         private System.Windows.Forms.ToolStripMenuItem ItemRegistroClientes;
-        private System.Windows.Forms.ToolStripMenuItem itemRegistroMarcasYmodelos;
+        private System.Windows.Forms.ToolStripMenuItem itemRegistroMarcas;
         private System.Windows.Forms.ToolStripMenuItem itemRegistroClasesVehiculos;
         private System.Windows.Forms.ToolStripMenuItem ItemRegistroVehiculos;
         private System.Windows.Forms.ToolStripMenuItem itemRegistroCatalogoRepuestos;
         private System.Windows.Forms.ToolStripMenuItem ItemRegistroCatalogoReparaciones;
+        private System.Windows.Forms.ToolStripMenuItem ItemRegistroDeModelo;
     }
 }
