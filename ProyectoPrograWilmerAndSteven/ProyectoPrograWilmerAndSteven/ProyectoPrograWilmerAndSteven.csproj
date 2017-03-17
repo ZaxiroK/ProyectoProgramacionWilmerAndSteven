@@ -139,12 +139,6 @@
     <Compile Include="Vista\FrmRegistroDeClasesDeVehiculos.Designer.cs">
       <DependentUpon>FrmRegistroDeClasesDeVehiculos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\FrmRegistroDeMarcasYmodelos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\FrmRegistroDeMarcasYmodelos.Designer.cs">
-      <DependentUpon>FrmRegistroDeMarcasYmodelos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\FrmRegistroDePuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,9 +192,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroDeClasesDeVehiculos.resx">
       <DependentUpon>FrmRegistroDeClasesDeVehiculos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\FrmRegistroDeMarcasYmodelos.resx">
-      <DependentUpon>FrmRegistroDeMarcasYmodelos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroDePuestos.resx">
       <DependentUpon>FrmRegistroDePuestos.cs</DependentUpon>
