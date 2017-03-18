@@ -7,10 +7,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*
+
+
 namespace ProyectoPrograWilmerAndSteven.Datos
 {
-   public class OrdenReparacionD
+ /*  public class OrdenReparacionD
     {
         private AccesoDatosPostgre conexion;
 
@@ -19,7 +20,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
         {
             get { return error; }
         }
-
+        
         private string errorMsg;
         public string ErrorMsg
         {
@@ -149,5 +150,5 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 return ordenesReparaciones;
             }
         }
-    }
+    }*/
 }
