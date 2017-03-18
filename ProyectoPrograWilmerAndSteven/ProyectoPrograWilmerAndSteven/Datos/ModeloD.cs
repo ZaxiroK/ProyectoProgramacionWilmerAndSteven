@@ -47,7 +47,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             DataSet dsetMarcas;
             string sql = "select mo.id_modelo  as idModelo, mo.descripcion  as descripcion, mo.anio as anno," +
                             "m.id_marca as idMarca, m.descripcion as descripcion" +
-                               "from Modelo mo, marca m where mo.id_modelo = m.id_marca";
+                               "from schtaller.Modelo mo, marca m where mo.id_modelo = m.id_marca";
             if (pMarca != null)
             {
                 sql += "and m.IdMarca = @marca";

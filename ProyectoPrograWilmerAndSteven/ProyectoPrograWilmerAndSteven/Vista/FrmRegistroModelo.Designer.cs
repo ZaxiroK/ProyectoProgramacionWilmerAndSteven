@@ -47,6 +47,7 @@
             this.buttonAceptar.TabIndex = 11;
             this.buttonAceptar.Text = "Aceptar";
             this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
             // buttonCancelar
             // 
@@ -57,6 +58,7 @@
             this.buttonCancelar.TabIndex = 10;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // txtAnio
             // 
@@ -73,7 +75,6 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(264, 22);
             this.txtDescripcion.TabIndex = 8;
-            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // label2
             // 
@@ -94,7 +95,6 @@
             this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Descripcion:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
