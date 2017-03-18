@@ -13,7 +13,7 @@ namespace Logica
         private int cantidad;
 
         public OrdenRepuestoE(int idOrdenRepuesto, OrdenTrabajoE idOrdenTrabajo, int pCantidad, int pIdCatalogoRepuesto, string pNombreDelRepuesto,
-            string pAnnoAlQuePertenece, double pPrecio) :
+            int pAnnoAlQuePertenece, double pPrecio) :
             base(pIdCatalogoRepuesto, pNombreDelRepuesto, pAnnoAlQuePertenece, pPrecio)
         {
             this.Cantidad = pCantidad;

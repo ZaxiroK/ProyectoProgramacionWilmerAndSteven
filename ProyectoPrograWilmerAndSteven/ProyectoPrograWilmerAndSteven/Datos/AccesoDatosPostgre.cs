@@ -81,7 +81,7 @@ namespace Datos
             try
             {
                 conexion.Open();
-                this.schema = fila["Schema"].ToString();
+                this.schema = fila["schema"].ToString();
             }
             catch (NpgsqlException error)
             {

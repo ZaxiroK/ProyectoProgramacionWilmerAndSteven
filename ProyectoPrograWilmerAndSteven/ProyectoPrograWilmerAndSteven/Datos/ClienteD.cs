@@ -48,7 +48,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             string sql = "select c.cedula as cedula, c.nombre as nombre," +
                             "c.apellido1 as apellido1, c.apellido2 as apellido2," +
                              "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3" +
-                               " from cliente c";
+                               " from schtaller.cliente c";
 
             dsetClientes = this.conexion.ejecutarConsultaSQL(sql);
             string error = this.conexion.ErrorDescripcion;

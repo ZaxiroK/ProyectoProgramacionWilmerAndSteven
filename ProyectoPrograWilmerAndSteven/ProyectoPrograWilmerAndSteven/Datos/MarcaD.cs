@@ -46,9 +46,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             List<MarcaE> marcas = new List<MarcaE>();
             DataSet dsetMarcas;
             string sql = "select id_marca  , descripcion" +
-                         " from marca ";
-
+                         " from schtaller.marca ";
+           
             dsetMarcas = this.conexion.ejecutarConsultaSQL(sql);
+            
             foreach (DataRow tupla in dsetMarcas.Tables[0].Rows)
             {
                 MarcaE oMarca = new MarcaE(Convert.ToInt32(tupla[0].ToString()),tupla[1].ToString());
