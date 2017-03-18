@@ -10,11 +10,11 @@ namespace Logica
     {
         protected int idCatalogoRepuesto;
         protected string nombreDelRepuesto;
-        protected string annoAlQuePertenece;
+        protected int annoAlQuePertenece;
         protected List<ModeloE> modelo;
         protected double precio;
        public CatalogoRepuestoE(int pIdCatalogoRepuesto, string pNombreDelRepuesto,
-            string pAnnoAlQuePertenece, double pPrecio)
+            int pAnnoAlQuePertenece, double pPrecio)
         {
             this.IdCatalogoRepuesto = pIdCatalogoRepuesto;
             this.NombreDelRepuesto = pNombreDelRepuesto;
@@ -23,7 +23,7 @@ namespace Logica
         }
 
         public CatalogoRepuestoE(int pIdCatalogoRepuesto, string pNombreDelRepuesto,
-            string pAnnoAlQuePertenece, double pPrecio, List<ModeloE> pModelo)
+            int pAnnoAlQuePertenece, double pPrecio, List<ModeloE> pModelo)
         {
             this.IdCatalogoRepuesto = pIdCatalogoRepuesto;
             this.NombreDelRepuesto = pNombreDelRepuesto;
@@ -63,7 +63,7 @@ namespace Logica
             }
         }
 
-        public string AnnoAlQuePertenece
+        public int AnnoAlQuePertenece
         {
             get
             {

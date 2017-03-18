@@ -126,7 +126,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
                 
-                string sql = "update modelo set id_catalogo_reparacion = @id_catalogo_reparacion , descripcion = @descripcion, horas_reparacion = @horas_reparacion,"+
+                string sql = "update catalogoReparacion set id_catalogo_reparacion = @id_catalogo_reparacion , descripcion = @descripcion, horas_reparacion = @horas_reparacion," +
                      "costo_reparacion = @costo_reparacion where CatalogoReparacion = @CatalogoReparacion";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
@@ -134,7 +134,6 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pCatalogoReparacion.Descripcion);
                 oP.agregarParametro("@horas_reparacion", NpgsqlDbType.Integer, pCatalogoReparacion.HorasReparacion);
                 oP.agregarParametro("@costo_reparacion", NpgsqlDbType.Integer, pCatalogoReparacion.CostoReparacion);
-                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
 
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)

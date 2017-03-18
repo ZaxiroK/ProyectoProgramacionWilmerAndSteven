@@ -1,5 +1,7 @@
 ﻿using Datos;
 using Logica;
+using Npgsql;
+using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -58,6 +60,102 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 usuarios.Add(oUsuario);
             }
             return usuarios;
+        }
+        public bool agregarUsuario(UsuarioE pUsuario)
+        {
+            this.limpiarError();
+            bool estado = true;
+            try
+            {
+                string sql = "INSERT INTO schtaller.usuario(" +
+            "login, contrasenia, administrador, sistema, parametros, administracionOrdenes, gestionGerencial ); ";
+
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+                oP.agregarParametro("@login", NpgsqlDbType.Integer, pUsuario.Login);
+                oP.agregarParametro("@contrasenia", NpgsqlDbType.Integer, pUsuario.Contrasenia);
+                oP.agregarParametro("@administrador", NpgsqlDbType.Integer, pUsuario.Administrador);
+                oP.agregarParametro("@sistema", NpgsqlDbType.Integer, pUsuario.Sistema);
+                oP.agregarParametro("@parametros", NpgsqlDbType.Integer, pUsuario.Parametros);
+                oP.agregarParametro("@administracionOrdenes", NpgsqlDbType.Integer, pUsuario.AdministracionDeOrdenes);
+                oP.agregarParametro("@gestionGerencial", NpgsqlDbType.Integer, pUsuario.GestionGerencial);
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+                if (this.conexion.IsError)
+                {
+
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
+        }
+        public bool borrarUsuario(UsuarioE pUsuario)
+        {
+            bool estado = true;
+            try
+            {
+                string sql = "delete from usuario where login = @login";
+
+                NpgsqlParameter[] parametros = new NpgsqlParameter[1];
+
+                parametros[0] = new NpgsqlParameter();
+                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
+                parametros[0].ParameterName = "@login";
+                parametros[0].Value = pUsuario.Login;
+
+                this.conexion.ejecutarSQL(sql, parametros);
+                if (this.conexion.IsError)
+                {
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
+        }
+        public bool modificarUsuario(UsuarioE pUsuario)
+        {
+            bool estado = true;
+
+            try
+            {
+                
+                string sql = "update usuario set login = @login, contrasenia = @contrasenia, administrador = @administrador, sistema = @sistema, parametros =<@parametros,"+
+                    "administracionOrdenes = @administracionOrdenes,gestionGerencial = @gestionGerencial where usuario = @usuario";
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+                oP.agregarParametro("@login", NpgsqlDbType.Integer, pUsuario.Login);
+                oP.agregarParametro("@contrasenia", NpgsqlDbType.Integer, pUsuario.Contrasenia);
+                oP.agregarParametro("@administrador", NpgsqlDbType.Integer, pUsuario.Administrador);
+                oP.agregarParametro("@sistema", NpgsqlDbType.Integer, pUsuario.Sistema);
+                oP.agregarParametro("@parametros", NpgsqlDbType.Integer, pUsuario.Parametros);
+                oP.agregarParametro("@administracionOrdenes", NpgsqlDbType.Integer, pUsuario.AdministracionDeOrdenes);
+                oP.agregarParametro("@gestionGerencial", NpgsqlDbType.Integer, pUsuario.GestionGerencial);
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+                if (this.conexion.IsError)
+                {
+
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
         }
     }
 }

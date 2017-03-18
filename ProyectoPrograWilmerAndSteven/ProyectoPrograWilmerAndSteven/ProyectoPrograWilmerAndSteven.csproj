@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\AccesoDatosPostgre.cs" />
+    <Compile Include="Datos\CatalogoRepuestoD.cs" />
     <Compile Include="Datos\ClienteD.cs" />
     <Compile Include="Datos\MarcaD.cs" />
     <Compile Include="Datos\ModeloD.cs" />
