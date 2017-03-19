@@ -20,11 +20,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             InitializeComponent();
         }
 
-        public FrmRegistroCliente(ClienteE pOCliente)
+        public FrmRegistroCliente(ClienteE pCliente)
         {
             InitializeComponent();
 
-            this.oCliente = pOCliente;
+            this.oCliente = pCliente;
 
             this.txtApellido1.Text = oCliente.Apellido1;
             this.txtApellido2.Text = oCliente.Apellido2;

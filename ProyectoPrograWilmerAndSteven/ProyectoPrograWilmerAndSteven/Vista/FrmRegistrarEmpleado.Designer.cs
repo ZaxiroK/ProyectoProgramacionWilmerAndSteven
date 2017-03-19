@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxPuesto = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label9
@@ -68,6 +69,7 @@
             this.btnCancelar.TabIndex = 107;
             this.btnCancelar.Text = "Cerrar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnRegistrar
             // 
@@ -78,6 +80,7 @@
             this.btnRegistrar.TabIndex = 106;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // txtTelefono3
             // 
@@ -223,11 +226,20 @@
             this.label1.TabIndex = 90;
             this.label1.Text = "Cédula";
             // 
+            // comboBoxPuesto
+            // 
+            this.comboBoxPuesto.FormattingEnabled = true;
+            this.comboBoxPuesto.Location = new System.Drawing.Point(200, 283);
+            this.comboBoxPuesto.Name = "comboBoxPuesto";
+            this.comboBoxPuesto.Size = new System.Drawing.Size(309, 24);
+            this.comboBoxPuesto.TabIndex = 109;
+            // 
             // FrmRegistrarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 558);
+            this.Controls.Add(this.comboBoxPuesto);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRegistrar);
@@ -275,5 +287,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxPuesto;
     }
 }
