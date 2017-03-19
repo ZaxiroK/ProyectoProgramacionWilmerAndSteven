@@ -44,7 +44,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
 
                 
-                this.oModelo = new ModeloE(/*id*/,this.txtDescripcion.Text, /*Marca*/, Convert.ToInt32(this.txtAnio.Text));
+               // this.oModelo = new ModeloE(/*id,*/this.txtDescripcion.Text, /*Marca,*/ Convert.ToInt32(this.txtAnio.Text));
                 this.aceptar = true;
                 this.Visible = false;
             }

@@ -39,7 +39,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.errorMsg = "";
         }
 
-        public List<ModeloE> obtenerMarca(MarcaE pMarca)
+        public List<ModeloE> obtenerModelos(MarcaE pMarca)
         {
 
             this.limpiarError();

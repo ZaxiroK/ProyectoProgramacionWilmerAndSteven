@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMarca));
             this.dGVMarcas = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.Editar = new System.Windows.Forms.ToolStripButton();
             this.btnBorrar = new System.Windows.Forms.ToolStripButton();
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMarcas)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,64 +48,11 @@
             this.Código,
             this.Marca});
             this.dGVMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGVMarcas.Location = new System.Drawing.Point(0, 42);
+            this.dGVMarcas.Location = new System.Drawing.Point(0, 47);
+            this.dGVMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGVMarcas.Name = "dGVMarcas";
-            this.dGVMarcas.Size = new System.Drawing.Size(556, 219);
+            this.dGVMarcas.Size = new System.Drawing.Size(741, 274);
             this.dGVMarcas.TabIndex = 0;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAgregar,
-            this.Editar,
-            this.btnBorrar,
-            this.btnActualizar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(556, 42);
-            this.toolStrip1.TabIndex = 15;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(53, 39);
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // Editar
-            // 
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(41, 39);
-            this.Editar.Text = "Editar";
-            this.Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.Editar.Click += new System.EventHandler(this.Editar_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
-            this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(43, 39);
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(63, 39);
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // Código
             // 
@@ -119,13 +66,68 @@
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAgregar,
+            this.Editar,
+            this.btnBorrar,
+            this.btnActualizar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(741, 47);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(67, 44);
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // Editar
+            // 
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Editar.Name = "Editar";
+            this.Editar.Size = new System.Drawing.Size(52, 44);
+            this.Editar.Text = "Editar";
+            this.Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
+            this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(54, 44);
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(79, 44);
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // FrmMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 261);
+            this.ClientSize = new System.Drawing.Size(741, 321);
             this.Controls.Add(this.dGVMarcas);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMarca";
             this.Text = "Marcas";
             ((System.ComponentModel.ISupportInitialize)(this.dGVMarcas)).EndInit();

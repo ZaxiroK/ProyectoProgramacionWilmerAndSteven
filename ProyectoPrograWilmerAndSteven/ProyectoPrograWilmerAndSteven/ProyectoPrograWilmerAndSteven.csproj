@@ -98,9 +98,7 @@
     <Compile Include="Vista\FrmDerechosPorUsuarios.Designer.cs">
       <DependentUpon>FrmDerechosPorUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\FrmEmpleados.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Vista\FrmEmpleados.cs" />
     <Compile Include="Vista\FrmEmpleados.Designer.cs">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </Compile>
@@ -109,6 +107,12 @@
     </Compile>
     <Compile Include="Vista\FrmMarca.Designer.cs">
       <DependentUpon>FrmMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmModelo.Designer.cs">
+      <DependentUpon>FrmModelo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -196,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmMarca.resx">
       <DependentUpon>FrmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmModelo.resx">
+      <DependentUpon>FrmModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

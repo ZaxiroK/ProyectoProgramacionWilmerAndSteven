@@ -44,7 +44,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 }
                 else
                 {
-                    MessageBox.Show("Error al agregar cliente: " +
+                    MessageBox.Show("Error al agregar Marca: " +
                                oMarcaD.ErrorMsg, "Error",
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -101,7 +101,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     }
                     else
                     {
-                        MessageBox.Show("Error borrando el cliente: " +
+                        MessageBox.Show("Error borrando el marca: " +
                                    oMarcaD.ErrorMsg, "Error",
                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
