@@ -16,7 +16,7 @@ namespace ProyectoPrograWilmerAndSteven
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmRegistroModelo());
+            Application.Run(new FrmPuesto());
         }
     }
 }

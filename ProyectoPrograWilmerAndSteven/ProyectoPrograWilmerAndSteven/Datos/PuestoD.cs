@@ -47,13 +47,14 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             DataSet dsetPuestos;
             string sql = "select p.id_puesto as id_puesto, p.salario as salario, " +
                         "p.puesto as puesto, p.descripcion as descripcion"+
-                         "from Puesto p";
+                         " from Puesto p";
 
             dsetPuestos = this.conexion.ejecutarConsultaSQL(sql);
+
             foreach (DataRow tupla in dsetPuestos.Tables[0].Rows)
             {
-                PuestoE oPuesto = new PuestoE(Convert.ToInt32(tupla["id_puesto"].ToString()), Convert.ToDouble(tupla["salario"].ToString()),
-                    Convert.ToChar(tupla["puesto"].ToString()), tupla["descripcion"].ToString());
+                PuestoE oPuesto = new PuestoE(Convert.ToInt32(tupla[0].ToString()), Convert.ToDouble(tupla[1].ToString()),
+                    Convert.ToChar(tupla[2].ToString()), tupla[3].ToString());
                 puestos.Add(oPuesto);
             }
             return puestos;
@@ -64,15 +65,16 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO schtaller.puesto(" +
-            "id_puesto, salario, puesto,descripcion ); ";
+                string sql = "INSERT INTO puesto("+
+            "id_puesto, salario, puesto, descripcion)"+
+            "VALUES(@id_puesto, @salario, @puesto, @descripcion); ";
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_puesto", NpgsqlDbType.Integer, pPuesto.IdPuesto);
-                oP.agregarParametro("@salario", NpgsqlDbType.Integer, pPuesto.Salario);
-                oP.agregarParametro("@puesto", NpgsqlDbType.Integer, pPuesto.Puesto);
-                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pPuesto.Descripcion);
+                oP.agregarParametro("@salario", NpgsqlDbType.Double, pPuesto.Salario);
+                oP.agregarParametro("@puesto", NpgsqlDbType.Char, pPuesto.Puesto);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Varchar, pPuesto.Descripcion);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {
@@ -99,7 +101,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
                 parametros[0] = new NpgsqlParameter();
-                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
+                parametros[0].NpgsqlDbType = NpgsqlDbType.Integer;
                 parametros[0].ParameterName = "@id_puesto";
                 parametros[0].Value = pPuesto.IdPuesto;
 
@@ -117,22 +119,23 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public bool modificarPuesto(PuestoE pPuesto)
+        public bool modificarPuesto(PuestoE pPuesto, int puesto)
         {
             bool estado = true;
 
             try
             {
-                string sql = "update puesto set id_puesto = @id_puesto, salario = @salario, puesto = @puesto, descripcion = @descripcion where puesto = @puesto";
+                string sql = "update puesto set id_puesto = @id_puesto, salario = @salario, puesto = @puesto, descripcion = @descripcion where id_puesto = @antiguoId";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_puesto", NpgsqlDbType.Integer, pPuesto.IdPuesto);
-                oP.agregarParametro("@salario", NpgsqlDbType.Integer, pPuesto.Salario);
-                oP.agregarParametro("@puesto", NpgsqlDbType.Integer, pPuesto.Puesto);
-                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pPuesto.Descripcion);
-                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+                oP.agregarParametro("@salario", NpgsqlDbType.Double, pPuesto.Salario);
+                oP.agregarParametro("@puesto", NpgsqlDbType.Char, pPuesto.Puesto);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Varchar, pPuesto.Descripcion);
+                oP.agregarParametro("@antiguoId", NpgsqlDbType.Integer, puesto);
 
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+
                 if (this.conexion.IsError)
                 {
 
