@@ -32,82 +32,84 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            //FrmRegistroDeCatalogoDeRepuestos oFrm = new FrmRegistroDeCatalogoDeRepuestos();
-            //oFrm.ShowDialog();
+            FrmRegistroDeCatalogoDeRepuestos oFrm = new FrmRegistroDeCatalogoDeRepuestos();
+            oFrm.ShowDialog();
 
-            //if (oFrm.aceptar)
-            //{
-            //    if (oCatalogoRepuestoD.agregarCatalogoRepuesto(oFrm.oCatalogoRepuestoE))
-            //    {
-            //        this.CargarDGview();
-            //        MessageBox.Show("Catalogo agregado");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Error al agregar Catalogo: " +
-            //                   oCatalogoRepuestoD.ErrorMsg, "Error",
-            //                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
+            if (oFrm.aceptar)
+            {
+                if (oCatalogoRepuestoD.agregarCatalogoRepuesto(oFrm.oCatalogoRepuestoE))
+                {
+                    this.CargarDGview();
+                    MessageBox.Show("Repuesto agregado");
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar repuesto: " +
+                               oCatalogoRepuestoD.ErrorMsg, "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            //if (this.dGVCatalogoRepuestos.Rows.Count > 0)
-            //{
+            if (this.dGVCatalogoRepuestos.Rows.Count > 0)
+            {
 
-            //    int fila = this.dGVCatalogoRepuestos.CurrentRow.Index;
+                int fila = this.dGVCatalogoRepuestos.CurrentRow.Index;
 
-            //    CatalogoRepuestoE oCatalogoRepuestoE = new CatalogoRepuestoE(Convert.ToInt32(this.dGVCatalogoRepuestos[0, fila].Value.ToString()),
-            //                             this.dGVCatalogoRepuestos[1, fila].Value.ToString(), Convert.ToInt32(this.dGVCatalogoRepuestos[2, fila].Value.ToString()),
-            //                             Convert.ToDouble(this.dGVCatalogoRepuestos[3, fila].Value.ToString()));
+                CatalogoRepuestoE oCatalogoRepuestoE = new CatalogoRepuestoE(Convert.ToInt32(this.dGVCatalogoRepuestos[0, fila].Value.ToString()),
+                                         this.dGVCatalogoRepuestos[1, fila].Value.ToString(), Convert.ToInt32(this.dGVCatalogoRepuestos[2, fila].Value.ToString()),
+                                         Convert.ToDouble(this.dGVCatalogoRepuestos[3, fila].Value.ToString()));
 
-            //    FrmRegistroDeCatalogoDeRepuestos oFrm = new FrmRegistroDeCatalogoDeRepuestos(oCatalogoRepuestoE);
-            //    oFrm.ShowDialog();
-            //    if (oFrm.aceptar)
-            //    {
+                FrmRegistroDeCatalogoDeRepuestos oFrm = new FrmRegistroDeCatalogoDeRepuestos(oCatalogoRepuestoE);
+                oFrm.ShowDialog();
+                if (oFrm.aceptar)
+                {
 
-            //        if (oCatalogoRepuestoD.modificarCatalogoRepuesto(oFrm.oCatalogoRepuestoE, Convert.ToInt32(this.dGVCatalogoRepuestos[0, fila].Value.ToString()));
-            //        {
-            //            this.CargarDGview();
-            //            MessageBox.Show("Marca actualizada");
-            //        }
+                    if (oCatalogoRepuestoD.modificarCatalogoRepuesto(oFrm.oCatalogoRepuestoE, Convert.ToInt32(this.dGVCatalogoRepuestos[0, fila].Value.ToString())));
+                    {
+                        this.CargarDGview();
+                        MessageBox.Show("Repuesto actualizada");
+                    }
 
-            //    }
+                }
 
-            //}
+            }
         }
 
         private void BtnBorrar_Click(object sender, EventArgs e)
         {
-            //if (this.dGVCatalogoRepuestos.Rows.Count > 0)
-            //{
-            //    DialogResult respuesta = MessageBox.Show("¿Está seguro de borrar?",
-            //                                             "Error",
-            //                                              MessageBoxButtons.YesNo,
-            //                                              MessageBoxIcon.Question);
-            //    if (respuesta == DialogResult.Yes)
-            //    {
+            if (this.dGVCatalogoRepuestos.Rows.Count > 0)
+            {
+                DialogResult respuesta = MessageBox.Show("¿Está seguro de borrar?",
+                                                         "Error",
+                                                          MessageBoxButtons.YesNo,
+                                                          MessageBoxIcon.Question);
+                if (respuesta == DialogResult.Yes)
+                {
 
-            //        int fila = this.dGVCatalogoRepuestos.CurrentRow.Index;
+                    int fila = this.dGVCatalogoRepuestos.CurrentRow.Index;
 
-            //        MarcaE oMarcaE = new MarcaE(Convert.ToInt32(this.dGVCatalogoRepuestos[0, fila].Value.ToString()),
-            //                                 this.dGVCatalogoRepuestos[1, fila].Value.ToString());
+                    CatalogoRepuestoE oCatalogoRepuestoE = new CatalogoRepuestoE(Convert.ToInt32(this.dGVCatalogoRepuestos[0, fila].Value.ToString()),
+                                             this.dGVCatalogoRepuestos[1, fila].Value.ToString(),
+                                             Convert.ToInt32(this.dGVCatalogoRepuestos[2, fila].Value.ToString()),
+                                             Convert.ToDouble(this.dGVCatalogoRepuestos[3, fila].Value.ToString()));
 
 
-            //        if (oCatalogoRepuestoD.borrarCatalogoRepuesto(oCatalogoRepuestoE))
-            //        {
-            //            this.CargarDGview();
-            //            MessageBox.Show("Marca borrada");
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Error borrando el marca: " +
-            //                       oCatalogoRepuestoD.ErrorMsg, "Error",
-            //                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        }
-            //    }
-            //}
+                    if (oCatalogoRepuestoD.borrarCatalogoRepuesto(oCatalogoRepuestoE))
+                    {
+                        this.CargarDGview();
+                        MessageBox.Show("Repuesto borrada");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error borrando el Repuesto: " +
+                                   oCatalogoRepuestoD.ErrorMsg, "Error",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)

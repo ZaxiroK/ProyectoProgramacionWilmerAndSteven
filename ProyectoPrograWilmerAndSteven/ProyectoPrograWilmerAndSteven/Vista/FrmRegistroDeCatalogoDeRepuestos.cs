@@ -23,7 +23,6 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         public FrmRegistroDeCatalogoDeRepuestos(CatalogoRepuestoE pCatalogoRepuestoE)
         {
             InitializeComponent();
-            this.oCatalogoRepuestoE = pCatalogoRepuestoE;
             this.txtId.Text = pCatalogoRepuestoE.IdCatalogoRepuesto.ToString();
             this.txtNombreRepuesto.Text = pCatalogoRepuestoE.NombreDelRepuesto;
             this.txtAnio.Text = pCatalogoRepuestoE.AnnoAlQuePertenece.ToString();
@@ -35,7 +34,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             if (!(this.txtId.Text == "") && !(this.txtNombreRepuesto.Text == "") && !(this.txtAnio.Text == "") && !(this.txtPrecio.Text == ""))
             {
                 this.oCatalogoRepuestoE = new CatalogoRepuestoE(Convert.ToInt32(this.txtId.Text), this.txtNombreRepuesto.Text,Convert.ToInt32(this.txtAnio.Text),
-                Convert.ToDouble(this.txtId.Text));
+                Convert.ToDouble(this.txtPrecio.Text));
                 this.aceptar = true;
                 this.Visible = false;
             }

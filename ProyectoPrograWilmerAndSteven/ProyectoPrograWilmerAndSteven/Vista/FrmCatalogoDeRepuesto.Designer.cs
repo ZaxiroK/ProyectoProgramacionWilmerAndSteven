@@ -53,7 +53,7 @@
             this.BtnActualizar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(702, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(526, 42);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -62,7 +62,7 @@
             this.BtnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregar.Image")));
             this.BtnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(67, 44);
+            this.BtnAgregar.Size = new System.Drawing.Size(53, 39);
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
@@ -72,7 +72,7 @@
             this.BtnEditar.Image = ((System.Drawing.Image)(resources.GetObject("BtnEditar.Image")));
             this.BtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(52, 44);
+            this.BtnEditar.Size = new System.Drawing.Size(41, 39);
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
@@ -82,7 +82,7 @@
             this.BtnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnBorrar.Image")));
             this.BtnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnBorrar.Name = "BtnBorrar";
-            this.BtnBorrar.Size = new System.Drawing.Size(54, 44);
+            this.BtnBorrar.Size = new System.Drawing.Size(43, 39);
             this.BtnBorrar.Text = "Borrar";
             this.BtnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnBorrar.Click += new System.EventHandler(this.BtnBorrar_Click);
@@ -92,7 +92,7 @@
             this.BtnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnActualizar.Image")));
             this.BtnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(79, 44);
+            this.BtnActualizar.Size = new System.Drawing.Size(63, 39);
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
@@ -106,10 +106,9 @@
             this.Anio,
             this.Precio});
             this.dGVCatalogoRepuestos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGVCatalogoRepuestos.Location = new System.Drawing.Point(0, 47);
-            this.dGVCatalogoRepuestos.Margin = new System.Windows.Forms.Padding(4);
+            this.dGVCatalogoRepuestos.Location = new System.Drawing.Point(0, 42);
             this.dGVCatalogoRepuestos.Name = "dGVCatalogoRepuestos";
-            this.dGVCatalogoRepuestos.Size = new System.Drawing.Size(702, 234);
+            this.dGVCatalogoRepuestos.Size = new System.Drawing.Size(526, 186);
             this.dGVCatalogoRepuestos.TabIndex = 1;
             // 
             // ID
@@ -138,13 +137,14 @@
             // 
             // FrmCatalogoDeRepuesto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 281);
+            this.ClientSize = new System.Drawing.Size(526, 228);
             this.Controls.Add(this.dGVCatalogoRepuestos);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmCatalogoDeRepuesto";
-            this.Text = "FrmCatalogoDeRepuesto";
+            this.Text = "Catalogo de repuestos";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCatalogoRepuestos)).EndInit();

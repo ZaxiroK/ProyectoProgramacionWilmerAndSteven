@@ -46,16 +46,14 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             List<CatalogoRepuestoE> catalogoRepuestos = new List<CatalogoRepuestoE>();
             DataSet dsetCatalogoRepuestos;
 
-            string sql = "select cro.id_catalogo_de_repuesto  as idCatalogoRepuesto, cro.nombre_del_repuesto  as nombreDelRepuesto, " +
-                            "cro.anio_al_que_pertenece  as annoAlQuePertenece, cro.precio as precio" +
-                             "from CatalogoRepuesto cro";
+            string sql = "select * from CatalogoRepuesto";
 
             dsetCatalogoRepuestos = this.conexion.ejecutarConsultaSQL(sql);
             foreach (DataRow tupla in dsetCatalogoRepuestos.Tables[0].Rows)
             {
 
-                CatalogoRepuestoE oCatalogoRepuestos = new CatalogoRepuestoE(Convert.ToInt32(tupla["id_catalogo_de_repuesto"].ToString()), tupla["nombreDelRepuesto"].ToString(),
-                        Convert.ToInt32(tupla["annoAlQuePertenece"].ToString()), Convert.ToDouble(tupla["precio"].ToString()));
+                CatalogoRepuestoE oCatalogoRepuestos = new CatalogoRepuestoE(Convert.ToInt32(tupla[0].ToString()), tupla[1].ToString(),
+                        Convert.ToInt32(tupla[2].ToString()), Convert.ToDouble(tupla[3].ToString()));
                 catalogoRepuestos.Add(oCatalogoRepuestos);
             }
             return catalogoRepuestos;
@@ -66,15 +64,18 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO schtaller.catalogoRepuesto(" +
-            "id_catalogo_reparacion,nombreDelRepuesto, annoAlQuePertenece, precio); ";
+                string sql = "INSERT INTO catalogorepuesto("+
+            "id_catalogo_de_repuesto, nombre_del_repuesto, anio_al_que_pertenece," +
+            "precio)"+
+            "VALUES(@id_catalogo_de_repuesto, @nombre_del_repuesto, @anio_al_que_pertenece," +
+            "@precio); ";
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
-                oP.agregarParametro("@id_catalogo_de_repuesto ", NpgsqlDbType.Integer, pCatalogoRepuesto.IdCatalogoRepuesto);
-                oP.agregarParametro("@nombre_del_repuesto ", NpgsqlDbType.Integer, pCatalogoRepuesto.NombreDelRepuesto);
-                oP.agregarParametro("@anio_al_que_pertenece ", NpgsqlDbType.Integer, pCatalogoRepuesto.AnnoAlQuePertenece);
-                oP.agregarParametro("@precio", NpgsqlDbType.Integer, pCatalogoRepuesto.Precio);
+                oP.agregarParametro("@id_catalogo_de_repuesto", NpgsqlDbType.Integer, pCatalogoRepuesto.IdCatalogoRepuesto);
+                oP.agregarParametro("@nombre_del_repuesto", NpgsqlDbType.Varchar, pCatalogoRepuesto.NombreDelRepuesto);
+                oP.agregarParametro("@anio_al_que_pertenece", NpgsqlDbType.Integer, pCatalogoRepuesto.AnnoAlQuePertenece);
+                oP.agregarParametro("@precio", NpgsqlDbType.Double, pCatalogoRepuesto.Precio);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {
@@ -101,7 +102,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
                 parametros[0] = new NpgsqlParameter();
-                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
+                parametros[0].NpgsqlDbType = NpgsqlDbType.Integer;
                 parametros[0].ParameterName = "@id_catalogo_de_repuesto ";
                 parametros[0].Value = pCatalogoRepuesto.IdCatalogoRepuesto;
 
@@ -119,21 +120,23 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public bool modificarCatalogoRepuesto(CatalogoRepuestoE pCatalogoRepuesto)
+        public bool modificarCatalogoRepuesto(CatalogoRepuestoE pCatalogoRepuesto , int codigo)
         {
             bool estado = true;
 
             try
             {
 
-                string sql = "update catalogoRepuesto set IdCatalogoRepuesto  = @id_catalogo_de_repuesto  , NombreDelRepuesto = @nombre_del_repuesto, AnnoAlQuePertenece = @anio_al_que_pertenece," +
-                     "Precio = @Precio where catalogoRepuesto = @catalogoRepuesto";
+                string sql = "update catalogoRepuesto set id_catalogo_de_repuesto  = @id_catalogo_de_repuesto  , nombre_del_repuesto = @nombre_del_repuesto, anio_al_que_pertenece = @anio_al_que_pertenece," +
+                     "precio = @Precio where id_catalogo_de_repuesto = @catalogoRepuesto";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_catalogo_de_repuesto ", NpgsqlDbType.Integer, pCatalogoRepuesto.IdCatalogoRepuesto);
-                oP.agregarParametro("@nombre_del_repuesto ", NpgsqlDbType.Integer, pCatalogoRepuesto.NombreDelRepuesto);
+                oP.agregarParametro("@nombre_del_repuesto ", NpgsqlDbType.Varchar, pCatalogoRepuesto.NombreDelRepuesto);
                 oP.agregarParametro("@anio_al_que_pertenece ", NpgsqlDbType.Integer, pCatalogoRepuesto.AnnoAlQuePertenece);
-                oP.agregarParametro("@precio", NpgsqlDbType.Integer, pCatalogoRepuesto.Precio);
+                oP.agregarParametro("@precio", NpgsqlDbType.Double, pCatalogoRepuesto.Precio);
+                oP.agregarParametro("@catalogoRepuesto", NpgsqlDbType.Integer, codigo
+                    );
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {
