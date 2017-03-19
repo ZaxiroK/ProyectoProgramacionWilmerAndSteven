@@ -194,6 +194,9 @@
     <EmbeddedResource Include="Vista\FrmCambioContrasenia.resx">
       <DependentUpon>FrmCambioContrasenia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmCatalogoDeRepuesto.resx">
+      <DependentUpon>FrmCatalogoDeRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </EmbeddedResource>
