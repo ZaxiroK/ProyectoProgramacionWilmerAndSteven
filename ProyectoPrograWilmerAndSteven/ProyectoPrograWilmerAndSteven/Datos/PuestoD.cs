@@ -47,7 +47,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             DataSet dsetPuestos;
             string sql = "select p.id_puesto as id_puesto, p.salario as salario, " +
                         "p.puesto as puesto, p.descripcion as descripcion"+
-                         " from Puesto p";
+                         " from schtaller.Puesto p";
 
             dsetPuestos = this.conexion.ejecutarConsultaSQL(sql);
 
