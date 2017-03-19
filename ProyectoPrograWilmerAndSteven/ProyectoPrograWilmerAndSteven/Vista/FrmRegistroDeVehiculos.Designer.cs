@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnnRegistrar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.textCombustible = new System.Windows.Forms.TextBox();
             this.labelCombustible = new System.Windows.Forms.Label();
             this.textNumeroDeChasis = new System.Windows.Forms.TextBox();
-            this.textNumeroDeMotoro = new System.Windows.Forms.TextBox();
+            this.textNumeroDeMotor = new System.Windows.Forms.TextBox();
             this.labelNumeroDeChasis = new System.Windows.Forms.Label();
             this.labelNumeroDeMotor = new System.Windows.Forms.Label();
             this.textCapacidadDePersonas = new System.Windows.Forms.TextBox();
@@ -41,13 +41,13 @@
             this.labelCapacidadDePersonas = new System.Windows.Forms.Label();
             this.labelAño = new System.Windows.Forms.Label();
             this.textPlaca = new System.Windows.Forms.TextBox();
-            this.textAño = new System.Windows.Forms.TextBox();
+            this.textAnio = new System.Windows.Forms.TextBox();
             this.labelPlaca = new System.Windows.Forms.Label();
             this.labelClaseDeVehiculo = new System.Windows.Forms.Label();
-            this.textModelo = new System.Windows.Forms.TextBox();
-            this.textMarca = new System.Windows.Forms.TextBox();
             this.labelModelo = new System.Windows.Forms.Label();
             this.labelMarca = new System.Windows.Forms.Label();
+            this.comboBoxMarcas = new System.Windows.Forms.ComboBox();
+            this.comboBoxModelos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -60,15 +60,16 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
-            // btnnRegistrar
+            // btnRegistrar
             // 
-            this.btnnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnRegistrar.Location = new System.Drawing.Point(533, 474);
-            this.btnnRegistrar.Name = "btnnRegistrar";
-            this.btnnRegistrar.Size = new System.Drawing.Size(89, 35);
-            this.btnnRegistrar.TabIndex = 81;
-            this.btnnRegistrar.Text = "Registrar";
-            this.btnnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(533, 474);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(89, 35);
+            this.btnRegistrar.TabIndex = 81;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // textCombustible
             // 
@@ -96,13 +97,13 @@
             this.textNumeroDeChasis.Size = new System.Drawing.Size(309, 27);
             this.textNumeroDeChasis.TabIndex = 78;
             // 
-            // textNumeroDeMotoro
+            // textNumeroDeMotor
             // 
-            this.textNumeroDeMotoro.Location = new System.Drawing.Point(313, 318);
-            this.textNumeroDeMotoro.Multiline = true;
-            this.textNumeroDeMotoro.Name = "textNumeroDeMotoro";
-            this.textNumeroDeMotoro.Size = new System.Drawing.Size(309, 27);
-            this.textNumeroDeMotoro.TabIndex = 77;
+            this.textNumeroDeMotor.Location = new System.Drawing.Point(313, 318);
+            this.textNumeroDeMotor.Multiline = true;
+            this.textNumeroDeMotor.Name = "textNumeroDeMotor";
+            this.textNumeroDeMotor.Size = new System.Drawing.Size(309, 27);
+            this.textNumeroDeMotor.TabIndex = 77;
             // 
             // labelNumeroDeChasis
             // 
@@ -168,13 +169,13 @@
             this.textPlaca.Size = new System.Drawing.Size(309, 27);
             this.textPlaca.TabIndex = 70;
             // 
-            // textAño
+            // textAnio
             // 
-            this.textAño.Location = new System.Drawing.Point(313, 129);
-            this.textAño.Multiline = true;
-            this.textAño.Name = "textAño";
-            this.textAño.Size = new System.Drawing.Size(309, 27);
-            this.textAño.TabIndex = 69;
+            this.textAnio.Location = new System.Drawing.Point(313, 129);
+            this.textAnio.Multiline = true;
+            this.textAnio.Name = "textAnio";
+            this.textAnio.Size = new System.Drawing.Size(309, 27);
+            this.textAnio.TabIndex = 69;
             // 
             // labelPlaca
             // 
@@ -196,22 +197,6 @@
             this.labelClaseDeVehiculo.TabIndex = 67;
             this.labelClaseDeVehiculo.Text = "Clase de vehiculo";
             // 
-            // textModelo
-            // 
-            this.textModelo.Location = new System.Drawing.Point(313, 82);
-            this.textModelo.Multiline = true;
-            this.textModelo.Name = "textModelo";
-            this.textModelo.Size = new System.Drawing.Size(309, 27);
-            this.textModelo.TabIndex = 66;
-            // 
-            // textMarca
-            // 
-            this.textMarca.Location = new System.Drawing.Point(313, 33);
-            this.textMarca.Multiline = true;
-            this.textMarca.Name = "textMarca";
-            this.textMarca.Size = new System.Drawing.Size(309, 27);
-            this.textMarca.TabIndex = 65;
-            // 
             // labelModelo
             // 
             this.labelModelo.AutoSize = true;
@@ -232,17 +217,35 @@
             this.labelMarca.TabIndex = 63;
             this.labelMarca.Text = "Marca";
             // 
+            // comboBoxMarcas
+            // 
+            this.comboBoxMarcas.FormattingEnabled = true;
+            this.comboBoxMarcas.Location = new System.Drawing.Point(313, 40);
+            this.comboBoxMarcas.Name = "comboBoxMarcas";
+            this.comboBoxMarcas.Size = new System.Drawing.Size(309, 24);
+            this.comboBoxMarcas.TabIndex = 83;
+            // 
+            // comboBoxModelos
+            // 
+            this.comboBoxModelos.FormattingEnabled = true;
+            this.comboBoxModelos.Location = new System.Drawing.Point(313, 85);
+            this.comboBoxModelos.Name = "comboBoxModelos";
+            this.comboBoxModelos.Size = new System.Drawing.Size(309, 24);
+            this.comboBoxModelos.TabIndex = 84;
+            // 
             // FrmRegistroDeVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 552);
+            this.Controls.Add(this.comboBoxModelos);
+            this.Controls.Add(this.comboBoxMarcas);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnnRegistrar);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.textCombustible);
             this.Controls.Add(this.labelCombustible);
             this.Controls.Add(this.textNumeroDeChasis);
-            this.Controls.Add(this.textNumeroDeMotoro);
+            this.Controls.Add(this.textNumeroDeMotor);
             this.Controls.Add(this.labelNumeroDeChasis);
             this.Controls.Add(this.labelNumeroDeMotor);
             this.Controls.Add(this.textCapacidadDePersonas);
@@ -250,11 +253,9 @@
             this.Controls.Add(this.labelCapacidadDePersonas);
             this.Controls.Add(this.labelAño);
             this.Controls.Add(this.textPlaca);
-            this.Controls.Add(this.textAño);
+            this.Controls.Add(this.textAnio);
             this.Controls.Add(this.labelPlaca);
             this.Controls.Add(this.labelClaseDeVehiculo);
-            this.Controls.Add(this.textModelo);
-            this.Controls.Add(this.textMarca);
             this.Controls.Add(this.labelModelo);
             this.Controls.Add(this.labelMarca);
             this.Name = "FrmRegistroDeVehiculos";
@@ -267,11 +268,11 @@
         #endregion
 
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnnRegistrar;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox textCombustible;
         private System.Windows.Forms.Label labelCombustible;
         private System.Windows.Forms.TextBox textNumeroDeChasis;
-        private System.Windows.Forms.TextBox textNumeroDeMotoro;
+        private System.Windows.Forms.TextBox textNumeroDeMotor;
         private System.Windows.Forms.Label labelNumeroDeChasis;
         private System.Windows.Forms.Label labelNumeroDeMotor;
         private System.Windows.Forms.TextBox textCapacidadDePersonas;
@@ -279,12 +280,12 @@
         private System.Windows.Forms.Label labelCapacidadDePersonas;
         private System.Windows.Forms.Label labelAño;
         private System.Windows.Forms.TextBox textPlaca;
-        private System.Windows.Forms.TextBox textAño;
+        private System.Windows.Forms.TextBox textAnio;
         private System.Windows.Forms.Label labelPlaca;
         private System.Windows.Forms.Label labelClaseDeVehiculo;
-        private System.Windows.Forms.TextBox textModelo;
-        private System.Windows.Forms.TextBox textMarca;
         private System.Windows.Forms.Label labelModelo;
         private System.Windows.Forms.Label labelMarca;
+        private System.Windows.Forms.ComboBox comboBoxMarcas;
+        private System.Windows.Forms.ComboBox comboBoxModelos;
     }
 }
