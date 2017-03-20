@@ -23,10 +23,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void CargarDGview()
         {
-            //list<empleadoe> empleado = oempleadod.obtenerempleados(puestoe ppuesto);
-            //if (!oempleadod.error)
+            //List<EmpleadoE> empleado = oEmpleadoD.obtenerEmpleados(PuestoE pPuestoE);
+            //if (!oEmpleadoD.Error)
             //{
-            //    this.dgviewempleados.datasource = empleado;
+            //    this.dGViewEmpleados.DataSource = empleado;
             //}
         }
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             //    if (oFrm.aceptar)
             //    {
 
-            //        if (oEmpleadoD.modificarEmpleado(oFrm.oEmpleadoE, Convert.ToInt32(this.dGViewEmpleados[0, fila].Value.ToString())));
+            //        if (oEmpleadoD.modificarEmpleado(oFrm.oEmpleadoE, Convert.ToInt32(this.dGViewEmpleados[0, fila].Value.ToString()))) ;
             //        {
             //            this.CargarDGview();
             //            MessageBox.Show("Empleado actualizado");

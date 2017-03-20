@@ -39,7 +39,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.errorMsg = "";
         }
 
-        public List<VehiculoE> obtenerVehiculos(ClienteE pClienten, ModeloE pModelo)
+        public List<VehiculoE> obtenerVehiculos(ClienteE pCliente, ModeloE pModelo)
         {
             this.limpiarError();
             List<VehiculoE> vehiculos = new List<VehiculoE>();
@@ -55,11 +55,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 "from Vehiculo v, Cliente c,Modelo mo, Marca m" +
                 "where c.cedula = v.id_cliente and v.id_modelo = mo.id_modelo;";
 
-            if (pClienten != null)
+            if (pCliente != null)
             {
                 sql += "and c.cedula = @cliente";
                 Parametro oParametro = new Parametro();
-                oParametro.agregarParametro("@cliente", NpgsqlDbType.Varchar, pClienten.Cedula);
+                oParametro.agregarParametro("@cliente", NpgsqlDbType.Varchar, pCliente.Cedula);
                 dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql, "vehiculo", oParametro.obtenerParametros());
             }
             else
@@ -70,7 +70,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             {
                 sql += "and mo.idModelo = @modelo";
                 Parametro oParametro = new Parametro();
-                oParametro.agregarParametro("@modelo", NpgsqlDbType.Varchar, pClienten.Cedula);
+                oParametro.agregarParametro("@modelo", NpgsqlDbType.Varchar, pCliente.Cedula);
                 dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql, "vehiculo", oParametro.obtenerParametros());
             }
             else

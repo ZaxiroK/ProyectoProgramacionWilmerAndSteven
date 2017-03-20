@@ -46,7 +46,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             List<CatalogoReparacionE> catalogoReparaciones = new List<CatalogoReparacionE>();
             DataSet dsetCatalogoReparaciones;
             
-            string sql = "select * from CatalogoReparacion";
+            string sql = "select * from schtaller.CatalogoReparacion";
 
             dsetCatalogoReparaciones = this.conexion.ejecutarConsultaSQL(sql);
 
@@ -66,7 +66,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO catalogoreparacion("+
+                string sql = "INSERT INTO schtaller.catalogoreparacion(" +
             "id_catalogo_reparacion, descripcion, horas_reparacion, costo_reparacion)"+
             "VALUES(@id_catalogo_reparacion, @descripcion, @horas_reparacion, @costo_reparacion);";
 
@@ -97,7 +97,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from catalogoReparacion where id_catalogo_reparacion = @id_catalogo_reparacion";
+                string sql = "delete from schtaller.catalogoReparacion where id_catalogo_reparacion = @id_catalogo_reparacion";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -127,7 +127,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
                 
-                string sql = "update catalogoReparacion set id_catalogo_reparacion = @id_catalogo_reparacion , descripcion = @descripcion, horas_reparacion = @horas_reparacion," +
+                string sql = "update schtaller.catalogoReparacion set id_catalogo_reparacion = @id_catalogo_reparacion , descripcion = @descripcion, horas_reparacion = @horas_reparacion," +
                      "costo_reparacion = @costo_reparacion where id_catalogo_reparacion = @CatalogoReparacion";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();

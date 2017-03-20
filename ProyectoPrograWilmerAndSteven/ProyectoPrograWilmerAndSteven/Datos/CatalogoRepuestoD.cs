@@ -46,7 +46,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             List<CatalogoRepuestoE> catalogoRepuestos = new List<CatalogoRepuestoE>();
             DataSet dsetCatalogoRepuestos;
 
-            string sql = "select * from CatalogoRepuesto";
+            string sql = "select * from schtaller.CatalogoRepuesto";
 
             dsetCatalogoRepuestos = this.conexion.ejecutarConsultaSQL(sql);
             foreach (DataRow tupla in dsetCatalogoRepuestos.Tables[0].Rows)
@@ -64,7 +64,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO catalogorepuesto("+
+                string sql = "INSERT INTO schtaller.catalogorepuesto(" +
             "id_catalogo_de_repuesto, nombre_del_repuesto, anio_al_que_pertenece," +
             "precio)"+
             "VALUES(@id_catalogo_de_repuesto, @nombre_del_repuesto, @anio_al_que_pertenece," +
@@ -97,7 +97,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from catalogoRepuesto where id_catalogo_de_repuesto  = @id_catalogo_de_repuesto ";
+                string sql = "delete from schtaller.catalogoRepuesto where id_catalogo_de_repuesto  = @id_catalogo_de_repuesto ";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -127,7 +127,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
 
-                string sql = "update catalogoRepuesto set id_catalogo_de_repuesto  = @id_catalogo_de_repuesto  , nombre_del_repuesto = @nombre_del_repuesto, anio_al_que_pertenece = @anio_al_que_pertenece," +
+                string sql = "update schtaller.catalogoRepuesto set id_catalogo_de_repuesto  = @id_catalogo_de_repuesto  , nombre_del_repuesto = @nombre_del_repuesto, anio_al_que_pertenece = @anio_al_que_pertenece," +
                      "precio = @Precio where id_catalogo_de_repuesto = @catalogoRepuesto";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();

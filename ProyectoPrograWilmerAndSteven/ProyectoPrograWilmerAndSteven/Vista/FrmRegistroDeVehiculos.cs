@@ -20,7 +20,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
             llenarComboMarcas();
-            
+            llenarComboClientes();
+
+
         }
 
         public void llenarComboMarcas()
@@ -46,29 +48,50 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 this.comboBoxModelos.Items.Add(oModeloE);
             }
         }
+        public void llenarComboClientes()
+        {
+            this.comboBoxClientes.Items.Clear();
+            ClienteD oClienteD = new ClienteD();
+            List<ClienteE> clientes = oClienteD.obtenerClientes();
+
+            foreach (ClienteE oClienteE in clientes)
+            {
+                this.comboBoxClientes.Items.Add(oClienteE);
+            }
+        }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            //if (!(this.comboBoxMarcas.SelectedItem == "") && 
-            //    !(this.comboBoxModelos.SelectedItem == "") && 
-            //    !(this.textAnio.Text == "") && 
-            //    !(this.textPlaca.Text == "") &&
-            //    !(this.textClaseDeVehiculo.Text == "") &&
-            //    !(this.textCapacidadDePersonas.Text == "") &&
-            //    !(this.textNumeroDeMotor.Text == "") &&
-            //    !(this.textNumeroDeChasis.Text == "") &&
-            //    !(this.textCombustible.Text == ""))
-            //{
-            //    z
-            //    this.aceptar = true;
+            if (!(this.comboBoxMarcas.SelectedItem == "") &&
+                !(this.comboBoxModelos.SelectedItem == "") &&
+                !(this.textAnio.Text == "") &&
+                !(this.textPlaca.Text == "") &&
+                !(this.textClaseDeVehiculo.Text == "") &&
+                !(this.textCapacidadDePersonas.Text == "") &&
+                !(this.textNumeroDeMotor.Text == "") &&
+                !(this.textNumeroDeChasis.Text == "") &&
+                !(this.textCombustible.Text == ""))
+            {
 
-            //    this.oVehiculoE = new VehiculoE(Convert.ToInt32(idvehiculo), this.textPlaca.Text,
-            //        this.textClaseDeVehiculo.Text, Convert.ToInt32(this.textCapacidadDePersonas),comboBoxModelos.SelectedItem, this.txtDireccion.Text,Puesto,
-            //        this.txtTelefono.Text, this.txtTelefono2.Text, this.txtTelefono3.Text);
+                this.aceptar = true;
 
-            //    this.Visible = false;
-            //}
+                //this.oVehiculoE = new VehiculoE(Convert.ToInt32(idvehiculo), this.textPlaca.Text,
+                //    this.textClaseDeVehiculo.Text,
+                //    Convert.ToInt32(this.textCapacidadDePersonas),
+                //    comboBoxClientes.SelectedItem,
+                //    comboBoxModelos.SelectedItem,
+                //    this.textNumeroDeMotor.Text,
+                //    this.textNumeroDeChasis.Text,
+                //    this.textCombustible.Text);
+
+                //this.Visible = false;
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
-    
+
 }

@@ -26,17 +26,17 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.txtId.Text = oPu.IdPuesto.ToString();
             this.txtSalario.Text = oPu.Salario.ToString();
             this.txtDescripcion.Text = oPu.Descripcion;
-            this.txtMecanico.Text = oPu.Puesto.ToString();
+            this.txtPuesto.Text = oPu.Puesto.ToString();
         }
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
             if((this.txtId.Text != " ") &&(this.txtSalario.Text != " ") &&(this.txtDescripcion.Text != " ")
-                && (this.txtMecanico.Text != " "))
+                && (this.txtPuesto.Text != " "))
             {
                 aceptar = true;
                 oP = new PuestoE(Convert.ToInt32(this.txtId.Text), Convert.ToDouble(this.txtSalario.Text),
-                    Convert.ToChar(this.txtMecanico.Text), this.txtDescripcion.Text);
+                    Convert.ToChar(this.txtPuesto.Text), this.txtDescripcion.Text);
                 this.Visible = false;
             }
         }
