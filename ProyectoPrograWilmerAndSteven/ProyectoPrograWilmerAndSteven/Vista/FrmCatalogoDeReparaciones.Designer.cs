@@ -113,7 +113,7 @@
             // 
             // ID
             // 
-            this.ID.DataPropertyName = "idCatalogoReparaciones";
+            this.ID.DataPropertyName = "id_catalogoReparacion";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             // 
@@ -125,13 +125,13 @@
             // 
             // Anio
             // 
-            this.Anio.DataPropertyName = "horas";
-            this.Anio.HeaderText = "Año";
+            this.Anio.DataPropertyName = "horasReparacion";
+            this.Anio.HeaderText = "Horas";
             this.Anio.Name = "Anio";
             // 
             // Precio
             // 
-            this.Precio.DataPropertyName = "precio";
+            this.Precio.DataPropertyName = "costoReparacion";
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             // 
