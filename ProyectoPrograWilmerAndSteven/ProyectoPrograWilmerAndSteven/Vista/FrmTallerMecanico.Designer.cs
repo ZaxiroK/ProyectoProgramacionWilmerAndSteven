@@ -42,9 +42,9 @@
             this.ItemRegistroVehiculos = new System.Windows.Forms.ToolStripMenuItem();
             this.itemRegistroCatalogoRepuestos = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemRegistroCatalogoReparaciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItemRegistroDeModelo = new System.Windows.Forms.ToolStripMenuItem();
             this.administracíonYÓrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestíonGerencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ItemRegistroDeModelo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +94,7 @@
             this.itemRegistroPuestos.Name = "itemRegistroPuestos";
             this.itemRegistroPuestos.Size = new System.Drawing.Size(194, 22);
             this.itemRegistroPuestos.Text = "Registro de puestos";
+            this.itemRegistroPuestos.Click += new System.EventHandler(this.itemRegistroPuestos_Click);
             // 
             // itemDerechosUsuarios
             // 
@@ -133,6 +134,7 @@
             this.itemRegistroMarcas.Name = "itemRegistroMarcas";
             this.itemRegistroMarcas.Size = new System.Drawing.Size(258, 22);
             this.itemRegistroMarcas.Text = "Registro de marcas";
+            this.itemRegistroMarcas.Click += new System.EventHandler(this.itemRegistroMarcas_Click);
             // 
             // itemRegistroClasesVehiculos
             // 
@@ -151,12 +153,21 @@
             this.itemRegistroCatalogoRepuestos.Name = "itemRegistroCatalogoRepuestos";
             this.itemRegistroCatalogoRepuestos.Size = new System.Drawing.Size(258, 22);
             this.itemRegistroCatalogoRepuestos.Text = "Registro de catálogo de repuestos";
+            this.itemRegistroCatalogoRepuestos.Click += new System.EventHandler(this.itemRegistroCatalogoRepuestos_Click);
             // 
             // ItemRegistroCatalogoReparaciones
             // 
             this.ItemRegistroCatalogoReparaciones.Name = "ItemRegistroCatalogoReparaciones";
             this.ItemRegistroCatalogoReparaciones.Size = new System.Drawing.Size(258, 22);
             this.ItemRegistroCatalogoReparaciones.Text = "Registro de catálogo de repaciónes";
+            this.ItemRegistroCatalogoReparaciones.Click += new System.EventHandler(this.ItemRegistroCatalogoReparaciones_Click);
+            // 
+            // ItemRegistroDeModelo
+            // 
+            this.ItemRegistroDeModelo.Name = "ItemRegistroDeModelo";
+            this.ItemRegistroDeModelo.Size = new System.Drawing.Size(258, 22);
+            this.ItemRegistroDeModelo.Text = "Registro de modelos";
+            this.ItemRegistroDeModelo.Click += new System.EventHandler(this.ItemRegistroDeModelo_Click);
             // 
             // administracíonYÓrdenesToolStripMenuItem
             // 
@@ -170,21 +181,15 @@
             this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.gestíonGerencialToolStripMenuItem.Text = "Gestíon gerencial";
             // 
-            // ItemRegistroDeModelo
-            // 
-            this.ItemRegistroDeModelo.Name = "ItemRegistroDeModelo";
-            this.ItemRegistroDeModelo.Size = new System.Drawing.Size(258, 22);
-            this.ItemRegistroDeModelo.Text = "Registro de modelos";
-            // 
             // FrmTallerMecanico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 235);
             this.Controls.Add(this.menuStrip2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmTallerMecanico";
-            this.Text = "FrmTallerMecanico";
+            this.Text = "Taller Mecanico";
             this.Load += new System.EventHandler(this.FrmTallerMecanico_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();

@@ -143,7 +143,7 @@
             this.Controls.Add(this.dGVCatalogoRepuestos);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmCatalogoDeReparaciones2";
-            this.Text = "FrmCatalogoDeReparaciones2";
+            this.Text = "Catalogo de Reparaciones";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCatalogoRepuestos)).EndInit();

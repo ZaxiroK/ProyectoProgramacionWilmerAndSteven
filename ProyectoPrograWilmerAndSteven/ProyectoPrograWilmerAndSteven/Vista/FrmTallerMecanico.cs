@@ -24,7 +24,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-
+            FrmEmpleado oFrm = new FrmEmpleado();
+            oFrm.ShowDialog();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -36,6 +37,36 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             FrmClientes oFrmCliente = new FrmClientes();
             oFrmCliente.ShowDialog();
+        }
+
+        private void itemRegistroCatalogoRepuestos_Click(object sender, EventArgs e)
+        {
+            FrmCatalogoDeRepuesto oFrm = new FrmCatalogoDeRepuesto();
+            oFrm.ShowDialog();
+        }
+
+        private void ItemRegistroCatalogoReparaciones_Click(object sender, EventArgs e)
+        {
+            FrmCatalogoDeReparaciones2 oFrm = new FrmCatalogoDeReparaciones2();
+            oFrm.ShowDialog();
+        }
+
+        private void itemRegistroMarcas_Click(object sender, EventArgs e)
+        {
+            FrmMarca oFrm = new FrmMarca();
+            oFrm.ShowDialog();
+        }
+
+        private void ItemRegistroDeModelo_Click(object sender, EventArgs e)
+        {
+            FrmModelo oFrm = new FrmModelo();
+            oFrm.ShowDialog();
+        }
+
+        private void itemRegistroPuestos_Click(object sender, EventArgs e)
+        {
+            FrmPuesto oFrm = new FrmPuesto();
+            oFrm.ShowDialog();
         }
     }
 }
