@@ -22,6 +22,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         }
         private void CargarDGview()
         {
+            this.dGVMarcas.DataSource = "";
+
             List<PuestoE> marca = oPuestoD.obtenerPuestos();
             if (!oPuestoD.Error)
             {

@@ -37,9 +37,9 @@
             this.dGViewEmpleados = new System.Windows.Forms.DataGridView();
             this.Cédula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,7 @@
             this.btnActualizar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(946, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(945, 42);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -67,7 +67,7 @@
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(67, 44);
+            this.btnAgregar.Size = new System.Drawing.Size(53, 39);
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -77,7 +77,7 @@
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(52, 44);
+            this.btnEditar.Size = new System.Drawing.Size(41, 39);
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -87,7 +87,7 @@
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(54, 44);
+            this.btnBorrar.Size = new System.Drawing.Size(43, 39);
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
@@ -97,7 +97,7 @@
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(79, 44);
+            this.btnActualizar.Size = new System.Drawing.Size(63, 39);
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -108,19 +108,19 @@
             this.dGViewEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cédula,
             this.Nombre,
-            this.Dirección,
             this.Apellido1,
             this.Apellido2,
+            this.Dirección,
             this.Puesto,
             this.Telefono1,
             this.Telefono2,
             this.Telefono3});
             this.dGViewEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGViewEmpleados.Location = new System.Drawing.Point(0, 47);
-            this.dGViewEmpleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dGViewEmpleados.Location = new System.Drawing.Point(0, 42);
+            this.dGViewEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.dGViewEmpleados.Name = "dGViewEmpleados";
             this.dGViewEmpleados.RowTemplate.Height = 24;
-            this.dGViewEmpleados.Size = new System.Drawing.Size(946, 380);
+            this.dGViewEmpleados.Size = new System.Drawing.Size(945, 305);
             this.dGViewEmpleados.TabIndex = 14;
             // 
             // Cédula
@@ -135,12 +135,6 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             // 
-            // Dirección
-            // 
-            this.Dirección.DataPropertyName = "direccion";
-            this.Dirección.HeaderText = "Dirección";
-            this.Dirección.Name = "Dirección";
-            // 
             // Apellido1
             // 
             this.Apellido1.DataPropertyName = "apellido1";
@@ -152,6 +146,12 @@
             this.Apellido2.DataPropertyName = "apellido2";
             this.Apellido2.HeaderText = "Apellido 2";
             this.Apellido2.Name = "Apellido2";
+            // 
+            // Dirección
+            // 
+            this.Dirección.DataPropertyName = "direccion";
+            this.Dirección.HeaderText = "Dirección";
+            this.Dirección.Name = "Dirección";
             // 
             // Puesto
             // 
@@ -179,13 +179,14 @@
             // 
             // FrmEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 427);
+            this.ClientSize = new System.Drawing.Size(945, 347);
             this.Controls.Add(this.dGViewEmpleados);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmEmpleado";
-            this.Text = "FrmEmpleado";
+            this.Text = "Empleados";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGViewEmpleados)).EndInit();
@@ -204,9 +205,9 @@
         private System.Windows.Forms.DataGridView dGViewEmpleados;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cédula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dirección;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dirección;
         private System.Windows.Forms.DataGridViewTextBoxColumn Puesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono2;

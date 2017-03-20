@@ -23,6 +23,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void CargarDGview()
         {
+            this.dGVCatalogoRepuestos.DataSource = "";
+
             List<CatalogoRepuestoE> catalogoRepuesto = oCatalogoRepuestoD.obtenerCatalogoRepuestos();
             if (!oCatalogoRepuestoD.Error)
             {

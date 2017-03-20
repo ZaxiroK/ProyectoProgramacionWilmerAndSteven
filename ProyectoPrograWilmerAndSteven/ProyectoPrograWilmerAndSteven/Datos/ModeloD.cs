@@ -48,7 +48,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             string sql = "select mo.id_modelo  as idModelo, mo.descripcion  as descripcion, mo.anio as anno," +
                             "m.id_marca as idMarca, m.descripcion as descripcion" +
                                " from modelo mo, marca m "+
-                               "where  m.id_marca = mo.id_modelo";
+                               "where  m.id_marca = mo.id_marca";
             //if (pMarca != null)
             //{
                 //sql += "and m.IdMarca = @marca";

@@ -39,7 +39,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.errorMsg = "";
         }
 
-        public List<EmpleadoE> obtenerEmpleados(PuestoE pPuesto)
+        public List<EmpleadoE> obtenerEmpleados()
         {
 
             this.limpiarError();
@@ -49,25 +49,25 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                             "e.apellido1 as apellido1, e.apellido2 as apellido2," +
                              "e.direccion as direccion, e.telefono1 as telefono1, e.telefono2 as telefono2,e.telefono3 as telefono3," +
                               "p.id_puesto as id_puesto, p.salario as salario, p.puesto as puesto, p.descripcion as descripcion" +
-                               "from Empleado e, Puesto p where e.cedula = p.id_puesto";
-            if (pPuesto != null)
-            {
-                sql += "and p.IdPuesto = @puesto";
-                Parametro oParametro = new Parametro();
-                oParametro.agregarParametro("@puesto", NpgsqlDbType.Varchar, pPuesto.IdPuesto);
-                dsetEmpleados = this.conexion.ejecutarConsultaSQL(sql, "empleado", oParametro.obtenerParametros());
-            }
-            else
-            {
+                               " from Empleado e, Puesto p where e.id_puesto = p.id_puesto";
+            //if (pPuesto != null)
+            //{
+            //    sql += "and p.IdPuesto = @puesto";
+            //    Parametro oParametro = new Parametro();
+            //    oParametro.agregarParametro("@puesto", NpgsqlDbType.Varchar, pPuesto.IdPuesto);
+            //    dsetEmpleados = this.conexion.ejecutarConsultaSQL(sql, "empleado", oParametro.obtenerParametros());
+            //}
+            //else
+            //{
                 dsetEmpleados = this.conexion.ejecutarConsultaSQL(sql);
-            }
+            //}
             foreach (DataRow tupla in dsetEmpleados.Tables[0].Rows)
             {
-                PuestoE oPuesto = new PuestoE(Int32.Parse(tupla["id_puesto"].ToString()), Convert.ToDouble(tupla["salario"].ToString())
-                    , Convert.ToChar(tupla["puesto"].ToString()), tupla["descripcion"].ToString());
-                EmpleadoE oEmpleado = new EmpleadoE(Convert.ToInt32(tupla["cedula"].ToString()), tupla["nombre"].ToString(), tupla["apellido1"].ToString()
-                    , tupla["apellido2"].ToString(), tupla["direccion"].ToString(), oPuesto, tupla["telefono1"].ToString(), tupla["telefono2"].ToString()
-                    , tupla["telefono3"].ToString());
+                PuestoE oPuesto = new PuestoE(Int32.Parse(tupla[8].ToString()), Convert.ToDouble(tupla[9].ToString())
+                    , Convert.ToChar(tupla[10].ToString()), tupla[11].ToString());
+                EmpleadoE oEmpleado = new EmpleadoE(Convert.ToInt32(tupla[0].ToString()), tupla[1].ToString(), tupla[2].ToString()
+                    , tupla[3].ToString(), tupla[4].ToString(), oPuesto, tupla[5].ToString(), tupla[6].ToString()
+                    , tupla[7].ToString());
                 empleados.Add(oEmpleado);
             }
             return empleados;
@@ -78,20 +78,23 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO schtaller.cliente(" +
-            "cedula, nombre, apellido1, apellido2,  direccion, puesto, telefono1, telefono2, telefono3); ";
+                string sql = "INSERT INTO empleado("+
+            "cedula, nombre, apellido1, apellido2, direccion, id_puesto, telefono1,"+ 
+            "telefono2, telefono3)"+
+            "VALUES(@cedula, @nombre, @apellido1, @apellido2, @direccion, @puesto, @telefono1," +
+            "@telefono2, @telefono3);";
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@cedula", NpgsqlDbType.Integer, pEmpleado.Cedula);
-                oP.agregarParametro("@nombre", NpgsqlDbType.Integer, pEmpleado.Nombre);
-                oP.agregarParametro("@apellido1", NpgsqlDbType.Integer, pEmpleado.Apellido1);
-                oP.agregarParametro("@apellido2", NpgsqlDbType.Integer, pEmpleado.Apellido2);
-                oP.agregarParametro("@direccion", NpgsqlDbType.Integer, pEmpleado.Direccion);
-                oP.agregarParametro("@puesto", NpgsqlDbType.Integer, pEmpleado.OPuestoE);
-                oP.agregarParametro("@telefono1", NpgsqlDbType.Integer, pEmpleado.Telefono1);
-                oP.agregarParametro("@telefono2", NpgsqlDbType.Integer, pEmpleado.Telefono2);
-                oP.agregarParametro("@telefono3", NpgsqlDbType.Integer, pEmpleado.Telefono3);
+                oP.agregarParametro("@nombre", NpgsqlDbType.Varchar, pEmpleado.Nombre);
+                oP.agregarParametro("@apellido1", NpgsqlDbType.Varchar, pEmpleado.Apellido1);
+                oP.agregarParametro("@apellido2", NpgsqlDbType.Varchar, pEmpleado.Apellido2);
+                oP.agregarParametro("@direccion", NpgsqlDbType.Varchar, pEmpleado.Direccion);
+                oP.agregarParametro("@puesto", NpgsqlDbType.Integer, pEmpleado.OPuestoE.IdPuesto);
+                oP.agregarParametro("@telefono1", NpgsqlDbType.Varchar, pEmpleado.Telefono1);
+                oP.agregarParametro("@telefono2", NpgsqlDbType.Varchar, pEmpleado.Telefono2);
+                oP.agregarParametro("@telefono3", NpgsqlDbType.Varchar, pEmpleado.Telefono3);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {
@@ -118,7 +121,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
                 parametros[0] = new NpgsqlParameter();
-                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
+                parametros[0].NpgsqlDbType = NpgsqlDbType.Integer;
                 parametros[0].ParameterName = "@cedula";
                 parametros[0].Value = pEmpleado.Cedula;
 
@@ -136,26 +139,27 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public bool modificarEmpleado(EmpleadoE pEmpleado)
+        public bool modificarEmpleado(EmpleadoE pEmpleado, int cedula)
         {
             bool estado = true;
 
             try
             {
 
-                string sql = "update cliente set cedula = @cedula , descripcion = @descripcion, apellido1 = @apellido1, apellido2 = @apellido2," +
-                    "direccion = @ direccion, puesto = @puesto telefono1 = @telefono1, telefono2 = telefono2, telefono3 = telefono3 where cliente = @cliente";
+                string sql = "update empleado set cedula = @cedula , nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2," +
+                    "direccion = @direccion, id_puesto = @puesto, telefono1 = @telefono1, telefono2 = telefono2, telefono3 = @telefono3 where cedula = @cedulaVieja";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@cedula", NpgsqlDbType.Integer, pEmpleado.Cedula);
-                oP.agregarParametro("@nombre", NpgsqlDbType.Integer, pEmpleado.Nombre);
-                oP.agregarParametro("@apellido1", NpgsqlDbType.Integer, pEmpleado.Apellido1);
-                oP.agregarParametro("@apellido2", NpgsqlDbType.Integer, pEmpleado.Apellido2);
-                oP.agregarParametro("@direccion", NpgsqlDbType.Integer, pEmpleado.Direccion);
-                oP.agregarParametro("@puesto", NpgsqlDbType.Integer, pEmpleado.OPuestoE);
-                oP.agregarParametro("@telefono1", NpgsqlDbType.Integer, pEmpleado.Telefono1);
-                oP.agregarParametro("@telefono2", NpgsqlDbType.Integer, pEmpleado.Telefono2);
-                oP.agregarParametro("@telefono3", NpgsqlDbType.Integer, pEmpleado.Telefono3);
+                oP.agregarParametro("@nombre", NpgsqlDbType.Varchar, pEmpleado.Nombre);
+                oP.agregarParametro("@apellido1", NpgsqlDbType.Varchar, pEmpleado.Apellido1);
+                oP.agregarParametro("@apellido2", NpgsqlDbType.Varchar, pEmpleado.Apellido2);
+                oP.agregarParametro("@direccion", NpgsqlDbType.Varchar, pEmpleado.Direccion);
+                oP.agregarParametro("@puesto", NpgsqlDbType.Integer, pEmpleado.OPuestoE.IdPuesto);
+                oP.agregarParametro("@telefono1", NpgsqlDbType.Varchar, pEmpleado.Telefono1);
+                oP.agregarParametro("@telefono2", NpgsqlDbType.Varchar, pEmpleado.Telefono2);
+                oP.agregarParametro("@telefono3", NpgsqlDbType.Varchar, pEmpleado.Telefono3);
+                oP.agregarParametro("@cedulaVieja", NpgsqlDbType.Integer, cedula);
 
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)

@@ -23,6 +23,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void CargarDGview()
         {
+            this.dGVMarcas.DataSource = "";
+
             List<MarcaE> marca = oMarcaD.obtenerMarcas();
             if (!oMarcaD.Error)
             {

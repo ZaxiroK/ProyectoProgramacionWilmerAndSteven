@@ -35,7 +35,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.txtApellido1.Text = oEmpleadoE.Apellido1;
             this.txtApellido2.Text = oEmpleadoE.Apellido2;
             this.txtDireccion.Text = this.oEmpleadoE.Direccion;
-            this.comboBoxPuesto.SelectedItem = oEmpleadoE.OPuestoE.ToString();// 
+            this.comboBoxPuesto.SelectedItem = oEmpleadoE.OPuestoE;// 
             this.txtTelefono.Text = this.oEmpleadoE.Telefono1;
             this.txtTelefono2.Text = this.oEmpleadoE.Telefono2;
             this.txtTelefono3.Text = this.oEmpleadoE.Telefono3;
@@ -67,9 +67,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
                 this.aceptar = true;
 
-                //this.oEmpleadoE = new EmpleadoE(Convert.ToInt32(this.txtCedula.Text), this.txtNombre.Text,
-                //    this.txtApellido1.Text, this.txtApellido2.Text, this.txtDireccion.Text,Puesto,
-                //    this.txtTelefono.Text, this.txtTelefono2.Text, this.txtTelefono3.Text);
+                this.oEmpleadoE = new EmpleadoE(Convert.ToInt32(this.txtCedula.Text), this.txtNombre.Text,
+                  this.txtApellido1.Text, this.txtApellido2.Text, this.txtDireccion.Text,(PuestoE)this.comboBoxPuesto.SelectedItem,
+                  this.txtTelefono.Text, this.txtTelefono2.Text, this.txtTelefono3.Text);
 
                 this.Visible = false;
             }

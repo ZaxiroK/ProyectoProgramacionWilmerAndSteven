@@ -44,6 +44,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void CargarDGview()
         {
+            this.dGViewClientes.DataSource = "";
+
             List<ClienteE> cliente = oClienteD.obtenerClientes();
             if (!oClienteD.Error)
             {

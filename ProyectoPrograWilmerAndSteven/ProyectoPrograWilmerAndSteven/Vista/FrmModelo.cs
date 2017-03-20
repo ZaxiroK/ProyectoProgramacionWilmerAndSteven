@@ -22,6 +22,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         }
         private void CargarDGview()
         {
+            
+            dGVModelos.Rows.Clear();
+            
             List<ModeloE> modelo = oModeloD.obtenerModelos();
             if (!oModeloD.Error)
             {

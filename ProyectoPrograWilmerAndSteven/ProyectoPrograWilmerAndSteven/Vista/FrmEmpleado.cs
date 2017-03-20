@@ -23,11 +23,18 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void CargarDGview()
         {
-            //List<EmpleadoE> empleado = oEmpleadoD.obtenerEmpleados(PuestoE pPuestoE);
-            //if (!oEmpleadoD.Error)
-            //{
-            //    this.dGViewEmpleados.DataSource = empleado;
-            //}
+            this.dGViewEmpleados.Rows.Clear();
+
+            List<EmpleadoE> empleado = oEmpleadoD.obtenerEmpleados();
+            if (!oEmpleadoD.Error)
+            {
+                foreach (EmpleadoE oEm in empleado)
+                {
+                    this.dGViewEmpleados.Rows.Add(oEm.Cedula, oEm.Nombre,
+                        oEm.Apellido1, oEm.Apellido2, oEm.Direccion, oEm.OPuestoE, oEm.Telefono1, oEm.Telefono2,
+                        oEm.Telefono3);
+                }
+            }
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -52,74 +59,58 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //if (this.dGViewEmpleados.Rows.Count > 0)
-            //{
+            if (this.dGViewEmpleados.Rows.Count > 0)
+            {
 
-            //    int fila = this.dGViewEmpleados.CurrentRow.Index;
+                int fila = this.dGViewEmpleados.CurrentRow.Index;
 
-            //    EmpleadoE oEmpleadoE = new EmpleadoE(Convert.ToInt32(this.dGViewEmpleados[0, fila].Value.ToString()),
-            //                             this.dGViewEmpleados[1, fila].Value.ToString(),
-            //                             this.dGViewEmpleados[2, fila].Value.ToString(),
-            //                             this.dGViewEmpleados[3, fila].Value.ToString(),
-            //                             this.dGViewEmpleados[4, fila].Value.ToString(),
-            //                             this.dGViewEmpleados[5, fila].Value.ToString(),
-            //                             this.dGViewEmpleados[6, fila].Value.ToString(),
-            //                             this.dGViewEmpleados[7, fila].Value.ToString(),
-            //                             this.dGViewEmpleados[8, fila].Value.ToString());
+                List<EmpleadoE> empleado = oEmpleadoD.obtenerEmpleados();
 
-            //    FrmRegistrarEmpleado oFrm = new FrmRegistrarEmpleado(oEmpleadoE);
-            //    oFrm.ShowDialog();
-            //    if (oFrm.aceptar)
-            //    {
+                FrmRegistrarEmpleado oFrm = new FrmRegistrarEmpleado(empleado.ElementAt(fila));
+                oFrm.ShowDialog();
+                if (oFrm.aceptar)
+                {
 
-            //        if (oEmpleadoD.modificarEmpleado(oFrm.oEmpleadoE, Convert.ToInt32(this.dGViewEmpleados[0, fila].Value.ToString()))) ;
-            //        {
-            //            this.CargarDGview();
-            //            MessageBox.Show("Empleado actualizado");
-            //        }
+                    if (oEmpleadoD.modificarEmpleado(oFrm.oEmpleadoE, Convert.ToInt32(this.dGViewEmpleados[0, fila].Value.ToString()))) ;
+                    {
+                        this.CargarDGview();
+                        MessageBox.Show("Empleado actualizado");
+                    }
 
-            //    }
+                }
 
-            //}
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            //if (this.dGViewEmpleados.Rows.Count > 0)
-            //{
-            //    DialogResult respuesta = MessageBox.Show("¿Está seguro de borrar?",
-            //                                             "Error",
-            //                                              MessageBoxButtons.YesNo,
-            //                                              MessageBoxIcon.Question);
-            //    if (respuesta == DialogResult.Yes)
-            //    {
+            if (this.dGViewEmpleados.Rows.Count > 0)
+            {
+                DialogResult respuesta = MessageBox.Show("¿Está seguro de borrar?",
+                                                         "Error",
+                                                          MessageBoxButtons.YesNo,
+                                                          MessageBoxIcon.Question);
+                if (respuesta == DialogResult.Yes)
+                {
 
-            //        int fila = this.dGViewEmpleados.CurrentRow.Index;
+                    int fila = this.dGViewEmpleados.CurrentRow.Index;
 
-            //        EmpleadoE oEmpleadoE = new EmpleadoE(Convert.ToInt32(this.dGViewEmpleados[0, fila].Value.ToString()),
-            //                                 this.dGViewEmpleados[1, fila].Value.ToString(),
-            //                                 this.dGViewEmpleados[2, fila].Value.ToString(),
-            //                                 this.dGViewEmpleados[3, fila].Value.ToString(),
-            //                                 this.dGViewEmpleados[4, fila].Value.ToString(),
-            //                                 this.dGViewEmpleados[5, fila].Value.ToString(),
-            //                                 this.dGViewEmpleados[6, fila].Value.ToString(),
-            //                                 this.dGViewEmpleados[7, fila].Value.ToString(),
-            //                                 this.dGViewEmpleados[8, fila].Value.ToString());
+                    List<EmpleadoE> empleado = oEmpleadoD.obtenerEmpleados();
 
 
-            //        if (oEmpleadoD.borrarEmpleado(oEmpleadoE))
-            //        {
-            //            this.CargarDGview();
-            //            MessageBox.Show("Empleado borrado");
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Error borrando el cliente: " +
-            //                       oEmpleadoD.ErrorMsg, "Error",
-            //                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        }
-            //    }
-            //}
+                    if (oEmpleadoD.borrarEmpleado(empleado.ElementAt(fila)))
+                    {
+                        this.CargarDGview();
+                        MessageBox.Show("Empleado borrado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error borrando el cliente: " +
+                                   oEmpleadoD.ErrorMsg, "Error",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
