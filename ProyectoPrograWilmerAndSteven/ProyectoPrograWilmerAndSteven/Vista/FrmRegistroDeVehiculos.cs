@@ -19,34 +19,40 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         public FrmRegistroDeVehiculos()
         {
             InitializeComponent();
-            llenarComboMarcas();
             llenarComboClientes();
-
+            llenarComboModelos();
 
         }
 
-        public void llenarComboMarcas()
+        public FrmRegistroDeVehiculos(VehiculoE oV)
         {
-            this.comboBoxMarcas.Items.Clear();
+            InitializeComponent();
+            llenarComboClientes();
+            this.llenarComboModelos();
+            this.txtId.Text = oV.IdVehiculo.ToString();
+            this.textPlaca.Text = oV.Placa;
+            this.textNumeroDeMotor.Text = oV.NumeroMotor;
+            this.textCombustible.Text = oV.Combustible;
+            this.textClaseDeVehiculo.Text = oV.ClaseVehiculo;
+            this.textAnio.Text = oV.OModeloE.Anno.ToString();
+            this.textNumeroDeChasis.Text = oV.NumeroChasis;
+            this.textCapacidadDePersonas.Text = oV.CapacidadPersonas.ToString();
+            this.comboBoxClientes.SelectedItem = oV.OClienteE;
+            this.comboBoxModelos.SelectedValue = oV.OModeloE;
+        }
+
+        
+        public void llenarComboModelos()
+        {
             this.comboBoxModelos.Items.Clear();
-            MarcaD oMarcaD = new MarcaD();
-            List<MarcaE> marcas = oMarcaD.obtenerMarcas();
+            ModeloD oModeloD = new ModeloD();
 
-            foreach (MarcaE oMarcaE in marcas)
+            List<ModeloE> modelos = oModeloD.obtenerModelos();
+
+            foreach (ModeloE oModeloE in modelos)
             {
-                this.comboBoxMarcas.Items.Add(oMarcaE);
+                this.comboBoxModelos.Items.Add(oModeloE);
             }
-        }
-        public void llenarComboModelos(MarcaE pMarcaE)
-        {
-            //this.comboBoxModelos.Items.Clear();
-            //ModeloD oModeloD = new ModeloD();
-            //List<ModeloE> modelos = oModeloD.obtenerModelos(pMarcaE);
-
-            //foreach (ModeloE oModeloE in modelos)
-            //{
-            //    this.comboBoxModelos.Items.Add(oModeloE);
-            //}
         }
         public void llenarComboClientes()
         {
@@ -62,29 +68,26 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            //if (!(this.comboBoxMarcas.SelectedItem == "") &&
-            //    !(this.comboBoxModelos.SelectedItem == "") &&
-            //    !(this.textAnio.Text == "") &&
-            //    !(this.textPlaca.Text == "") &&
-            //    !(this.textClaseDeVehiculo.Text == "") &&
-            //    !(this.textCapacidadDePersonas.Text == "") &&
-            //    !(this.textNumeroDeMotor.Text == "") &&
-            //    !(this.textNumeroDeChasis.Text == "") &&
-            //    !(this.textCombustible.Text == ""))
+            if (
+                !(this.comboBoxModelos.SelectedItem == null) &&
+                !(this.textAnio.Text == "") &&
+                !(this.textPlaca.Text == "") &&
+                !(this.textClaseDeVehiculo.Text == "") &&
+                !(this.textCapacidadDePersonas.Text == "") &&
+                !(this.textNumeroDeMotor.Text == "") &&
+                !(this.textNumeroDeChasis.Text == "") &&
+                !(this.textCombustible.Text == ""))
             {
 
                 this.aceptar = true;
 
-                //this.oVehiculoE = new VehiculoE(Convert.ToInt32(idvehiculo), this.textPlaca.Text,
-                //    this.textClaseDeVehiculo.Text,
-                //    Convert.ToInt32(this.textCapacidadDePersonas),
-                //    comboBoxClientes.SelectedItem,
-                //    comboBoxModelos.SelectedItem,
-                //    this.textNumeroDeMotor.Text,
-                //    this.textNumeroDeChasis.Text,
-                //    this.textCombustible.Text);
+                oVehiculoE = new VehiculoE(Convert.ToInt32(this.txtId.Text), 
+                    this.textPlaca.Text,this.textClaseDeVehiculo.Text,Convert.ToInt32(this.textCapacidadDePersonas.Text),
+                    (ClienteE)this.comboBoxClientes.SelectedItem,
+                    (ModeloE)this.comboBoxModelos.SelectedItem,
+                    this.textNumeroDeMotor.Text, this.textNumeroDeChasis.Text, this.textCombustible.Text);
 
-                //this.Visible = false;
+                this.Visible = false;
             }
         }
 
