@@ -68,17 +68,19 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
                 string sql = "INSERT INTO schtaller.usuario(" +
-            "login, contrasenia, administrador, sistema, parametros, administracionOrdenes, gestionGerencial ); ";
+            "id_login , contrasenia, administrador, sistema, parametros, administracion_de_ordenes , gestion_gerencial)" +
+            "VALUES(@login, @contrasenia, @administrador,@sistema, @parametros, @administracionOrdenes," +
+            "@gestionGerencial);";
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@login", NpgsqlDbType.Integer, pUsuario.Login);
                 oP.agregarParametro("@contrasenia", NpgsqlDbType.Integer, pUsuario.Contrasenia);
-                oP.agregarParametro("@administrador", NpgsqlDbType.Integer, pUsuario.Administrador);
-                oP.agregarParametro("@sistema", NpgsqlDbType.Integer, pUsuario.Sistema);
-                oP.agregarParametro("@parametros", NpgsqlDbType.Integer, pUsuario.Parametros);
-                oP.agregarParametro("@administracionOrdenes", NpgsqlDbType.Integer, pUsuario.AdministracionDeOrdenes);
-                oP.agregarParametro("@gestionGerencial", NpgsqlDbType.Integer, pUsuario.GestionGerencial);
+                oP.agregarParametro("@administrador", NpgsqlDbType.Boolean, pUsuario.Administrador);
+                oP.agregarParametro("@sistema", NpgsqlDbType.Boolean, pUsuario.Sistema);
+                oP.agregarParametro("@parametros", NpgsqlDbType.Boolean, pUsuario.Parametros);
+                oP.agregarParametro("@administracionOrdenes", NpgsqlDbType.Boolean, pUsuario.AdministracionDeOrdenes);
+                oP.agregarParametro("@gestionGerencial", NpgsqlDbType.Boolean, pUsuario.GestionGerencial);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {
@@ -100,7 +102,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from schtaller.usuario where login = @login";
+                string sql = "delete from schtaller.usuario where id_login = @login";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -130,17 +132,19 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
                 
-                string sql = "update schtaller.usuario set login = @login, contrasenia = @contrasenia, administrador = @administrador, sistema = @sistema, parametros =<@parametros," +
-                    "administracionOrdenes = @administracionOrdenes,gestionGerencial = @gestionGerencial where usuario = @usuario";
+
+
+                string sql = "update schtaller.usuario set id_login = @login, contrasenia = @contrasenia, administrador = @administrador, sistema = @sistema, parametros =<@parametros," +
+                    "administracion_de_ordenes = @administracionOrdenes,gestion_gerencial = @gestionGerencial where usuario = @usuario";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@login", NpgsqlDbType.Integer, pUsuario.Login);
                 oP.agregarParametro("@contrasenia", NpgsqlDbType.Integer, pUsuario.Contrasenia);
-                oP.agregarParametro("@administrador", NpgsqlDbType.Integer, pUsuario.Administrador);
-                oP.agregarParametro("@sistema", NpgsqlDbType.Integer, pUsuario.Sistema);
-                oP.agregarParametro("@parametros", NpgsqlDbType.Integer, pUsuario.Parametros);
-                oP.agregarParametro("@administracionOrdenes", NpgsqlDbType.Integer, pUsuario.AdministracionDeOrdenes);
-                oP.agregarParametro("@gestionGerencial", NpgsqlDbType.Integer, pUsuario.GestionGerencial);
+                oP.agregarParametro("@administrador", NpgsqlDbType.Boolean, pUsuario.Administrador);
+                oP.agregarParametro("@sistema", NpgsqlDbType.Boolean, pUsuario.Sistema);
+                oP.agregarParametro("@parametros", NpgsqlDbType.Boolean, pUsuario.Parametros);
+                oP.agregarParametro("@administracionOrdenes", NpgsqlDbType.Boolean, pUsuario.AdministracionDeOrdenes);
+                oP.agregarParametro("@gestionGerencial", NpgsqlDbType.Boolean, pUsuario.GestionGerencial);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {

@@ -50,9 +50,27 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                // !(this.checkBoxAdministracionDeOrdenes.Checked == false) &&
                 //!(this.checkBoxGestionGerencial.Checked == false)) ;
             {
-
+                
                 this.aceptar = true;
-
+                if (checkBoxAdministrador.Checked || checkBoxParametros.Checked || checkBoxSistema.Checked
+                    || checkBoxAdministracionDeOrdenes.Checked
+                    || checkBoxGestionGerencial.Checked)
+                   
+                {
+                    checkBoxAdministrador.Checked = true;
+                    checkBoxParametros.Checked = true;
+                    checkBoxSistema.Checked = true;
+                    checkBoxAdministracionDeOrdenes.Checked = true;
+                    checkBoxGestionGerencial.Checked = true;
+                }
+                else
+                {
+                    checkBoxAdministrador.Checked = false;
+                    checkBoxParametros.Checked = false;
+                    checkBoxSistema.Checked = false;
+                    checkBoxAdministracionDeOrdenes.Checked = false;
+                    checkBoxGestionGerencial.Checked = false;
+                }
                 oUsuarioE = new UsuarioE(this.txtLogin.Text,
                     this.txtContrasenia.Text, this.checkBoxAdministrador.Checked, this.checkBoxParametros.Checked,
                     this.checkBoxSistema.Checked,

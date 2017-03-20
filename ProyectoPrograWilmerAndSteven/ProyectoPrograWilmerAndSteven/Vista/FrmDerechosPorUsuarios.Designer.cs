@@ -55,7 +55,7 @@
             this.btnActualizar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(740, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(648, 47);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -67,6 +67,7 @@
             this.btnRegistrar.Size = new System.Drawing.Size(72, 44);
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnEditar
             // 
@@ -76,6 +77,7 @@
             this.btnEditar.Size = new System.Drawing.Size(52, 44);
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // btnBorrar
             // 
@@ -85,6 +87,7 @@
             this.btnBorrar.Size = new System.Drawing.Size(54, 44);
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click_1);
             // 
             // btnActualizar
             // 
@@ -94,6 +97,7 @@
             this.btnActualizar.Size = new System.Drawing.Size(79, 44);
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
             // 
             // dGVUsuarios
             // 
@@ -109,8 +113,8 @@
             this.dGVUsuarios.Location = new System.Drawing.Point(0, 47);
             this.dGVUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.dGVUsuarios.Name = "dGVUsuarios";
-            this.dGVUsuarios.Size = new System.Drawing.Size(740, 311);
-            this.dGVUsuarios.TabIndex = 2;
+            this.dGVUsuarios.Size = new System.Drawing.Size(648, 311);
+            this.dGVUsuarios.TabIndex = 3;
             // 
             // login
             // 
@@ -149,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 358);
+            this.ClientSize = new System.Drawing.Size(648, 358);
             this.Controls.Add(this.dGVUsuarios);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmDerechosPorUsuarios";

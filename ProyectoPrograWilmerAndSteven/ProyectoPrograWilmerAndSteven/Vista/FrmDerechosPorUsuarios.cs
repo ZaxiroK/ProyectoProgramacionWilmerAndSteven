@@ -30,32 +30,35 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 this.dGVUsuarios.DataSource = usuario;
             }
         }
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            FrmRegistroDerechosUsuarios oFrm = new FrmRegistroDerechosUsuarios();
-            oFrm.ShowDialog();
+     
+      
 
-            if (oFrm.aceptar)
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            if (this.dGVUsuarios.Rows.Count > 0)
             {
-                if (oUsuarioD.agregarUsuario(oFrm.oUsuarioE))
+
+                int fila = this.dGVUsuarios.CurrentRow.Index;
+
+                List<UsuarioE> usuario = oUsuarioD.obtenerUsuarios();
+
+                FrmRegistroDerechosUsuarios oFrm = new FrmRegistroDerechosUsuarios(usuario.ElementAt(fila));
+                oFrm.ShowDialog();
+                if (oFrm.aceptar)
                 {
-                    this.CargarDGview();
-                    MessageBox.Show("Usuario agregado");
+
+                    if (oUsuarioD.modificarUsuario(oFrm.oUsuarioE, this.dGVUsuarios[0, fila].Value.ToString()));
+                    {
+                        this.CargarDGview();
+                        MessageBox.Show("Usuario actualizado");
+                    }
+
                 }
-                else
-                {
-                    MessageBox.Show("Error al agregar usuario: " +
-                               oUsuarioD.ErrorMsg, "Error",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
             }
         }
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            this.CargarDGview();
-        }
 
-        private void btnBorrar_Click(object sender, EventArgs e)
+        private void btnBorrar_Click_1(object sender, EventArgs e)
         {
             if (this.dGVUsuarios.Rows.Count > 0)
             {
@@ -86,28 +89,29 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnActualizar_Click_1(object sender, EventArgs e)
         {
-            if (this.dGVUsuarios.Rows.Count > 0)
+            this.CargarDGview();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            FrmRegistroDerechosUsuarios oFrm = new FrmRegistroDerechosUsuarios();
+            oFrm.ShowDialog();
+
+            if (oFrm.aceptar)
             {
-
-                int fila = this.dGVUsuarios.CurrentRow.Index;
-
-                List<UsuarioE> usuario = oUsuarioD.obtenerUsuarios();
-
-                FrmRegistroDerechosUsuarios oFrm = new FrmRegistroDerechosUsuarios(usuario.ElementAt(fila));
-                oFrm.ShowDialog();
-                if (oFrm.aceptar)
+                if (oUsuarioD.agregarUsuario(oFrm.oUsuarioE))
                 {
-
-                    if (oUsuarioD.modificarUsuario(oFrm.oUsuarioE, this.dGVUsuarios[0, fila].Value.ToString()));
-                    {
-                        this.CargarDGview();
-                        MessageBox.Show("Usuario actualizado");
-                    }
-
+                    this.CargarDGview();
+                    MessageBox.Show("Usuario agregado");
                 }
-
+                else
+                {
+                    MessageBox.Show("Error al agregar usuario: " +
+                               oUsuarioD.ErrorMsg, "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

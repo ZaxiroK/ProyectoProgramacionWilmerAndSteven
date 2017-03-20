@@ -105,7 +105,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 string sql = "INSERT INTO schtaller.vehiculo(" +
             "id_vehiculo, id_cliente, id_modelo, placa, clase_de_vehiculo," +
             "capacidad_de_personas, numero_de_motor, numero_de_chasis, combustible)"+
-             "VALUES(@id_vehiculo, @id_cliente, id_modelo, @placa, @clase_de_vehiculo," +
+             "VALUES(@id_vehiculo, @id_cliente, @id_modelo, @placa, @clase_de_vehiculo," +
             "@capacidad_de_personas, @numero_de_motor, @numero_de_chasis, @combustible);"; 
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
