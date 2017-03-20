@@ -22,94 +22,93 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         }
         private void CargarDGview()
         {
-            //List<ModeloE> modelo = oModeloD.obtenerModelos(MarcaE pMarca);
-            //if (!oModeloD.Error)
-            //{
-            //    this.dGVModelos.DataSource = modelo;
-            //}
+            List<ModeloE> modelo = oModeloD.obtenerModelos();
+            if (!oModeloD.Error)
+            {
+                foreach (ModeloE oM in modelo)
+                {
+                    this.dGVModelos.Rows.Add(oM.IdModelo.ToString(),
+                        oM.Descripcion, oM.Anno.ToString(), oM.OMarca);
+                }
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //FrmRegistroModelo oFrm = new FrmRegistroModelo();
-            //oFrm.ShowDialog();
+            FrmRegistroModelo oFrm = new FrmRegistroModelo();
+            oFrm.ShowDialog();
 
-            //if (oFrm.aceptar)
-            //{
-            //    if (oModeloD.agregarModelo(oFrm.oModelo))
-            //    {
-            //        this.CargarDGview();
-            //        MessageBox.Show("Modelo agregado");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Error al agregar modelo: " +
-            //                   oModeloD.ErrorMsg, "Error",
-            //                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
+            if (oFrm.aceptar)
+            {
+                if (oModeloD.agregarModelo(oFrm.oModelo))
+                {
+                    this.CargarDGview();
+                    MessageBox.Show("Modelo agregado");
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar modelo: " +
+                               oModeloD.ErrorMsg, "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //if (this.dGVModelos.Rows.Count > 0)
-            //{
+            if (this.dGVModelos.Rows.Count > 0)
+            {
 
-            //    int fila = this.dGVModelos.CurrentRow.Index;
+                int fila = this.dGVModelos.CurrentRow.Index;
 
-            //    ModeloE oModeloE = new ModeloE(Convert.ToInt32(this.dGVModelos[0, fila].Value.ToString()),
-            //                             this.dGVModelos[1, fila].Value.ToString(),
-            //                             this.dGVModelos[2, fila].Value.ToString(),
-            //                             this.dGVModelos[3, fila].Value.ToString());
+                List<ModeloE> modelo = oModeloD.obtenerModelos();
+                
 
-            //    FrmRegistroModelo oFrm = new FrmRegistroModelo(oModeloE);
-            //    oFrm.ShowDialog();
-            //    if (oFrm.aceptar)
-            //    {
+                FrmRegistroModelo oFrm = new FrmRegistroModelo(modelo.ElementAt(fila));
+                oFrm.ShowDialog();
+                if (oFrm.aceptar)
+                {
 
-            //        if (oModeloD.modificarModelo(oFrm.oModelo, Convert.ToInt32(this.dGVModelos[0, fila].Value.ToString()))) ;
-            //        {
-            //            this.CargarDGview();
-            //            MessageBox.Show("Modelo actualizado");
-            //        }
+                    if (oModeloD.modificarModelo(oFrm.oModelo, Convert.ToInt32(this.dGVModelos[0, fila].Value.ToString())));
+                    {
+                        this.CargarDGview();
+                        MessageBox.Show("Modelo actualizado");
+                    }
 
-            //    }
+                }
 
-            //}
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            //if (this.dGVModelos.Rows.Count > 0)
-            //{
-            //    DialogResult respuesta = MessageBox.Show("¿Está seguro de borrar?",
-            //                                             "Error",
-            //                                              MessageBoxButtons.YesNo,
-            //                                              MessageBoxIcon.Question);
-            //    if (respuesta == DialogResult.Yes)
-            //    {
+            if (this.dGVModelos.Rows.Count > 0)
+            {
+                DialogResult respuesta = MessageBox.Show("¿Está seguro de borrar?",
+                                                         "Error",
+                                                          MessageBoxButtons.YesNo,
+                                                          MessageBoxIcon.Question);
+                if (respuesta == DialogResult.Yes)
+                {
 
-            //        int fila = this.dGVModelos.CurrentRow.Index;
+                    int fila = this.dGVModelos.CurrentRow.Index;
 
-            //        ModeloE oModeloE = new ModeloE(Convert.ToInt32(this.dGVModelos[0, fila].Value.ToString()),
-            //                             this.dGVModelos[1, fila].Value.ToString(),
-            //                             this.dGVModelos[2, fila].Value.ToString(),
-            //                             this.dGVModelos[3, fila].Value.ToString());
+                    List<ModeloE> modelo = oModeloD.obtenerModelos();
 
 
-            //        if (oModeloD.borrarModelo(oModeloE))
-            //        {
-            //            this.CargarDGview();
-            //            MessageBox.Show("Modelo borrada");
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Error borrando el modelo: " +
-            //                       oModeloD.ErrorMsg, "Error",
-            //                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        }
-            //    }
-            //}
+                    if (oModeloD.borrarModelo(modelo.ElementAt(fila)))
+                    {
+                        this.CargarDGview();
+                        MessageBox.Show("Modelo borrada");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error borrando el modelo: " +
+                                   oModeloD.ErrorMsg, "Error",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

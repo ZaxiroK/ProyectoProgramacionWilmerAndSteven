@@ -39,14 +39,14 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         }
         public void llenarComboModelos(MarcaE pMarcaE)
         {
-            this.comboBoxModelos.Items.Clear();
-            ModeloD oModeloD = new ModeloD();
-            List<ModeloE> modelos = oModeloD.obtenerModelos(pMarcaE);
+            //this.comboBoxModelos.Items.Clear();
+            //ModeloD oModeloD = new ModeloD();
+            //List<ModeloE> modelos = oModeloD.obtenerModelos(pMarcaE);
 
-            foreach (ModeloE oModeloE in modelos)
-            {
-                this.comboBoxModelos.Items.Add(oModeloE);
-            }
+            //foreach (ModeloE oModeloE in modelos)
+            //{
+            //    this.comboBoxModelos.Items.Add(oModeloE);
+            //}
         }
         public void llenarComboClientes()
         {
@@ -62,15 +62,15 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (!(this.comboBoxMarcas.SelectedItem == "") &&
-                !(this.comboBoxModelos.SelectedItem == "") &&
-                !(this.textAnio.Text == "") &&
-                !(this.textPlaca.Text == "") &&
-                !(this.textClaseDeVehiculo.Text == "") &&
-                !(this.textCapacidadDePersonas.Text == "") &&
-                !(this.textNumeroDeMotor.Text == "") &&
-                !(this.textNumeroDeChasis.Text == "") &&
-                !(this.textCombustible.Text == ""))
+            //if (!(this.comboBoxMarcas.SelectedItem == "") &&
+            //    !(this.comboBoxModelos.SelectedItem == "") &&
+            //    !(this.textAnio.Text == "") &&
+            //    !(this.textPlaca.Text == "") &&
+            //    !(this.textClaseDeVehiculo.Text == "") &&
+            //    !(this.textCapacidadDePersonas.Text == "") &&
+            //    !(this.textNumeroDeMotor.Text == "") &&
+            //    !(this.textNumeroDeChasis.Text == "") &&
+            //    !(this.textCombustible.Text == ""))
             {
 
                 this.aceptar = true;

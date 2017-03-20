@@ -37,8 +37,8 @@
             this.dGVModelos = new System.Windows.Forms.DataGridView();
             this.idModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVModelos)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             this.btnActualizar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(700, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(525, 42);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -62,7 +62,7 @@
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(67, 44);
+            this.btnAgregar.Size = new System.Drawing.Size(53, 39);
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -72,7 +72,7 @@
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(52, 44);
+            this.btnEditar.Size = new System.Drawing.Size(41, 39);
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -82,7 +82,7 @@
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(54, 44);
+            this.btnBorrar.Size = new System.Drawing.Size(43, 39);
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
@@ -92,7 +92,7 @@
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(79, 44);
+            this.btnActualizar.Size = new System.Drawing.Size(63, 39);
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -103,32 +103,23 @@
             this.dGVModelos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idModelo,
             this.Marca,
-            this.descripcion,
-            this.Anio});
+            this.Anio,
+            this.descripcion});
             this.dGVModelos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGVModelos.Location = new System.Drawing.Point(0, 47);
-            this.dGVModelos.Margin = new System.Windows.Forms.Padding(4);
+            this.dGVModelos.Location = new System.Drawing.Point(0, 42);
             this.dGVModelos.Name = "dGVModelos";
-            this.dGVModelos.Size = new System.Drawing.Size(700, 206);
+            this.dGVModelos.Size = new System.Drawing.Size(525, 164);
             this.dGVModelos.TabIndex = 1;
             // 
             // idModelo
             // 
-            this.idModelo.DataPropertyName = "idModelo";
             this.idModelo.HeaderText = "ID";
             this.idModelo.Name = "idModelo";
             // 
             // Marca
             // 
-            this.Marca.DataPropertyName = "oMarca";
-            this.Marca.HeaderText = "Marca";
+            this.Marca.HeaderText = "Modelo";
             this.Marca.Name = "Marca";
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
             // 
             // Anio
             // 
@@ -136,15 +127,21 @@
             this.Anio.HeaderText = "Año";
             this.Anio.Name = "Anio";
             // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Marca";
+            this.descripcion.Name = "descripcion";
+            // 
             // FrmModelo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 253);
+            this.ClientSize = new System.Drawing.Size(525, 206);
             this.Controls.Add(this.dGVModelos);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmModelo";
-            this.Text = "FrmModelo";
+            this.Text = "Modelos";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVModelos)).EndInit();
@@ -163,7 +160,7 @@
         private System.Windows.Forms.DataGridView dGVModelos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idModelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
     }
 }

@@ -19,7 +19,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         public FrmRegistroModelo()
         {
             InitializeComponent();
-            this.llenarComboMarcas();//
+            this.llenarComboMarcas();
         }
         
 
@@ -28,7 +28,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             InitializeComponent();
             this.llenarComboMarcas();
             this.oModelo = pModelo;
-            this.comboBoxMarcas.SelectedItem = pModelo.OMarca.ToString();// 
+            this.txtId.Text = pModelo.IdModelo.ToString();
+            this.comboBoxMarcas.SelectedItem = pModelo.OMarca.ToString(); 
             this.txtDescripcion.Text = pModelo.Descripcion.ToString();
             this.txtAnio.Text = pModelo.Anno.ToString();
         }
@@ -44,7 +45,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
 
                 
-               // this.oModelo = new ModeloE(/*id,*/this.txtDescripcion.Text, /*Marca,*/ Convert.ToInt32(this.txtAnio.Text));
+               this.oModelo = new ModeloE(Convert.ToInt32(this.txtId.Text),this.txtDescripcion.Text, ((MarcaE)this.comboBoxMarcas.SelectedItem), Convert.ToInt32(this.txtAnio.Text));
                 this.aceptar = true;
                 this.Visible = false;
             }
