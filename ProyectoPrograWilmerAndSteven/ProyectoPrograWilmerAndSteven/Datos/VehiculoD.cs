@@ -52,7 +52,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3," +
                 "mo.id_modelo  as idModelo, mo.descripcion  as descripcion, mo.anio as anno," +
                 "m.id_marca as idMarca, m.descripcion as descripcion" +
-                " from Vehiculo v, Cliente c,Modelo mo, Marca m" +
+                " from schtaller.Vehiculo v, schtaller.Cliente c, schtaller.Modelo mo, schtaller.Marca m" +
                 " where c.cedula = v.id_cliente and v.id_modelo = mo.id_modelo;";
 
             //if (pCliente != null)
@@ -102,7 +102,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO vehiculo("+
+                string sql = "INSERT INTO schtaller.vehiculo(" +
             "id_vehiculo, id_cliente, id_modelo, placa, clase_de_vehiculo," +
             "capacidad_de_personas, numero_de_motor, numero_de_chasis, combustible)"+
              "VALUES(@id_vehiculo, @id_cliente, id_modelo, @placa, @clase_de_vehiculo," +
@@ -142,7 +142,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from vehiculo where id_vehiculo = @id_vehiculo";
+                string sql = "delete from schtaller.vehiculo where id_vehiculo = @id_vehiculo";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -171,7 +171,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             
             try
             {
-                string sql = "UPDATE vehiculo "+
+                string sql = "UPDATE schtaller.vehiculo " +
      "SET id_vehiculo = @id_vehiculo, id_cliente = @id_cliente, id_modelo = @id_modelo, placa = @placa, clase_de_vehiculo = @clase_de_vehiculo," +
          "capacidad_de_personas = @capacidad_de_personas, numero_de_motor = @numero_de_motor, numero_de_chasis = @numero_de_chasis," +
         "combustible = @combustible" +

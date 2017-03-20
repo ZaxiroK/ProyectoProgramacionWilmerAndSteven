@@ -17,21 +17,13 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             InitializeComponent();
         }
 
-        private void FrmTallerMecanico_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void ItemRegistroEmpleados(object sender, EventArgs e)
         {
             FrmEmpleado oFrm = new FrmEmpleado();
             oFrm.ShowDialog();
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ItemRegistroClientes_Click(object sender, EventArgs e)
         {
@@ -66,6 +58,17 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         private void itemRegistroPuestos_Click(object sender, EventArgs e)
         {
             FrmPuesto oFrm = new FrmPuesto();
+            oFrm.ShowDialog();
+        }
+
+        private void ItemRegistroVehiculos_Click(object sender, EventArgs e)
+        {
+            FrmVehiculo oFrm = new FrmVehiculo();
+            oFrm.ShowDialog();
+        }
+        private void ItemDerechosUsuarios(object sender, EventArgs e)
+        {
+            FrmDerechosPorUsuarios oFrm = new FrmDerechosPorUsuarios();
             oFrm.ShowDialog();
         }
     }

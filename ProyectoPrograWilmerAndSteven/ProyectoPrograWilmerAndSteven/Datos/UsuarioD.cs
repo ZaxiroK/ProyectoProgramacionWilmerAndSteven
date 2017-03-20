@@ -48,8 +48,8 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             string sql = "select u.id_login as login, u.contrasenia as contrasenia, " +
                         " u.administrador as administrador, u.sistema as sistema," +
                         "u.parametros as parametros, u.administracion_de_ordenes as administracionOrdenes," +
-                        "u.gestion_gerencial as gestionGerencial"+
-                         "from Usuario u";
+                        "u.gestion_gerencial as gestionGerencial "+
+                         "from schtaller.usuario u";
 
             dsetUsuarios = this.conexion.ejecutarConsultaSQL(sql);
             foreach (DataRow tupla in dsetUsuarios.Tables[0].Rows)
@@ -100,7 +100,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from usuario where login = @login";
+                string sql = "delete from schtaller.usuario where login = @login";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -123,14 +123,14 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public bool modificarUsuario(UsuarioE pUsuario)
+        public bool modificarUsuario(UsuarioE pUsuario, string login)
         {
             bool estado = true;
 
             try
             {
                 
-                string sql = "update usuario set login = @login, contrasenia = @contrasenia, administrador = @administrador, sistema = @sistema, parametros =<@parametros,"+
+                string sql = "update schtaller.usuario set login = @login, contrasenia = @contrasenia, administrador = @administrador, sistema = @sistema, parametros =<@parametros," +
                     "administracionOrdenes = @administracionOrdenes,gestionGerencial = @gestionGerencial where usuario = @usuario";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();

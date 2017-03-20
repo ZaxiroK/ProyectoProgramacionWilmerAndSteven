@@ -95,6 +95,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             this.Visible = false;
         }
+
+        
     }
 
 }

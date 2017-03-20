@@ -47,7 +47,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             DataSet dsetMarcas;
             string sql = "select mo.id_modelo  as idModelo, mo.descripcion  as descripcion, mo.anio as anno," +
                             "m.id_marca as idMarca, m.descripcion as descripcion" +
-                               " from modelo mo, marca m "+
+                               " from schtaller.modelo mo, schtaller.marca m " +
                                "where  m.id_marca = mo.id_marca";
             //if (pMarca != null)
             //{
@@ -74,7 +74,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO modelo("+
+                string sql = "INSERT INTO schtaller.modelo(" +
             "id_modelo, id_marca, descripcion, anio)"+
                "VALUES(@id_modelo, @id_marca, @descripcion, @anio)";
                 
@@ -106,7 +106,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from modelo where id_modelo = @id_modelo";
+                string sql = "delete from schtaller.modelo where id_modelo = @id_modelo";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -135,7 +135,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
             try
             {
-                string sql = "update modelo set id_modelo = @id_modelo , descripcion = @descripcion,"+
+                string sql = "update schtaller.modelo set id_modelo = @id_modelo , descripcion = @descripcion," +
                     "id_marca = @id_marca, anio = @anio where id_modelo = @idViejo";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
