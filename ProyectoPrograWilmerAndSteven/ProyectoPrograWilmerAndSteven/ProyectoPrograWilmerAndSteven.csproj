@@ -86,6 +86,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\FrmCatalogoDeReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCatalogoDeReparaciones.Designer.cs">
+      <DependentUpon>FrmCatalogoDeReparaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmCatalogoDeRepuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </Compile>
     <EmbeddedResource Include="Vista\FrmCambioContrasenia.resx">
       <DependentUpon>FrmCambioContrasenia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmCatalogoDeReparaciones.resx">
+      <DependentUpon>FrmCatalogoDeReparaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCatalogoDeRepuesto.resx">
       <DependentUpon>FrmCatalogoDeRepuesto.cs</DependentUpon>

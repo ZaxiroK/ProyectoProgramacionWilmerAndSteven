@@ -46,18 +46,18 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             List<CatalogoReparacionE> catalogoReparaciones = new List<CatalogoReparacionE>();
             DataSet dsetCatalogoReparaciones;
             
-            string sql = "select c.id_catalogo_reparacion as id_catalogo_reparacion, c.descripcion as descripcion, " +
-                        "c.horas_reparacion as horasReparacion, c.costo_reparacion as costoReparacion" +
-                         "from CatalogoReparacion c";
+            string sql = "select * from CatalogoReparacion";
 
             dsetCatalogoReparaciones = this.conexion.ejecutarConsultaSQL(sql);
+
             foreach (DataRow tupla in dsetCatalogoReparaciones.Tables[0].Rows)
             {
 
-            CatalogoReparacionE oCatalogoReparacion = new CatalogoReparacionE(Convert.ToInt32(tupla["id_catalogo_reparacion"].ToString()),tupla["descripcion"].ToString(),
-                    Convert.ToInt32(tupla["horasReparacion"].ToString()),Convert.ToDouble(tupla["costoReparacion"].ToString()));
+            CatalogoReparacionE oCatalogoReparacion = new CatalogoReparacionE(Convert.ToInt32(tupla[0].ToString()),tupla[1].ToString(),
+                    Convert.ToInt32(tupla[2].ToString()),Convert.ToDouble(tupla[3].ToString()));
                 catalogoReparaciones.Add(oCatalogoReparacion);
             }
+
             return catalogoReparaciones;
         }
         public bool agregarCatalogoReparacion(CatalogoReparacionE pCatalogoReparacion)
@@ -66,15 +66,16 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO schtaller.catalogoReparacion(" +
-            "id_catalogo_reparacion,descripcion, horas_reparacion, costo_reparacion); ";
+                string sql = "INSERT INTO catalogoreparacion("+
+            "id_catalogo_reparacion, descripcion, horas_reparacion, costo_reparacion)"+
+            "VALUES(@id_catalogo_reparacion, @descripcion, @horas_reparacion, @costo_reparacion);";
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_catalogo_reparacion", NpgsqlDbType.Integer, pCatalogoReparacion.Id_catalogoReparacion);
-                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pCatalogoReparacion.Descripcion);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Varchar, pCatalogoReparacion.Descripcion);
                 oP.agregarParametro("@horas_reparacion", NpgsqlDbType.Integer, pCatalogoReparacion.HorasReparacion);
-                oP.agregarParametro("@costo_reparacion", NpgsqlDbType.Integer, pCatalogoReparacion.CostoReparacion);
+                oP.agregarParametro("@costo_reparacion", NpgsqlDbType.Double, pCatalogoReparacion.CostoReparacion);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {
@@ -101,7 +102,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
                 parametros[0] = new NpgsqlParameter();
-                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
+                parametros[0].NpgsqlDbType = NpgsqlDbType.Integer;
                 parametros[0].ParameterName = "@id_catalogo_reparacion";
                 parametros[0].Value = pCatalogoReparacion.Id_catalogoReparacion;
 
@@ -119,7 +120,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public bool modificarCatalogoReparacion(CatalogoReparacionE pCatalogoReparacion)
+        public bool modificarCatalogoReparacion(CatalogoReparacionE pCatalogoReparacion, int codigo)
         {
             bool estado = true;
 
@@ -127,13 +128,14 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             {
                 
                 string sql = "update catalogoReparacion set id_catalogo_reparacion = @id_catalogo_reparacion , descripcion = @descripcion, horas_reparacion = @horas_reparacion," +
-                     "costo_reparacion = @costo_reparacion where CatalogoReparacion = @CatalogoReparacion";
+                     "costo_reparacion = @costo_reparacion where id_catalogo_reparacion = @CatalogoReparacion";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_catalogo_reparacion", NpgsqlDbType.Integer, pCatalogoReparacion.Id_catalogoReparacion);
-                oP.agregarParametro("@descripcion", NpgsqlDbType.Integer, pCatalogoReparacion.Descripcion);
+                oP.agregarParametro("@descripcion", NpgsqlDbType.Varchar, pCatalogoReparacion.Descripcion);
                 oP.agregarParametro("@horas_reparacion", NpgsqlDbType.Integer, pCatalogoReparacion.HorasReparacion);
-                oP.agregarParametro("@costo_reparacion", NpgsqlDbType.Integer, pCatalogoReparacion.CostoReparacion);
+                oP.agregarParametro("@costo_reparacion", NpgsqlDbType.Double, pCatalogoReparacion.CostoReparacion);
+                oP.agregarParametro("@CatalogoReparacion", NpgsqlDbType.Integer, codigo);
 
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
