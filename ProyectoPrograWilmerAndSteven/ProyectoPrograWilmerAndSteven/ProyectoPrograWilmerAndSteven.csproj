@@ -92,6 +92,12 @@
     <Compile Include="Vista\FrmCatalogoDeReparaciones.Designer.cs">
       <DependentUpon>FrmCatalogoDeReparaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmCatalogoDeReparaciones2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCatalogoDeReparaciones2.Designer.cs">
+      <DependentUpon>FrmCatalogoDeReparaciones2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmCatalogoDeRepuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCatalogoDeReparaciones.resx">
       <DependentUpon>FrmCatalogoDeReparaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmCatalogoDeReparaciones2.resx">
+      <DependentUpon>FrmCatalogoDeReparaciones2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCatalogoDeRepuesto.resx">
       <DependentUpon>FrmCatalogoDeRepuesto.cs</DependentUpon>
