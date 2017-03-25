@@ -49,7 +49,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                             "e.apellido1 as apellido1, e.apellido2 as apellido2," +
                              "e.direccion as direccion, e.telefono1 as telefono1, e.telefono2 as telefono2,e.telefono3 as telefono3," +
                               "p.id_puesto as id_puesto, p.salario as salario, p.puesto as puesto, p.descripcion as descripcion" +
-                               " from Empleado e, Puesto p where e.id_puesto = p.id_puesto";
+                               " from schtaller.Empleado e, schtaller.Puesto p where e.id_puesto = p.id_puesto";
             //if (pPuesto != null)
             //{
             //    sql += "and p.IdPuesto = @puesto";
@@ -78,7 +78,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO empleado("+
+                string sql = "INSERT INTO schtaller.empleado(" +
             "cedula, nombre, apellido1, apellido2, direccion, id_puesto, telefono1,"+ 
             "telefono2, telefono3)"+
             "VALUES(@cedula, @nombre, @apellido1, @apellido2, @direccion, @puesto, @telefono1," +
@@ -116,7 +116,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from empleado where cedula = @cedula";
+                string sql = "delete from schtaller.empleado where cedula = @cedula";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -146,7 +146,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
 
-                string sql = "update empleado set cedula = @cedula , nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2," +
+                string sql = "update schtaller.empleado set cedula = @cedula , nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2," +
                     "direccion = @direccion, id_puesto = @puesto, telefono1 = @telefono1, telefono2 = telefono2, telefono3 = @telefono3 where cedula = @cedulaVieja";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();

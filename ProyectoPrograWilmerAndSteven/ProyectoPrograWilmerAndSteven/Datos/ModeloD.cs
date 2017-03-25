@@ -49,17 +49,9 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                             "m.id_marca as idMarca, m.descripcion as descripcion" +
                                " from schtaller.modelo mo, schtaller.marca m " +
                                "where  m.id_marca = mo.id_marca";
-            //if (pMarca != null)
-            //{
-                //sql += "and m.IdMarca = @marca";
-                //Parametro oParametro = new Parametro();
-                //oParametro.agregarParametro("@marca", NpgsqlDbType.Varchar, pMarca.IdMarca);
-                //dsetMarcas = this.conexion.ejecutarConsultaSQL(sql, "modelo", oParametro.obtenerParametros());
-            //}
-            //else
-            //{
-                dsetMarcas = this.conexion.ejecutarConsultaSQL(sql);
-            //}
+
+            dsetMarcas = this.conexion.ejecutarConsultaSQL(sql);
+
             foreach (DataRow tupla in dsetMarcas.Tables[0].Rows)
             {
                 MarcaE oMarca = new MarcaE(Convert.ToInt32(tupla[3].ToString()), tupla[4].ToString());
@@ -75,9 +67,9 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
                 string sql = "INSERT INTO schtaller.modelo(" +
-            "id_modelo, id_marca, descripcion, anio)"+
+            "id_modelo, id_marca, descripcion, anio)" +
                "VALUES(@id_modelo, @id_marca, @descripcion, @anio)";
-                
+
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();

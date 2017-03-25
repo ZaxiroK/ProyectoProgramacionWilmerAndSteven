@@ -68,7 +68,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                                 "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3," +
                                " mo.id_modelo as idModelo, mo.descripcion as descripcion, mo.anio as anno," +
                                " m.id_marca as idMarca, m.descripcion as descripcion" +
-                               " from OrdenDeTrabajo t, empleado e, cliente c, modelo mo, marca m, puesto p, vehiculo v" +
+                               " from schtaller.OrdenDeTrabajo t, schtaller.empleado e, schtaller.cliente c, schtaller.modelo mo, schtaller.marca m, schtaller.puesto p, schtaller.vehiculo v" +
                                 " where t.id_empleado = e.cedula and t.id_vehiculo = v.id_vehiculo";
 
 
@@ -164,7 +164,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from OrdenDeTrabajo where id_orden_de_trabajo = @id_orden_de_trabajo";
+                string sql = "delete from schtaller.OrdenDeTrabajo where id_orden_de_trabajo = @id_orden_de_trabajo";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -194,9 +194,9 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
 
-                string sql = "update OrdenDeTrabajo set id_orden_de_trabajo = @id_orden_de_trabajo , anio = @anio, fecha_de_ingreso_de_vehiculo = @fecha_de_ingreso_de_vehiculo," +
+                string sql = "update schtaller.OrdenDeTrabajo set id_orden_de_trabajo = @id_orden_de_trabajo , anio = @anio, fecha_de_ingreso_de_vehiculo = @fecha_de_ingreso_de_vehiculo," +
                      "fecha_de_salida = @fecha_de_salida, fecha_de_facturacion = @fecha_de_facturacion, costo_total = @costo_total, id_empleado = @id_empleado," +
-                     "id_vehiculo = @id_vehiculo, estado = @estado, factura_numero = @factura_numero where OrdenDeTrabajo = @OrdenDeTrabajo";
+                     "id_vehiculo = @id_vehiculo, estado = @estado, factura_numero = @factura_numero where schtaller.OrdenDeTrabajo = @OrdenDeTrabajo";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenTrabajo.IdOrdenDetrabajo);

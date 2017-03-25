@@ -65,7 +65,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO puesto("+
+                string sql = "INSERT INTO schtaller.puesto(" +
             "id_puesto, salario, puesto, descripcion)"+
             "VALUES(@id_puesto, @salario, @puesto, @descripcion); ";
 
@@ -96,7 +96,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from puesto where id_puesto = @id_puesto";
+                string sql = "delete from schtaller.puesto where id_puesto = @id_puesto";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -125,7 +125,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
             try
             {
-                string sql = "update puesto set id_puesto = @id_puesto, salario = @salario, puesto = @puesto, descripcion = @descripcion where id_puesto = @antiguoId";
+                string sql = "update schtaller.puesto set id_puesto = @id_puesto, salario = @salario, puesto = @puesto, descripcion = @descripcion where id_puesto = @antiguoId";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_puesto", NpgsqlDbType.Integer, pPuesto.IdPuesto);

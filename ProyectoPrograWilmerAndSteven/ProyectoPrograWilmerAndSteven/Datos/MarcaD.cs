@@ -92,7 +92,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from marca where id_marca = @id_marca";
+                string sql = "delete from schtaller.marca where id_marca = @id_marca";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -121,7 +121,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
             try
             {
-                string sql = "update marca set id_marca = @id_marca , descripcion = @descripcion where id_marca = @marca";
+                string sql = "update schtaller.marca set id_marca = @id_marca , descripcion = @descripcion where id_marca = @marca";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@id_marca", NpgsqlDbType.Integer, pMarca.IdMarca);

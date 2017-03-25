@@ -105,7 +105,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "delete from cliente where cedula = @cedula";
+                string sql = "delete from schtaller.cliente where cedula = @cedula";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
@@ -135,7 +135,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
                
-                string sql = "update cliente set cedula = @cedula , nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2,"+
+                string sql = "update schtaller.cliente set cedula = @cedula , nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2," +
                     "direccion = @direccion, telefono1 = @telefono1, telefono2 = @telefono2, telefono3 = @telefono3 where cedula = @cliente";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
