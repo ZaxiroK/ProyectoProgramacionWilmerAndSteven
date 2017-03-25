@@ -24,8 +24,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             InitializeComponent();
    
             this.txtLogin.Text = oU.Login.ToString();
-            this.txtContrasenia.Enabled = false;
-           //this.txtContrasenia.Text = oU.Contrasenia;
+            this.txtContrasenia.Visible = false;
+            this.txtContrasenia.Text = oU.Contrasenia;
             this.checkBoxAdministrador.Checked = oU.Administrador;
             this.checkBoxParametros.Checked = oU.Parametros;
             this.checkBoxSistema.Checked = oU.Sistema;

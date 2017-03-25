@@ -66,7 +66,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             FrmVehiculo oFrm = new FrmVehiculo();
             oFrm.ShowDialog();
         }
-        private void ItemDerechosUsuarios(object sender, EventArgs e)
+        private void itemDerechosUsuarios_Click(object sender, EventArgs e)
         {
             FrmDerechosPorUsuarios oFrm = new FrmDerechosPorUsuarios();
             oFrm.ShowDialog();

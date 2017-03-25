@@ -34,7 +34,6 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.textNumeroDeMotor.Text = oV.NumeroMotor;
             this.textCombustible.Text = oV.Combustible;
             this.textClaseDeVehiculo.Text = oV.ClaseVehiculo;
-            this.textAnio.Text = oV.OModeloE.Anno.ToString();
             this.textNumeroDeChasis.Text = oV.NumeroChasis;
             this.textCapacidadDePersonas.Text = oV.CapacidadPersonas.ToString();
             this.comboBoxClientes.SelectedItem = oV.OClienteE;
@@ -70,7 +69,6 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             if (
                 !(this.comboBoxModelos.SelectedItem == null) &&
-                !(this.textAnio.Text == "") &&
                 !(this.textPlaca.Text == "") &&
                 !(this.textClaseDeVehiculo.Text == "") &&
                 !(this.textCapacidadDePersonas.Text == "") &&

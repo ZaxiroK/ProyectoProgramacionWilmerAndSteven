@@ -74,7 +74,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
-                oP.agregarParametro("@login", NpgsqlDbType.Integer, pUsuario.Login);
+                oP.agregarParametro("@login", NpgsqlDbType.Varchar, pUsuario.Login);
                 oP.agregarParametro("@contrasenia", NpgsqlDbType.Integer, pUsuario.Contrasenia);
                 oP.agregarParametro("@administrador", NpgsqlDbType.Boolean, pUsuario.Administrador);
                 oP.agregarParametro("@sistema", NpgsqlDbType.Boolean, pUsuario.Sistema);
@@ -134,11 +134,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 
 
 
-                string sql = "update schtaller.usuario set id_login = @login, contrasenia = @contrasenia, administrador = @administrador, sistema = @sistema, parametros =<@parametros," +
-                    "administracion_de_ordenes = @administracionOrdenes,gestion_gerencial = @gestionGerencial where usuario = @usuario";
+                string sql = "update schtaller.usuario set id_login = @login, contrasenia = @contrasenia, administrador = @administrador, sistema = @sistema, parametros = @parametros," +
+                    "administracion_de_ordenes = @administracionOrdenes,gestion_gerencial = @gestionGerencial where id_login = @login";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
-                oP.agregarParametro("@login", NpgsqlDbType.Integer, pUsuario.Login);
+                oP.agregarParametro("@login", NpgsqlDbType.Varchar, pUsuario.Login);
                 oP.agregarParametro("@contrasenia", NpgsqlDbType.Integer, pUsuario.Contrasenia);
                 oP.agregarParametro("@administrador", NpgsqlDbType.Boolean, pUsuario.Administrador);
                 oP.agregarParametro("@sistema", NpgsqlDbType.Boolean, pUsuario.Sistema);

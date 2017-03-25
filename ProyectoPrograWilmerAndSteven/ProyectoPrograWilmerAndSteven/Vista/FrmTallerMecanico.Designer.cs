@@ -79,7 +79,6 @@
             this.itemCambioContrasenia.Name = "itemCambioContrasenia";
             this.itemCambioContrasenia.Size = new System.Drawing.Size(238, 26);
             this.itemCambioContrasenia.Text = "Cambio de contraseña";
-
             // 
             // itemRegistroEmpleados
             // 
@@ -100,6 +99,7 @@
             this.itemDerechosUsuarios.Name = "itemDerechosUsuarios";
             this.itemDerechosUsuarios.Size = new System.Drawing.Size(238, 26);
             this.itemDerechosUsuarios.Text = "Derechos por usuarios";
+            this.itemDerechosUsuarios.Click += new System.EventHandler(this.itemDerechosUsuarios_Click);
             // 
             // itemSalir
             // 
@@ -183,7 +183,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTallerMecanico";
             this.Text = "Taller Mecanico";
-
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);

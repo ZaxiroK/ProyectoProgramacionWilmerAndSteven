@@ -55,7 +55,7 @@
             this.btnActualizar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(648, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(1002, 47);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -113,7 +113,7 @@
             this.dGVUsuarios.Location = new System.Drawing.Point(0, 47);
             this.dGVUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.dGVUsuarios.Name = "dGVUsuarios";
-            this.dGVUsuarios.Size = new System.Drawing.Size(648, 311);
+            this.dGVUsuarios.Size = new System.Drawing.Size(1002, 410);
             this.dGVUsuarios.TabIndex = 3;
             // 
             // login
@@ -136,16 +136,19 @@
             // 
             // parametros
             // 
+            this.parametros.DataPropertyName = "parametros";
             this.parametros.HeaderText = "Parámetros";
             this.parametros.Name = "parametros";
             // 
             // AdministracionDeOrdenes
             // 
+            this.AdministracionDeOrdenes.DataPropertyName = "AdministracionDeOrdenes";
             this.AdministracionDeOrdenes.HeaderText = "Administración de ordenes";
             this.AdministracionDeOrdenes.Name = "AdministracionDeOrdenes";
             // 
             // gestionGerencial
             // 
+            this.gestionGerencial.DataPropertyName = "gestionGerencial";
             this.gestionGerencial.HeaderText = "Gestión gerencial";
             this.gestionGerencial.Name = "gestionGerencial";
             // 
@@ -153,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 358);
+            this.ClientSize = new System.Drawing.Size(1002, 457);
             this.Controls.Add(this.dGVUsuarios);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmDerechosPorUsuarios";

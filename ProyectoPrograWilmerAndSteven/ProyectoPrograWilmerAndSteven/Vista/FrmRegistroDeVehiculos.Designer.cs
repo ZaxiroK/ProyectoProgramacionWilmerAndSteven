@@ -39,9 +39,7 @@
             this.textCapacidadDePersonas = new System.Windows.Forms.TextBox();
             this.textClaseDeVehiculo = new System.Windows.Forms.TextBox();
             this.labelCapacidadDePersonas = new System.Windows.Forms.Label();
-            this.labelAño = new System.Windows.Forms.Label();
             this.textPlaca = new System.Windows.Forms.TextBox();
-            this.textAnio = new System.Windows.Forms.TextBox();
             this.labelPlaca = new System.Windows.Forms.Label();
             this.labelClaseDeVehiculo = new System.Windows.Forms.Label();
             this.labelModelo = new System.Windows.Forms.Label();
@@ -55,7 +53,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(159, 539);
+            this.btnCerrar.Location = new System.Drawing.Point(159, 483);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(88, 34);
@@ -66,7 +64,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(535, 539);
+            this.btnRegistrar.Location = new System.Drawing.Point(535, 483);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(89, 34);
@@ -77,7 +75,7 @@
             // 
             // textCombustible
             // 
-            this.textCombustible.Location = new System.Drawing.Point(313, 486);
+            this.textCombustible.Location = new System.Drawing.Point(313, 430);
             this.textCombustible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textCombustible.Multiline = true;
             this.textCombustible.Name = "textCombustible";
@@ -88,7 +86,7 @@
             // 
             this.labelCombustible.AutoSize = true;
             this.labelCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCombustible.Location = new System.Drawing.Point(125, 494);
+            this.labelCombustible.Location = new System.Drawing.Point(125, 438);
             this.labelCombustible.Name = "labelCombustible";
             this.labelCombustible.Size = new System.Drawing.Size(113, 20);
             this.labelCombustible.TabIndex = 79;
@@ -96,7 +94,7 @@
             // 
             // textNumeroDeChasis
             // 
-            this.textNumeroDeChasis.Location = new System.Drawing.Point(313, 438);
+            this.textNumeroDeChasis.Location = new System.Drawing.Point(313, 382);
             this.textNumeroDeChasis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNumeroDeChasis.Multiline = true;
             this.textNumeroDeChasis.Name = "textNumeroDeChasis";
@@ -105,7 +103,7 @@
             // 
             // textNumeroDeMotor
             // 
-            this.textNumeroDeMotor.Location = new System.Drawing.Point(313, 390);
+            this.textNumeroDeMotor.Location = new System.Drawing.Point(313, 334);
             this.textNumeroDeMotor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNumeroDeMotor.Multiline = true;
             this.textNumeroDeMotor.Name = "textNumeroDeMotor";
@@ -116,7 +114,7 @@
             // 
             this.labelNumeroDeChasis.AutoSize = true;
             this.labelNumeroDeChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumeroDeChasis.Location = new System.Drawing.Point(81, 446);
+            this.labelNumeroDeChasis.Location = new System.Drawing.Point(81, 390);
             this.labelNumeroDeChasis.Name = "labelNumeroDeChasis";
             this.labelNumeroDeChasis.Size = new System.Drawing.Size(161, 20);
             this.labelNumeroDeChasis.TabIndex = 76;
@@ -126,7 +124,7 @@
             // 
             this.labelNumeroDeMotor.AutoSize = true;
             this.labelNumeroDeMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumeroDeMotor.Location = new System.Drawing.Point(88, 398);
+            this.labelNumeroDeMotor.Location = new System.Drawing.Point(88, 342);
             this.labelNumeroDeMotor.Name = "labelNumeroDeMotor";
             this.labelNumeroDeMotor.Size = new System.Drawing.Size(154, 20);
             this.labelNumeroDeMotor.TabIndex = 75;
@@ -134,7 +132,7 @@
             // 
             // textCapacidadDePersonas
             // 
-            this.textCapacidadDePersonas.Location = new System.Drawing.Point(313, 336);
+            this.textCapacidadDePersonas.Location = new System.Drawing.Point(313, 280);
             this.textCapacidadDePersonas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textCapacidadDePersonas.Multiline = true;
             this.textCapacidadDePersonas.Name = "textCapacidadDePersonas";
@@ -143,7 +141,7 @@
             // 
             // textClaseDeVehiculo
             // 
-            this.textClaseDeVehiculo.Location = new System.Drawing.Point(313, 287);
+            this.textClaseDeVehiculo.Location = new System.Drawing.Point(313, 231);
             this.textClaseDeVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textClaseDeVehiculo.Multiline = true;
             this.textClaseDeVehiculo.Name = "textClaseDeVehiculo";
@@ -154,45 +152,26 @@
             // 
             this.labelCapacidadDePersonas.AutoSize = true;
             this.labelCapacidadDePersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCapacidadDePersonas.Location = new System.Drawing.Point(27, 343);
+            this.labelCapacidadDePersonas.Location = new System.Drawing.Point(27, 287);
             this.labelCapacidadDePersonas.Name = "labelCapacidadDePersonas";
             this.labelCapacidadDePersonas.Size = new System.Drawing.Size(206, 20);
             this.labelCapacidadDePersonas.TabIndex = 72;
             this.labelCapacidadDePersonas.Text = "Capacidad de personas";
             // 
-            // labelAño
-            // 
-            this.labelAño.AutoSize = true;
-            this.labelAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAño.Location = new System.Drawing.Point(203, 190);
-            this.labelAño.Name = "labelAño";
-            this.labelAño.Size = new System.Drawing.Size(41, 20);
-            this.labelAño.TabIndex = 71;
-            this.labelAño.Text = "Año";
-            // 
             // textPlaca
             // 
-            this.textPlaca.Location = new System.Drawing.Point(313, 239);
+            this.textPlaca.Location = new System.Drawing.Point(313, 183);
             this.textPlaca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textPlaca.Multiline = true;
             this.textPlaca.Name = "textPlaca";
             this.textPlaca.Size = new System.Drawing.Size(309, 27);
             this.textPlaca.TabIndex = 70;
             // 
-            // textAnio
-            // 
-            this.textAnio.Location = new System.Drawing.Point(313, 190);
-            this.textAnio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textAnio.Multiline = true;
-            this.textAnio.Name = "textAnio";
-            this.textAnio.Size = new System.Drawing.Size(309, 27);
-            this.textAnio.TabIndex = 69;
-            // 
             // labelPlaca
             // 
             this.labelPlaca.AutoSize = true;
             this.labelPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlaca.Location = new System.Drawing.Point(187, 246);
+            this.labelPlaca.Location = new System.Drawing.Point(187, 190);
             this.labelPlaca.Name = "labelPlaca";
             this.labelPlaca.Size = new System.Drawing.Size(56, 20);
             this.labelPlaca.TabIndex = 68;
@@ -202,7 +181,7 @@
             // 
             this.labelClaseDeVehiculo.AutoSize = true;
             this.labelClaseDeVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClaseDeVehiculo.Location = new System.Drawing.Point(84, 294);
+            this.labelClaseDeVehiculo.Location = new System.Drawing.Point(84, 238);
             this.labelClaseDeVehiculo.Name = "labelClaseDeVehiculo";
             this.labelClaseDeVehiculo.Size = new System.Drawing.Size(158, 20);
             this.labelClaseDeVehiculo.TabIndex = 67;
@@ -286,9 +265,7 @@
             this.Controls.Add(this.textCapacidadDePersonas);
             this.Controls.Add(this.textClaseDeVehiculo);
             this.Controls.Add(this.labelCapacidadDePersonas);
-            this.Controls.Add(this.labelAño);
             this.Controls.Add(this.textPlaca);
-            this.Controls.Add(this.textAnio);
             this.Controls.Add(this.labelPlaca);
             this.Controls.Add(this.labelClaseDeVehiculo);
             this.Controls.Add(this.labelModelo);
@@ -313,9 +290,7 @@
         private System.Windows.Forms.TextBox textCapacidadDePersonas;
         private System.Windows.Forms.TextBox textClaseDeVehiculo;
         private System.Windows.Forms.Label labelCapacidadDePersonas;
-        private System.Windows.Forms.Label labelAño;
         private System.Windows.Forms.TextBox textPlaca;
-        private System.Windows.Forms.TextBox textAnio;
         private System.Windows.Forms.Label labelPlaca;
         private System.Windows.Forms.Label labelClaseDeVehiculo;
         private System.Windows.Forms.Label labelModelo;
