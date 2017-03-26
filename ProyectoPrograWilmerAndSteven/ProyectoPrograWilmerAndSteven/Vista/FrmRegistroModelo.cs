@@ -26,6 +26,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         public FrmRegistroModelo(ModeloE pModelo)
         {
+
             InitializeComponent();
             this.llenarComboMarcas();
             this.oModelo = pModelo;
