@@ -64,7 +64,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 permisos(this.checkBoxSistema),
                permisos(this.checkBoxAdministracionDeOrdenes),
                 permisos(this.checkBoxGestionGerencial));
-
+             
             this.Visible = false;
         }
 
