@@ -20,6 +20,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
             llenarComboPuestos();
+            this.comboBoxPuesto.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public FrmRegistrarEmpleado(EmpleadoE pEmpleado)

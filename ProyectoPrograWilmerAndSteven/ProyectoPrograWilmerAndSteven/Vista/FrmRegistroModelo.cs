@@ -20,6 +20,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
             this.llenarComboMarcas();
+            this.comboBoxMarcas.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         
 
@@ -32,6 +33,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.comboBoxMarcas.SelectedItem = pModelo.OMarca.ToString(); 
             this.txtDescripcion.Text = pModelo.Descripcion.ToString();
             this.txtAnio.Text = pModelo.Anno.ToString();
+            this.comboBoxMarcas.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -60,6 +62,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (MarcaE oMarcaE in marcas)
             {
                 this.comboBoxMarcas.Items.Add(oMarcaE);
+                
             }
         }
     }

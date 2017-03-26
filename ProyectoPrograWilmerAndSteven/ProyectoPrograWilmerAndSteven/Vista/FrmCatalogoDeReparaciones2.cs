@@ -19,6 +19,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
             this.CargarDGview();
+            dGVCatalogoRepuestos.ReadOnly = true;
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)

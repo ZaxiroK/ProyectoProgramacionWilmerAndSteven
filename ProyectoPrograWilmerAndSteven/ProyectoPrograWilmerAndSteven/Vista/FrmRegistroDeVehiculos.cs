@@ -21,7 +21,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             InitializeComponent();
             llenarComboClientes();
             llenarComboModelos();
-
+            this.comboBoxClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.comboBoxModelos.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public FrmRegistroDeVehiculos(VehiculoE oV)
@@ -38,6 +39,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.textCapacidadDePersonas.Text = oV.CapacidadPersonas.ToString();
             this.comboBoxClientes.SelectedItem = oV.OClienteE;
             this.comboBoxModelos.SelectedValue = oV.OModeloE;
+            this.comboBoxClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.comboBoxModelos.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         

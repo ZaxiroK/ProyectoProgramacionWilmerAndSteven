@@ -20,6 +20,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             
             InitializeComponent();
             this.CargarDGview();
+            dGVVehiculos.ReadOnly = true;
         }
         private void CargarDGview()
         {

@@ -57,8 +57,8 @@
             this.gestíonGerencialToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(897, 28);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(673, 24);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -71,40 +71,40 @@
             this.itemDerechosUsuarios,
             this.itemSalir});
             this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.sistemaToolStripMenuItem.Text = "Sistema";
             // 
             // itemCambioContrasenia
             // 
             this.itemCambioContrasenia.Name = "itemCambioContrasenia";
-            this.itemCambioContrasenia.Size = new System.Drawing.Size(238, 26);
+            this.itemCambioContrasenia.Size = new System.Drawing.Size(194, 22);
             this.itemCambioContrasenia.Text = "Cambio de contraseña";
             // 
             // itemRegistroEmpleados
             // 
             this.itemRegistroEmpleados.Name = "itemRegistroEmpleados";
-            this.itemRegistroEmpleados.Size = new System.Drawing.Size(238, 26);
+            this.itemRegistroEmpleados.Size = new System.Drawing.Size(194, 22);
             this.itemRegistroEmpleados.Text = "Registro de empleados";
             this.itemRegistroEmpleados.Click += new System.EventHandler(this.ItemRegistroEmpleados);
             // 
             // itemRegistroPuestos
             // 
             this.itemRegistroPuestos.Name = "itemRegistroPuestos";
-            this.itemRegistroPuestos.Size = new System.Drawing.Size(238, 26);
+            this.itemRegistroPuestos.Size = new System.Drawing.Size(194, 22);
             this.itemRegistroPuestos.Text = "Registro de puestos";
             this.itemRegistroPuestos.Click += new System.EventHandler(this.itemRegistroPuestos_Click);
             // 
             // itemDerechosUsuarios
             // 
             this.itemDerechosUsuarios.Name = "itemDerechosUsuarios";
-            this.itemDerechosUsuarios.Size = new System.Drawing.Size(238, 26);
+            this.itemDerechosUsuarios.Size = new System.Drawing.Size(194, 22);
             this.itemDerechosUsuarios.Text = "Derechos por usuarios";
             this.itemDerechosUsuarios.Click += new System.EventHandler(this.itemDerechosUsuarios_Click);
             // 
             // itemSalir
             // 
             this.itemSalir.Name = "itemSalir";
-            this.itemSalir.Size = new System.Drawing.Size(238, 26);
+            this.itemSalir.Size = new System.Drawing.Size(194, 22);
             this.itemSalir.Text = "Salir";
             // 
             // parametrosToolStripMenuItem
@@ -117,70 +117,70 @@
             this.ItemRegistroCatalogoReparaciones,
             this.ItemRegistroDeModelo});
             this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.parametrosToolStripMenuItem.Text = "Parámetros";
             // 
             // ItemRegistroClientes
             // 
             this.ItemRegistroClientes.Name = "ItemRegistroClientes";
-            this.ItemRegistroClientes.Size = new System.Drawing.Size(320, 26);
+            this.ItemRegistroClientes.Size = new System.Drawing.Size(268, 22);
             this.ItemRegistroClientes.Text = "Registro de clientes";
             this.ItemRegistroClientes.Click += new System.EventHandler(this.ItemRegistroClientes_Click);
             // 
             // itemRegistroMarcas
             // 
             this.itemRegistroMarcas.Name = "itemRegistroMarcas";
-            this.itemRegistroMarcas.Size = new System.Drawing.Size(320, 26);
+            this.itemRegistroMarcas.Size = new System.Drawing.Size(268, 22);
             this.itemRegistroMarcas.Text = "Registro de marcas";
             this.itemRegistroMarcas.Click += new System.EventHandler(this.itemRegistroMarcas_Click);
             // 
             // ItemRegistroVehiculos
             // 
             this.ItemRegistroVehiculos.Name = "ItemRegistroVehiculos";
-            this.ItemRegistroVehiculos.Size = new System.Drawing.Size(320, 26);
+            this.ItemRegistroVehiculos.Size = new System.Drawing.Size(268, 22);
             this.ItemRegistroVehiculos.Text = "Registro de vehículos";
             this.ItemRegistroVehiculos.Click += new System.EventHandler(this.ItemRegistroVehiculos_Click);
             // 
             // itemRegistroCatalogoRepuestos
             // 
             this.itemRegistroCatalogoRepuestos.Name = "itemRegistroCatalogoRepuestos";
-            this.itemRegistroCatalogoRepuestos.Size = new System.Drawing.Size(320, 26);
+            this.itemRegistroCatalogoRepuestos.Size = new System.Drawing.Size(268, 22);
             this.itemRegistroCatalogoRepuestos.Text = "Registro de catálogo de repuestos";
             this.itemRegistroCatalogoRepuestos.Click += new System.EventHandler(this.itemRegistroCatalogoRepuestos_Click);
             // 
             // ItemRegistroCatalogoReparaciones
             // 
             this.ItemRegistroCatalogoReparaciones.Name = "ItemRegistroCatalogoReparaciones";
-            this.ItemRegistroCatalogoReparaciones.Size = new System.Drawing.Size(320, 26);
-            this.ItemRegistroCatalogoReparaciones.Text = "Registro de catálogo de repaciónes";
+            this.ItemRegistroCatalogoReparaciones.Size = new System.Drawing.Size(268, 22);
+            this.ItemRegistroCatalogoReparaciones.Text = "Registro de catálogo de reparaciónes";
             this.ItemRegistroCatalogoReparaciones.Click += new System.EventHandler(this.ItemRegistroCatalogoReparaciones_Click);
             // 
             // ItemRegistroDeModelo
             // 
             this.ItemRegistroDeModelo.Name = "ItemRegistroDeModelo";
-            this.ItemRegistroDeModelo.Size = new System.Drawing.Size(320, 26);
+            this.ItemRegistroDeModelo.Size = new System.Drawing.Size(268, 22);
             this.ItemRegistroDeModelo.Text = "Registro de modelos";
             this.ItemRegistroDeModelo.Click += new System.EventHandler(this.ItemRegistroDeModelo_Click);
             // 
             // administracíonYÓrdenesToolStripMenuItem
             // 
             this.administracíonYÓrdenesToolStripMenuItem.Name = "administracíonYÓrdenesToolStripMenuItem";
-            this.administracíonYÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
+            this.administracíonYÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
             this.administracíonYÓrdenesToolStripMenuItem.Text = "Administracíon y órdenes";
             // 
             // gestíonGerencialToolStripMenuItem
             // 
             this.gestíonGerencialToolStripMenuItem.Name = "gestíonGerencialToolStripMenuItem";
-            this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
+            this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.gestíonGerencialToolStripMenuItem.Text = "Gestíon gerencial";
             // 
             // FrmTallerMecanico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 289);
+            this.ClientSize = new System.Drawing.Size(673, 235);
             this.Controls.Add(this.menuStrip2);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmTallerMecanico";
             this.Text = "Taller Mecanico";
             this.menuStrip2.ResumeLayout(false);
