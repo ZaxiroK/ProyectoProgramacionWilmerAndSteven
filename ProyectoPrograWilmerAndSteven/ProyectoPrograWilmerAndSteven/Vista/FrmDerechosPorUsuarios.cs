@@ -28,6 +28,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             List<UsuarioE> usuario = oUsuarioD.obtenerUsuarios();
             if (!oUsuarioD.Error)
             {
+                
                 this.dGVUsuarios.DataSource = usuario;
             }
         }
