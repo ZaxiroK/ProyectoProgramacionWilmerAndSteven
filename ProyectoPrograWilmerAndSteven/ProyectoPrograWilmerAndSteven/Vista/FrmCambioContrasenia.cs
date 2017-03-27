@@ -18,5 +18,34 @@ namespace ProyectoPrograWilmerAndSteven
         {
             InitializeComponent();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Visible = false;
+
+                MessageBox.Show("Debe ingresar todos los datos");
+            }
+            
+                
+            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+            }
+        }
     }
 }

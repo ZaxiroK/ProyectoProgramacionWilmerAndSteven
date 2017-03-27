@@ -70,26 +70,38 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (
-                !(this.comboBoxModelos.SelectedItem == null) &&
-                !(this.textPlaca.Text == "") &&
-                !(this.textClaseDeVehiculo.Text == "") &&
-                !(this.textCapacidadDePersonas.Text == "") &&
-                !(this.textNumeroDeMotor.Text == "") &&
-                !(this.textNumeroDeChasis.Text == "") &&
-                !(this.textCombustible.Text == ""))
+            try
             {
+                if (
+               !(this.comboBoxModelos.SelectedItem == null) &&
+               !(this.textPlaca.Text == "") &&
+               !(this.textClaseDeVehiculo.Text == "") &&
+               !(this.textCapacidadDePersonas.Text == "") &&
+               !(this.textNumeroDeMotor.Text == "") &&
+               !(this.textNumeroDeChasis.Text == "") &&
+               !(this.textCombustible.Text == ""))
+                {
 
-                this.aceptar = true;
+                    this.aceptar = true;
 
-                oVehiculoE = new VehiculoE(Convert.ToInt32(this.txtId.Text), 
-                    this.textPlaca.Text,this.textClaseDeVehiculo.Text,Convert.ToInt32(this.textCapacidadDePersonas.Text),
-                    (ClienteE)this.comboBoxClientes.SelectedItem,
-                    (ModeloE)this.comboBoxModelos.SelectedItem,
-                    this.textNumeroDeMotor.Text, this.textNumeroDeChasis.Text, this.textCombustible.Text);
+                    oVehiculoE = new VehiculoE(Convert.ToInt32(this.txtId.Text),
+                        this.textPlaca.Text, this.textClaseDeVehiculo.Text, Convert.ToInt32(this.textCapacidadDePersonas.Text),
+                        (ClienteE)this.comboBoxClientes.SelectedItem,
+                        (ModeloE)this.comboBoxModelos.SelectedItem,
+                        this.textNumeroDeMotor.Text, this.textNumeroDeChasis.Text, this.textCombustible.Text);
 
-                this.Visible = false;
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar todos los datos");
+                }
             }
+            catch
+            {
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+            }
+           
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -97,7 +109,17 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.Visible = false;
         }
 
-        
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 
 }

@@ -42,23 +42,25 @@
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(232, 247);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(66, 28);
             this.btnCerrar.TabIndex = 98;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnnRegistrar
             // 
             this.btnnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnnRegistrar.Location = new System.Drawing.Point(404, 247);
-            this.btnnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnnRegistrar.Name = "btnnRegistrar";
             this.btnnRegistrar.Size = new System.Drawing.Size(67, 28);
             this.btnnRegistrar.TabIndex = 97;
             this.btnnRegistrar.Text = "Registrar";
             this.btnnRegistrar.UseVisualStyleBackColor = true;
+            this.btnnRegistrar.Click += new System.EventHandler(this.btnnRegistrar_Click);
             // 
             // labelAño
             // 
@@ -74,7 +76,7 @@
             // txtAnio
             // 
             this.txtAnio.Location = new System.Drawing.Point(232, 102);
-            this.txtAnio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAnio.Margin = new System.Windows.Forms.Padding(2);
             this.txtAnio.Multiline = true;
             this.txtAnio.Name = "txtAnio";
             this.txtAnio.Size = new System.Drawing.Size(233, 23);
@@ -83,7 +85,7 @@
             // txtNombreRepuesto
             // 
             this.txtNombreRepuesto.Location = new System.Drawing.Point(232, 63);
-            this.txtNombreRepuesto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreRepuesto.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreRepuesto.Multiline = true;
             this.txtNombreRepuesto.Name = "txtNombreRepuesto";
             this.txtNombreRepuesto.Size = new System.Drawing.Size(233, 23);
@@ -92,7 +94,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(232, 144);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(233, 23);
@@ -133,7 +135,7 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.labelModelo);
             this.Controls.Add(this.labelMarca);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmRegistroDeClasesDeVehiculos";
             this.Text = "Registro de clases de vehículos";
             this.ResumeLayout(false);

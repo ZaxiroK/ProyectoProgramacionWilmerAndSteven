@@ -37,35 +37,50 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (
-                !(this.txtLogin.Text == "") &&
-                !(this.txtContrasenia.Text == "")) ;
-            //!(this.checkBoxAdministrador.Checked == false) &&
-            //!(this.checkBoxParametros.Checked == false) &&
-            //!(this.checkBoxSistema.Checked == false) &&
-            // !(this.checkBoxAdministracionDeOrdenes.Checked == false) &&
-            //!(this.checkBoxGestionGerencial.Checked == false)) ;
+            try
             {
+                if (
+                               !(this.txtLogin.Text == "") &&
+                               !(this.txtContrasenia.Text == "")) 
 
-                this.aceptar = true;
+                {
+
+                    this.aceptar = true;
 
 
 
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar todos los datos de texto");
+                }
+
+
+                oUsuarioE = new UsuarioE(this.txtLogin.Text,
+                    this.txtContrasenia.Text, permisos(this.checkBoxAdministrador), permisos(this.checkBoxParametros),
+                    permisos(this.checkBoxSistema),
+                   permisos(this.checkBoxAdministracionDeOrdenes),
+                    permisos(this.checkBoxGestionGerencial));
+
+                this.Visible = false;
             }
-            
-
-            oUsuarioE = new UsuarioE(this.txtLogin.Text,
-                this.txtContrasenia.Text, permisos(this.checkBoxAdministrador), permisos(this.checkBoxParametros),
-                permisos(this.checkBoxSistema),
-               permisos(this.checkBoxAdministracionDeOrdenes),
-                permisos(this.checkBoxGestionGerencial));
-             
-            this.Visible = false;
+            catch
+            {
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+            }
+           
         }
 
         public Boolean permisos(CheckBox checkbox)

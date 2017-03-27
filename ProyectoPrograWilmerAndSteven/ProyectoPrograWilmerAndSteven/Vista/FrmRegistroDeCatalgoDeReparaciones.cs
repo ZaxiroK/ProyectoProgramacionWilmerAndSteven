@@ -30,16 +30,40 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         }
         private void btnnRegistrar_Click(object sender, EventArgs e)
         {
-            if((this.txtDescripcionReparacion.Text != "") &&(this.txtId.Text != "") 
-                &&(this.txtHorasReparacion.Text != "") &&(this.txtCostoReparacion.Text != ""))
+            try
             {
-                this.aceptar = true;
+                if ((this.txtDescripcionReparacion.Text != "") && (this.txtId.Text != "")
+                && (this.txtHorasReparacion.Text != "") && (this.txtCostoReparacion.Text != ""))
+                {
+                    this.aceptar = true;
 
-                oCatalogoE = new CatalogoReparacionE(Convert.ToInt32(this.txtId.Text),
-                   this.txtDescripcionReparacion.Text, Convert.ToInt32(this.txtHorasReparacion.Text),
-                   Convert.ToDouble(this.txtCostoReparacion.Text));
+                    oCatalogoE = new CatalogoReparacionE(Convert.ToInt32(this.txtId.Text),
+                       this.txtDescripcionReparacion.Text, Convert.ToInt32(this.txtHorasReparacion.Text),
+                       Convert.ToDouble(this.txtCostoReparacion.Text));
 
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar todos los datos");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+            }
+            
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

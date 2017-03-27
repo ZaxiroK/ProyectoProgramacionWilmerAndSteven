@@ -16,5 +16,30 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("Debe ingresar todos los datos");
+            }
+            catch
+            {
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+            }
+
+        }
     }
 }

@@ -60,7 +60,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 if (oFrm.aceptar)
                 {
 
-                    if (oCatalogoReparacionD.modificarCatalogoReparacion(oFrm.oCatalogoE, Convert.ToInt32(this.dGVCatalogoRepuestos[0, fila].Value.ToString()))) ;
+                    if (oCatalogoReparacionD.modificarCatalogoReparacion(oFrm.oCatalogoE, Convert.ToInt32(this.dGVCatalogoRepuestos[0, fila].Value.ToString())));
                     {
                         this.CargarDGview();
                         MessageBox.Show("Reparacion actualizada");

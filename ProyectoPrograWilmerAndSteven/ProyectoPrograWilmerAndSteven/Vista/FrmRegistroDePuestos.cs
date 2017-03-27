@@ -31,19 +31,39 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
-            if((this.txtId.Text != " ") &&(this.txtSalario.Text != " ") &&(this.txtDescripcion.Text != " ")
-                && (this.txtPuesto.Text != " "))
+            try
             {
-                aceptar = true;
+                if (!(this.txtId.Text == " ") && !(this.txtSalario.Text == " ") && !(this.txtDescripcion.Text == " ")
+                                && !(this.txtPuesto.Text == " "))
+                {
+                    
                 oP = new PuestoE(Convert.ToInt32(this.txtId.Text), Convert.ToDouble(this.txtSalario.Text),
                     Convert.ToChar(this.txtPuesto.Text), this.txtDescripcion.Text);
-                this.Visible = false;
+                    aceptar = true;
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar todos los datos");
+                }
             }
+            catch 
+            {
+               MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

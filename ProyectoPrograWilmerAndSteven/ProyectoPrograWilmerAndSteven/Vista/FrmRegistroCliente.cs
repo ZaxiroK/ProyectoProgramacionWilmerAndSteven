@@ -40,23 +40,42 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
-            if (!(this.txtCedula.Text == "") && !(this.txtNombre.Text == "") && !(this.txtApellido1.Text == "") 
-                && !(this.txtApellido2.Text == "") && !(this.txtDireccion.Text == ""))
+            try
             {
+                if (!(this.txtCedula.Text == "") && !(this.txtNombre.Text == "") && !(this.txtApellido1.Text == "")
+               && !(this.txtApellido2.Text == "") && !(this.txtDireccion.Text == ""))
+                {
 
-                this.aceptar = true;
+                    this.aceptar = true;
 
-                this.oCliente = new ClienteE(Convert.ToInt32(this.txtCedula.Text), this.txtNombre.Text,
-                    this.txtApellido1.Text, this.txtApellido2.Text, this.txtDireccion.Text,
-                    this.txtTelefono.Text, this.txtTelefono2.Text,this.txtTelefono3.Text);
+                    this.oCliente = new ClienteE(Convert.ToInt32(this.txtCedula.Text), this.txtNombre.Text,
+                        this.txtApellido1.Text, this.txtApellido2.Text, this.txtDireccion.Text,
+                        this.txtTelefono.Text, this.txtTelefono2.Text, this.txtTelefono3.Text);
 
-                this.Visible = false;
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar todos los datos");
+                }
             }
+            catch
+            {
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+            }
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

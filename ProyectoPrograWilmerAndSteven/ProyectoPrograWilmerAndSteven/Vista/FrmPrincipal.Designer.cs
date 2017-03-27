@@ -40,17 +40,18 @@
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(120, 172);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(59, 28);
             this.btnCerrar.TabIndex = 14;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // textUsuario
             // 
             this.textUsuario.Location = new System.Drawing.Point(189, 49);
-            this.textUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.textUsuario.Multiline = true;
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.Size = new System.Drawing.Size(233, 27);
@@ -59,7 +60,7 @@
             // textContrasenna
             // 
             this.textContrasenna.Location = new System.Drawing.Point(189, 99);
-            this.textContrasenna.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textContrasenna.Margin = new System.Windows.Forms.Padding(2);
             this.textContrasenna.Multiline = true;
             this.textContrasenna.Name = "textContrasenna";
             this.textContrasenna.Size = new System.Drawing.Size(233, 27);
@@ -69,12 +70,13 @@
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Location = new System.Drawing.Point(305, 172);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(65, 28);
             this.btnIngresar.TabIndex = 11;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // labelContrasenna
             // 
@@ -109,7 +111,7 @@
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.labelContrasenna);
             this.Controls.Add(this.labelUsuario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPrincipal";
             this.Text = "Principal";
             this.ResumeLayout(false);

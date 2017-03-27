@@ -39,19 +39,38 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            if (!(this.txtDescripcion.Text == "") && !(this.txtAnio.Text == ""))
+            try
             {
+                if (!(this.txtDescripcion.Text == "") && !(this.txtAnio.Text == ""))
+                {
 
-                
-               this.oModelo = new ModeloE(Convert.ToInt32(this.txtId.Text),this.txtDescripcion.Text, ((MarcaE)this.comboBoxMarcas.SelectedItem), Convert.ToInt32(this.txtAnio.Text));
-                this.aceptar = true;
-                this.Visible = false;
+
+                    this.oModelo = new ModeloE(Convert.ToInt32(this.txtId.Text), this.txtDescripcion.Text, ((MarcaE)this.comboBoxMarcas.SelectedItem), Convert.ToInt32(this.txtAnio.Text));
+                    this.aceptar = true;
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar todos los datos");
+                }
             }
+            catch
+            {
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+            }
+            
         }
 
         public void llenarComboMarcas()

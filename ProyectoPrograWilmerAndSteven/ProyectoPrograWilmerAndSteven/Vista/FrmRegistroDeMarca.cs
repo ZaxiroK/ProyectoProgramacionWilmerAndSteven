@@ -30,21 +30,36 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            if (!(this.txtCodigo.Text == "") && !(this.txtMarca.Text == ""))
+            try
             {
-                this.oMarcaE = new MarcaE(Convert.ToInt32(this.txtCodigo.Text), this.txtMarca.Text);
-                this.aceptar = true;
-                this.Visible = false;
+                if (!(this.txtCodigo.Text == "") && !(this.txtMarca.Text == ""))
+                {
+                    this.oMarcaE = new MarcaE(Convert.ToInt32(this.txtCodigo.Text), this.txtMarca.Text);
+                    this.aceptar = true;
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar todos los datos");
+                }
             }
-            else
+            
+            catch
             {
-                MessageBox.Show("Debe ingresar todos los datos");
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
             }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
