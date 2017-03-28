@@ -53,7 +53,7 @@
             this.btnActualizar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(462, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(616, 47);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -62,7 +62,7 @@
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(53, 39);
+            this.btnAgregar.Size = new System.Drawing.Size(67, 44);
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -72,7 +72,7 @@
             this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
             this.Editar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(41, 39);
+            this.Editar.Size = new System.Drawing.Size(52, 44);
             this.Editar.Text = "Editar";
             this.Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Editar.Click += new System.EventHandler(this.Editar_Click);
@@ -82,7 +82,7 @@
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(43, 39);
+            this.btnBorrar.Size = new System.Drawing.Size(54, 44);
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
@@ -92,7 +92,7 @@
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(63, 39);
+            this.btnActualizar.Size = new System.Drawing.Size(79, 44);
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -106,9 +106,10 @@
             this.Mecanico,
             this.Marca});
             this.dGVMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGVMarcas.Location = new System.Drawing.Point(0, 42);
+            this.dGVMarcas.Location = new System.Drawing.Point(0, 47);
+            this.dGVMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGVMarcas.Name = "dGVMarcas";
-            this.dGVMarcas.Size = new System.Drawing.Size(462, 263);
+            this.dGVMarcas.Size = new System.Drawing.Size(616, 328);
             this.dGVMarcas.TabIndex = 17;
             // 
             // Código
@@ -116,6 +117,7 @@
             this.Código.DataPropertyName = "idPuesto";
             this.Código.HeaderText = "Id puesto";
             this.Código.Name = "Código";
+            this.Código.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Salario
             // 
@@ -137,11 +139,12 @@
             // 
             // FrmPuesto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 305);
+            this.ClientSize = new System.Drawing.Size(616, 375);
             this.Controls.Add(this.dGVMarcas);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmPuesto";
             this.Text = "Puestos";
             this.toolStrip1.ResumeLayout(false);
