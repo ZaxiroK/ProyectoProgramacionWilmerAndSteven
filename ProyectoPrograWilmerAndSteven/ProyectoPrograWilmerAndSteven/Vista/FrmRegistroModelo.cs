@@ -53,7 +53,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             try
             {
-                if (!(this.txtDescripcion.Text == "") && !(this.txtAnio.Text == ""))
+                if (!(this.txtId.Text == "") && !(this.txtAnio.Text == ""))
                 {
 
 

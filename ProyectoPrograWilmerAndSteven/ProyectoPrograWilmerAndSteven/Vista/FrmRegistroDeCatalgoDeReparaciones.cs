@@ -32,8 +32,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             try
             {
-                if ((this.txtDescripcionReparacion.Text != "") && (this.txtId.Text != "")
-                && (this.txtHorasReparacion.Text != "") && (this.txtCostoReparacion.Text != ""))
+                if ((this.txtDescripcionReparacion.Text != "") && (this.txtCostoReparacion.Text != "")
+                && (this.txtHorasReparacion.Text != "") && (this.txtId.Text != ""))
                 {
                     this.aceptar = true;
 
