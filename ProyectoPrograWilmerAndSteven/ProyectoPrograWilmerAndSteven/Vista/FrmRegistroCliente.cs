@@ -18,6 +18,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         public FrmRegistroCliente()
         {
             InitializeComponent();
+            
         }
 
         public FrmRegistroCliente(ClienteE pCliente)
@@ -35,7 +36,6 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.txtTelefono2.Text = this.oCliente.Telefono2;
             this.txtTelefono3.Text = this.oCliente.Telefono3;
 
-            
         }
 
         private void buttonRegistrar_Click(object sender, EventArgs e)

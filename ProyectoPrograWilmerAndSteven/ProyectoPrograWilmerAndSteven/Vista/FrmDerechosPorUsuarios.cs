@@ -31,6 +31,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 
                 this.dGVUsuarios.DataSource = usuario;
                 this.dGVUsuarios.Columns[1].Visible = false;
+
             }
         }
      

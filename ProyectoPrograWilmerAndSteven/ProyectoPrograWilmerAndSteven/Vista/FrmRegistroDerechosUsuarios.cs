@@ -32,6 +32,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.checkBoxSistema.Checked = oU.Sistema;
             this.checkBoxAdministracionDeOrdenes.Checked = oU.AdministracionDeOrdenes;
             this.checkBoxGestionGerencial.Checked = oU.GestionGerencial;
+            
 
         }
 

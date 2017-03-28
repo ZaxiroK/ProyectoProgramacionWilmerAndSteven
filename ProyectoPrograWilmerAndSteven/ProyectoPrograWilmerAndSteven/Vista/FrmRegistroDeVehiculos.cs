@@ -74,7 +74,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 if (
                !(this.comboBoxModelos.SelectedItem == null) &&
-               !(this.textPlaca.Text == "") &&
+               !(this.txtId.Text == "") &&
                !(this.textClaseDeVehiculo.Text == "") &&
                !(this.textCapacidadDePersonas.Text == "") &&
                !(this.textNumeroDeMotor.Text == "") &&
@@ -120,6 +120,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 MessageBox.Show(ex.ToString());
             }
         }
+
+     
     }
 
 }
