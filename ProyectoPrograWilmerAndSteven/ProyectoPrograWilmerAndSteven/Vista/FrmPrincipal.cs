@@ -176,17 +176,23 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                         
                         
                     }
+                    else
+                    {
+                        MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+                    }
+                
                 }
                 else
                 {
                     MessageBox.Show("Debe ingresar todos los datos");
                 }
 
+
                 
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+                MessageBox.Show(ex.ToString());
             }
 
         }

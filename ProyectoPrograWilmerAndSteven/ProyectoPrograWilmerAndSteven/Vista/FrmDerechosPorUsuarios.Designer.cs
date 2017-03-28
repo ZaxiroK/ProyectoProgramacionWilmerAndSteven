@@ -36,6 +36,7 @@
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.dGVUsuarios = new System.Windows.Forms.DataGridView();
             this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sistema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parametros = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,7 @@
             this.btnActualizar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(752, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(1003, 47);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -64,7 +65,7 @@
             this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
             this.btnRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(57, 39);
+            this.btnRegistrar.Size = new System.Drawing.Size(72, 44);
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -74,7 +75,7 @@
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(41, 39);
+            this.btnEditar.Size = new System.Drawing.Size(52, 44);
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
@@ -84,7 +85,7 @@
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(43, 39);
+            this.btnBorrar.Size = new System.Drawing.Size(54, 44);
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click_1);
@@ -94,7 +95,7 @@
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(63, 39);
+            this.btnActualizar.Size = new System.Drawing.Size(79, 44);
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
@@ -104,15 +105,17 @@
             this.dGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.login,
+            this.Contrasenia,
             this.administrador,
             this.sistema,
             this.parametros,
             this.AdministracionDeOrdenes,
             this.gestionGerencial});
             this.dGVUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGVUsuarios.Location = new System.Drawing.Point(0, 42);
+            this.dGVUsuarios.Location = new System.Drawing.Point(0, 47);
+            this.dGVUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGVUsuarios.Name = "dGVUsuarios";
-            this.dGVUsuarios.Size = new System.Drawing.Size(752, 329);
+            this.dGVUsuarios.Size = new System.Drawing.Size(1003, 410);
             this.dGVUsuarios.TabIndex = 3;
             // 
             // login
@@ -120,6 +123,14 @@
             this.login.DataPropertyName = "login";
             this.login.HeaderText = "Usuario";
             this.login.Name = "login";
+            // 
+            // Contrasenia
+            // 
+            this.Contrasenia.DataPropertyName = "contrasenia";
+            this.Contrasenia.HeaderText = "Contraseña";
+            this.Contrasenia.Name = "Contrasenia";
+            this.Contrasenia.ReadOnly = true;
+            this.Contrasenia.Visible = false;
             // 
             // administrador
             // 
@@ -153,12 +164,12 @@
             // 
             // FrmDerechosPorUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 371);
+            this.ClientSize = new System.Drawing.Size(1003, 457);
             this.Controls.Add(this.dGVUsuarios);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmDerechosPorUsuarios";
             this.Text = "Derechos por usuarios";
             this.toolStrip1.ResumeLayout(false);
@@ -176,12 +187,13 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnBorrar;
         private System.Windows.Forms.ToolStripButton btnActualizar;
+        internal System.Windows.Forms.DataGridView dGVUsuarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn login;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contrasenia;
         private System.Windows.Forms.DataGridViewTextBoxColumn administrador;
         private System.Windows.Forms.DataGridViewTextBoxColumn sistema;
         private System.Windows.Forms.DataGridViewTextBoxColumn parametros;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdministracionDeOrdenes;
         private System.Windows.Forms.DataGridViewTextBoxColumn gestionGerencial;
-        internal System.Windows.Forms.DataGridView dGVUsuarios;
     }
 }

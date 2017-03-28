@@ -69,8 +69,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
 
                 oUsuarioE = new UsuarioE(this.txtLogin.Text,
-                    this.txtContrasenia.Text, permisos(this.checkBoxAdministrador), permisos(this.checkBoxParametros),
+                    this.txtContrasenia.Text, permisos(this.checkBoxAdministrador), 
                     permisos(this.checkBoxSistema),
+                    permisos(this.checkBoxParametros),
                    permisos(this.checkBoxAdministracionDeOrdenes),
                     permisos(this.checkBoxGestionGerencial));
 

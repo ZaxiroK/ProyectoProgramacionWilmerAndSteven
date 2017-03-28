@@ -33,15 +33,24 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             try
             {
-                if (!(this.txtId.Text == " ") && !(this.txtSalario.Text == " ") && !(this.txtDescripcion.Text == " ")
+                if (!(this.txtId.Text == " ") && !(this.txtSalario.Text == " ") /*&& !(this.txtDescripcion.Text == " ")*/
                                 && !(this.txtPuesto.Text == " "))
                 {
-                    
-                oP = new PuestoE(Convert.ToInt32(this.txtId.Text), Convert.ToDouble(this.txtSalario.Text),
-                    Convert.ToChar(this.txtPuesto.Text), this.txtDescripcion.Text);
-                    aceptar = true;
-                    this.Visible = false;
+                    if (!(this.txtDescripcion.Text == " "))
+                    {
+
+
+                        oP = new PuestoE(Convert.ToInt32(this.txtId.Text), Convert.ToDouble(this.txtSalario.Text),
+                            Convert.ToChar(this.txtPuesto.Text), this.txtDescripcion.Text);
+                        aceptar = true;
+                        this.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar todos los datos");
+                    }
                 }
+                 
                 else
                 {
                     MessageBox.Show("Debe ingresar todos los datos");
