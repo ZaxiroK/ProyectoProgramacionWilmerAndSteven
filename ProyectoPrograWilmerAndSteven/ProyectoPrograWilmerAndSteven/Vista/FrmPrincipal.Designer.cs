@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.textUsuario = new System.Windows.Forms.TextBox();
-            this.textContrasenna = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContrasenna = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.labelContrasenna = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
@@ -48,23 +48,23 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // textUsuario
+            // txtUsuario
             // 
-            this.textUsuario.Location = new System.Drawing.Point(189, 49);
-            this.textUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.textUsuario.Multiline = true;
-            this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Size = new System.Drawing.Size(233, 27);
-            this.textUsuario.TabIndex = 13;
+            this.txtUsuario.Location = new System.Drawing.Point(189, 49);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(233, 27);
+            this.txtUsuario.TabIndex = 13;
             // 
-            // textContrasenna
+            // txtContrasenna
             // 
-            this.textContrasenna.Location = new System.Drawing.Point(189, 99);
-            this.textContrasenna.Margin = new System.Windows.Forms.Padding(2);
-            this.textContrasenna.Multiline = true;
-            this.textContrasenna.Name = "textContrasenna";
-            this.textContrasenna.Size = new System.Drawing.Size(233, 27);
-            this.textContrasenna.TabIndex = 12;
+            this.txtContrasenna.Location = new System.Drawing.Point(189, 99);
+            this.txtContrasenna.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContrasenna.Multiline = true;
+            this.txtContrasenna.Name = "txtContrasenna";
+            this.txtContrasenna.Size = new System.Drawing.Size(233, 27);
+            this.txtContrasenna.TabIndex = 12;
             // 
             // btnIngresar
             // 
@@ -82,12 +82,12 @@
             // 
             this.labelContrasenna.AutoSize = true;
             this.labelContrasenna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContrasenna.Location = new System.Drawing.Point(90, 99);
+            this.labelContrasenna.Location = new System.Drawing.Point(81, 99);
             this.labelContrasenna.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelContrasenna.Name = "labelContrasenna";
-            this.labelContrasenna.Size = new System.Drawing.Size(99, 17);
+            this.labelContrasenna.Size = new System.Drawing.Size(104, 17);
             this.labelContrasenna.TabIndex = 10;
-            this.labelContrasenna.Text = "Constraseña";
+            this.labelContrasenna.Text = "Constraseña:";
             // 
             // labelUsuario
             // 
@@ -96,9 +96,9 @@
             this.labelUsuario.Location = new System.Drawing.Point(90, 49);
             this.labelUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(64, 17);
+            this.labelUsuario.Size = new System.Drawing.Size(69, 17);
             this.labelUsuario.TabIndex = 9;
-            this.labelUsuario.Text = "Usuario";
+            this.labelUsuario.Text = "Usuario:";
             // 
             // FrmPrincipal
             // 
@@ -106,8 +106,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 218);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.textUsuario);
-            this.Controls.Add(this.textContrasenna);
+            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtContrasenna);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.labelContrasenna);
             this.Controls.Add(this.labelUsuario);
@@ -122,8 +122,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.TextBox textUsuario;
-        private System.Windows.Forms.TextBox textContrasenna;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtContrasenna;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label labelContrasenna;
         private System.Windows.Forms.Label labelUsuario;

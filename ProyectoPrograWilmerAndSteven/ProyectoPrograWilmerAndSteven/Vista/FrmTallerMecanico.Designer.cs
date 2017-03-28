@@ -73,12 +73,14 @@
             this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
             this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.sistemaToolStripMenuItem.Text = "Sistema";
+            this.sistemaToolStripMenuItem.Click += new System.EventHandler(this.sistemaToolStripMenuItem_Click);
             // 
             // itemCambioContrasenia
             // 
             this.itemCambioContrasenia.Name = "itemCambioContrasenia";
             this.itemCambioContrasenia.Size = new System.Drawing.Size(194, 22);
             this.itemCambioContrasenia.Text = "Cambio de contraseña";
+            this.itemCambioContrasenia.Click += new System.EventHandler(this.itemCambioContrasenia_Click);
             // 
             // itemRegistroEmpleados
             // 
@@ -180,7 +182,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 235);
             this.Controls.Add(this.menuStrip2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmTallerMecanico";
             this.Text = "Taller Mecanico";
             this.menuStrip2.ResumeLayout(false);
@@ -192,10 +194,6 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem parametrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem administracíonYÓrdenesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestíonGerencialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemCambioContrasenia;
         private System.Windows.Forms.ToolStripMenuItem itemRegistroEmpleados;
         private System.Windows.Forms.ToolStripMenuItem itemRegistroPuestos;
@@ -207,5 +205,9 @@
         private System.Windows.Forms.ToolStripMenuItem itemRegistroCatalogoRepuestos;
         private System.Windows.Forms.ToolStripMenuItem ItemRegistroCatalogoReparaciones;
         private System.Windows.Forms.ToolStripMenuItem ItemRegistroDeModelo;
+        public System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem parametrosToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem administracíonYÓrdenesToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem gestíonGerencialToolStripMenuItem;
     }
 }

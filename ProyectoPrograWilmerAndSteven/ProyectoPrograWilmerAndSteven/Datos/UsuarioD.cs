@@ -61,6 +61,34 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return usuarios;
         }
+
+        public UsuarioE comprobarUsuario(string login, string password)
+        {
+
+            this.limpiarError();
+            UsuarioE usuario = null;
+            DataSet dsetUsuarios;
+            string sql = "select u.id_login as login, u.contrasenia as contrasenia, " +
+                        " u.administrador as administrador, u.sistema as sistema," +
+                        "u.parametros as parametros, u.administracion_de_ordenes as administracionOrdenes," +
+                        "u.gestion_gerencial as gestionGerencial " +
+                         "from schtaller.usuario u " +
+                         "where id_login = " + "'"+ login + "' and contrasenia = " +"'"+ password +"'"  ;
+
+            dsetUsuarios = this.conexion.ejecutarConsultaSQL(sql);
+
+            if (!this.conexion.IsError)
+            {
+                if (dsetUsuarios.Tables[0].Rows.Count > 0)
+                {
+                    usuario = new UsuarioE(dsetUsuarios.Tables[0].Rows[0]["login"].ToString(), dsetUsuarios.Tables[0].Rows[0]["contrasenia"].ToString(), Convert.ToBoolean(dsetUsuarios.Tables[0].Rows[0]["administrador"].ToString()),
+                    Convert.ToBoolean(dsetUsuarios.Tables[0].Rows[0]["sistema"].ToString()), Convert.ToBoolean(dsetUsuarios.Tables[0].Rows[0]["parametros"].ToString()), Convert.ToBoolean(dsetUsuarios.Tables[0].Rows[0]["administracionOrdenes"].ToString()),
+                    Convert.ToBoolean(dsetUsuarios.Tables[0].Rows[0]["gestionGerencial"].ToString()));
+                }
+            }
+            
+            return usuario;
+        }
         public bool agregarUsuario(UsuarioE pUsuario)
         {
             this.limpiarError();

@@ -16,7 +16,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
         }
-
+        
 
         private void ItemRegistroEmpleados(object sender, EventArgs e)
         {
@@ -70,6 +70,16 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             FrmDerechosPorUsuarios oFrm = new FrmDerechosPorUsuarios();
             oFrm.ShowDialog();
+        }
+
+        private void itemCambioContrasenia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

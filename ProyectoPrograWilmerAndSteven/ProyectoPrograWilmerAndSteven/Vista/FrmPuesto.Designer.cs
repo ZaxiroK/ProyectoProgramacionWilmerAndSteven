@@ -143,7 +143,7 @@
             this.Controls.Add(this.dGVMarcas);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmPuesto";
-            this.Text = "FrmPuesto";
+            this.Text = "Puestos";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMarcas)).EndInit();

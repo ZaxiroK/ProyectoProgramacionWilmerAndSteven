@@ -158,9 +158,9 @@
             this.ClientSize = new System.Drawing.Size(752, 371);
             this.Controls.Add(this.dGVUsuarios);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmDerechosPorUsuarios";
-            this.Text = "FrmDerechosPorUsuarios";
+            this.Text = "Derechos por usuarios";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVUsuarios)).EndInit();

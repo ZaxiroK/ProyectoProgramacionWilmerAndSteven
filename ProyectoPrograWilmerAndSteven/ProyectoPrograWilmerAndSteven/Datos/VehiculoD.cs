@@ -53,7 +53,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 "mo.id_modelo  as idModelo, mo.descripcion  as descripcion, mo.anio as anno," +
                 "m.id_marca as idMarca, m.descripcion as descripcion" +
                 " from schtaller.Vehiculo v, schtaller.Cliente c, schtaller.Modelo mo, schtaller.Marca m" +
-                " where c.cedula = v.id_cliente and v.id_modelo = mo.id_modelo;";
+                " where c.cedula = v.id_cliente and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca;";
 
             //if (pCliente != null)
             //{

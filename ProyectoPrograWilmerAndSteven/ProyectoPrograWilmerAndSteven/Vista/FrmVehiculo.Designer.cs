@@ -182,9 +182,9 @@
             this.ClientSize = new System.Drawing.Size(942, 274);
             this.Controls.Add(this.dGVVehiculos);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmVehiculo";
-            this.Text = "FrmVehiculo";
+            this.Text = "Vehiculos";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVVehiculos)).EndInit();
