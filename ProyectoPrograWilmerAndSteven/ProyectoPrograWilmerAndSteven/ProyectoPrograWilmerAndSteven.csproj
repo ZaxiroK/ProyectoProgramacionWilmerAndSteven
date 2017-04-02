@@ -128,6 +128,12 @@
     <Compile Include="Vista\FrmModelo.Designer.cs">
       <DependentUpon>FrmModelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmOrdenTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmOrdenTrabajo.Designer.cs">
+      <DependentUpon>FrmOrdenTrabajo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,12 @@
     </Compile>
     <Compile Include="Vista\FrmRegistroDeMarca.Designer.cs">
       <DependentUpon>FrmRegistroDeMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmRegistroDeOrdenDeTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmRegistroDeOrdenDeTrabajo.Designer.cs">
+      <DependentUpon>FrmRegistroDeOrdenDeTrabajo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmRegistroDePuestos.cs">
       <SubType>Form</SubType>
@@ -245,6 +257,9 @@
     <EmbeddedResource Include="Vista\FrmModelo.resx">
       <DependentUpon>FrmModelo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmOrdenTrabajo.resx">
+      <DependentUpon>FrmOrdenTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroDeMarca.resx">
       <DependentUpon>FrmRegistroDeMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmRegistroDeOrdenDeTrabajo.resx">
+      <DependentUpon>FrmRegistroDeOrdenDeTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroDePuestos.resx">
       <DependentUpon>FrmRegistroDePuestos.cs</DependentUpon>

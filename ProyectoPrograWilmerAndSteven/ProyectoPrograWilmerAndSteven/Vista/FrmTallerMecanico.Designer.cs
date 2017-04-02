@@ -44,6 +44,7 @@
             this.ItemRegistroDeModelo = new System.Windows.Forms.ToolStripMenuItem();
             this.administracíonYÓrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestíonGerencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemOrdenTrabajo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,6 +167,8 @@
             // 
             // administracíonYÓrdenesToolStripMenuItem
             // 
+            this.administracíonYÓrdenesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemOrdenTrabajo});
             this.administracíonYÓrdenesToolStripMenuItem.Name = "administracíonYÓrdenesToolStripMenuItem";
             this.administracíonYÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
             this.administracíonYÓrdenesToolStripMenuItem.Text = "Administracíon y órdenes";
@@ -175,6 +178,12 @@
             this.gestíonGerencialToolStripMenuItem.Name = "gestíonGerencialToolStripMenuItem";
             this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.gestíonGerencialToolStripMenuItem.Text = "Gestíon gerencial";
+            // 
+            // menuItemOrdenTrabajo
+            // 
+            this.menuItemOrdenTrabajo.Name = "menuItemOrdenTrabajo";
+            this.menuItemOrdenTrabajo.Size = new System.Drawing.Size(163, 22);
+            this.menuItemOrdenTrabajo.Text = "Orden de trabajo";
             // 
             // FrmTallerMecanico
             // 
@@ -209,5 +218,6 @@
         public System.Windows.Forms.ToolStripMenuItem parametrosToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem administracíonYÓrdenesToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem gestíonGerencialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuItemOrdenTrabajo;
     }
 }
