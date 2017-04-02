@@ -13,8 +13,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmRegistroDePuestos : Form
     {
-       public PuestoE oP;
-       public bool aceptar; 
+        public PuestoE oP;
+        public bool aceptar;
         public FrmRegistroDePuestos()
         {
             InitializeComponent();
@@ -50,17 +50,17 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                         MessageBox.Show("Debe ingresar todos los datos");
                     }
                 }
-                 
+
                 else
                 {
                     MessageBox.Show("Debe ingresar todos los datos");
                 }
             }
-            catch 
+            catch
             {
-               MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
             }
-            
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -74,5 +74,83 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtSalario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtDescripcion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtPuesto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!(this.txtId.Text == " ") && !(this.txtSalario.Text == " ") /*&& !(this.txtDescripcion.Text == " ")*/
+                       && !(this.txtPuesto.Text == " "))
+                {
+                    if (!(this.txtDescripcion.Text == " "))
+                    {
+
+
+                        oP = new PuestoE(Convert.ToInt32(this.txtId.Text), Convert.ToDouble(this.txtSalario.Text),
+                            Convert.ToChar(this.txtPuesto.Text), this.txtDescripcion.Text);
+                        aceptar = true;
+                        this.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar todos los datos");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
+            }
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
+
+

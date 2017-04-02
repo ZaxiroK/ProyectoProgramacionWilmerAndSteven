@@ -22,7 +22,8 @@ namespace ProyectoPrograWilmerAndSteven
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             try
-            {
+            {  
+
                 this.Visible = false;
 
                 MessageBox.Show("Debe ingresar todos los datos");

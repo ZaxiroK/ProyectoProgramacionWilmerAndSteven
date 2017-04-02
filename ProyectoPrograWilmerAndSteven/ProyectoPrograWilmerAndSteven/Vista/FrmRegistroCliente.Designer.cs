@@ -83,6 +83,7 @@
             this.txtTelefono3.Name = "txtTelefono3";
             this.txtTelefono3.Size = new System.Drawing.Size(233, 23);
             this.txtTelefono3.TabIndex = 80;
+            this.txtTelefono3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefono3_KeyDown);
             // 
             // txtTelefono2
             // 
@@ -93,6 +94,7 @@
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Size = new System.Drawing.Size(233, 23);
             this.txtTelefono2.TabIndex = 79;
+            this.txtTelefono2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefono2_KeyDown);
             // 
             // label8
             // 
@@ -125,6 +127,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(233, 23);
             this.txtTelefono.TabIndex = 76;
+            this.txtTelefono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefono_KeyDown);
             // 
             // txtDireccion
             // 
@@ -135,6 +138,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(233, 23);
             this.txtDireccion.TabIndex = 75;
+            this.txtDireccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDireccion_KeyDown);
             // 
             // label6
             // 
@@ -167,6 +171,7 @@
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(233, 23);
             this.txtApellido2.TabIndex = 72;
+            this.txtApellido2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtApellido2_KeyDown);
             // 
             // txtApellido1
             // 
@@ -177,6 +182,7 @@
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(233, 23);
             this.txtApellido1.TabIndex = 71;
+            this.txtApellido1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtApellido1_KeyDown);
             // 
             // label4
             // 
@@ -209,6 +215,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(233, 23);
             this.txtNombre.TabIndex = 68;
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
             // txtCedula
             // 
@@ -219,6 +226,7 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(233, 23);
             this.txtCedula.TabIndex = 67;
+            this.txtCedula.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCedula_KeyDown);
             // 
             // label2
             // 

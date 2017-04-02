@@ -20,7 +20,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
             this.llenarComboMarcas();
-            this.comboBoxMarcas.DropDownStyle = ComboBoxStyle.DropDownList;
+            
         }
         
 
@@ -34,7 +34,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.comboBoxMarcas.SelectedItem = pModelo.OMarca.ToString(); 
             this.txtDescripcion.Text = pModelo.Descripcion.ToString();
             this.txtAnio.Text = pModelo.Anno.ToString();
-            this.comboBoxMarcas.DropDownStyle = ComboBoxStyle.DropDownList;    
+               
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -50,6 +50,75 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         }
 
         private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        public void llenarComboMarcas()
+        {
+            this.comboBoxMarcas.Items.Clear(); 
+            MarcaD oMarcaD = new MarcaD();
+            List<MarcaE> marcas = oMarcaD.obtenerMarcas();
+
+            foreach (MarcaE oMarcaE in marcas)
+            {
+                this.comboBoxMarcas.Items.Add(oMarcaE);
+                this.comboBoxMarcas.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBoxMarcas.SelectedIndex = comboBoxMarcas.Items.Count - 1;
+
+            }
+        }
+
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtDescripcion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtAnio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void buttonCancelar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtAnio_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void buttonAceptar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -70,19 +139,17 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
             }
-            
         }
 
-        public void llenarComboMarcas()
+        private void buttonCancelar_Click_2(object sender, EventArgs e)
         {
-            this.comboBoxMarcas.Items.Clear(); 
-            MarcaD oMarcaD = new MarcaD();
-            List<MarcaE> marcas = oMarcaD.obtenerMarcas();
-
-            foreach (MarcaE oMarcaE in marcas)
+            try
             {
-                this.comboBoxMarcas.Items.Add(oMarcaE);
-                
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

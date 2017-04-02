@@ -84,18 +84,30 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         public void llenarComboClientes()
         {
             int posicion = 1;
+            int posicion2 = 1;
             this.comboBoxClientes.Items.Clear();
             ClienteD oClienteD = new ClienteD();
             List<ClienteE> clientes = oClienteD.obtenerClientes();
             
             foreach (ClienteE oClienteE in clientes)
             {
-                this.comboBoxClientes.Items.Add(oClienteE);
-                if (oClienteE == oClienteEeditar)
+                if (oClienteE.Equals(oClienteEeditar))//no quiere entrar al if aunque sea igual
                 {
-                    posicion = comboBoxClientes.Items.Count;
+                    posicion = posicion2;//posicion ser igual al numero donde los objetos eran equivalentes
                 }
+                posicion2 += 1;// al final de todo el for posicion2 va a ser = 6
+                this.comboBoxClientes.Items.Add(oClienteE);               
                 this.comboBoxClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBoxClientes.SelectedIndex = comboBoxClientes.Items.Count - (posicion2 - posicion);
+                //se resta por que el combo se llena alrevez es decir las posiciones, es decir q la 1 es la 5.
+                /*
+                 *6 -1 = 5
+                 *6 -2 = 4
+                 *6 -3 = 3
+                 *6 -4 = 2
+                 *6 -5 = 1
+                 * se obtiene las posciones al revez en caso de que fueran 5 o mas 
+                 */
             }
         }
 

@@ -55,20 +55,22 @@
             // txtContrasenia
             // 
             this.txtContrasenia.Location = new System.Drawing.Point(107, 54);
-            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(2);
             this.txtContrasenia.Multiline = true;
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(233, 23);
             this.txtContrasenia.TabIndex = 74;
+            this.txtContrasenia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContrasenia_KeyDown);
             // 
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(107, 15);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(2);
             this.txtLogin.Multiline = true;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(233, 23);
             this.txtLogin.TabIndex = 73;
+            this.txtLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLogin_KeyDown);
             // 
             // label
             // 
@@ -87,7 +89,7 @@
             this.checkBoxAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxAdministrador.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.checkBoxAdministrador.Location = new System.Drawing.Point(107, 98);
-            this.checkBoxAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxAdministrador.Name = "checkBoxAdministrador";
             this.checkBoxAdministrador.Size = new System.Drawing.Size(127, 21);
             this.checkBoxAdministrador.TabIndex = 76;
@@ -100,7 +102,7 @@
             this.checkBoxSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxSistema.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.checkBoxSistema.Location = new System.Drawing.Point(107, 129);
-            this.checkBoxSistema.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxSistema.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxSistema.Name = "checkBoxSistema";
             this.checkBoxSistema.Size = new System.Drawing.Size(84, 21);
             this.checkBoxSistema.TabIndex = 77;
@@ -113,7 +115,7 @@
             this.checkBoxAdministracionDeOrdenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxAdministracionDeOrdenes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.checkBoxAdministracionDeOrdenes.Location = new System.Drawing.Point(107, 193);
-            this.checkBoxAdministracionDeOrdenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxAdministracionDeOrdenes.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxAdministracionDeOrdenes.Name = "checkBoxAdministracionDeOrdenes";
             this.checkBoxAdministracionDeOrdenes.Size = new System.Drawing.Size(220, 21);
             this.checkBoxAdministracionDeOrdenes.TabIndex = 79;
@@ -126,7 +128,7 @@
             this.checkBoxParametros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxParametros.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.checkBoxParametros.Location = new System.Drawing.Point(107, 161);
-            this.checkBoxParametros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxParametros.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxParametros.Name = "checkBoxParametros";
             this.checkBoxParametros.Size = new System.Drawing.Size(110, 21);
             this.checkBoxParametros.TabIndex = 78;
@@ -139,7 +141,7 @@
             this.checkBoxGestionGerencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxGestionGerencial.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.checkBoxGestionGerencial.Location = new System.Drawing.Point(107, 225);
-            this.checkBoxGestionGerencial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxGestionGerencial.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxGestionGerencial.Name = "checkBoxGestionGerencial";
             this.checkBoxGestionGerencial.Size = new System.Drawing.Size(155, 21);
             this.checkBoxGestionGerencial.TabIndex = 80;
@@ -150,7 +152,7 @@
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(93, 280);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(66, 28);
             this.btnCerrar.TabIndex = 84;
@@ -162,7 +164,7 @@
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.Location = new System.Drawing.Point(263, 280);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(67, 28);
             this.btnRegistrar.TabIndex = 83;
@@ -186,7 +188,7 @@
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmRegistroDerechosUsuarios";
             this.Text = "Registro de derechos de usuarios";
             this.ResumeLayout(false);
