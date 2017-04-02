@@ -65,7 +65,7 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(111, 379);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(66, 28);
             this.btnCancelar.TabIndex = 107;
@@ -77,7 +77,7 @@
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.Location = new System.Drawing.Point(315, 379);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(67, 28);
             this.btnRegistrar.TabIndex = 106;
@@ -88,74 +88,82 @@
             // txtTelefono3
             // 
             this.txtTelefono3.Location = new System.Drawing.Point(150, 343);
-            this.txtTelefono3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono3.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono3.Multiline = true;
             this.txtTelefono3.Name = "txtTelefono3";
             this.txtTelefono3.Size = new System.Drawing.Size(233, 23);
             this.txtTelefono3.TabIndex = 105;
+            this.txtTelefono3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefono3_KeyDown);
             // 
             // txtTelefono2
             // 
             this.txtTelefono2.Location = new System.Drawing.Point(150, 303);
-            this.txtTelefono2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono2.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono2.Multiline = true;
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Size = new System.Drawing.Size(233, 23);
             this.txtTelefono2.TabIndex = 104;
+            this.txtTelefono2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefono2_KeyDown);
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(150, 268);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(233, 23);
             this.txtTelefono.TabIndex = 103;
+            this.txtTelefono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefono_KeyDown);
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(150, 189);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(233, 23);
             this.txtDireccion.TabIndex = 102;
+            this.txtDireccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDireccion_KeyDown);
             // 
             // txtApellido2
             // 
             this.txtApellido2.Location = new System.Drawing.Point(150, 150);
-            this.txtApellido2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellido2.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido2.Multiline = true;
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(233, 23);
             this.txtApellido2.TabIndex = 101;
+            this.txtApellido2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtApellido2_KeyDown);
             // 
             // txtApellido1
             // 
             this.txtApellido1.Location = new System.Drawing.Point(150, 110);
-            this.txtApellido1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellido1.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido1.Multiline = true;
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(233, 23);
             this.txtApellido1.TabIndex = 100;
+            this.txtApellido1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtApellido1_KeyDown);
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(150, 72);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(233, 23);
             this.txtNombre.TabIndex = 99;
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
             // txtCedula
             // 
             this.txtCedula.Location = new System.Drawing.Point(150, 32);
-            this.txtCedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(2);
             this.txtCedula.Multiline = true;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(233, 23);
             this.txtCedula.TabIndex = 98;
+            this.txtCedula.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCedula_KeyDown);
             // 
             // label8
             // 
@@ -249,7 +257,7 @@
             // 
             this.comboBoxPuesto.FormattingEnabled = true;
             this.comboBoxPuesto.Location = new System.Drawing.Point(150, 230);
-            this.comboBoxPuesto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxPuesto.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPuesto.Name = "comboBoxPuesto";
             this.comboBoxPuesto.Size = new System.Drawing.Size(233, 21);
             this.comboBoxPuesto.TabIndex = 109;
@@ -279,7 +287,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmRegistrarEmpleado";
             this.Text = "Registrar empleado";
             this.ResumeLayout(false);

@@ -20,7 +20,6 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
             llenarComboPuestos();
-            this.comboBoxPuesto.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public FrmRegistrarEmpleado(EmpleadoE pEmpleado)
@@ -52,7 +51,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (PuestoE oPuestoE in puestos)
             {
                 this.comboBoxPuesto.Items.Add(oPuestoE);
+                this.comboBoxPuesto.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBoxPuesto.SelectedIndex = comboBoxPuesto.Items.Count - 1;
             }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -93,5 +95,84 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
             
         }
+
+        private void txtCedula_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtApellido1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtApellido2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDireccion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtTelefono_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtTelefono2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtTelefono3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+
     }
 }
