@@ -95,6 +95,62 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             return vehiculos;
         }
 
+        public List<VehiculoE> obtenerVehiculosOrdenTrabajo(int pCedula)
+        {
+            this.limpiarError();
+            List<VehiculoE> vehiculos = new List<VehiculoE>();
+            DataSet dsetVehiculos;
+            string sql = "select v.id_vehiculo as idVehiculo, v.placa as placa, v.clase_de_vehiculo as claseVehiculo, " +
+                "v.capacidad_de_personas as capacidadPersonas, v.numero_de_motor as numeroMotor, v.numero_de_chasis as numeroChasis, " +
+                "v.combustible as combustible," +
+                "c.cedula as cedula, c.nombre as nombre," +
+                "c.apellido1 as apellido1, c.apellido2 as apellido2," +
+                "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3," +
+                "mo.id_modelo  as idModelo, mo.descripcion  as descripcion, mo.anio as anno," +
+                "m.id_marca as idMarca, m.descripcion as descripcion" +
+                " from schtaller.Vehiculo v, schtaller.Cliente c, schtaller.Modelo mo, schtaller.Marca m" +
+                " where c.cedula = v.id_cliente and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca "+
+                "and v.id_cliente = "+ pCedula;
+
+            //if (pCliente != null)
+            //{
+            //    sql += "and c.cedula = @cliente";
+            //    Parametro oParametro = new Parametro();
+            //    oParametro.agregarParametro("@cliente", NpgsqlDbType.Varchar, pCliente.Cedula);
+            //    dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql, "vehiculo", oParametro.obtenerParametros());
+            //}
+            //else
+            //{
+            dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql);
+            //}
+            //if (pModelo != null)
+            ////{
+            //    sql += "and mo.idModelo = @modelo";
+            //    Parametro oParametro = new Parametro();
+            //    oParametro.agregarParametro("@modelo", NpgsqlDbType.Varchar, pCliente.Cedula);
+            //    dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql, "vehiculo", oParametro.obtenerParametros());
+            //}
+            //else
+            //{
+            //    dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql);
+            //}
+            foreach (DataRow tupla in dsetVehiculos.Tables[0].Rows)
+            {
+                ClienteE oCliente = new ClienteE(Convert.ToInt32(tupla[7].ToString()), tupla[8].ToString(),
+                    tupla[9].ToString(), tupla[10].ToString(), tupla[11].ToString(), tupla[12].ToString(),
+                    tupla[13].ToString(), tupla[14].ToString());
+
+                MarcaE oMarca = new MarcaE(Convert.ToInt32(tupla[18].ToString()), tupla[19].ToString());
+
+                ModeloE oModelo = new ModeloE(Convert.ToInt32(tupla[15].ToString()), tupla[16].ToString(), oMarca, Convert.ToInt32(tupla[17].ToString()));
+
+                VehiculoE oVehiculo = new VehiculoE(Convert.ToInt32(tupla[0].ToString()), tupla[1].ToString(), tupla[2].ToString()
+                    , Convert.ToInt32(tupla[3].ToString()), oCliente, oModelo, tupla[4].ToString(), tupla[5].ToString()
+                    , tupla[6].ToString());
+                vehiculos.Add(oVehiculo);
+            }
+            return vehiculos;
+        }
 
         public bool agregarVehiculo(VehiculoE pVehiculo)
         {

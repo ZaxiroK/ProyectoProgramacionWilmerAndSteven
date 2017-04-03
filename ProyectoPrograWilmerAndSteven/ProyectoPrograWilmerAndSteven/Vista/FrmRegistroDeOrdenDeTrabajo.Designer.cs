@@ -41,24 +41,29 @@
             this.txtOrden = new System.Windows.Forms.TextBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.DTGreparaciones = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAgregarReparacion = new System.Windows.Forms.ToolStripButton();
             this.btnEliminarReparacion = new System.Windows.Forms.ToolStripButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.DTGrepuestos = new System.Windows.Forms.DataGridView();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.DTGrepuestos = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.DTGreparaciones = new System.Windows.Forms.DataGridView();
+            this.idRepuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
-            this.toolStrip3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DTGrepuestos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DTGreparaciones)).BeginInit();
+            this.toolStrip2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DTGrepuestos)).BeginInit();
+            this.toolStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -81,6 +86,7 @@
             this.btnSalvar.Size = new System.Drawing.Size(42, 35);
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnFinalizar
             // 
@@ -134,6 +140,7 @@
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(277, 21);
             this.cmbCliente.TabIndex = 4;
+            this.cmbCliente.SelectionChangeCommitted += new System.EventHandler(this.cmbCliente_SelectionChangeCommitted);
             // 
             // cmbVehiculo
             // 
@@ -172,17 +179,14 @@
             this.tabPage1.Text = "Reparaciones";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // DTGreparaciones
             // 
-            this.tabPage2.Controls.Add(this.DTGrepuestos);
-            this.tabPage2.Controls.Add(this.toolStrip3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(730, 255);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Repuestos";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.DTGreparaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DTGreparaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DTGreparaciones.Location = new System.Drawing.Point(3, 41);
+            this.DTGreparaciones.Name = "DTGreparaciones";
+            this.DTGreparaciones.Size = new System.Drawing.Size(724, 211);
+            this.DTGreparaciones.TabIndex = 1;
             // 
             // toolStrip2
             // 
@@ -213,6 +217,33 @@
             this.btnEliminarReparacion.Text = "Eliminar";
             this.btnEliminarReparacion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.DTGrepuestos);
+            this.tabPage2.Controls.Add(this.toolStrip3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(730, 255);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Repuestos";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // DTGrepuestos
+            // 
+            this.DTGrepuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DTGrepuestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idRepuesto,
+            this.nombre,
+            this.anno,
+            this.precio,
+            this.cantidad});
+            this.DTGrepuestos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DTGrepuestos.Location = new System.Drawing.Point(3, 41);
+            this.DTGrepuestos.Name = "DTGrepuestos";
+            this.DTGrepuestos.Size = new System.Drawing.Size(724, 211);
+            this.DTGrepuestos.TabIndex = 1;
+            // 
             // toolStrip3
             // 
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -233,6 +264,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(53, 35);
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // toolStripButton4
             // 
@@ -243,15 +275,6 @@
             this.toolStripButton4.Text = "Eliminar";
             this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
-            // DTGrepuestos
-            // 
-            this.DTGrepuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DTGrepuestos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DTGrepuestos.Location = new System.Drawing.Point(3, 41);
-            this.DTGrepuestos.Name = "DTGrepuestos";
-            this.DTGrepuestos.Size = new System.Drawing.Size(724, 211);
-            this.DTGrepuestos.TabIndex = 1;
-            // 
             // btnEditar
             // 
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
@@ -261,14 +284,33 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
-            // DTGreparaciones
+            // idRepuesto
             // 
-            this.DTGreparaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DTGreparaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DTGreparaciones.Location = new System.Drawing.Point(3, 41);
-            this.DTGreparaciones.Name = "DTGreparaciones";
-            this.DTGreparaciones.Size = new System.Drawing.Size(724, 211);
-            this.DTGreparaciones.TabIndex = 1;
+            this.idRepuesto.DataPropertyName = "IdCatalogoRepuesto";
+            this.idRepuesto.HeaderText = "Id repuesto";
+            this.idRepuesto.Name = "idRepuesto";
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre Repuesto";
+            this.nombre.Name = "nombre";
+            // 
+            // anno
+            // 
+            this.anno.DataPropertyName = "AnnoAlQuePertenece";
+            this.anno.HeaderText = "Año";
+            this.anno.Name = "anno";
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "Precio";
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
             // 
             // FrmRegistroDeOrdenDeTrabajo
             // 
@@ -290,14 +332,14 @@
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DTGreparaciones)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DTGrepuestos)).EndInit();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DTGrepuestos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DTGreparaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +369,10 @@
         private System.Windows.Forms.ToolStripButton btnAgregar;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idRepuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn anno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
     }
 }

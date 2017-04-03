@@ -16,12 +16,11 @@ namespace Logica
         private DateTime fechaDeSalida;
         private DateTime fechaDeFacturacion;
         private EmpleadoE oMecanicoResponsable;
-        /*private Double costoTotal;*/
         private VehiculoE oVehiculo;
         private char estado;
         private int facturaNumero;
         public OrdenTrabajoE(int pIdOrdenDetrabajo, int pAnno, DateTime pFechaDeIngreso,
-            DateTime pFechaDeSalida, DateTime pFechaDeFacturacion, EmpleadoE pOMecanicoResponsable, /*Double pCostoTotal,*/ VehiculoE pOVehiculo,
+            DateTime pFechaDeSalida, DateTime pFechaDeFacturacion, EmpleadoE pOMecanicoResponsable,VehiculoE pOVehiculo,
             char pEstado, int pFacturaNumero)
         {
             this.IdOrdenDetrabajo = pIdOrdenDetrabajo;
@@ -30,7 +29,6 @@ namespace Logica
             this.FechaDeSalida = pFechaDeSalida;
             this.FechaDeFacturacion = pFechaDeFacturacion;
             this.OMecanicoResponsable = pOMecanicoResponsable;
-            /*this.CostoTotal = pCostoTotal;*/
             this.OVehiculo = pOVehiculo;
             this.Estado = pEstado;
             this.FacturaNumero = pFacturaNumero;

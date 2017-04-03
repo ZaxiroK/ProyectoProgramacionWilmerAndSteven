@@ -151,7 +151,7 @@ namespace Logica
 
         public override string ToString()
         {
-            return (this.oClienteE.Cedula+"-"+this.oClienteE.Nombre +":"+ this.placa +"-"+this.claseVehiculo);
+            return ("Dueño: "+this.oClienteE.Nombre+" "+ this.oClienteE.Apellido1 +" Placa:"+ this.placa +" Clase:"+this.claseVehiculo);
         }
     }
 }
