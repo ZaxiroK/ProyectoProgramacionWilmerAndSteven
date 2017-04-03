@@ -42,6 +42,11 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.DTGreparaciones = new System.Windows.Forms.DataGridView();
+            this.idReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaTotalReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedulaEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAgregarReparacion = new System.Windows.Forms.ToolStripButton();
             this.btnEliminarReparacion = new System.Windows.Forms.ToolStripButton();
@@ -56,6 +61,8 @@
             this.anno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOrdenTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOrdenRepuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -182,11 +189,47 @@
             // DTGreparaciones
             // 
             this.DTGreparaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DTGreparaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idReparacion,
+            this.descripcion,
+            this.horaTotalReparacion,
+            this.costoReparacion,
+            this.cedulaEmpleado});
             this.DTGreparaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGreparaciones.Location = new System.Drawing.Point(3, 41);
             this.DTGreparaciones.Name = "DTGreparaciones";
             this.DTGreparaciones.Size = new System.Drawing.Size(724, 211);
             this.DTGreparaciones.TabIndex = 1;
+            // 
+            // idReparacion
+            // 
+            this.idReparacion.DataPropertyName = "Id_catalogoReparacion";
+            this.idReparacion.HeaderText = "Id reparación";
+            this.idReparacion.Name = "idReparacion";
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "Descripcion";
+            this.descripcion.HeaderText = "Nombre";
+            this.descripcion.Name = "descripcion";
+            // 
+            // horaTotalReparacion
+            // 
+            this.horaTotalReparacion.DataPropertyName = "HorasTotalReparacion";
+            this.horaTotalReparacion.HeaderText = "Horas";
+            this.horaTotalReparacion.Name = "horaTotalReparacion";
+            // 
+            // costoReparacion
+            // 
+            this.costoReparacion.DataPropertyName = "CostoReparacion";
+            this.costoReparacion.HeaderText = "Costo";
+            this.costoReparacion.Name = "costoReparacion";
+            // 
+            // cedulaEmpleado
+            // 
+            this.cedulaEmpleado.DataPropertyName = "CedulaEmpleado";
+            this.cedulaEmpleado.HeaderText = "Encargado";
+            this.cedulaEmpleado.Name = "cedulaEmpleado";
             // 
             // toolStrip2
             // 
@@ -207,6 +250,7 @@
             this.btnAgregarReparacion.Size = new System.Drawing.Size(53, 35);
             this.btnAgregarReparacion.Text = "Agregar";
             this.btnAgregarReparacion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnAgregarReparacion.Click += new System.EventHandler(this.btnAgregarReparacion_Click);
             // 
             // btnEliminarReparacion
             // 
@@ -237,7 +281,9 @@
             this.nombre,
             this.anno,
             this.precio,
-            this.cantidad});
+            this.cantidad,
+            this.idOrdenTrabajo,
+            this.idOrdenRepuesto});
             this.DTGrepuestos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGrepuestos.Location = new System.Drawing.Point(3, 41);
             this.DTGrepuestos.Name = "DTGrepuestos";
@@ -292,6 +338,7 @@
             // 
             // nombre
             // 
+            this.nombre.DataPropertyName = "NombreDelRepuesto";
             this.nombre.HeaderText = "Nombre Repuesto";
             this.nombre.Name = "nombre";
             // 
@@ -309,8 +356,21 @@
             // 
             // cantidad
             // 
+            this.cantidad.DataPropertyName = "Cantidad";
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.Name = "cantidad";
+            // 
+            // idOrdenTrabajo
+            // 
+            this.idOrdenTrabajo.DataPropertyName = "IdOrdenTrabajo";
+            this.idOrdenTrabajo.HeaderText = "N° orden trabajo";
+            this.idOrdenTrabajo.Name = "idOrdenTrabajo";
+            // 
+            // idOrdenRepuesto
+            // 
+            this.idOrdenRepuesto.DataPropertyName = "IdOrdenRepuesto";
+            this.idOrdenRepuesto.HeaderText = "N° orden repuesto";
+            this.idOrdenRepuesto.Name = "idOrdenRepuesto";
             // 
             // FrmRegistroDeOrdenDeTrabajo
             // 
@@ -369,10 +429,17 @@
         private System.Windows.Forms.ToolStripButton btnAgregar;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idReparacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaTotalReparacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costoReparacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRepuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn anno;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOrdenTrabajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOrdenRepuesto;
     }
 }

@@ -23,6 +23,14 @@ namespace Logica
             this.HorasTotalReparacion = pHorasTotalReparacion;
             this.OOrdenTrabajo = pOrdenTrabajo;
         }
+
+        public OrdenReparacionE( int pCedulaEmpleado,int pHorasTotalReparacion, int pIdCatalogoReparacion, string pDescripcion,
+                int pHorasReparacion, double pCostoReparacion) :
+                base(pIdCatalogoReparacion, pDescripcion, pHorasReparacion, pCostoReparacion)
+        {
+            this.CedulaEmpleado = pCedulaEmpleado;
+            this.HorasTotalReparacion = pHorasTotalReparacion;
+        }
         public int IdOrdenReparacion
         {
             get

@@ -206,6 +206,12 @@
     <Compile Include="Vista\FrmRegistroModelo.Designer.cs">
       <DependentUpon>FrmRegistroModelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmSeleccionarReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmSeleccionarReparaciones.Designer.cs">
+      <DependentUpon>FrmSeleccionarReparaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmSeleccionarRepuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroModelo.resx">
       <DependentUpon>FrmRegistroModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmSeleccionarReparaciones.resx">
+      <DependentUpon>FrmSeleccionarReparaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmSeleccionarRepuestos.resx">
       <DependentUpon>FrmSeleccionarRepuestos.cs</DependentUpon>

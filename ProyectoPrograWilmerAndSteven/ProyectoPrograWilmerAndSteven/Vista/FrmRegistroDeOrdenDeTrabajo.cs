@@ -14,6 +14,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmRegistroDeOrdenDeTrabajo : Form
     {
+        List<OrdenReparacionE> listOredenReparacion = new List<OrdenReparacionE>();
+        List<OrdenRepuestoE> listOredenRepuesto = new List<OrdenRepuestoE>();
+
         public FrmRegistroDeOrdenDeTrabajo()
         {
             InitializeComponent();
@@ -58,8 +61,27 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FrmSeleccionarRepuestos oFRm = new FrmSeleccionarRepuestos();
-            oFRm.ShowDialog();            
+            FrmSeleccionarRepuestos oFrm = new FrmSeleccionarRepuestos();
+            oFrm.ShowDialog();
+            if(oFrm.Aceptar)
+            {
+                this.agregarOrdenRepuestos(oFrm.ListaOrdenRepuesto);
+                DTGrepuestos.DataSource = this.listOredenRepuesto;
+            }            
+        }
+
+        private void btnAgregarReparacion_Click(object sender, EventArgs e)
+        {
+            FrmSeleccionarReparaciones oFrm = new FrmSeleccionarReparaciones();
+            oFrm.ShowDialog();
+        }
+
+        private void agregarOrdenRepuestos(List<OrdenRepuestoE> pRepuesto)
+        {
+            foreach (OrdenRepuestoE oRepuesto in pRepuesto)
+            {
+                this.listOredenRepuesto.Add(oRepuesto);
+            }
         }
     }
 }
