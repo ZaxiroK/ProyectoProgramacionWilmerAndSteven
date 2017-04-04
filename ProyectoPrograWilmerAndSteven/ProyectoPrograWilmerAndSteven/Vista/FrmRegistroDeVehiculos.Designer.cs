@@ -81,7 +81,7 @@
             this.textCombustible.Multiline = true;
             this.textCombustible.Name = "textCombustible";
             this.textCombustible.Size = new System.Drawing.Size(309, 27);
-            this.textCombustible.TabIndex = 80;
+            this.textCombustible.TabIndex = 6;
             // 
             // labelCombustible
             // 
@@ -100,7 +100,7 @@
             this.textNumeroDeChasis.Multiline = true;
             this.textNumeroDeChasis.Name = "textNumeroDeChasis";
             this.textNumeroDeChasis.Size = new System.Drawing.Size(309, 27);
-            this.textNumeroDeChasis.TabIndex = 78;
+            this.textNumeroDeChasis.TabIndex = 5;
             // 
             // textNumeroDeMotor
             // 
@@ -109,7 +109,7 @@
             this.textNumeroDeMotor.Multiline = true;
             this.textNumeroDeMotor.Name = "textNumeroDeMotor";
             this.textNumeroDeMotor.Size = new System.Drawing.Size(309, 27);
-            this.textNumeroDeMotor.TabIndex = 77;
+            this.textNumeroDeMotor.TabIndex = 4;
             // 
             // labelNumeroDeChasis
             // 
@@ -138,7 +138,7 @@
             this.textCapacidadDePersonas.Multiline = true;
             this.textCapacidadDePersonas.Name = "textCapacidadDePersonas";
             this.textCapacidadDePersonas.Size = new System.Drawing.Size(309, 27);
-            this.textCapacidadDePersonas.TabIndex = 74;
+            this.textCapacidadDePersonas.TabIndex = 3;
             // 
             // textClaseDeVehiculo
             // 
@@ -147,7 +147,7 @@
             this.textClaseDeVehiculo.Multiline = true;
             this.textClaseDeVehiculo.Name = "textClaseDeVehiculo";
             this.textClaseDeVehiculo.Size = new System.Drawing.Size(309, 27);
-            this.textClaseDeVehiculo.TabIndex = 73;
+            this.textClaseDeVehiculo.TabIndex = 2;
             // 
             // labelCapacidadDePersonas
             // 
@@ -166,7 +166,8 @@
             this.txtId.Multiline = true;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(309, 27);
-            this.txtId.TabIndex = 70;
+            this.txtId.TabIndex = 0;
+            this.txtId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtId_KeyDown);
             // 
             // labelPlaca
             // 
@@ -235,7 +236,6 @@
             this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 87;
             this.label2.Text = "Id vehiculo";
-
             // 
             // textPlaca
             // 
@@ -244,8 +244,7 @@
             this.textPlaca.Multiline = true;
             this.textPlaca.Name = "textPlaca";
             this.textPlaca.Size = new System.Drawing.Size(309, 27);
-            this.textPlaca.TabIndex = 88;
-
+            this.textPlaca.TabIndex = 1;
             // 
             // FrmRegistroDeVehiculos
             // 

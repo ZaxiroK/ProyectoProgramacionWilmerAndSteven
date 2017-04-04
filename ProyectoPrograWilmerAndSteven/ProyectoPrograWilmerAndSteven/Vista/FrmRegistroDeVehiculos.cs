@@ -18,7 +18,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         public VehiculoE oVehiculoE;
         private ClienteE oClienteEeditar;
         private ModeloE oModeloEditar;
-        
+
         public FrmRegistroDeVehiculos()
         {
             InitializeComponent();
@@ -42,17 +42,47 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.textNumeroDeChasis.Text = oV.NumeroChasis;
             this.textCapacidadDePersonas.Text = oV.CapacidadPersonas.ToString();
             oClienteEeditar = oV.OClienteE;
-            oModeloEditar = oV.OModeloE;            
+            oModeloEditar = oV.OModeloE;
             this.llenarComboClientes();
             this.llenarComboModelos();
- 
+            this.setModeloComboActual(oModeloEditar.IdModelo);
+            this.setClienteComboActual(oClienteEeditar.Cedula);
+
         }
 
-        
+
+        private void setModeloComboActual(int id)
+        {
+            int i, x = 0;
+            for (i = 0; i < this.comboBoxModelos.Items.Count; i++)
+            {
+                ModeloE oMe = (ModeloE)this.comboBoxModelos.Items[i];
+                if (oMe.IdModelo == id)
+                {
+                    x = i;
+                    i = this.comboBoxModelos.Items.Count;
+                }
+            }
+            this.comboBoxModelos.SelectedIndex = x;
+        }
+
+        private void setClienteComboActual(int cedula)
+        {
+            int i, x = 0;
+            for (i = 0; i < this.comboBoxClientes.Items.Count; i++)
+            {
+                ClienteE oCe = (ClienteE)this.comboBoxClientes.Items[i];
+                if (oCe.Cedula == cedula)
+                {
+                    x = i;
+                    i = this.comboBoxModelos.Items.Count;
+                }
+            }
+            this.comboBoxClientes.SelectedIndex = x;
+        }
         public void llenarComboModelos()
         {
-            int posicion = 1;
-            int posicion2 = 1;
+
             this.comboBoxModelos.Items.Clear();
             ModeloD oModeloD = new ModeloD();
 
@@ -60,56 +90,30 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             foreach (ModeloE oModeloE in modelos)
             {
-                
-                if (oModeloE.Equals(oModeloEditar))//no quiere entrar al if aunque sea igual
-                {
-                    posicion = posicion2;//posicion ser igual al numero donde los objetos eran equivalentes
-                }
-                posicion2 += 1;// al final de todo el for posicion2 va a ser = 6
+
                 this.comboBoxModelos.Items.Add(oModeloE);
-                this.comboBoxModelos.DropDownStyle = ComboBoxStyle.DropDownList;
-                comboBoxModelos.SelectedIndex = comboBoxModelos.Items.Count - (posicion2-posicion);
-                //se resta por que el combo se llena alrevez es decir las posiciones, es decir q la 1 es la 5.
-                /*
-                 *6 -1 = 5
-                 *6 -2 = 4
-                 *6 -3 = 3
-                 *6 -4 = 2
-                 *6 -5 = 1
-                 * se obtiene las posciones al revez en caso de que fueran 5 o mas 
-                 */
+
             }
+            this.comboBoxModelos.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxModelos.SelectedIndex = comboBoxModelos.Items.Count - 1;
 
         }
         public void llenarComboClientes()
         {
-            int posicion = 1;
-            int posicion2 = 1;
             this.comboBoxClientes.Items.Clear();
             ClienteD oClienteD = new ClienteD();
             List<ClienteE> clientes = oClienteD.obtenerClientes();
-            
+
             foreach (ClienteE oClienteE in clientes)
             {
-                if (oClienteE.Equals(oClienteEeditar))//no quiere entrar al if aunque sea igual
-                {
-                    posicion = posicion2;//posicion ser igual al numero donde los objetos eran equivalentes
-                }
-                posicion2 += 1;// al final de todo el for posicion2 va a ser = 6
-                this.comboBoxClientes.Items.Add(oClienteE);               
-                this.comboBoxClientes.DropDownStyle = ComboBoxStyle.DropDownList;
-                comboBoxClientes.SelectedIndex = comboBoxClientes.Items.Count - (posicion2 - posicion);
-                //se resta por que el combo se llena alrevez es decir las posiciones, es decir q la 1 es la 5.
-                /*
-                 *6 -1 = 5
-                 *6 -2 = 4
-                 *6 -3 = 3
-                 *6 -4 = 2
-                 *6 -5 = 1
-                 * se obtiene las posciones al revez en caso de que fueran 5 o mas 
-                 */
+                this.comboBoxClientes.Items.Add(oClienteE);
             }
+
+            this.comboBoxClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxClientes.SelectedIndex = comboBoxClientes.Items.Count - 1;
+
         }
+
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -117,12 +121,12 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 if (
                !(this.comboBoxModelos.SelectedItem == null) &&
-               !(this.txtId.Text == "") &&
-               !(this.textClaseDeVehiculo.Text == "") &&
-               !(this.textCapacidadDePersonas.Text == "") &&
-               !(this.textNumeroDeMotor.Text == "") &&
-               !(this.textNumeroDeChasis.Text == "") &&
-               !(this.textCombustible.Text == ""))
+               !(this.txtId.Text.Trim() == "") &&
+               !(this.textClaseDeVehiculo.Text.Trim() == "") &&
+               !(this.textCapacidadDePersonas.Text.Trim() == "") &&
+               !(this.textNumeroDeMotor.Text.Trim() == "") &&
+               !(this.textNumeroDeChasis.Text.Trim() == "") &&
+               !(this.textCombustible.Text.Trim() == ""))
                 {
 
                     this.aceptar = true;
@@ -144,7 +148,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 MessageBox.Show("Asegurese de que los datos ingresados son los correctos");
             }
-           
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -164,8 +168,14 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
         }
 
-  
-
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
     }
 
 }
