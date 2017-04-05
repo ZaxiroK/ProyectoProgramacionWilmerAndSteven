@@ -11,7 +11,6 @@ namespace Logica
         private int idOrdenDetrabajo;
         private List<OrdenRepuestoE> ordenRepuesto;
         private List<OrdenReparacionE> ordenReparacion;
-        private int anno;
         private DateTime fechaDeIngreso;
         private DateTime fechaDeSalida;
         private DateTime fechaDeFacturacion;
@@ -19,12 +18,11 @@ namespace Logica
         private VehiculoE oVehiculo;
         private char estado;
         private int facturaNumero;
-        public OrdenTrabajoE(int pIdOrdenDetrabajo, int pAnno, DateTime pFechaDeIngreso,
+        public OrdenTrabajoE(int pIdOrdenDetrabajo,  DateTime pFechaDeIngreso,
             DateTime pFechaDeSalida, DateTime pFechaDeFacturacion, EmpleadoE pOMecanicoResponsable,VehiculoE pOVehiculo,
             char pEstado, int pFacturaNumero)
         {
             this.IdOrdenDetrabajo = pIdOrdenDetrabajo;
-            this.Anno = pAnno;
             this.FechaDeIngreso = pFechaDeIngreso;
             this.FechaDeSalida = pFechaDeSalida;
             this.FechaDeFacturacion = pFechaDeFacturacion;
@@ -34,13 +32,12 @@ namespace Logica
             this.FacturaNumero = pFacturaNumero;
         }
 
-        public OrdenTrabajoE(int pIdOrdenDetrabajo, int pAnno, DateTime pFechaDeIngreso,
+        public OrdenTrabajoE(int pIdOrdenDetrabajo, DateTime pFechaDeIngreso,
             DateTime pFechaDeSalida, DateTime pFechaDeFacturacion, EmpleadoE pOMecanicoResponsable, /*Double pCostoTotal,*/ VehiculoE pOVehiculo,
             char pEstado, int pFacturaNumero, List<OrdenRepuestoE> pOrdenRepuesto,
             List<OrdenReparacionE> pOrdenReparacion)
         {
             this.IdOrdenDetrabajo = pIdOrdenDetrabajo;
-            this.Anno = pAnno;
             this.FechaDeIngreso = pFechaDeIngreso;
             this.FechaDeSalida = pFechaDeSalida;
             this.FechaDeFacturacion = pFechaDeFacturacion;
@@ -136,18 +133,6 @@ namespace Logica
             }
         }
 
-        public int Anno
-        {
-            get
-            {
-                return anno;
-            }
-
-            set
-            {
-                anno = value;
-            }
-        }
 
         public DateTime FechaDeIngreso
         {
@@ -257,7 +242,6 @@ namespace Logica
         {
             return (
                 "Numero de factura: " + this.facturaNumero + "\n" +
-                "Año: " + this.anno + "\n" +
                 "Fecha de ingreso: " + this.fechaDeIngreso.ToString() + "\n" +
                 "Fecha de salida: " + this.fechaDeSalida.ToString() + "\n" +
                 "Fecha de facturacion: " + this.fechaDeFacturacion.ToString() + "\n" +

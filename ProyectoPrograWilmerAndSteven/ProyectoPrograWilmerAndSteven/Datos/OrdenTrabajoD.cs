@@ -48,8 +48,8 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
 
 
-            string sql = "select t.id_orden_de_trabajo  as idOrdenDetrabajo, t.anio   as anno," +
-                           " t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida," +
+            string sql = "select t.id_orden_de_trabajo  as idOrdenDetrabajo, " +
+                           " t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida, " +
                             "t.fecha_de_facturacion as fechaDeFacturacion," +/* t.costo_total as costoTotal," +*/
                            " t.estado as estado, t.factura_numero as facturaNumero," +
 
@@ -117,7 +117,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                     , Convert.ToInt32(tupla["capacidadPersonas"].ToString()), oCliente, oModelo, tupla["numeroMotor"].ToString(), tupla["numeroChasis"].ToString()
                     , tupla["combustible"].ToString());
 
-                OrdenTrabajoE oOrdenTrabajo = new OrdenTrabajoE(Convert.ToInt32(tupla["idOrdenDetrabajo"].ToString()), Convert.ToInt32(tupla["anno"].ToString()), Convert.ToDateTime(tupla["fechaDeIngreso"].ToString()),
+                OrdenTrabajoE oOrdenTrabajo = new OrdenTrabajoE(Convert.ToInt32(tupla["idOrdenDetrabajo"].ToString()), Convert.ToDateTime(tupla["fechaDeIngreso"].ToString()),
                     Convert.ToDateTime(tupla["fechaDeSalida"].ToString()), Convert.ToDateTime(tupla["fechaDeFacturacion"].ToString()), oEmpleado, oVehiculo, Convert.ToChar(tupla["estado"].ToString()), Convert.ToInt32(tupla["facturaNumero"].ToString()));
                 ordenesTrabajos.Add(oOrdenTrabajo);
             }
@@ -130,7 +130,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
                 string sql = "INSERT INTO schtaller.OrdenDeTrabajo(" +
-            "id_orden_de_trabajo,anio, fecha_de_ingreso_de_vehiculo, fecha_de_salida, fecha_de_facturacion, costo_total, id_empleado, id_vehiculo, estado, factura_numero ); ";
+            "id_orden_de_trabajo, fecha_de_ingreso_de_vehiculo, fecha_de_salida, fecha_de_facturacion, costo_total, id_empleado, id_vehiculo, estado, factura_numero ); ";
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
@@ -194,7 +194,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
 
-                string sql = "update schtaller.OrdenDeTrabajo set id_orden_de_trabajo = @id_orden_de_trabajo , anio = @anio, fecha_de_ingreso_de_vehiculo = @fecha_de_ingreso_de_vehiculo," +
+                string sql = "update schtaller.OrdenDeTrabajo set id_orden_de_trabajo = @id_orden_de_trabajo , fecha_de_ingreso_de_vehiculo = @fecha_de_ingreso_de_vehiculo," +
                      "fecha_de_salida = @fecha_de_salida, fecha_de_facturacion = @fecha_de_facturacion, costo_total = @costo_total, id_empleado = @id_empleado," +
                      "id_vehiculo = @id_vehiculo, estado = @estado, factura_numero = @factura_numero where schtaller.OrdenDeTrabajo = @OrdenDeTrabajo";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
