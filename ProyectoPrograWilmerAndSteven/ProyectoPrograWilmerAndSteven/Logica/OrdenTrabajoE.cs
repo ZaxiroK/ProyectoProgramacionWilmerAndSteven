@@ -32,12 +32,11 @@ namespace Logica
             this.FacturaNumero = pFacturaNumero;
         }
 
-        public OrdenTrabajoE(int pIdOrdenDetrabajo, DateTime pFechaDeIngreso,
+        public OrdenTrabajoE(DateTime pFechaDeIngreso,
             DateTime pFechaDeSalida, DateTime pFechaDeFacturacion, EmpleadoE pOMecanicoResponsable, /*Double pCostoTotal,*/ VehiculoE pOVehiculo,
             char pEstado, int pFacturaNumero, List<OrdenRepuestoE> pOrdenRepuesto,
             List<OrdenReparacionE> pOrdenReparacion)
         {
-            this.IdOrdenDetrabajo = pIdOrdenDetrabajo;
             this.FechaDeIngreso = pFechaDeIngreso;
             this.FechaDeSalida = pFechaDeSalida;
             this.FechaDeFacturacion = pFechaDeFacturacion;

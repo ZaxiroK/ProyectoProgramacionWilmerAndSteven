@@ -43,8 +43,8 @@
             this.ItemRegistroCatalogoReparaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemRegistroDeModelo = new System.Windows.Forms.ToolStripMenuItem();
             this.administracíonYÓrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestíonGerencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemOrdenTrabajo = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestíonGerencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,17 +173,18 @@
             this.administracíonYÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
             this.administracíonYÓrdenesToolStripMenuItem.Text = "Administracíon y órdenes";
             // 
-            // gestíonGerencialToolStripMenuItem
-            // 
-            this.gestíonGerencialToolStripMenuItem.Name = "gestíonGerencialToolStripMenuItem";
-            this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
-            this.gestíonGerencialToolStripMenuItem.Text = "Gestíon gerencial";
-            // 
             // menuItemOrdenTrabajo
             // 
             this.menuItemOrdenTrabajo.Name = "menuItemOrdenTrabajo";
             this.menuItemOrdenTrabajo.Size = new System.Drawing.Size(163, 22);
             this.menuItemOrdenTrabajo.Text = "Orden de trabajo";
+            this.menuItemOrdenTrabajo.Click += new System.EventHandler(this.menuItemOrdenTrabajo_Click);
+            // 
+            // gestíonGerencialToolStripMenuItem
+            // 
+            this.gestíonGerencialToolStripMenuItem.Name = "gestíonGerencialToolStripMenuItem";
+            this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.gestíonGerencialToolStripMenuItem.Text = "Gestíon gerencial";
             // 
             // FrmTallerMecanico
             // 

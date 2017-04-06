@@ -21,11 +21,13 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
             this.llenarComboClientes();
+            this.llenarComboEmpleado();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            OrdenTrabajoE oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now, ((EmpleadoE)this.cmbEmpleado.SelectedItem)
+                ,((VehiculoE)this.cmbVehiculo.SelectedItem), 'N', 0, this.listOredenRepuesto, this.listOredenReparacion);
         }
 
         public void llenarComboClientes()
@@ -61,27 +63,81 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FrmSeleccionarRepuestos oFrm = new FrmSeleccionarRepuestos();
+            FrmSeleccionarRepuestos oFrm = new FrmSeleccionarRepuestos(this.listOredenRepuesto);
             oFrm.ShowDialog();
             if(oFrm.Aceptar)
             {
-                this.agregarOrdenRepuestos(oFrm.ListaOrdenRepuesto);
-                DTGrepuestos.DataSource = this.listOredenRepuesto;
+                this.listOredenRepuesto = oFrm.CompararRepuesto;
+                this.CargarDGviewRepuesto(this.listOredenRepuesto);
             }            
         }
+        
 
         private void btnAgregarReparacion_Click(object sender, EventArgs e)
         {
             FrmSeleccionarReparaciones oFrm = new FrmSeleccionarReparaciones();
             oFrm.ShowDialog();
-        }
 
-        private void agregarOrdenRepuestos(List<OrdenRepuestoE> pRepuesto)
-        {
-            foreach (OrdenRepuestoE oRepuesto in pRepuesto)
+            if(oFrm.Aceptar)
             {
-                this.listOredenRepuesto.Add(oRepuesto);
+                this.agregarOrdenReparacion(oFrm.ListaOrdenReparacion);
+                this.CargarDGviewReparacion(this.listOredenReparacion);
             }
         }
+
+        
+        private void agregarOrdenReparacion(List<OrdenReparacionE> pReparacion)
+        {
+            foreach (OrdenReparacionE oReparacion in pReparacion)
+            {
+                this.listOredenReparacion.Add(oReparacion);
+            }
+        }
+
+        private void CargarDGviewRepuesto(List<OrdenRepuestoE> pRepuestos)
+        {
+
+            DTGrepuestos.Rows.Clear();
+
+
+            foreach (OrdenRepuestoE oM in pRepuestos)
+            {
+                
+                this.DTGrepuestos.Rows.Add(oM.IdCatalogoRepuesto.ToString(),
+                    oM.NombreDelRepuesto.ToString(),
+                    oM.AnnoAlQuePertenece.ToString(), oM.Precio.ToString()
+                    , oM.Cantidad.ToString());
+            }
+
+        }
+
+        private void CargarDGviewReparacion(List<OrdenReparacionE> pReparacion)
+        {
+
+            DTGreparaciones.Rows.Clear();
+
+
+            foreach (OrdenReparacionE oM in pReparacion)
+            {
+                this.DTGreparaciones.Rows.Add(oM.Id_catalogoReparacion.ToString(),
+                    oM.Descripcion.ToString(),
+                    oM.HorasTotalReparacion.ToString(), oM.CostoReparacion.ToString()
+                    , oM.CedulaEmpleado.ToString());
+            }
+
+        }
+        public void llenarComboEmpleado()
+        {
+
+            EmpleadoD oEmpleadoD = new EmpleadoD();
+            List<EmpleadoE> empleados = oEmpleadoD.obtenerEmpleados();
+
+            foreach (EmpleadoE oEmpleadoE in empleados)
+            {
+                this.cmbEmpleado.Items.Add(oEmpleadoE);
+            }
+        }
+
+        
     }
 }

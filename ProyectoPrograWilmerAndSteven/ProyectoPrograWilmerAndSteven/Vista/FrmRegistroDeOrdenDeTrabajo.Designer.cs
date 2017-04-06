@@ -42,20 +42,11 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.DTGreparaciones = new System.Windows.Forms.DataGridView();
-            this.idReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaTotalReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cedulaEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAgregarReparacion = new System.Windows.Forms.ToolStripButton();
             this.btnEliminarReparacion = new System.Windows.Forms.ToolStripButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.DTGrepuestos = new System.Windows.Forms.DataGridView();
-            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
-            this.btnAgregar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.idRepuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +54,17 @@
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idOrdenTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idOrdenRepuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.btnAgregar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.idReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaTotalReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedulaEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -168,7 +170,7 @@
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Location = new System.Drawing.Point(0, 173);
+            this.tabControl.Location = new System.Drawing.Point(0, 205);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(738, 281);
@@ -201,36 +203,6 @@
             this.DTGreparaciones.Size = new System.Drawing.Size(724, 211);
             this.DTGreparaciones.TabIndex = 1;
             // 
-            // idReparacion
-            // 
-            this.idReparacion.DataPropertyName = "Id_catalogoReparacion";
-            this.idReparacion.HeaderText = "Id reparación";
-            this.idReparacion.Name = "idReparacion";
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "Descripcion";
-            this.descripcion.HeaderText = "Nombre";
-            this.descripcion.Name = "descripcion";
-            // 
-            // horaTotalReparacion
-            // 
-            this.horaTotalReparacion.DataPropertyName = "HorasTotalReparacion";
-            this.horaTotalReparacion.HeaderText = "Horas";
-            this.horaTotalReparacion.Name = "horaTotalReparacion";
-            // 
-            // costoReparacion
-            // 
-            this.costoReparacion.DataPropertyName = "CostoReparacion";
-            this.costoReparacion.HeaderText = "Costo";
-            this.costoReparacion.Name = "costoReparacion";
-            // 
-            // cedulaEmpleado
-            // 
-            this.cedulaEmpleado.DataPropertyName = "CedulaEmpleado";
-            this.cedulaEmpleado.HeaderText = "Encargado";
-            this.cedulaEmpleado.Name = "cedulaEmpleado";
-            // 
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -247,8 +219,8 @@
             this.btnAgregarReparacion.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarReparacion.Image")));
             this.btnAgregarReparacion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregarReparacion.Name = "btnAgregarReparacion";
-            this.btnAgregarReparacion.Size = new System.Drawing.Size(53, 35);
-            this.btnAgregarReparacion.Text = "Agregar";
+            this.btnAgregarReparacion.Size = new System.Drawing.Size(56, 35);
+            this.btnAgregarReparacion.Text = " Agregar";
             this.btnAgregarReparacion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnAgregarReparacion.Click += new System.EventHandler(this.btnAgregarReparacion_Click);
             // 
@@ -290,6 +262,50 @@
             this.DTGrepuestos.Size = new System.Drawing.Size(724, 211);
             this.DTGrepuestos.TabIndex = 1;
             // 
+            // idRepuesto
+            // 
+            this.idRepuesto.DataPropertyName = "IdCatalogoRepuesto";
+            this.idRepuesto.HeaderText = "Id repuesto";
+            this.idRepuesto.Name = "idRepuesto";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "NombreDelRepuesto";
+            this.nombre.HeaderText = "Nombre Repuesto";
+            this.nombre.Name = "nombre";
+            // 
+            // anno
+            // 
+            this.anno.DataPropertyName = "AnnoAlQuePertenece";
+            this.anno.HeaderText = "Año";
+            this.anno.Name = "anno";
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "Precio";
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "Cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
+            // idOrdenTrabajo
+            // 
+            this.idOrdenTrabajo.DataPropertyName = "IdOrdenTrabajo";
+            this.idOrdenTrabajo.HeaderText = "N° orden trabajo";
+            this.idOrdenTrabajo.Name = "idOrdenTrabajo";
+            this.idOrdenTrabajo.Visible = false;
+            // 
+            // idOrdenRepuesto
+            // 
+            this.idOrdenRepuesto.DataPropertyName = "IdOrdenRepuesto";
+            this.idOrdenRepuesto.HeaderText = "N° orden repuesto";
+            this.idOrdenRepuesto.Name = "idOrdenRepuesto";
+            this.idOrdenRepuesto.Visible = false;
+            // 
             // toolStrip3
             // 
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -330,53 +346,55 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
-            // idRepuesto
+            // label4
             // 
-            this.idRepuesto.DataPropertyName = "IdCatalogoRepuesto";
-            this.idRepuesto.HeaderText = "Id repuesto";
-            this.idRepuesto.Name = "idRepuesto";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 174);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Empleado:";
             // 
-            // nombre
+            // cmbEmpleado
             // 
-            this.nombre.DataPropertyName = "NombreDelRepuesto";
-            this.nombre.HeaderText = "Nombre Repuesto";
-            this.nombre.Name = "nombre";
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Location = new System.Drawing.Point(92, 166);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(277, 21);
+            this.cmbEmpleado.TabIndex = 9;
             // 
-            // anno
+            // idReparacion
             // 
-            this.anno.DataPropertyName = "AnnoAlQuePertenece";
-            this.anno.HeaderText = "Año";
-            this.anno.Name = "anno";
+            this.idReparacion.HeaderText = "Id reparación";
+            this.idReparacion.Name = "idReparacion";
             // 
-            // precio
+            // descripcion
             // 
-            this.precio.DataPropertyName = "Precio";
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
+            this.descripcion.HeaderText = "Nombre";
+            this.descripcion.Name = "descripcion";
             // 
-            // cantidad
+            // horaTotalReparacion
             // 
-            this.cantidad.DataPropertyName = "Cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
+            this.horaTotalReparacion.HeaderText = "Horas";
+            this.horaTotalReparacion.Name = "horaTotalReparacion";
             // 
-            // idOrdenTrabajo
+            // costoReparacion
             // 
-            this.idOrdenTrabajo.DataPropertyName = "IdOrdenTrabajo";
-            this.idOrdenTrabajo.HeaderText = "N° orden trabajo";
-            this.idOrdenTrabajo.Name = "idOrdenTrabajo";
+            this.costoReparacion.HeaderText = "Costo";
+            this.costoReparacion.Name = "costoReparacion";
             // 
-            // idOrdenRepuesto
+            // cedulaEmpleado
             // 
-            this.idOrdenRepuesto.DataPropertyName = "IdOrdenRepuesto";
-            this.idOrdenRepuesto.HeaderText = "N° orden repuesto";
-            this.idOrdenRepuesto.Name = "idOrdenRepuesto";
+            this.cedulaEmpleado.HeaderText = "Encargado";
+            this.cedulaEmpleado.Name = "cedulaEmpleado";
             // 
             // FrmRegistroDeOrdenDeTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 451);
+            this.ClientSize = new System.Drawing.Size(738, 486);
+            this.Controls.Add(this.cmbEmpleado);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.txtOrden);
             this.Controls.Add(this.cmbVehiculo);
@@ -429,11 +447,6 @@
         private System.Windows.Forms.ToolStripButton btnAgregar;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton btnEditar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idReparacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horaTotalReparacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costoReparacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRepuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn anno;
@@ -441,5 +454,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOrdenTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOrdenRepuesto;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idReparacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaTotalReparacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costoReparacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaEmpleado;
     }
 }

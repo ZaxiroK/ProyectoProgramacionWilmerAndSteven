@@ -14,6 +14,63 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmSeleccionarReparaciones : Form
     {
+        private CatalogoReparacionE oReparacion;
+        private OrdenReparacionE oOrdenReparacion;
+        private List<OrdenReparacionE> listaOrdenReparacion = new List<OrdenReparacionE>();
+        private bool aceptar;
+
+        public CatalogoReparacionE OReparacion
+        {
+            get
+            {
+                return oReparacion;
+            }
+
+            set
+            {
+                oReparacion = value;
+            }
+        }
+
+        public OrdenReparacionE OOrdenReparacion
+        {
+            get
+            {
+                return oOrdenReparacion;
+            }
+
+            set
+            {
+                oOrdenReparacion = value;
+            }
+        }
+
+        public List<OrdenReparacionE> ListaOrdenReparacion
+        {
+            get
+            {
+                return listaOrdenReparacion;
+            }
+
+            set
+            {
+                listaOrdenReparacion = value;
+            }
+        }
+
+        public bool Aceptar
+        {
+            get
+            {
+                return aceptar;
+            }
+
+            set
+            {
+                aceptar = value;
+            }
+        }
+
         public FrmSeleccionarReparaciones()
         {
             InitializeComponent();
@@ -23,10 +80,27 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //if()
-            //{
+            if ((this.numericHoras.Value > 0) && (this.cmbEmpleado.SelectedItem != null) && 
+                (this.cmbReparacion.SelectedItem != null))
+            {
+                this.OReparacion = ((CatalogoReparacionE)this.cmbReparacion.SelectedItem);
 
-            //}
+                this.OOrdenReparacion = new OrdenReparacionE(((EmpleadoE)this.cmbEmpleado.SelectedItem).Cedula,
+                   ((Int32)this.numericHoras.Value), OReparacion.Id_catalogoReparacion,
+                   this.OReparacion.Descripcion,
+                    this.OReparacion.HorasReparacion, this.OReparacion.CostoReparacion);
+
+
+                this.Aceptar = true;
+                this.ListaOrdenReparacion.Add(OOrdenReparacion);
+                MessageBox.Show("¡Reparacion agregada!" + "\n" + "Presione salir para volver al menu principal " + "\n" + " o continue seleccionando más repuestos.");
+                this.cmbReparacion.SelectedIndex = -1;
+                this.cmbEmpleado.SelectedIndex = -1;
+            }
+            else
+            {
+                MessageBox.Show("¡Por favor ingrese todos los datos!");
+            }
         }
 
         public void llenarComboReparacion()
@@ -37,7 +111,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             foreach (CatalogoReparacionE oRespuestoE in reparacion)
             {
-                this.cmbOrdenTrabajo.Items.Add(oRespuestoE);
+                this.cmbReparacion.Items.Add(oRespuestoE);
             }
         }
 

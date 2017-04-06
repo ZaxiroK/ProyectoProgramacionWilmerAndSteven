@@ -16,5 +16,17 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            FrmRegistroDeOrdenDeTrabajo oFrm = new FrmRegistroDeOrdenDeTrabajo();
+            oFrm.ShowDialog();
+
+        }
+
+        private void FrmOrdenTrabajo_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

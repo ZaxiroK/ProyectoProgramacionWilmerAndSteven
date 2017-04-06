@@ -81,5 +81,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
 
         }
+
+        private void menuItemOrdenTrabajo_Click(object sender, EventArgs e)
+        {
+            FrmOrdenTrabajo oFrm = new FrmOrdenTrabajo();
+            oFrm.ShowDialog();
+        }
     }
 }

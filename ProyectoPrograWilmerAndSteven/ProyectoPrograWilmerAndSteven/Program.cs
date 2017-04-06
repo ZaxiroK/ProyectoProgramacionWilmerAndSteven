@@ -16,7 +16,7 @@ namespace ProyectoPrograWilmerAndSteven
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTallerMecanico());
+            Application.Run(new FrmRegistroDeOrdenDeTrabajo());
         }
     }
 }

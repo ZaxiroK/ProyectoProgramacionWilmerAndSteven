@@ -17,6 +17,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         private CatalogoRepuestoE oRepuesto;
         private OrdenRepuestoE oOrdenRepuesto;
         private List<OrdenRepuestoE> listaOrdenRepuesto = new List<OrdenRepuestoE>();
+        private List<OrdenRepuestoE> compararRepuesto = new List<OrdenRepuestoE>();
         private bool aceptar;
 
         public CatalogoRepuestoE ORepuesto
@@ -58,9 +59,24 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
         }
 
-        public FrmSeleccionarRepuestos()
+        public List<OrdenRepuestoE> CompararRepuesto
         {
+            get
+            {
+                return compararRepuesto;
+            }
+
+            set
+            {
+                compararRepuesto = value;
+            }
+        }
+
+        public FrmSeleccionarRepuestos(List<OrdenRepuestoE> pComparacion)
+        {
+
             InitializeComponent();
+            this.CompararRepuesto = pComparacion;
             this.llenarComboCantidad();
             this.llenarComboRepuesto();
         }
@@ -77,10 +93,18 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                    this.oRepuesto.IdCatalogoRepuesto, this.oRepuesto.NombreDelRepuesto, this.oRepuesto.AnnoAlQuePertenece,
                     this.oRepuesto.Precio);
 
+                if (validarCantidad(oOrdenRepuesto))
+                {
+                    this.aceptar = true;
+                    MessageBox.Show("¡Repuesto editado!" + "\n" + "Presione salir para volver al menu principal " + "\n" + " o continue seleccionando más repuestos.");
+                }
+                else
+                {
 
-                this.aceptar = true;
-                this.ListaOrdenRepuesto.Add(oOrdenRepuesto);
-                MessageBox.Show("¡Repuesto agregado!" +"\n" + "Presione salir para volver al menu principal "+"\n" +" o continue seleccionando más repuestos.");
+                    this.aceptar = true;
+                    this.CompararRepuesto.Add(oOrdenRepuesto);
+                    MessageBox.Show("¡Repuesto agregado!" + "\n" + "Presione salir para volver al menu principal " + "\n" + " o continue seleccionando más repuestos.");
+                }
                 this.cmbCantidad.SelectedIndex = -1;
                 this.cmbRepuestos.SelectedIndex = -1;
             }
@@ -88,6 +112,37 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 MessageBox.Show("¡Debe seleccionar el repuesto y la cantidad!");
             }
+        }
+
+        public bool validarCantidad(OrdenRepuestoE oOrdenRepuesto)
+        {
+            bool estado = false;
+            for (int i = 0; i < this.CompararRepuesto.Count; i++)
+            {
+                if(oOrdenRepuesto.IdCatalogoRepuesto == this.CompararRepuesto.ElementAt(i).IdCatalogoRepuesto)
+                {
+                    string message =
+                    "¡Repuesto existente!" + "\n" + "Presione 'Si' para editar el valor"
+                    + "\n" + "Presione 'No' para sumar el valor";
+
+                    const string caption = "Form Closing";
+                    var result = MessageBox.Show(message, caption,
+                                                 MessageBoxButtons.YesNo,
+                                                 MessageBoxIcon.Question);
+                    if (result == DialogResult.No)
+                    {
+                        this.CompararRepuesto.ElementAt(i).Cantidad += oOrdenRepuesto.Cantidad;
+                        estado = true;
+                    }
+                    if (result == DialogResult.Yes)
+                    {
+                        this.CompararRepuesto.ElementAt(i).Cantidad = oOrdenRepuesto.Cantidad; 
+                         estado = true;
+                    }
+                }
+            }
+            return estado;
+
         }
 
         public void llenarComboRepuesto()
