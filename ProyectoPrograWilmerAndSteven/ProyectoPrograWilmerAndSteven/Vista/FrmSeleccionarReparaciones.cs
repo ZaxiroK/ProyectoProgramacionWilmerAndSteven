@@ -18,7 +18,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         private OrdenReparacionE oOrdenReparacion;
         private List<OrdenReparacionE> listaOrdenReparacion = new List<OrdenReparacionE>();
         private bool aceptar;
-
+        
         public CatalogoReparacionE OReparacion
         {
             get

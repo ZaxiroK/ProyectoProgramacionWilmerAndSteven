@@ -14,6 +14,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmRegistroDeOrdenDeTrabajo : Form
     {
+        public VehiculoE vehiculoEcliente;
         List<OrdenReparacionE> listOredenReparacion = new List<OrdenReparacionE>();
         List<OrdenRepuestoE> listOredenRepuesto = new List<OrdenRepuestoE>();
 
@@ -40,6 +41,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (ClienteE oClienteE in clientes)
             {
                 this.cmbCliente.Items.Add(oClienteE);
+                this.cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbCliente.SelectedIndex = cmbCliente.Items.Count - 1;
             }
         }
 
@@ -52,6 +55,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (VehiculoE oVehiculoE in vehiculos)
             {
                 this.cmbVehiculo.Items.Add(oVehiculoE);
+                this.cmbVehiculo.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbVehiculo.SelectedIndex = cmbVehiculo.Items.Count - 1;
             }
         }
 
@@ -59,6 +64,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             this.cmbVehiculo.Items.Clear();
             this.llenarComboVehiculo(((ClienteE)this.cmbCliente.SelectedItem).Cedula);
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -135,9 +141,26 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (EmpleadoE oEmpleadoE in empleados)
             {
                 this.cmbEmpleado.Items.Add(oEmpleadoE);
+                this.cmbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbEmpleado.SelectedIndex = cmbEmpleado.Items.Count - 1;
             }
         }
 
-        
+        private void setVehiculoActual(int id)
+        {
+            int i, x = 0;
+            for (i = 0; i < this.cmbVehiculo.Items.Count; i++)
+            {
+                VehiculoE oVe = (VehiculoE)this.cmbVehiculo.Items[i];
+                if (oVe.IdVehiculo == id)
+                {
+                    x = i;
+                    i = this.cmbVehiculo.Items.Count;
+                }
+            }
+            this.cmbVehiculo.SelectedIndex = x;
+        }
+
+
     }
 }
