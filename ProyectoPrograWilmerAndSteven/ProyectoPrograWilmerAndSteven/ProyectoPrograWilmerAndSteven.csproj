@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Mono.Security">
       <HintPath>..\..\..\..\..\Desktop\Wilmer\Programacion3\semana3\C5\C5\Mono.Security.dll</HintPath>
     </Reference>
@@ -78,6 +81,14 @@
     <Compile Include="Logica\PuestoE.cs" />
     <Compile Include="Logica\UsuarioE.cs" />
     <Compile Include="Logica\VehiculoE.cs" />
+    <Compile Include="Reportes\dsetOrdenTrabajo.cs">
+      <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dsetOrdenTrabajo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmCambioContrasenia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,12 +334,26 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\dsetOrdenTrabajo.xsc">
+      <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsetOrdenTrabajo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsetOrdenTrabajo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dsetOrdenTrabajo.xss">
+      <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
