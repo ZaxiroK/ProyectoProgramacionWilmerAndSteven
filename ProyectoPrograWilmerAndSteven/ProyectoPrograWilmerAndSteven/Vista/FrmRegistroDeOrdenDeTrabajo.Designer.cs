@@ -33,15 +33,18 @@
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
             this.btnFinalizar = new System.Windows.Forms.ToolStripButton();
             this.btnFacturar = new System.Windows.Forms.ToolStripButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.cmbVehiculo = new System.Windows.Forms.ComboBox();
-            this.txtOrden = new System.Windows.Forms.TextBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.DTGreparaciones = new System.Windows.Forms.DataGridView();
+            this.idReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaTotalReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedulaEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAgregarReparacion = new System.Windows.Forms.ToolStripButton();
             this.btnEliminarReparacion = new System.Windows.Forms.ToolStripButton();
@@ -60,11 +63,6 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbEmpleado = new System.Windows.Forms.ComboBox();
-            this.idReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaTotalReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoReparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cedulaEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -105,6 +103,7 @@
             this.btnFinalizar.Size = new System.Drawing.Size(54, 35);
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // btnFacturar
             // 
@@ -115,19 +114,10 @@
             this.btnFacturar.Text = "Facturar";
             this.btnFacturar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "N° orden:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 98);
+            this.label2.Location = new System.Drawing.Point(14, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 2;
@@ -136,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 133);
+            this.label3.Location = new System.Drawing.Point(12, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 3;
@@ -145,7 +135,7 @@
             // cmbCliente
             // 
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(92, 90);
+            this.cmbCliente.Location = new System.Drawing.Point(92, 55);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(277, 21);
             this.cmbCliente.TabIndex = 4;
@@ -154,26 +144,19 @@
             // cmbVehiculo
             // 
             this.cmbVehiculo.FormattingEnabled = true;
-            this.cmbVehiculo.Location = new System.Drawing.Point(92, 125);
+            this.cmbVehiculo.Location = new System.Drawing.Point(92, 92);
             this.cmbVehiculo.Name = "cmbVehiculo";
             this.cmbVehiculo.Size = new System.Drawing.Size(277, 21);
             this.cmbVehiculo.TabIndex = 5;
-            // 
-            // txtOrden
-            // 
-            this.txtOrden.Location = new System.Drawing.Point(92, 56);
-            this.txtOrden.Name = "txtOrden";
-            this.txtOrden.Size = new System.Drawing.Size(277, 20);
-            this.txtOrden.TabIndex = 6;
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Location = new System.Drawing.Point(0, 205);
+            this.tabControl.Location = new System.Drawing.Point(0, 180);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(738, 281);
+            this.tabControl.Size = new System.Drawing.Size(738, 306);
             this.tabControl.TabIndex = 7;
             // 
             // tabPage1
@@ -183,7 +166,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(730, 255);
+            this.tabPage1.Size = new System.Drawing.Size(730, 280);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Reparaciones";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -200,8 +183,33 @@
             this.DTGreparaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGreparaciones.Location = new System.Drawing.Point(3, 41);
             this.DTGreparaciones.Name = "DTGreparaciones";
-            this.DTGreparaciones.Size = new System.Drawing.Size(724, 211);
+            this.DTGreparaciones.Size = new System.Drawing.Size(724, 236);
             this.DTGreparaciones.TabIndex = 1;
+            // 
+            // idReparacion
+            // 
+            this.idReparacion.HeaderText = "Id reparación";
+            this.idReparacion.Name = "idReparacion";
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Nombre";
+            this.descripcion.Name = "descripcion";
+            // 
+            // horaTotalReparacion
+            // 
+            this.horaTotalReparacion.HeaderText = "Horas";
+            this.horaTotalReparacion.Name = "horaTotalReparacion";
+            // 
+            // costoReparacion
+            // 
+            this.costoReparacion.HeaderText = "Costo";
+            this.costoReparacion.Name = "costoReparacion";
+            // 
+            // cedulaEmpleado
+            // 
+            this.cedulaEmpleado.HeaderText = "Encargado";
+            this.cedulaEmpleado.Name = "cedulaEmpleado";
             // 
             // toolStrip2
             // 
@@ -240,7 +248,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(730, 255);
+            this.tabPage2.Size = new System.Drawing.Size(730, 280);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Repuestos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -259,7 +267,7 @@
             this.DTGrepuestos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGrepuestos.Location = new System.Drawing.Point(3, 41);
             this.DTGrepuestos.Name = "DTGrepuestos";
-            this.DTGrepuestos.Size = new System.Drawing.Size(724, 211);
+            this.DTGrepuestos.Size = new System.Drawing.Size(724, 236);
             this.DTGrepuestos.TabIndex = 1;
             // 
             // idRepuesto
@@ -349,7 +357,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 174);
+            this.label4.Location = new System.Drawing.Point(14, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 8;
@@ -358,35 +366,10 @@
             // cmbEmpleado
             // 
             this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(92, 166);
+            this.cmbEmpleado.Location = new System.Drawing.Point(92, 136);
             this.cmbEmpleado.Name = "cmbEmpleado";
             this.cmbEmpleado.Size = new System.Drawing.Size(277, 21);
             this.cmbEmpleado.TabIndex = 9;
-            // 
-            // idReparacion
-            // 
-            this.idReparacion.HeaderText = "Id reparación";
-            this.idReparacion.Name = "idReparacion";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Nombre";
-            this.descripcion.Name = "descripcion";
-            // 
-            // horaTotalReparacion
-            // 
-            this.horaTotalReparacion.HeaderText = "Horas";
-            this.horaTotalReparacion.Name = "horaTotalReparacion";
-            // 
-            // costoReparacion
-            // 
-            this.costoReparacion.HeaderText = "Costo";
-            this.costoReparacion.Name = "costoReparacion";
-            // 
-            // cedulaEmpleado
-            // 
-            this.cedulaEmpleado.HeaderText = "Encargado";
-            this.cedulaEmpleado.Name = "cedulaEmpleado";
             // 
             // FrmRegistroDeOrdenDeTrabajo
             // 
@@ -396,12 +379,10 @@
             this.Controls.Add(this.cmbEmpleado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.txtOrden);
             this.Controls.Add(this.cmbVehiculo);
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmRegistroDeOrdenDeTrabajo";
             this.Text = "Registro orden trabajo";
@@ -429,12 +410,10 @@
         private System.Windows.Forms.ToolStripButton btnSalvar;
         private System.Windows.Forms.ToolStripButton btnFinalizar;
         private System.Windows.Forms.ToolStripButton btnFacturar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.ComboBox cmbVehiculo;
-        private System.Windows.Forms.TextBox txtOrden;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView DTGreparaciones;

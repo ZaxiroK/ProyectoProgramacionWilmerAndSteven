@@ -40,7 +40,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.errorMsg = "";
         }
 
-        public List<OrdenReparacionE> obtenerOredenesReaparaciones(OrdenTrabajoE pOrdenTrabajoE, CatalogoReparacionE pCatalogoReparacionE, EmpleadoE pEmpleadoE)
+        public List<OrdenReparacionE> obtenerOredenesReaparaciones(int pOrdenTrabajo)
         {
 
             this.limpiarError();
@@ -48,102 +48,76 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             DataSet dsetOredenesReparaciones;
 
 
-            string sql = "select o.id_orden_reparacion as idOrdenReparacion, o.id_orden_de_trabajo as idOrdenReparacion, o.id_empleado as cedulaEmpleado, o.horas as horasTotalReparacion, " +
-
-                           "cr.id_catalogo_reparacion as id_catalogo_reparacion, cr.descripcion as descripcion, " +
-                           "cr.horas_reparacion as horasReparacion, cr.costo_reparacion as costoReparacion, " +
-                            "t.id_orden_de_trabajo as idOrdenDetrabajo, " +
-                                "t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida, " +
-                               "t.fecha_de_facturacion as fechaDeFacturacion,t.costo_total as costoTotal, " +
-                              "t.estado as estado, t.factura_numero as facturaNumero, " +
-
-                              
-                                 "e.cedula as cedula , e.nombre as nombre, e.apellido1 as apellido1, e.apellido2 as apellido2, " +
-                                  "e.direccion as direccion, e.telefono1 as telefono1, e.telefono2 as telefono2, e.telefono3 as telefono3, " +
-                                  "p.id_puesto as id_puesto, p.salario as salario, " +
-                                  "p.puesto as puesto, p.descripcion as descripcion, " +
+            string sql = "select t.id_orden_de_trabajo  as idOrdenDetrabajo,"+ 
+                           "t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida,"+
+                            "t.fecha_de_facturacion as fechaDeFacturacion, t.costo_total as costoTotal,"+
+                            "t.estado as estado, t.factura_numero as facturaNumero,"+
 
 
+                             "e.cedula as cedula , e.nombre as nombre, e.apellido1 as apellido1, e.apellido2 as apellido2,"+
+                               "e.direccion as direccion, e.telefono1 as telefono1, e.telefono2 as telefono2, e.telefono3 as telefono3,"+
+                               "p.id_puesto as id_puesto, p.salario as salario,"+
+                               "p.puesto as puesto, p.descripcion as descripcion,"+
 
-                                   "v.id_vehiculo as idVehiculo, v.placa as placa, v.clase_de_vehiculo as claseVehiculo, " +
-                                     "v.capacidad_de_personas as capacidadPersonas, v.numero_de_motor as numeroMotor, v.numero_de_chasis as numeroChasis, " +
-                                     "c.cedula as cedula, c.nombre as nombre, " +
-                                    "c.apellido1 as apellido1, c.apellido2 as apellido2, " +
-                                    "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3, " +
-                                   "mo.id_modelo as idModelo, mo.descripcion as descripcion, mo.anio as anno, " +
-                                   "m.id_marca as idMarca, m.descripcion as descripcion " +
 
-    
+                                "v.id_vehiculo as idVehiculo, v.placa as placa, v.clase_de_vehiculo as claseVehiculo,"+
+                                 "v.capacidad_de_personas as capacidadPersonas, v.numero_de_motor as numeroMotor, v.numero_de_chasis as numeroChasis,"+
+                                "v.combustible as combustible,"+
 
-                               " from OrdenReparacion o, CatalogoReparacion cr, OrdenDeTrabajo t, empleado e, cliente c, modelo mo, marca m, puesto p, vehiculo v " +
-                                 "where o.id_catalogo_reparacion = cr.id_catalogo_reparacion and o.id_empleado = e.cedula and o.id_orden_de_trabajo = id_orden_reparacion ";
+                                 "c.cedula as cedula, c.nombre as nombre,"+
+                                 "c.apellido1 as apellido1, c.apellido2 as apellido2,"+
+                                "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3,"+
+                                "mo.id_modelo as idModelo, mo.descripcion as descripcion, mo.anio as anno,"+
+                                "m.id_marca as idMarca, m.descripcion as descripcion,"+
+
+                                "cr.id_orden_reparacion  , cr.id_catalogo_reparacion , cr.id_orden_de_trabajo,"+
+                                 "cr.id_empleado, cr.horas, cr.costo,"+
+
+                                 "oe.id_catalogo_reparacion as rep , oe.descripcion, oe.horas_reparacion, oe.costo_reparacion"+
+
+
+                                 " from schtaller.OrdenDeTrabajo t, schtaller.empleado e, schtaller.cliente c, schtaller.modelo mo, schtaller.marca m,"+
+                                 "schtaller.puesto p, schtaller.vehiculo v, schtaller.catalogoreparacion oe, schtaller.ordenreparacion cr"+
+
+
+                                  " where t.id_empleado = e.cedula and t.id_vehiculo = v.id_vehiculo"+
+                                   " and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca and c.cedula = v.id_cliente and "+
+                                   "t.id_orden_de_trabajo = cr.id_orden_de_trabajo and cr.id_catalogo_reparacion = oe.id_catalogo_reparacion"+
+
+
+
+                                  " and t.id_orden_de_trabajo = " + pOrdenTrabajo;
+
 
             dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql);
-            if (pCatalogoReparacionE != null)
-           {
-                sql += "and cr.id_catalogo_reparacion = @CatalogoReparacion";
-                Parametro oParametro = new Parametro();
-                oParametro.agregarParametro("@CatalogoReparacion", NpgsqlDbType.Varchar, pCatalogoReparacionE.Id_catalogoReparacion);
-                dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql, "OrdenReparacion ", oParametro.obtenerParametros());
-           }
-            else
-            {
-                dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql);
-            }
-            if (pOrdenTrabajoE != null)
-            {
-                sql += "and t.id_orden_de_trabajo = @OrdenDeTrabajo";
-                Parametro oParametro = new Parametro();
-                oParametro.agregarParametro("@OrdenDeTrabajo", NpgsqlDbType.Varchar, pOrdenTrabajoE.IdOrdenDetrabajo);
-                dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql, "OrdenReparacion ", oParametro.obtenerParametros());
-            }
-            else
-            {
-                dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql);
-            }
 
-            if (pEmpleadoE != null)
-            {
-                sql += "and e.cedula = @empleado";
-                Parametro oParametro = new Parametro();
-                oParametro.agregarParametro("@empleado", NpgsqlDbType.Varchar, pEmpleadoE.Cedula);
-                dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql, "OrdenReparacion ", oParametro.obtenerParametros());
-            }
-            else
-          {
-                dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql);
-            }
             foreach (DataRow tupla in dsetOredenesReparaciones.Tables[0].Rows)
             {
-                CatalogoReparacionE oCatalogoReparacion = new CatalogoReparacionE(Convert.ToInt32(tupla["id_catalogo_reparacion"].ToString()), tupla["descripcion"].ToString(),
-                    Convert.ToInt32(tupla["horasReparacion"].ToString()), Convert.ToDouble(tupla["costoReparacion"].ToString()));
-
-                PuestoE oPuesto = new PuestoE(Int32.Parse(tupla["id_puesto"].ToString()), Convert.ToDouble(tupla["salario"].ToString())
-                   , Convert.ToChar(tupla["puesto"].ToString()), tupla["descripcion"].ToString());
-
-               EmpleadoE oEmpleado = new EmpleadoE(Convert.ToInt32(tupla["cedula"].ToString()), tupla["nombre"].ToString(), tupla["apellido1"].ToString()
-                    , tupla["apellido2"].ToString(), tupla["direccion"].ToString(), oPuesto, tupla["telefono1"].ToString(), tupla["telefono2"].ToString()
-                   , tupla["telefono3"].ToString());
-
-               ClienteE oCliente = new ClienteE(Convert.ToInt32(tupla["cedula"].ToString()), tupla["nombre"].ToString(),
-                   tupla["apellido1"].ToString(), tupla["apellido2"].ToString(), tupla["direccion"].ToString(), tupla["telelfono1"].ToString(),
-                   tupla["telefono2"].ToString(), tupla["telefono3"].ToString());
-
-                MarcaE oMarca = new MarcaE(Convert.ToInt32(tupla["idMarca"].ToString()), tupla["descripcion"].ToString());
-
-               ModeloE oModelo = new ModeloE(Convert.ToInt32(tupla["idModelo"].ToString()), tupla["descripcion"].ToString(), oMarca, Convert.ToInt32(tupla["anio"].ToString()));
-
-                VehiculoE oVehiculo = new VehiculoE(Convert.ToInt32(tupla["idVehiculo"].ToString()), tupla["placa"].ToString(), tupla["claseVehiculo"].ToString()
-                    , Convert.ToInt32(tupla["capacidadPersonas"].ToString()), oCliente, oModelo, tupla["numeroMotor"].ToString(), tupla["numeroChasis"].ToString()
-                    , tupla["combustible"].ToString());
-
-               OrdenTrabajoE oOrdenTrabajo = new OrdenTrabajoE(Convert.ToInt32(tupla["idOrdenDetrabajo"].ToString()), Convert.ToDateTime(tupla["fechaDeIngreso"].ToString()),
-                   Convert.ToDateTime(tupla["fechaDeSalida"].ToString()), Convert.ToDateTime(tupla["fechaDeFacturacion"].ToString()), oEmpleado, oVehiculo, Convert.ToChar(tupla["estado"].ToString()), Convert.ToInt32(tupla["facturaNumero"].ToString()));
+                PuestoE oPuesto = new PuestoE(Int32.Parse(tupla[15].ToString()), Convert.ToDouble(tupla[16].ToString())
+                    , Convert.ToChar(tupla[17].ToString()), tupla[18].ToString());
 
 
+                EmpleadoE oEmpleado = new EmpleadoE(Convert.ToInt32(tupla[7].ToString()), tupla[8].ToString(), tupla[9].ToString()
+                    , tupla[10].ToString(), tupla[11].ToString(), oPuesto, tupla[12].ToString(), tupla[13].ToString()
+                    , tupla[14].ToString());
 
-                OrdenReparacionE oOrdenReparacion = new OrdenReparacionE(Convert.ToInt32(tupla["idOrdenReparacion"].ToString()), Convert.ToInt32(tupla["cedulaEmpleado"].ToString()), Convert.ToInt32(tupla["horas"].ToString()), oOrdenTrabajo
-                     , Convert.ToInt32(tupla["pIdCatalogoReparacion"].ToString()), tupla["pDescripcion"].ToString(), Convert.ToInt32(tupla["pHorasReparacion"].ToString()), Convert.ToDouble(tupla["pCostoReparacion"].ToString()));
+                ClienteE oCliente = new ClienteE(Convert.ToInt32(tupla[26].ToString()), tupla[27].ToString(),
+                    tupla[28].ToString(), tupla[29].ToString(), tupla[30].ToString(), tupla[31].ToString(),
+                    tupla[32].ToString(), tupla[33].ToString());
+
+                MarcaE oMarca = new MarcaE(Convert.ToInt32(tupla[37].ToString()), tupla[38].ToString());
+
+                ModeloE oModelo = new ModeloE(Convert.ToInt32(tupla[34].ToString()), tupla[35].ToString(), oMarca, Convert.ToInt32(tupla[36].ToString()));
+
+                VehiculoE oVehiculo = new VehiculoE(Convert.ToInt32(tupla[19].ToString()), tupla[20].ToString(), tupla[21].ToString()
+                    , Convert.ToInt32(tupla[22].ToString()), oCliente, oModelo, tupla[23].ToString(), tupla[24].ToString()
+                    , tupla[25].ToString());
+
+                OrdenTrabajoE oOrdenTrabajo = new OrdenTrabajoE(Convert.ToInt32(tupla[0].ToString()), Convert.ToDateTime(tupla[1].ToString()),
+                    Convert.ToDateTime(tupla[2].ToString()), Convert.ToDateTime(tupla[3].ToString()), oEmpleado, oVehiculo, Convert.ToChar(tupla[5].ToString()), Convert.ToInt32(tupla[6].ToString()));
+
+                OrdenReparacionE oOrdenReparacion = new OrdenReparacionE(Convert.ToInt32(tupla[39].ToString()), Convert.ToInt32(tupla[42].ToString()), Convert.ToInt32(tupla[43].ToString()), oOrdenTrabajo
+                     , Convert.ToInt32(tupla[40].ToString()), tupla[46].ToString(), Convert.ToInt32(tupla[43].ToString()), Convert.ToDouble(tupla[44].ToString()));
                   
                 
                ordenesReparaciones.Add(oOrdenReparacion);
@@ -151,23 +125,26 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return ordenesReparaciones;
         }
-        public bool agregarOrdenReparacion(OrdenReparacionE pOrdenReparacionE)
+        public bool agregarOrdenReparacion(OrdenReparacionE pOrdenReparacionE, int pOrdenReparacion)
         {
             this.limpiarError();
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO schtaller.OrdenrReparacion(" +
-            "@id_orden_reparacion, @id_catalogo_reparacion, @id_orden_de_trabajo, @id_empleado, @horas, @costo ); ";
+                string sql = "INSERT INTO ordenreparacion("+
+            "id_catalogo_reparacion, id_orden_de_trabajo," +
+            "id_empleado, horas, costo)"+
+            " VALUES(@id_catalogo_reparacion, @id_orden_de_trabajo," +
+            " @id_empleado, @horas, @costo); ";
 
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
-                oP.agregarParametro("@id_orden_reparacion", NpgsqlDbType.Integer, pOrdenReparacionE.IdOrdenReparacion);
+                
                 oP.agregarParametro("@id_catalogo_reparacion", NpgsqlDbType.Integer, pOrdenReparacionE.Id_catalogoReparacion);
-                oP.agregarParametro("@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenReparacionE.OOrdenTrabajo);
+                oP.agregarParametro("@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenReparacion);
                 oP.agregarParametro("@id_empleado", NpgsqlDbType.Integer, pOrdenReparacionE.CedulaEmpleado);
-                oP.agregarParametro("@horas", NpgsqlDbType.Integer, pOrdenReparacionE.HorasReparacion);
-                oP.agregarParametro("@costo", NpgsqlDbType.Double, pOrdenReparacionE.HorasTotalReparacion);
+                oP.agregarParametro("@horas", NpgsqlDbType.Integer, pOrdenReparacionE.HorasTotalReparacion);
+                oP.agregarParametro("@costo", NpgsqlDbType.Double, pOrdenReparacionE.CostoReparacion);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
                 if (this.conexion.IsError)
                 {

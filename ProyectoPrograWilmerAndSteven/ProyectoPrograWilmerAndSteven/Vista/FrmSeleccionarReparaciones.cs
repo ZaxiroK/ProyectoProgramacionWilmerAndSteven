@@ -96,6 +96,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 MessageBox.Show("¡Reparacion agregada!" + "\n" + "Presione salir para volver al menu principal " + "\n" + " o continue seleccionando más repuestos.");
                 this.cmbReparacion.SelectedIndex = -1;
                 this.cmbEmpleado.SelectedIndex = -1;
+                this.numericHoras.Value = 0;
             }
             else
             {
@@ -133,6 +134,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }

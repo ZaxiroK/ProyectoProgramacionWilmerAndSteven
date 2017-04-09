@@ -26,8 +26,34 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            OrdenTrabajoE oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now, ((EmpleadoE)this.cmbEmpleado.SelectedItem)
-                ,((VehiculoE)this.cmbVehiculo.SelectedItem), 'N', 0, this.listOredenRepuesto, this.listOredenReparacion);
+
+
+            OrdenTrabajoE oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now,
+                ((EmpleadoE)this.cmbEmpleado.SelectedItem),((VehiculoE)this.cmbVehiculo.SelectedItem), 'N', 0,
+                this.listOredenRepuesto, this.listOredenReparacion);
+
+
+            OrdenTrabajoD oOrdenTrabajoD = new OrdenTrabajoD();
+            string numeroOrden = oOrdenTrabajoD.agregarOrdenDeTrabajo(oOrdenTrabajoE, 
+                oOrdenTrabajoE.CalculoCostoTotal());
+
+            if (!oOrdenTrabajoD.Error)
+            {
+                MessageBox.Show(oOrdenTrabajoD.ErrorMsg);
+            }
+
+            OrdenReparacionD oOrdenRepracionD = new OrdenReparacionD();
+            foreach (OrdenReparacionE oR in oOrdenTrabajoE.OrdenReparacion)
+            {
+                oOrdenRepracionD.agregarOrdenReparacion(oR,Convert.ToInt32(numeroOrden));
+            }
+
+            OrdenRepuestoD oOrdenRepuestoD = new OrdenRepuestoD();
+            foreach (OrdenRepuestoE oR in oOrdenTrabajoE.OrdenRepuesto)
+            {
+                oOrdenRepuestoD.agregarOrdenRpuesto(oR, Convert.ToInt32(numeroOrden));
+            }
+
         }
 
         public void llenarComboClientes()
@@ -138,6 +164,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
         }
 
-        
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
