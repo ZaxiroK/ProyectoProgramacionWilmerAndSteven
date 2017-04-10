@@ -22,7 +22,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FrmRegistroDeOrdenDeTrabajo oFrm = new FrmRegistroDeOrdenDeTrabajo();
+             FrmRegistroDeOrdenDeTrabajo oFrm = new FrmRegistroDeOrdenDeTrabajo();
             oFrm.ShowDialog();
 
         }
