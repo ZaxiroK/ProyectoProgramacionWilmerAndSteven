@@ -16,6 +16,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     {
         public bool aceptar;
         public EmpleadoE oEmpleadoE;
+        public PuestoE puestoEActual;
         public FrmRegistrarEmpleado()
         {
             InitializeComponent();
@@ -35,11 +36,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.txtApellido1.Text = oEmpleadoE.Apellido1;
             this.txtApellido2.Text = oEmpleadoE.Apellido2;
             this.txtDireccion.Text = this.oEmpleadoE.Direccion;
-            this.comboBoxPuesto.SelectedItem = oEmpleadoE.OPuestoE;// 
             this.txtTelefono.Text = this.oEmpleadoE.Telefono1;
             this.txtTelefono2.Text = this.oEmpleadoE.Telefono2;
             this.txtTelefono3.Text = this.oEmpleadoE.Telefono3;
-
+            puestoEActual = oEmpleadoE.OPuestoE;
+            setPuestoActual(puestoEActual.IdPuesto);
 
         }
         public void llenarComboPuestos()
@@ -173,6 +174,19 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
         }
 
-
+        private void setPuestoActual(int id)
+        {
+            int i, x = 0;
+            for (i = 0; i < this.comboBoxPuesto.Items.Count; i++)
+            {
+                PuestoE oPe = (PuestoE)this.comboBoxPuesto.Items[i];
+                if (oPe.IdPuesto == id)
+                {
+                    x = i;
+                    i = this.comboBoxPuesto.Items.Count;
+                }
+            }
+            this.comboBoxPuesto.SelectedIndex = x;
+        }
     }
 }

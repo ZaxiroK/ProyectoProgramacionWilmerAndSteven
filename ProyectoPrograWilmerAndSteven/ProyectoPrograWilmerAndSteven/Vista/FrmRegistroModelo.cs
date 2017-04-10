@@ -16,6 +16,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     {
         public bool aceptar;
         public ModeloE oModelo;
+        public MarcaE oMarcaEActual;
         public FrmRegistroModelo()
         {
             InitializeComponent();
@@ -34,7 +35,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.comboBoxMarcas.SelectedItem = pModelo.OMarca.ToString(); 
             this.txtDescripcion.Text = pModelo.Descripcion.ToString();
             this.txtAnio.Text = pModelo.Anno.ToString();
-               
+            oMarcaEActual = pModelo.OMarca;
+            setModeloActual(oMarcaEActual.IdMarca);
+
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -68,6 +71,21 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 comboBoxMarcas.SelectedIndex = comboBoxMarcas.Items.Count - 1;
 
             }
+        }
+
+        private void setModeloActual(int id)
+        {
+            int i, x = 0;
+            for (i = 0; i < this.comboBoxMarcas.Items.Count; i++)
+            {
+                MarcaE oMe = (MarcaE)this.comboBoxMarcas.Items[i];
+                if (oMe.IdMarca == id)
+                {
+                    x = i;
+                    i = this.comboBoxMarcas.Items.Count;
+                }
+            }
+            this.comboBoxMarcas.SelectedIndex = x;
         }
 
         private void txtId_KeyDown(object sender, KeyEventArgs e)

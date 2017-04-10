@@ -14,6 +14,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmRegistroDeOrdenDeTrabajo : Form
     {
+        public VehiculoE vehiculoEcliente;
         List<OrdenReparacionE> listOredenReparacion = new List<OrdenReparacionE>();
         List<OrdenRepuestoE> listOredenRepuesto = new List<OrdenRepuestoE>();
 
@@ -26,34 +27,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
-
-            OrdenTrabajoE oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now,
-                ((EmpleadoE)this.cmbEmpleado.SelectedItem),((VehiculoE)this.cmbVehiculo.SelectedItem), 'N', 0,
-                this.listOredenRepuesto, this.listOredenReparacion);
-
-
-            OrdenTrabajoD oOrdenTrabajoD = new OrdenTrabajoD();
-            string numeroOrden = oOrdenTrabajoD.agregarOrdenDeTrabajo(oOrdenTrabajoE, 
-                oOrdenTrabajoE.CalculoCostoTotal());
-
-            if (!oOrdenTrabajoD.Error)
-            {
-                MessageBox.Show(oOrdenTrabajoD.ErrorMsg);
-            }
-
-            OrdenReparacionD oOrdenRepracionD = new OrdenReparacionD();
-            foreach (OrdenReparacionE oR in oOrdenTrabajoE.OrdenReparacion)
-            {
-                oOrdenRepracionD.agregarOrdenReparacion(oR,Convert.ToInt32(numeroOrden));
-            }
-
-            OrdenRepuestoD oOrdenRepuestoD = new OrdenRepuestoD();
-            foreach (OrdenRepuestoE oR in oOrdenTrabajoE.OrdenRepuesto)
-            {
-                oOrdenRepuestoD.agregarOrdenRpuesto(oR, Convert.ToInt32(numeroOrden));
-            }
-
+            OrdenTrabajoE oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now, ((EmpleadoE)this.cmbEmpleado.SelectedItem)
+                ,((VehiculoE)this.cmbVehiculo.SelectedItem), 'N', 0, this.listOredenRepuesto, this.listOredenReparacion);
         }
 
         public void llenarComboClientes()
@@ -66,6 +41,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (ClienteE oClienteE in clientes)
             {
                 this.cmbCliente.Items.Add(oClienteE);
+                this.cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbCliente.SelectedIndex = cmbCliente.Items.Count - 1;
             }
         }
 
@@ -78,6 +55,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (VehiculoE oVehiculoE in vehiculos)
             {
                 this.cmbVehiculo.Items.Add(oVehiculoE);
+                this.cmbVehiculo.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbVehiculo.SelectedIndex = cmbVehiculo.Items.Count - 1;
             }
         }
 
@@ -85,6 +64,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             this.cmbVehiculo.Items.Clear();
             this.llenarComboVehiculo(((ClienteE)this.cmbCliente.SelectedItem).Cedula);
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -161,12 +141,26 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (EmpleadoE oEmpleadoE in empleados)
             {
                 this.cmbEmpleado.Items.Add(oEmpleadoE);
+                this.cmbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbEmpleado.SelectedIndex = cmbEmpleado.Items.Count - 1;
             }
         }
 
-        private void btnFinalizar_Click(object sender, EventArgs e)
+        private void setVehiculoActual(int id)
         {
-
+            int i, x = 0;
+            for (i = 0; i < this.cmbVehiculo.Items.Count; i++)
+            {
+                VehiculoE oVe = (VehiculoE)this.cmbVehiculo.Items[i];
+                if (oVe.IdVehiculo == id)
+                {
+                    x = i;
+                    i = this.cmbVehiculo.Items.Count;
+                }
+            }
+            this.cmbVehiculo.SelectedIndex = x;
         }
+
+
     }
 }
