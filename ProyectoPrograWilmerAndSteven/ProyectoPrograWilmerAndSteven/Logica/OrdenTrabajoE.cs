@@ -69,13 +69,13 @@ namespace Logica
         private double CostoTotalOrdenReparacion()
         {
             double total = 0;
-
-            foreach (OrdenReparacionE oReparacion in OrdenReparacion)
+            if (ordenReparacion.Count != 0)
             {
-                total += oReparacion.CostoReparacion;
-            }
-
-            return total;
+                foreach (OrdenReparacionE oReparacion in OrdenReparacion)
+                {
+                    total += oReparacion.CostoReparacion;
+                }
+            }            return total;
         }
 
         public DateTime CalculoFecha()
