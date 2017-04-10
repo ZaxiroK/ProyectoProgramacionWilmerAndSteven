@@ -290,7 +290,7 @@ namespace Datos
                     cmd.Transaction = this.transaccion;
                 }
 
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
                 try
                 {
                     pNumero = "";
