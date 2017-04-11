@@ -295,7 +295,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
 
                                  " where t.id_empleado = e.cedula and e.id_puesto = p.id_puesto and t.id_vehiculo = v.id_vehiculo" +
-                                  " and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca and c.cedula = vi.d_cliente";
+                                  " and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca and c.cedula = v.id_cliente";
             dsetOrdenTrabajos = this.conexion.ejecutarConsultaSQL(sql,"ordenDeTrabajo", oParametro.obtenerParametros());
 
             if (!this.conexion.IsError)
