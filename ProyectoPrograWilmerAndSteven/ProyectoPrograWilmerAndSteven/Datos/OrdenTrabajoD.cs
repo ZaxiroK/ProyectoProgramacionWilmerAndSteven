@@ -78,7 +78,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                                  "schtaller.puesto p, schtaller.vehiculo v" +
 
 
-                                 " where t.id_empleado = e.cedula and t.id_vehiculo = v.id_vehiculo" +
+                                 " where t.id_empleado = e.cedula and e.id_puesto = p.id_puesto and t.id_vehiculo = v.id_vehiculo" +
                                   " and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca and c.cedula = v.id_cliente";
                                  
 
@@ -126,7 +126,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             string numero = "0";
             try
             {
-                string sql = "INSERT INTO ordendetrabajo("+
+                string sql = "INSERT INTO schtaller.ordendetrabajo(" +
                     "id_vehiculo, id_empleado, fecha_de_ingreso_de_vehiculo," +
             "fecha_de_salida, fecha_de_facturacion, costo_total, estado, factura_numero)"+
             "VALUES(@id_vehiculo, @id_empleado, @fecha_de_ingreso_de_vehiculo," +

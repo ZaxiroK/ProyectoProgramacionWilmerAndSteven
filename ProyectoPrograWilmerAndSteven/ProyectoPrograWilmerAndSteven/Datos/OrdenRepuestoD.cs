@@ -130,7 +130,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
 
-                string sql = " INSERT INTO ordenrepuesto("+
+                string sql = " INSERT INTO schtaller.ordenrepuesto(" +
                 "id_orden_de_trabajo, id_catalogo_de_repuestos,"+
                 "cantidad_de_repuestos, precio)"+
                 "VALUES(@id_orden_de_trabajo, @id_catalogo_de_repuestos," +

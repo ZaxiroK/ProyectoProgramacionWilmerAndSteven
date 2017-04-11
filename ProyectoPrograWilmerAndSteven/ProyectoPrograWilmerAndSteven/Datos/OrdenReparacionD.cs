@@ -131,7 +131,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             bool estado = true;
             try
             {
-                string sql = "INSERT INTO ordenreparacion("+
+                string sql = "INSERT INTO schtaller.ordenreparacion(" +
             "id_catalogo_reparacion, id_orden_de_trabajo," +
             "id_empleado, horas, costo)"+
             " VALUES(@id_catalogo_reparacion, @id_orden_de_trabajo," +
