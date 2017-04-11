@@ -36,6 +36,8 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Mono.Security">
       <HintPath>..\..\..\..\..\Desktop\Wilmer\Programacion3\semana3\C5\C5\Mono.Security.dll</HintPath>
     </Reference>
@@ -44,6 +46,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,6 +92,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpOrdenDeTrabajo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpOrdenDeTrabajo.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Vista\FrmCambioContrasenia.cs">
       <SubType>Form</SubType>
@@ -217,6 +227,12 @@
     <Compile Include="Vista\FrmRegistroModelo.Designer.cs">
       <DependentUpon>FrmRegistroModelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmReporteOrdenDeTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmReporteOrdenDeTrabajo.Designer.cs">
+      <DependentUpon>FrmReporteOrdenDeTrabajo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmSeleccionarReparaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +266,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\rpOrdenDeTrabajo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpOrdenDeTrabajo.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCambioContrasenia.resx">
       <DependentUpon>FrmCambioContrasenia.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroModelo.resx">
       <DependentUpon>FrmRegistroModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmReporteOrdenDeTrabajo.resx">
+      <DependentUpon>FrmReporteOrdenDeTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmSeleccionarReparaciones.resx">
       <DependentUpon>FrmSeleccionarReparaciones.cs</DependentUpon>

@@ -260,6 +260,51 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        public DataTable consultaOrdenDeTrabajoReporte(int pOrdenDeTraabajo)
+        {
+            DataSet dsetOrdenTrabajos;
+            DataTable tabla = null;
+
+            Parametro oParametro = new Parametro();
+            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, pOrdenDeTraabajo);
+
+            string sql = "select t.id_orden_de_trabajo  as idOrdenDetrabajo, " +
+                           "t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida," +
+                            "t.fecha_de_facturacion as fechaDeFacturacion, t.costo_total as costoTotal," +
+                            "t.estado as estado, t.factura_numero as facturaNumero," +
+
+
+                             "e.cedula as cedula , e.nombre as nombre, e.apellido1 as apellido1, e.apellido2 as apellido2," +
+                              " e.direccion as direccion, e.telefono1 as telefono1, e.telefono2 as telefono2, e.telefono3 as telefono3," +
+                               "p.id_puesto as id_puesto, p.salario as salario," +
+                               "p.puesto as puesto, p.descripcion as descripcion," +
+
+
+                                "v.id_vehiculo as idVehiculo, v.placa as placa, v.clase_de_vehiculo as claseVehiculo," +
+                                 "v.capacidad_de_personas as capacidadPersonas, v.numero_de_motor as numeroMotor, v.numero_de_chasis as numeroChasis," +
+                                "v.combustible as combustible," +
+
+                                 "c.cedula as cedula, c.nombre as nombre," +
+                                 "c.apellido1 as apellido1, c.apellido2 as apellido2," +
+                                "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3," +
+                                "mo.id_modelo as idModelo, mo.descripcion as descripcion, mo.anio as anno," +
+                                "m.id_marca as idMarca, m.descripcion as descripcion" +
+
+                                " from schtaller.OrdenDeTrabajo t, schtaller.empleado e, schtaller.cliente c, schtaller.modelo mo, schtaller.marca m," +
+                                 "schtaller.puesto p, schtaller.vehiculo v" +
+
+
+                                 " where t.id_empleado = e.cedula and e.id_puesto = p.id_puesto and t.id_vehiculo = v.id_vehiculo" +
+                                  " and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca and c.cedula = vi.d_cliente";
+            dsetOrdenTrabajos = this.conexion.ejecutarConsultaSQL(sql,"ordenDeTrabajo", oParametro.obtenerParametros());
+
+            if (!this.conexion.IsError)
+            {
+                tabla = dsetOrdenTrabajos.Tables[0].Copy();
+            }
+
+            return tabla;
+        }
     }
 
 }

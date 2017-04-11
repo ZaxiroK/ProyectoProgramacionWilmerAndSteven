@@ -15,6 +15,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     public partial class FrmRegistroDeOrdenDeTrabajo : Form
     {
         public VehiculoE vehiculoEcliente;
+        public OrdenReparacionE pOrdenDeTrabajoE;
         List<OrdenReparacionE> listOredenReparacion = new List<OrdenReparacionE>();
         List<OrdenRepuestoE> listOredenRepuesto = new List<OrdenRepuestoE>();
 
@@ -27,33 +28,39 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            
+
+                OrdenTrabajoE oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now,
+                    ((EmpleadoE)this.cmbEmpleado.SelectedItem), ((VehiculoE)this.cmbVehiculo.SelectedItem), 'N', 0,
+                    this.listOredenRepuesto, this.listOredenReparacion);
 
 
-            OrdenTrabajoE oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now,
-                ((EmpleadoE)this.cmbEmpleado.SelectedItem),((VehiculoE)this.cmbVehiculo.SelectedItem), 'N', 0,
-                this.listOredenRepuesto, this.listOredenReparacion);
+                OrdenTrabajoD oOrdenTrabajoD = new OrdenTrabajoD();
+                string numeroOrden = oOrdenTrabajoD.agregarOrdenDeTrabajo(oOrdenTrabajoE,
+                    oOrdenTrabajoE.CalculoCostoTotal());
 
+                if (!oOrdenTrabajoD.Error)
+                {
+                    MessageBox.Show(oOrdenTrabajoD.ErrorMsg);
+                }
 
-             OrdenTrabajoD oOrdenTrabajoD = new OrdenTrabajoD();
-            string numeroOrden = oOrdenTrabajoD.agregarOrdenDeTrabajo(oOrdenTrabajoE, 
-                oOrdenTrabajoE.CalculoCostoTotal());
+                OrdenReparacionD oOrdenRepracionD = new OrdenReparacionD();
+                foreach (OrdenReparacionE oR in oOrdenTrabajoE.OrdenReparacion)
+                {
+                    oOrdenRepracionD.agregarOrdenReparacion(oR, Convert.ToInt32(numeroOrden));
+                }
 
-            if (!oOrdenTrabajoD.Error)
-            {
-                MessageBox.Show(oOrdenTrabajoD.ErrorMsg);
-            }
+                OrdenRepuestoD oOrdenRepuestoD = new OrdenRepuestoD();
+                foreach (OrdenRepuestoE oR in oOrdenTrabajoE.OrdenRepuesto)
+                {
+                    oOrdenRepuestoD.agregarOrdenRpuesto(oR, Convert.ToInt32(numeroOrden));
+                }
+        
+/*
+            FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo();
+            oReporte.ShowDialog();
 
-            OrdenReparacionD oOrdenRepracionD = new OrdenReparacionD();
-            foreach (OrdenReparacionE oR in oOrdenTrabajoE.OrdenReparacion)
-            {
-                oOrdenRepracionD.agregarOrdenReparacion(oR,Convert.ToInt32(numeroOrden));
-            }
-
-            OrdenRepuestoD oOrdenRepuestoD = new OrdenRepuestoD();
-            foreach (OrdenRepuestoE oR in oOrdenTrabajoE.OrdenRepuesto)
-            {
-                oOrdenRepuestoD.agregarOrdenRpuesto(oR, Convert.ToInt32(numeroOrden));
-            }
+    */
 
         }
 
