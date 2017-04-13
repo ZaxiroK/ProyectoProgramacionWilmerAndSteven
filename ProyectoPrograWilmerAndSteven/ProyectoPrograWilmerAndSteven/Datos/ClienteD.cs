@@ -166,5 +166,30 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-    }
+
+        public ClienteE comprobarDueño(int cedula)
+        {
+
+            this.limpiarError();
+            ClienteE cliente = null;
+            DataSet dsetClientes;
+            string sql = "select c.cedula as cedula " +
+                         "from schtaller.cliente c " +
+                         "where cedula = " + "'" + cedula + "'";
+
+            dsetClientes = this.conexion.ejecutarConsultaSQL(sql);
+
+            if (!this.conexion.IsError)
+            {
+                if (dsetClientes.Tables[0].Rows.Count > 0)
+                {
+                    cliente = new ClienteE(Convert.ToInt32(dsetClientes.Tables[0].Rows[0].ToString()), dsetClientes.Tables[1].ToString(),
+                    dsetClientes.Tables[2].ToString(), dsetClientes.Tables[3].ToString(), dsetClientes.Tables[4].ToString(), dsetClientes.Tables[5].ToString(),
+                    dsetClientes.Tables[6].ToString(), dsetClientes.Tables[7].ToString());
+                }
+            }
+            return cliente;
+        }
+          
+        }
 }

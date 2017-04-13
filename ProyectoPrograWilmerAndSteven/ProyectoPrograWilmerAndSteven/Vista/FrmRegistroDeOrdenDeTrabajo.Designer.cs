@@ -103,7 +103,7 @@
             this.btnFinalizar.Size = new System.Drawing.Size(54, 35);
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+
             // 
             // btnFacturar
             // 

@@ -1,4 +1,5 @@
-﻿using ProyectoPrograWilmerAndSteven.Datos;
+﻿using Logica;
+using ProyectoPrograWilmerAndSteven.Datos;
 using ProyectoPrograWilmerAndSteven.Reportes;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     public partial class FrmReporteOrdenDeTrabajo : Form
     {
         private int numeroFactura;
+        
         public FrmReporteOrdenDeTrabajo(int pIdOrdenDeTrabajo)
         {
             InitializeComponent();
@@ -31,5 +33,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             this.visorReporteOrden.ReportSource = oReporteOrdenTrabajo;
         }
+
+        
     }
 }
+    

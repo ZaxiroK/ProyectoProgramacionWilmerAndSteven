@@ -16,6 +16,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     {
         public VehiculoE vehiculoEcliente;
         public OrdenReparacionE pOrdenDeTrabajoE;
+        //ClienteE duenio= new ClienteE();
+        ClienteD oClienteD = new ClienteD();
         List<OrdenReparacionE> listOredenReparacion = new List<OrdenReparacionE>();
         List<OrdenRepuestoE> listOredenRepuesto = new List<OrdenRepuestoE>();
 
@@ -190,13 +192,21 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     x = i;
                     i = this.cmbVehiculo.Items.Count;
                 }
+                //duenio.Cedula = oVe.OClienteE;
+               // Duennio(oVe);
             }
             this.cmbVehiculo.SelectedIndex = x;
+
         }
 
-        private void btnFinalizar_Click(object sender, EventArgs e)
+      /*  public void Duennio(VehiculoE pVehiculoE)
         {
-        
+            ClienteE clienteE = (ClienteE)oClienteD.comprobarDueño(pVehiculoE.OClienteE);
+           
+                if (clienteE != null)
+                {
+                }
+            }
+        }*/
     }
-}
 }

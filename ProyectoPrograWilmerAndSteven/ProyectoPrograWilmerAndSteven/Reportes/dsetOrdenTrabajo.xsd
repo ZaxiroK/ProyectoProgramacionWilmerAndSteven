@@ -12,7 +12,7 @@
   <xs:element name="dsetOrdenTrabajo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsetOrdenTrabajo" msprop:Generator_UserDSName="dsetOrdenTrabajo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Orden_x0020_de_x0020_trabajo" msprop:Generator_TableClassName="Orden_de_trabajoDataTable" msprop:Generator_TableVarName="tableOrden_de_trabajo" msprop:Generator_TablePropName="Orden_de_trabajo" msprop:Generator_RowDeletingName="Orden_de_trabajoRowDeleting" msprop:Generator_RowChangingName="Orden_de_trabajoRowChanging" msprop:Generator_RowEvHandlerName="Orden_de_trabajoRowChangeEventHandler" msprop:Generator_RowDeletedName="Orden_de_trabajoRowDeleted" msprop:Generator_UserTableName="Orden de trabajo" msprop:Generator_RowChangedName="Orden_de_trabajoRowChanged" msprop:Generator_RowEvArgName="Orden_de_trabajoRowChangeEvent" msprop:Generator_RowClassName="Orden_de_trabajoRow">
+        <xs:element name="Orden_x0020_de_x0020_trabajo" msprop:Generator_TableClassName="Orden_de_trabajoDataTable" msprop:Generator_TableVarName="tableOrden_de_trabajo" msprop:Generator_RowChangedName="Orden_de_trabajoRowChanged" msprop:Generator_TablePropName="Orden_de_trabajo" msprop:Generator_RowDeletingName="Orden_de_trabajoRowDeleting" msprop:Generator_RowChangingName="Orden_de_trabajoRowChanging" msprop:Generator_RowEvHandlerName="Orden_de_trabajoRowChangeEventHandler" msprop:Generator_RowDeletedName="Orden_de_trabajoRowDeleted" msprop:Generator_RowClassName="Orden_de_trabajoRow" msprop:Generator_UserTableName="Orden de trabajo" msprop:Generator_RowEvArgName="Orden_de_trabajoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
@@ -31,6 +31,10 @@
               </xs:element>
               <xs:element name="Número_de_factura" msprop:Generator_ColumnVarNameInTable="columnNúmero_de_factura" msprop:Generator_ColumnPropNameInRow="Número_de_factura" msprop:Generator_ColumnPropNameInTable="Número_de_facturaColumn" msprop:Generator_UserColumnName="Número_de_factura" type="xs:int" minOccurs="0" />
             </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
           </xs:complexType>
         </xs:element>
       </xs:choice>
