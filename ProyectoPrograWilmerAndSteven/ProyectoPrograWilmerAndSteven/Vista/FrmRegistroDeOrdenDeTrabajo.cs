@@ -77,7 +77,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             }   
 
-                if (oOrdenTrabajoD.Error)
+                if (!oOrdenTrabajoD.Error)
                 {
                     MessageBox.Show(oOrdenTrabajoD.ErrorMsg);
                 }
@@ -251,7 +251,44 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
+            OrdenTrabajoE oOrdenTrabajoE = null;
+            int numeroOrden = 0;
 
+            if (estado == 1)
+            {
+
+                oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now,
+                    ((EmpleadoE)this.cmbEmpleado.SelectedItem), ((VehiculoE)this.cmbVehiculo.SelectedItem), 'S', 0,
+                    this.listOredenRepuesto, this.listOredenReparacion);
+
+
+                String strNumeroOrden = oOrdenTrabajoD.agregarOrdenDeTrabajoFactura(oOrdenTrabajoE,
+                    oOrdenTrabajoE.CalculoCostoTotal());
+
+                numeroOrden = Convert.ToInt32(strNumeroOrden);
+
+            }
+            if (estado == 2)
+            {
+                oOrdenTrabajoE = new OrdenTrabajoE(this.ordenTrabajo.FechaDeIngreso, DateTime.Now,
+                    this.ordenTrabajo.FechaDeFacturacion, ((EmpleadoE)this.cmbEmpleado.SelectedItem), ((VehiculoE)this.cmbVehiculo.SelectedItem),
+                    'S', 0, this.listOredenRepuesto, this.listOredenReparacion);
+
+                numeroOrden = this.ordenTrabajo.IdOrdenDetrabajo;
+                oOrdenTrabajoE.IdOrdenDetrabajo = this.ordenTrabajo.IdOrdenDetrabajo;
+
+                this.oOrdenTrabajoD.modificarOrdenDeTrabajoFactura(oOrdenTrabajoE, oOrdenTrabajoE.CalculoCostoTotal());
+
+            }
+
+            if (!oOrdenTrabajoD.Error)
+            {
+                MessageBox.Show(oOrdenTrabajoD.ErrorMsg);
+            }
+            else
+            {
+                this.AgregarOrdenes(numeroOrden, oOrdenTrabajoE);
+            }
         }
 
         private void btnFacturar_Click(object sender, EventArgs e)

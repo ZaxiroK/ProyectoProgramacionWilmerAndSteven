@@ -35,7 +35,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
         public void limpiarError()
         {
-            this.error = false;
+            this.error = true;
             this.errorMsg = "";
         }
 
@@ -128,7 +128,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             {
                 string sql = "INSERT INTO schtaller.ordendetrabajo(" +
                     "id_vehiculo, id_empleado, fecha_de_ingreso_de_vehiculo," +
-            "fecha_de_salida, fecha_de_facturacion, costo_total, estado, factura_numero)"+
+            "fecha_de_salida, fecha_de_facturacion, costo_total, estado, factura_numero)" +
             "VALUES(@id_vehiculo, @id_empleado, @fecha_de_ingreso_de_vehiculo," +
                 " @fecha_de_salida, @fecha_de_facturacion, @costo_total, @estado, @factura_numero) returning id_orden_de_trabajo";
 
@@ -144,7 +144,52 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 oP.agregarParametro("@estado", NpgsqlDbType.Varchar, pOrdenTrabajo.Estado);
                 oP.agregarParametro("@factura_numero", NpgsqlDbType.Integer, pOrdenTrabajo.FacturaNumero);
 
-                this.conexion.ejecutarSQL(sql, oP.obtenerParametros(), ref  numero);
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros(), ref numero);
+
+                if (this.conexion.IsError)
+                {
+
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+
+                return numero;
+
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return numero;
+
+        }
+
+             public string agregarOrdenDeTrabajoFactura(OrdenTrabajoE pOrdenTrabajo, double costo)
+            {
+            this.limpiarError();
+            bool estado = true;
+            string numero = "0";
+            try
+            {
+                string sql = "INSERT INTO schtaller.ordendetrabajo(" +
+                    "id_vehiculo, id_empleado, fecha_de_ingreso_de_vehiculo," +
+            "fecha_de_salida, fecha_de_facturacion, costo_total, estado)" +
+            "VALUES(@id_vehiculo, @id_empleado, @fecha_de_ingreso_de_vehiculo," +
+                " @fecha_de_salida, @fecha_de_facturacion, @costo_total, @estado) returning id_orden_de_trabajo";
+
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+
+                oP.agregarParametro("@fecha_de_ingreso_de_vehiculo", NpgsqlDbType.Timestamp, pOrdenTrabajo.FechaDeIngreso);
+                oP.agregarParametro("@fecha_de_salida", NpgsqlDbType.Timestamp, pOrdenTrabajo.FechaDeSalida);
+                oP.agregarParametro("@fecha_de_facturacion", NpgsqlDbType.Timestamp, pOrdenTrabajo.FechaDeFacturacion);
+                oP.agregarParametro("@costo_total", NpgsqlDbType.Double, costo);
+                oP.agregarParametro("@id_empleado", NpgsqlDbType.Integer, pOrdenTrabajo.OMecanicoResponsable.Cedula);
+                oP.agregarParametro("@id_vehiculo", NpgsqlDbType.Integer, pOrdenTrabajo.OVehiculo.IdVehiculo);
+                oP.agregarParametro("@estado", NpgsqlDbType.Varchar, pOrdenTrabajo.Estado);
+
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros(), ref numero);
 
                 if (this.conexion.IsError)
                 {
@@ -213,7 +258,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 oP.agregarParametro("@id_vehiculo", NpgsqlDbType.Integer, pOrdenTrabajo.OVehiculo.IdVehiculo);
                 oP.agregarParametro("@estado", NpgsqlDbType.Varchar, pOrdenTrabajo.Estado);
                 oP.agregarParametro("@factura_numero", NpgsqlDbType.Integer, pOrdenTrabajo.FacturaNumero);
-                oP.agregarParametro("@@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenTrabajo.IdOrdenDetrabajo);
+                oP.agregarParametro("@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenTrabajo.IdOrdenDetrabajo);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
 
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
@@ -231,6 +276,66 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 this.errorMsg = e.Message;
             }
             return estado;
+        }
+
+        public bool modificarOrdenDeTrabajoFactura(OrdenTrabajoE pOrdenTrabajo, double costoTotal)
+        {
+            bool estado = true;
+
+            try
+            {
+
+                string sql = "UPDATE ordendetrabajo" +
+                " SET id_vehiculo = @id_vehiculo, id_empleado = @id_empleado, fecha_de_ingreso_de_vehiculo = @fecha_de_ingreso_de_vehiculo," +
+                 " fecha_de_salida = @fecha_de_salida, fecha_de_facturacion = @fecha_de_facturacion, costo_total = @costo_total, estado = @estado," +
+                  "  factura_numero = @factura_numero" +
+                  " WHERE id_orden_de_trabajo = @id_orden_de_trabajo; ";
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+                oP.agregarParametro("@fecha_de_ingreso_de_vehiculo", NpgsqlDbType.Timestamp, pOrdenTrabajo.FechaDeIngreso);
+                oP.agregarParametro("@fecha_de_salida", NpgsqlDbType.Timestamp, pOrdenTrabajo.FechaDeSalida);
+                oP.agregarParametro("@fecha_de_facturacion", NpgsqlDbType.Timestamp, pOrdenTrabajo.FechaDeFacturacion);
+                oP.agregarParametro("@costo_total", NpgsqlDbType.Double, costoTotal);
+                oP.agregarParametro("@id_empleado", NpgsqlDbType.Integer, pOrdenTrabajo.OMecanicoResponsable.Cedula);
+                oP.agregarParametro("@id_vehiculo", NpgsqlDbType.Integer, pOrdenTrabajo.OVehiculo.IdVehiculo);
+                oP.agregarParametro("@estado", NpgsqlDbType.Varchar, pOrdenTrabajo.Estado);
+                oP.agregarParametro("@factura_numero", NpgsqlDbType.Integer, this.numeroFactura());
+                oP.agregarParametro("@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenTrabajo.IdOrdenDetrabajo);
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+                
+                if (this.conexion.IsError)
+                {
+
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
+        }
+
+        private int numeroFactura()
+        {
+            int numeroFactura = 0;
+            DataSet dsetOrdenTrabajos;
+
+            string sql = "SELECT nextval('factura');";
+
+            dsetOrdenTrabajos = this.conexion.ejecutarConsultaSQL(sql);
+
+            if (!this.conexion.IsError)
+            {
+                if (dsetOrdenTrabajos.Tables[0].Rows.Count > 0)
+                {
+                    numeroFactura = Convert.ToInt32(dsetOrdenTrabajos.Tables[0].Rows[0][0].ToString());
+                }
+            }
+                 return numeroFactura;
         }
 
         public bool modificarFechaFinalizar(DateTime pFecha, int pCodigo)
