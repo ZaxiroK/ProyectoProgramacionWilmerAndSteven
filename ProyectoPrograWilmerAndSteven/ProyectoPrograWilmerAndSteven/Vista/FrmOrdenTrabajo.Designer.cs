@@ -74,6 +74,7 @@
             this.btnEditar.Size = new System.Drawing.Size(41, 35);
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // DTGOrdenTrabajos
             // 

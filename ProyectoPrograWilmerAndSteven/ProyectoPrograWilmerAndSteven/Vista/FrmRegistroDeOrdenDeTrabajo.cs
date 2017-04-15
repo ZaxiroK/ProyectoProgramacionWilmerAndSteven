@@ -14,18 +14,29 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmRegistroDeOrdenDeTrabajo : Form
     {
-        public VehiculoE vehiculoEcliente;
-        public OrdenReparacionE pOrdenDeTrabajoE;
-        //ClienteE duenio= new ClienteE();
-        ClienteD oClienteD = new ClienteD();
+        
         List<OrdenReparacionE> listOredenReparacion = new List<OrdenReparacionE>();
         List<OrdenRepuestoE> listOredenRepuesto = new List<OrdenRepuestoE>();
+        OrdenTrabajoE ordenTrabajo;
 
         public FrmRegistroDeOrdenDeTrabajo()
         {
             InitializeComponent();
             this.llenarComboClientes();
             this.llenarComboEmpleado();
+        }
+
+        public FrmRegistroDeOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo)
+        {
+            InitializeComponent();
+            this.llenarComboClientes();
+            this.llenarComboEmpleado();
+            this.ordenTrabajo = pOrdenTrabajo;
+            this.listOredenReparacion = pOrdenTrabajo.OrdenReparacion;
+            this.listOredenRepuesto = pOrdenTrabajo.OrdenRepuesto;
+            this.CargarDGviewReparacion(this.listOredenReparacion);
+            this.CargarDGviewRepuesto(this.listOredenRepuesto);
+            this.seleccionarItemsCombo();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -179,34 +190,31 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 this.cmbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
                 cmbEmpleado.SelectedIndex =  - 1;
             }
-            }
-
-        private void setVehiculoActual(int id)
-        {
-            int i, x = 0;
-            for (i = 0; i < this.cmbVehiculo.Items.Count; i++)
-            {
-                VehiculoE oVe = (VehiculoE)this.cmbVehiculo.Items[i];
-                if (oVe.IdVehiculo == id)
-                {
-                    x = i;
-                    i = this.cmbVehiculo.Items.Count;
-                }
-                //duenio.Cedula = oVe.OClienteE;
-               // Duennio(oVe);
-            }
-            this.cmbVehiculo.SelectedIndex = x;
 
         }
 
-      /*  public void Duennio(VehiculoE pVehiculoE)
+        public void seleccionarItemsCombo()
         {
-            ClienteE clienteE = (ClienteE)oClienteD.comprobarDueño(pVehiculoE.OClienteE);
-           
-                if (clienteE != null)
+            foreach (ClienteE cliente in cmbCliente.Items)
+            {
+                if(cliente.Cedula == this.ordenTrabajo.OVehiculo.OClienteE.Cedula)
                 {
+                    this.cmbCliente.SelectedItem = cliente;
+                    this.cmbVehiculo.Items.Add(this.ordenTrabajo.OVehiculo);
+                    this.cmbVehiculo.SelectedItem = this.ordenTrabajo.OVehiculo;
                 }
             }
-        }*/
+
+            foreach (EmpleadoE empleado in this.cmbEmpleado.Items)
+            {
+                if(empleado.Cedula == this.ordenTrabajo.OMecanicoResponsable.Cedula)
+                {
+                    this.cmbEmpleado.SelectedItem = empleado;
+                }
+            }
+
+
+
+        }
     }
 }
