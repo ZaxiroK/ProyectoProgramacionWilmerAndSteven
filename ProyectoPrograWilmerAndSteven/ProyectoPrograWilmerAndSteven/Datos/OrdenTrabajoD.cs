@@ -191,27 +191,29 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public bool modificarOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo)
+        public bool modificarOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo, double costoTotal)
         {
             bool estado = true;
 
             try
             {
 
-                string sql = "update schtaller.OrdenDeTrabajo set id_orden_de_trabajo = @id_orden_de_trabajo , fecha_de_ingreso_de_vehiculo = @fecha_de_ingreso_de_vehiculo," +
-                     "fecha_de_salida = @fecha_de_salida, fecha_de_facturacion = @fecha_de_facturacion, costo_total = @costo_total, id_empleado = @id_empleado," +
-                     "id_vehiculo = @id_vehiculo, estado = @estado, factura_numero = @factura_numero where schtaller.OrdenDeTrabajo = @OrdenDeTrabajo";
+                string sql = "UPDATE ordendetrabajo"+
+                " SET id_vehiculo = @id_vehiculo, id_empleado = @id_empleado, fecha_de_ingreso_de_vehiculo = @fecha_de_ingreso_de_vehiculo," +
+                 " fecha_de_salida = @fecha_de_salida, fecha_de_facturacion = @fecha_de_facturacion, costo_total = @costo_total, estado = @estado," +
+                  "  factura_numero = @factura_numero" +
+                  " WHERE id_orden_de_trabajo = @id_orden_de_trabajo; ";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
-                oP.agregarParametro("@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenTrabajo.IdOrdenDetrabajo);
-                oP.agregarParametro("@fecha_de_ingreso_de_vehiculo", NpgsqlDbType.Integer, pOrdenTrabajo.FechaDeIngreso);
-                oP.agregarParametro("@fecha_de_salida", NpgsqlDbType.Integer, pOrdenTrabajo.FechaDeSalida);
-                oP.agregarParametro("@fecha_de_facturacion", NpgsqlDbType.Integer, pOrdenTrabajo.FechaDeFacturacion);
-                /*oP.agregarParametro("@costo_total", NpgsqlDbType.Integer, pOrdenTrabajo.CostoTotal);*/
-                oP.agregarParametro("@id_empleado", NpgsqlDbType.Integer, pOrdenTrabajo.OMecanicoResponsable);
-                oP.agregarParametro("@id_vehiculo", NpgsqlDbType.Integer, pOrdenTrabajo.OVehiculo);
-                oP.agregarParametro("@estado", NpgsqlDbType.Integer, pOrdenTrabajo.Estado);
+                oP.agregarParametro("@fecha_de_ingreso_de_vehiculo", NpgsqlDbType.Timestamp, pOrdenTrabajo.FechaDeIngreso);
+                oP.agregarParametro("@fecha_de_salida", NpgsqlDbType.Timestamp, pOrdenTrabajo.FechaDeSalida);
+                oP.agregarParametro("@fecha_de_facturacion", NpgsqlDbType.Timestamp, pOrdenTrabajo.FechaDeFacturacion);
+                oP.agregarParametro("@costo_total", NpgsqlDbType.Double, costoTotal);
+                oP.agregarParametro("@id_empleado", NpgsqlDbType.Integer, pOrdenTrabajo.OMecanicoResponsable.Cedula);
+                oP.agregarParametro("@id_vehiculo", NpgsqlDbType.Integer, pOrdenTrabajo.OVehiculo.IdVehiculo);
+                oP.agregarParametro("@estado", NpgsqlDbType.Varchar, pOrdenTrabajo.Estado);
                 oP.agregarParametro("@factura_numero", NpgsqlDbType.Integer, pOrdenTrabajo.FacturaNumero);
+                oP.agregarParametro("@@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenTrabajo.IdOrdenDetrabajo);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
 
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());

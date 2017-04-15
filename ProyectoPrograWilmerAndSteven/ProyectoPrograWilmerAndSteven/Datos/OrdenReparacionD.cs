@@ -161,19 +161,19 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public bool borrarOrdenReparacion(OrdenReparacionE pOrdenReparacionE)
+        public bool borrarOrdenReparacion(OrdenTrabajoE pOrdenTrabajoE)
         {
             bool estado = true;
             try
             {
-                string sql = "delete from schtaller.OrdenReparacion where id_orden_reparacion = @id_orden_reparacion";
+                string sql = "delete from schtaller.OrdenReparacion where id_orden_de_trabajo = @id_orden_de_trabajo";
 
                 NpgsqlParameter[] parametros = new NpgsqlParameter[1];
 
                 parametros[0] = new NpgsqlParameter();
-                parametros[0].NpgsqlDbType = NpgsqlDbType.Varchar;
-                parametros[0].ParameterName = "@id_orden_reparacion";
-                parametros[0].Value = pOrdenReparacionE.Id_catalogoReparacion;
+                parametros[0].NpgsqlDbType = NpgsqlDbType.Integer;
+                parametros[0].ParameterName = "@id_orden_de_trabajo";
+                parametros[0].Value = pOrdenTrabajoE.IdOrdenDetrabajo;
 
                 this.conexion.ejecutarSQL(sql, parametros);
                 if (this.conexion.IsError)

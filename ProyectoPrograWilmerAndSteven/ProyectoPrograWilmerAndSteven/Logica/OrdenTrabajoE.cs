@@ -58,9 +58,12 @@ namespace Logica
         {
             double total = 0;
 
-            foreach (OrdenRepuestoE oRepuesto in OrdenRepuesto)
+            if (this.OrdenRepuesto.Count != 0)
             {
-                total += oRepuesto.Precio * oRepuesto.Cantidad;
+                foreach (OrdenRepuestoE oRepuesto in OrdenRepuesto)
+                {
+                    total += oRepuesto.Precio * oRepuesto.Cantidad;
+                }
             }
 
             return total;

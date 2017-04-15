@@ -18,12 +18,17 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         List<OrdenReparacionE> listOredenReparacion = new List<OrdenReparacionE>();
         List<OrdenRepuestoE> listOredenRepuesto = new List<OrdenRepuestoE>();
         OrdenTrabajoE ordenTrabajo;
+        OrdenRepuestoD oOrdenRepuestoD = new OrdenRepuestoD();
+        OrdenReparacionD oOrdenRepracionD = new OrdenReparacionD();
+        OrdenTrabajoD oOrdenTrabajoD = new OrdenTrabajoD();
+        int estado; // variable para saber si es edición o agregar
 
         public FrmRegistroDeOrdenDeTrabajo()
         {
             InitializeComponent();
             this.llenarComboClientes();
             this.llenarComboEmpleado();
+            this.estado = 1;
         }
 
         public FrmRegistroDeOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo)
@@ -36,45 +41,72 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.listOredenRepuesto = pOrdenTrabajo.OrdenRepuesto;
             this.CargarDGviewReparacion(this.listOredenReparacion);
             this.CargarDGviewRepuesto(this.listOredenRepuesto);
-            this.seleccionarItemsCombo();
+            this.seleccionarItemsCombo();//setea los combos
+            this.estado = 2; 
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
+            OrdenTrabajoE oOrdenTrabajoE = null;
+            int numeroOrden = 0;
 
-                OrdenTrabajoE oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now,
+            if (estado == 1)
+            {
+
+                oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now,
                     ((EmpleadoE)this.cmbEmpleado.SelectedItem), ((VehiculoE)this.cmbVehiculo.SelectedItem), 'N', 0,
                     this.listOredenRepuesto, this.listOredenReparacion);
-
-
-                OrdenTrabajoD oOrdenTrabajoD = new OrdenTrabajoD();
-                string numeroOrden = oOrdenTrabajoD.agregarOrdenDeTrabajo(oOrdenTrabajoE,
+            
+                
+                String strNumeroOrden = oOrdenTrabajoD.agregarOrdenDeTrabajo(oOrdenTrabajoE,
                     oOrdenTrabajoE.CalculoCostoTotal());
 
-                if (!oOrdenTrabajoD.Error)
+                numeroOrden = Convert.ToInt32(strNumeroOrden);
+
+            }
+            if(estado == 2)
+            {
+                oOrdenTrabajoE = new OrdenTrabajoE(this.ordenTrabajo.FechaDeIngreso, this.ordenTrabajo.FechaDeSalida,
+                    this.ordenTrabajo.FechaDeFacturacion,((EmpleadoE)this.cmbEmpleado.SelectedItem), ((VehiculoE)this.cmbVehiculo.SelectedItem),
+                    'N', 0,this.listOredenRepuesto, this.listOredenReparacion);
+
+                numeroOrden = this.ordenTrabajo.IdOrdenDetrabajo;
+                oOrdenTrabajoE.IdOrdenDetrabajo = this.ordenTrabajo.IdOrdenDetrabajo;
+
+                this.oOrdenTrabajoD.modificarOrdenDeTrabajo(oOrdenTrabajoE, oOrdenTrabajoE.CalculoCostoTotal());
+
+            }   
+
+                if (oOrdenTrabajoD.Error)
                 {
                     MessageBox.Show(oOrdenTrabajoD.ErrorMsg);
                 }
-
-                OrdenReparacionD oOrdenRepracionD = new OrdenReparacionD();
-                foreach (OrdenReparacionE oR in oOrdenTrabajoE.OrdenReparacion)
+                else
                 {
-                    oOrdenRepracionD.agregarOrdenReparacion(oR, Convert.ToInt32(numeroOrden));
+                    this.AgregarOrdenes(numeroOrden, oOrdenTrabajoE);
                 }
 
-                OrdenRepuestoD oOrdenRepuestoD = new OrdenRepuestoD();
-                foreach (OrdenRepuestoE oR in oOrdenTrabajoE.OrdenRepuesto)
-                {
-                    oOrdenRepuestoD.agregarOrdenRpuesto(oR, Convert.ToInt32(numeroOrden));
-                }
-        
+                    
+           //FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrden);
+            //oReporte.ShowDialog();
+        }
 
-            FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(int.Parse(numeroOrden));
-            oReporte.ShowDialog();
+        public void AgregarOrdenes(int numeroOrdenTrabajo, OrdenTrabajoE oOrdenTrabajoE)
+        {
 
-    
+            this.oOrdenRepracionD.borrarOrdenReparacion(this.ordenTrabajo);//borrar
+            this.oOrdenRepuestoD.borrarOrdenDeRepuesto(this.ordenTrabajo);//borrar
 
+            foreach (OrdenReparacionE oR in oOrdenTrabajoE.OrdenReparacion)
+            {
+                oOrdenRepracionD.agregarOrdenReparacion(oR, numeroOrdenTrabajo);
+            }
+
+
+            foreach (OrdenRepuestoE oR in oOrdenTrabajoE.OrdenRepuesto)
+            {
+                oOrdenRepuestoD.agregarOrdenRpuesto(oR, numeroOrdenTrabajo);
+            }
         }
 
         public void llenarComboClientes()
@@ -214,6 +246,16 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
 
 
+
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
 
         }
     }
