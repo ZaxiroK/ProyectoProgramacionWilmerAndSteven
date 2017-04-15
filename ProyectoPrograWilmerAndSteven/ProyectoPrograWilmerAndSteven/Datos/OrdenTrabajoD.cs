@@ -268,9 +268,9 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             Parametro oParametro = new Parametro();
             oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, pOrdenDeTraabajo);
 
-            string sql = "select t.id_orden_de_trabajo  as idOrdenDetrabajo, " +
+            string sql = "select t.id_orden_de_trabajo  as ID, " +
                            "t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida," +
-                            "t.fecha_de_facturacion as fechaDeFacturacion, t.costo_total as costoTotal," +
+                            "t.fecha_de_facturacion as fechaDeFacturacion, t.costo_total as Costo_total," +
                             "t.estado as estado, t.factura_numero as facturaNumero," +
 
 
@@ -280,7 +280,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                                "p.puesto as puesto, p.descripcion as descripcion," +
 
 
-                                "v.id_vehiculo as idVehiculo, v.placa as placa, v.clase_de_vehiculo as claseVehiculo," +
+                                "v.id_vehiculo as ID_Vehiculo, v.placa as placa, v.clase_de_vehiculo as claseVehiculo," +
                                  "v.capacidad_de_personas as capacidadPersonas, v.numero_de_motor as numeroMotor, v.numero_de_chasis as numeroChasis," +
                                 "v.combustible as combustible," +
 
@@ -294,9 +294,9 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                                  "schtaller.puesto p, schtaller.vehiculo v" +
 
 
-                                 " where t.id_empleado = e.cedula and e.id_puesto = p.id_puesto and t.id_vehiculo = v.id_vehiculo" +
+                                 " where t.id_orden_de_trabajo = "+ pOrdenDeTraabajo + " and t.id_empleado = e.cedula and e.id_puesto = p.id_puesto and t.id_vehiculo = v.ID_Vehiculo" +
                                   " and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca and c.cedula = v.id_cliente";
-            dsetOrdenTrabajos = this.conexion.ejecutarConsultaSQL(sql,"ordenDeTrabajo", oParametro.obtenerParametros());
+            dsetOrdenTrabajos = this.conexion.ejecutarConsultaSQL(sql);
 
             if (!this.conexion.IsError)
             {

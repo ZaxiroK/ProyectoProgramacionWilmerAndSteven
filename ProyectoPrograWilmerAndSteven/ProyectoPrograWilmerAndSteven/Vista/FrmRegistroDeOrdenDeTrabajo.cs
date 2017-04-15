@@ -58,11 +58,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     oOrdenRepuestoD.agregarOrdenRpuesto(oR, Convert.ToInt32(numeroOrden));
                 }
         
-/*
-            FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo();
+
+            FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(int.Parse(numeroOrden));
             oReporte.ShowDialog();
 
-    */
+    
 
         }
 
