@@ -89,7 +89,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                                   " and t.id_orden_de_trabajo = " + pOrdenTrabajo;
 
 
-            dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql);
+             dsetOredenesReparaciones = this.conexion.ejecutarConsultaSQL(sql);
 
             foreach (DataRow tupla in dsetOredenesReparaciones.Tables[0].Rows)
             {
