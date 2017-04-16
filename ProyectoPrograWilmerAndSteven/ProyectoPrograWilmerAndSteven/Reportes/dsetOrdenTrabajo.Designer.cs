@@ -332,6 +332,8 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             private global::System.Data.DataColumn columnNúmero_de_factura;
             
+            private global::System.Data.DataColumn columnCliente;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Orden_de_trabajoDataTable() {
@@ -439,6 +441,14 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClienteColumn {
+                get {
+                    return this.columnCliente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -474,7 +484,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Orden_de_trabajoRow AddOrden_de_trabajoRow(int ID, int ID_Vehiculo, int Cédula_empleado, System.DateTime Ingreso_de_vehiculo, System.DateTime Salida_de_vehiculo, System.DateTime Fecha_de_facturación, double Costo_total, char Estado, int Número_de_factura) {
+            public Orden_de_trabajoRow AddOrden_de_trabajoRow(int ID, int ID_Vehiculo, int Cédula_empleado, System.DateTime Ingreso_de_vehiculo, System.DateTime Salida_de_vehiculo, System.DateTime Fecha_de_facturación, double Costo_total, char Estado, int Número_de_factura, int Cliente) {
                 Orden_de_trabajoRow rowOrden_de_trabajoRow = ((Orden_de_trabajoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -485,7 +495,8 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
                         Fecha_de_facturación,
                         Costo_total,
                         Estado,
-                        Número_de_factura};
+                        Número_de_factura,
+                        Cliente};
                 rowOrden_de_trabajoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrden_de_trabajoRow);
                 return rowOrden_de_trabajoRow;
@@ -517,6 +528,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
                 this.columnCosto_total = base.Columns["Costo_total"];
                 this.columnEstado = base.Columns["Estado"];
                 this.columnNúmero_de_factura = base.Columns["Número_de_factura"];
+                this.columnCliente = base.Columns["Cliente"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -540,6 +552,8 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
                 base.Columns.Add(this.columnEstado);
                 this.columnNúmero_de_factura = new global::System.Data.DataColumn("Número_de_factura", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNúmero_de_factura);
+                this.columnCliente = new global::System.Data.DataColumn("Cliente", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCliente);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1064,6 +1078,22 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Cliente {
+                get {
+                    try {
+                        return ((int)(this[this.tableOrden_de_trabajo.ClienteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cliente\' de la tabla \'Orden de trabajo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrden_de_trabajo.ClienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIDNull() {
                 return this.IsNull(this.tableOrden_de_trabajo.IDColumn);
             }
@@ -1168,6 +1198,18 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNúmero_de_facturaNull() {
                 this[this.tableOrden_de_trabajo.Número_de_facturaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClienteNull() {
+                return this.IsNull(this.tableOrden_de_trabajo.ClienteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClienteNull() {
+                this[this.tableOrden_de_trabajo.ClienteColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -14,7 +14,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmRegistroDeOrdenDeTrabajo : Form
     {
-        
+        //VehiculoE pVehiculoE = new VehiculoE();
+        ClienteE pClienteE = new ClienteE();
+
         List<OrdenReparacionE> listOredenReparacion = new List<OrdenReparacionE>();
         List<OrdenRepuestoE> listOredenRepuesto = new List<OrdenRepuestoE>();
         OrdenTrabajoE ordenTrabajo;
@@ -47,6 +49,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            
             OrdenTrabajoE oOrdenTrabajoE = null;
             int numeroOrden = 0;
 
@@ -69,7 +72,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 oOrdenTrabajoE = new OrdenTrabajoE(this.ordenTrabajo.FechaDeIngreso, this.ordenTrabajo.FechaDeSalida,
                     this.ordenTrabajo.FechaDeFacturacion,((EmpleadoE)this.cmbEmpleado.SelectedItem), ((VehiculoE)this.cmbVehiculo.SelectedItem),
                     'N', 0,this.listOredenRepuesto, this.listOredenReparacion);
-
+                
                 numeroOrden = this.ordenTrabajo.IdOrdenDetrabajo;
                 oOrdenTrabajoE.IdOrdenDetrabajo = this.ordenTrabajo.IdOrdenDetrabajo;
 
@@ -85,10 +88,13 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 {
                     this.AgregarOrdenes(numeroOrden, oOrdenTrabajoE);
                 }
+                
+                ClienteD pClienteD = new ClienteD();
+            //pClienteD.comprobarDueño(pClienteE.Cedula);
 
-                    
-           //FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrden);
-            //oReporte.ShowDialog();
+
+            FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrden,pClienteE.Cedula);
+            oReporte.ShowDialog();
         }
 
         public void AgregarOrdenes(int numeroOrdenTrabajo, OrdenTrabajoE oOrdenTrabajoE)
@@ -126,6 +132,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         public void llenarComboVehiculo(int pCedula)
         {
+            pClienteE.Cedula = pCedula;
 
             VehiculoD oVehiculoD = new VehiculoD();
             List<VehiculoE> vehiculos = oVehiculoD.obtenerVehiculosOrdenTrabajo(pCedula);

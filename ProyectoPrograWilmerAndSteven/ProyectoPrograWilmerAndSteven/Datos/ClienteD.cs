@@ -134,7 +134,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
             try
             {
-               
+
                 string sql = "update schtaller.cliente set cedula = @cedula , nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2," +
                     "direccion = @direccion, telefono1 = @telefono1, telefono2 = @telefono2, telefono3 = @telefono3 where cedula = @cliente";
                 NpgsqlParameter oParametro = new NpgsqlParameter();
@@ -190,6 +190,30 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return cliente;
         }
-          
+
+        public DataTable consultaClienteReporte(int cedula)
+        {
+            DataSet dsetClienteReporte;
+            DataTable tabla = null;
+
+            Parametro oParametro = new Parametro();
+            oParametro.agregarParametro("@cedula", NpgsqlDbType.Numeric, cedula);
+
+            string sql = "select c.cedula as cedula, c.nombre as nombre," +
+                            "c.apellido1 as apellido1, c.apellido2 as apellido2," +
+                             "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3" +
+                               " from schtaller.cliente c " +
+
+            " where c.cedula = " + cedula;
+            dsetClienteReporte = this.conexion.ejecutarConsultaSQL(sql);
+
+            if (!this.conexion.IsError)
+            {
+                tabla = dsetClienteReporte.Tables[0].Copy();
+            }
+
+            return tabla;
         }
+
+    }
 }

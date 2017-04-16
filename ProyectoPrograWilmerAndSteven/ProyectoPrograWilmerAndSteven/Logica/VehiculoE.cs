@@ -32,6 +32,10 @@ namespace Logica
             this.Combustible = pCombustible;
         }
 
+        public VehiculoE()
+        {
+        }
+
         public int IdVehiculo
         {
             get
