@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsetOrdenDeTrabajo" targetNamespace="http://tempuri.org/dsetOrdenDeTrabajo.xsd" xmlns:mstns="http://tempuri.org/dsetOrdenDeTrabajo.xsd" xmlns="http://tempuri.org/dsetOrdenDeTrabajo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsetOrdenDeTrabajo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsetOrdenDeTrabajo" msprop:Generator_UserDSName="dsetOrdenDeTrabajo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Orden_x0020_de_x0020_Servicio" msprop:Generator_TableClassName="Orden_de_ServicioDataTable" msprop:Generator_TableVarName="tableOrden_de_Servicio" msprop:Generator_TablePropName="Orden_de_Servicio" msprop:Generator_RowDeletingName="Orden_de_ServicioRowDeleting" msprop:Generator_RowChangingName="Orden_de_ServicioRowChanging" msprop:Generator_RowEvHandlerName="Orden_de_ServicioRowChangeEventHandler" msprop:Generator_RowDeletedName="Orden_de_ServicioRowDeleted" msprop:Generator_UserTableName="Orden de Servicio" msprop:Generator_RowChangedName="Orden_de_ServicioRowChanged" msprop:Generator_RowEvArgName="Orden_de_ServicioRowChangeEvent" msprop:Generator_RowClassName="Orden_de_ServicioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="Numero_de_orden" msprop:Generator_ColumnVarNameInTable="columnNumero_de_orden" msprop:Generator_ColumnPropNameInRow="Numero_de_orden" msprop:Generator_ColumnPropNameInTable="Numero_de_ordenColumn" msprop:Generator_UserColumnName="Numero_de_orden" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha_inicio" msprop:Generator_ColumnVarNameInTable="columnFecha_inicio" msprop:Generator_ColumnPropNameInRow="Fecha_inicio" msprop:Generator_ColumnPropNameInTable="Fecha_inicioColumn" msprop:Generator_UserColumnName="Fecha_inicio" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Fecha_fin" msprop:Generator_ColumnVarNameInTable="columnFecha_fin" msprop:Generator_ColumnPropNameInRow="Fecha_fin" msprop:Generator_ColumnPropNameInTable="Fecha_finColumn" msprop:Generator_UserColumnName="Fecha_fin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Detalle_reparaciones" msprop:Generator_ColumnVarNameInTable="columnDetalle_reparaciones" msprop:Generator_ColumnPropNameInRow="Detalle_reparaciones" msprop:Generator_ColumnPropNameInTable="Detalle_reparacionesColumn" msprop:Generator_UserColumnName="Detalle_reparaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="Detalles_repuestos" msprop:Generator_ColumnVarNameInTable="columnDetalles_repuestos" msprop:Generator_ColumnPropNameInRow="Detalles_repuestos" msprop:Generator_ColumnPropNameInTable="Detalles_repuestosColumn" msprop:Generator_UserColumnName="Detalles_repuestos" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_apagar" msprop:Generator_ColumnVarNameInTable="columnTotal_apagar" msprop:Generator_ColumnPropNameInRow="Total_apagar" msprop:Generator_ColumnPropNameInTable="Total_apagarColumn" msprop:Generator_UserColumnName="Total_apagar" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -16,22 +16,32 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     public partial class FrmReporteOrdenDeTrabajo : Form
     {
         private int numeroFactura;
+        private int oCedula;
         
-        public FrmReporteOrdenDeTrabajo(int pIdOrdenDeTrabajo)
+        public FrmReporteOrdenDeTrabajo(int pIdOrdenDeTrabajo, int pCedula)
         {
             InitializeComponent();
             this.numeroFactura = pIdOrdenDeTrabajo;
+            this.oCedula = pCedula;
             this.cargarReporte();
         }
 
         private void cargarReporte()
         {
             OrdenTrabajoD pOrdenTrabajoD = new OrdenTrabajoD();
-
-            rpOrdenDeTrabajo oReporteOrdenTrabajo = new rpOrdenDeTrabajo();
+            /*rpOrdenTrabajo oReporteOrdenTrabajo = new rpOrdenTrabajo();
             oReporteOrdenTrabajo.SetDataSource(pOrdenTrabajoD.consultaOrdenDeTrabajoReporte(this.numeroFactura));
 
-            this.visorReporteOrden.ReportSource = oReporteOrdenTrabajo;
+            this.visorReporteOrden.ReportSource = oReporteOrdenTrabajo;*/
+
+
+
+            ClienteD pClienteD = new ClienteD();
+            rpOrdenDeServicio orpOrdenDeServicio = new rpOrdenDeServicio();
+            orpOrdenDeServicio.SetDataSource(pOrdenTrabajoD.consultaOrdenDeTrabajoReporte(this.numeroFactura));
+            this.visorReporteOrden.ReportSource = orpOrdenDeServicio;
+            /*orpOrdenDeServicio.SetDataSource(pClienteD.consultaClienteReporte(this.oCedula));
+            this.visorReporteOrden.ReportSource = orpOrdenDeServicio;*/
         }
 
         

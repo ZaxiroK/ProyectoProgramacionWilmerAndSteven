@@ -16,14 +16,14 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpOrdenDeTrabajo : ReportClass {
+    public class rpOrdenDeServicio : ReportClass {
         
-        public rpOrdenDeTrabajo() {
+        public rpOrdenDeServicio() {
         }
         
         public override string ResourceName {
             get {
-                return "rpOrdenDeTrabajo.rpt";
+                return "rpOrdenDeServicio.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         
         public override string FullResourceName {
             get {
-                return "ProyectoPrograWilmerAndSteven.Reportes.rpOrdenDeTrabajo.rpt";
+                return "ProyectoPrograWilmerAndSteven.Reportes.rpOrdenDeServicio.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrpOrdenDeTrabajo : Component, ICachedReport {
+    public class CachedrpOrdenDeServicio : Component, ICachedReport {
         
-        public CachedrpOrdenDeTrabajo() {
+        public CachedrpOrdenDeServicio() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpOrdenDeTrabajo rpt = new rpOrdenDeTrabajo();
+            rpOrdenDeServicio rpt = new rpOrdenDeServicio();
             rpt.Site = this.Site;
             return rpt;
         }

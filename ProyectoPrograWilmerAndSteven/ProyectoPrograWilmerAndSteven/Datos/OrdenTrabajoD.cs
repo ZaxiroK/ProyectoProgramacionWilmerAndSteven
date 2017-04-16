@@ -367,17 +367,17 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-        public DataTable consultaOrdenDeTrabajoReporte(int pOrdenDeTraabajo)
-        {
+        public DataTable consultaOrdenDeTrabajoReporte(int pOrdenDeTrabajo)
+        {   
             DataSet dsetOrdenTrabajos;
             DataTable tabla = null;
 
             Parametro oParametro = new Parametro();
-            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, pOrdenDeTraabajo);
+            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, pOrdenDeTrabajo);
 
-            string sql = "select t.id_orden_de_trabajo  as ID, " +
-                           "t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida," +
-                            "t.fecha_de_facturacion as fechaDeFacturacion, t.costo_total as Costo_total," +
+            string sql = "select t.id_orden_de_trabajo  as Numero_de_orden, " +
+                           "t.fecha_de_ingreso_de_vehiculo as fecha_inicio, t.fecha_de_salida as fecha_fin," +
+                            "t.fecha_de_facturacion as fechaDeFacturacion, t.costo_total as total_apagar," +
                             "t.estado as estado, t.factura_numero as facturaNumero," +
 
 
@@ -401,7 +401,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                                  "schtaller.puesto p, schtaller.vehiculo v" +
 
 
-                                 " where t.id_orden_de_trabajo = "+ pOrdenDeTraabajo + " and t.id_empleado = e.cedula and e.id_puesto = p.id_puesto and t.id_vehiculo = v.ID_Vehiculo" +
+                                 " where t.id_orden_de_trabajo = "+ pOrdenDeTrabajo + " and t.id_empleado = e.cedula and e.id_puesto = p.id_puesto and t.id_vehiculo = v.ID_Vehiculo" +
                                   " and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca and c.cedula = v.id_cliente";
             dsetOrdenTrabajos = this.conexion.ejecutarConsultaSQL(sql);
 

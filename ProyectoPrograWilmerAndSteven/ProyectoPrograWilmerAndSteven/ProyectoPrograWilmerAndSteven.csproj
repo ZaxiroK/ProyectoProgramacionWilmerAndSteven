@@ -86,6 +86,14 @@
     <Compile Include="Logica\PuestoE.cs" />
     <Compile Include="Logica\UsuarioE.cs" />
     <Compile Include="Logica\VehiculoE.cs" />
+    <Compile Include="Reportes\dsetOrdenDeServicio.cs">
+      <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dsetOrdenDeServicio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dsetOrdenTrabajo.cs">
       <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
     </Compile>
@@ -94,10 +102,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\rpOrdenDeTrabajo.cs">
+    <Compile Include="Reportes\rpOrdenDeServicio.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rpOrdenDeTrabajo.rpt</DependentUpon>
+      <DependentUpon>rpOrdenDeServicio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpOrdenTrabajo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpOrdenTrabajo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Vista\FrmCambioContrasenia.cs">
@@ -268,9 +282,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\rpOrdenDeTrabajo.rpt">
+    <EmbeddedResource Include="Reportes\rpOrdenDeServicio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpOrdenDeTrabajo.cs</LastGenOutput>
+      <LastGenOutput>rpOrdenDeServicio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpOrdenTrabajo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpOrdenTrabajo.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCambioContrasenia.resx">
       <DependentUpon>FrmCambioContrasenia.cs</DependentUpon>
@@ -359,6 +377,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\dsetOrdenDeServicio.xsc">
+      <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsetOrdenDeServicio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsetOrdenDeServicio.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dsetOrdenDeServicio.xss">
+      <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\dsetOrdenTrabajo.xsc">
       <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
     </None>

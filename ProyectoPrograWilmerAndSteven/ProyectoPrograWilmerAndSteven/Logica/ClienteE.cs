@@ -29,6 +29,10 @@ namespace Logica
             this.Telefono3 = pTelefono3;
         }
 
+        public ClienteE()
+        {
+        }
+
         public int Cedula
         {
             get
