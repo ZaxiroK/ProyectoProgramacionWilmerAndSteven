@@ -86,6 +86,11 @@
     <Compile Include="Logica\PuestoE.cs" />
     <Compile Include="Logica\UsuarioE.cs" />
     <Compile Include="Logica\VehiculoE.cs" />
+    <Compile Include="Reportes\dsetInformeOrdenesFinalizadas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsetInformeOrdenesFinalizadas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dsetOrdenDeServicio.cs">
       <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
     </Compile>
@@ -395,6 +400,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\dsetInformeOrdenesFinalizadas.xsc">
+      <DependentUpon>dsetInformeOrdenesFinalizadas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsetInformeOrdenesFinalizadas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsetInformeOrdenesFinalizadas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dsetInformeOrdenesFinalizadas.xss">
+      <DependentUpon>dsetInformeOrdenesFinalizadas.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\dsetOrdenDeServicio.xsc">
       <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
     </None>
