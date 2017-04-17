@@ -24,9 +24,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         OrdenRepuestoD oOrdenRepuestoD = new OrdenRepuestoD();
         OrdenReparacionD oOrdenRepracionD = new OrdenReparacionD();
         OrdenTrabajoD oOrdenTrabajoD = new OrdenTrabajoD();
+        int numeroOrdenFactura = 0;
         //OrdenTrabajoE pOrdenTrabajoE = new OrdenTrabajoE();
         int estado; // variable para saber si es edición o agregar
-        int numeroOrdenFactura;
+        
         public FrmRegistroDeOrdenDeTrabajo()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.llenarComboClientes();
             this.llenarComboEmpleado();
             this.estado = 1;
-            
+
         }
 
         public FrmRegistroDeOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo)
@@ -51,12 +52,12 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.CargarDGviewRepuesto(this.listOredenRepuesto);
             this.seleccionarItemsCombo();//setea los combos
             this.estado = 2;
-            
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
+
             OrdenTrabajoE oOrdenTrabajoE = null;
             int numeroOrden = 0;
             if ((this.cmbCliente.SelectedIndex != -1) && (this.cmbEmpleado.SelectedIndex != -1)
@@ -99,8 +100,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 }
                 else
                 {
-                   bool estado = this.AgregarOrdenes(numeroOrden, oOrdenTrabajoE);
-                    if(!estado)
+                    bool estado = this.AgregarOrdenes(numeroOrden, oOrdenTrabajoE);
+                    if (!estado)
                     {
                         this.cnx.rollbackTransaccion();//en caso de error "rollback"
                         MessageBox.Show("¡Ha ocurrido un error al agregar orden de trabajo!");
@@ -112,25 +113,28 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
                 if (estado == 1)
                 {
+                    numeroOrdenFactura = numeroOrden;
                     this.cnx.commitTransaccion();
                     MessageBox.Show("¡Orden de trabajo agregada con exito!");
+
                 }
                 else
                 {
                     this.cnx.commitTransaccion();
                     MessageBox.Show("¡Orden de trabajo editada con exito!");
                 }
+
                 this.restablecerValores();
             }
             else
             {
                 MessageBox.Show("¡Debe seleccionar todos los datos!");
-            }      
-            
+            }
+
         }
         public void validarEstado(OrdenTrabajoE pOrdenTrabajoE)
         {
-            if(pOrdenTrabajoE.Estado.Equals('S'))
+            if (pOrdenTrabajoE.Estado.Equals('S'))
             {
                 this.btnFinalizar.Enabled = false;
                 this.btnSalvar.Enabled = false;
@@ -179,7 +183,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     oOrdenRepracionD.agregarOrdenReparacion(oR, numeroOrdenTrabajo);
                     if (oOrdenRepracionD.Error)
                     {
-                          estado = false;
+                        estado = false;
                     }
                 }
             }
@@ -216,7 +220,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 this.cmbCliente.Items.Add(oClienteE);
                 this.cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbCliente.SelectedIndex =  - 1;
+                cmbCliente.SelectedIndex = -1;
             }
         }
 
@@ -231,7 +235,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 this.cmbVehiculo.Items.Add(oVehiculoE);
                 this.cmbVehiculo.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbVehiculo.SelectedIndex =  - 1;
+                cmbVehiculo.SelectedIndex = -1;
             }
         }
 
@@ -239,34 +243,34 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             this.cmbVehiculo.Items.Clear();
             this.llenarComboVehiculo(((ClienteE)this.cmbCliente.SelectedItem).Cedula);
-            
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmSeleccionarRepuestos oFrm = new FrmSeleccionarRepuestos(this.listOredenRepuesto);
             oFrm.ShowDialog();
-            if(oFrm.Aceptar)
+            if (oFrm.Aceptar)
             {
                 this.listOredenRepuesto = oFrm.CompararRepuesto;
                 this.CargarDGviewRepuesto(this.listOredenRepuesto);
-            }            
+            }
         }
-        
+
 
         private void btnAgregarReparacion_Click(object sender, EventArgs e)
         {
             FrmSeleccionarReparaciones oFrm = new FrmSeleccionarReparaciones();
             oFrm.ShowDialog();
 
-            if(oFrm.Aceptar)
+            if (oFrm.Aceptar)
             {
                 this.agregarOrdenReparacion(oFrm.ListaOrdenReparacion);
                 this.CargarDGviewReparacion(this.listOredenReparacion);
             }
         }
 
-        
+
         private void agregarOrdenReparacion(List<OrdenReparacionE> pReparacion)
         {
             foreach (OrdenReparacionE oReparacion in pReparacion)
@@ -283,7 +287,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             foreach (OrdenRepuestoE oM in pRepuestos)
             {
-                
+
                 this.DTGrepuestos.Rows.Add(oM.IdCatalogoRepuesto.ToString(),
                     oM.NombreDelRepuesto.ToString(),
                     oM.AnnoAlQuePertenece.ToString(), oM.Precio.ToString()
@@ -317,7 +321,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 this.cmbEmpleado.Items.Add(oEmpleadoE);
                 this.cmbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbEmpleado.SelectedIndex =  - 1;
+                cmbEmpleado.SelectedIndex = -1;
             }
 
         }
@@ -326,7 +330,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             foreach (ClienteE cliente in cmbCliente.Items)
             {
-                if(cliente.Cedula == this.ordenTrabajo.OVehiculo.OClienteE.Cedula)
+                if (cliente.Cedula == this.ordenTrabajo.OVehiculo.OClienteE.Cedula)
                 {
                     this.cmbCliente.SelectedItem = cliente;
                     this.cmbVehiculo.Items.Add(this.ordenTrabajo.OVehiculo);
@@ -336,7 +340,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             foreach (EmpleadoE empleado in this.cmbEmpleado.Items)
             {
-                if(empleado.Cedula == this.ordenTrabajo.OMecanicoResponsable.Cedula)
+                if (empleado.Cedula == this.ordenTrabajo.OMecanicoResponsable.Cedula)
                 {
                     this.cmbEmpleado.SelectedItem = empleado;
                 }
@@ -402,7 +406,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
                 this.validarEstado(oOrdenTrabajoE);
 
-                
+
                 MessageBox.Show("¡Orden de trabajo finalizada con exito!");
             }
             else
@@ -413,8 +417,14 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-            int numeroOrdenFactura = ordenTrabajo.IdOrdenDetrabajo;
-            //ClienteD pClienteD = new ClienteD();
+            if (ordenTrabajo == null)
+            {
+                numeroOrdenFactura = numeroOrdenFactura;
+            }
+            else
+            {
+                 numeroOrdenFactura = ordenTrabajo.IdOrdenDetrabajo;
+            }
             FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
             oReporte.ShowDialog();
         }
