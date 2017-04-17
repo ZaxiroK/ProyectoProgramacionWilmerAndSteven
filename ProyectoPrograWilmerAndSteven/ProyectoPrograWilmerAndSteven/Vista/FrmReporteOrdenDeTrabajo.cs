@@ -37,11 +37,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
 
             ClienteD pClienteD = new ClienteD();
-            rpOrdenDeServicio orpOrdenDeServicio = new rpOrdenDeServicio();
-            orpOrdenDeServicio.SetDataSource(pOrdenTrabajoD.consultaOrdenDeTrabajoReporte(this.numeroFactura));
-            this.visorReporteOrden.ReportSource = orpOrdenDeServicio;
-            /*orpOrdenDeServicio.SetDataSource(pClienteD.consultaClienteReporte(this.oCedula));
-            this.visorReporteOrden.ReportSource = orpOrdenDeServicio;*/
+            rpInformeOrdenTrabajoFactura orpInformeOrdenTrabajoFactura = new rpInformeOrdenTrabajoFactura();
+            orpInformeOrdenTrabajoFactura.SetDataSource(pOrdenTrabajoD.consultaOrdenDeTrabajoReporte(this.numeroFactura));
+            this.visorReporteOrden.ReportSource = orpInformeOrdenTrabajoFactura;
+            
         }
 
         

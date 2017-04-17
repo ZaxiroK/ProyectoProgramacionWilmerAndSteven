@@ -24,8 +24,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         OrdenRepuestoD oOrdenRepuestoD = new OrdenRepuestoD();
         OrdenReparacionD oOrdenRepracionD = new OrdenReparacionD();
         OrdenTrabajoD oOrdenTrabajoD = new OrdenTrabajoD();
+        //OrdenTrabajoE pOrdenTrabajoE = new OrdenTrabajoE();
         int estado; // variable para saber si es edición o agregar
-
+        int numeroOrdenFactura;
         public FrmRegistroDeOrdenDeTrabajo()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.llenarComboClientes();
             this.llenarComboEmpleado();
             this.estado = 1;
+            
         }
 
         public FrmRegistroDeOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo)
@@ -48,7 +50,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.CargarDGviewReparacion(this.listOredenReparacion);
             this.CargarDGviewRepuesto(this.listOredenRepuesto);
             this.seleccionarItemsCombo();//setea los combos
-            this.estado = 2; 
+            this.estado = 2;
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -123,12 +126,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 MessageBox.Show("¡Debe seleccionar todos los datos!");
             }      
-            //    ClienteD pClienteD = new ClienteD();
-            ////pClienteD.comprobarDueño(pClienteE.Cedula);
-
-
-            //FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrden,pClienteE.Cedula);
-            //oReporte.ShowDialog();
+            
         }
         public void validarEstado(OrdenTrabajoE pOrdenTrabajoE)
         {
@@ -415,7 +413,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-
+            int numeroOrdenFactura = ordenTrabajo.IdOrdenDetrabajo;
+            //ClienteD pClienteD = new ClienteD();
+            FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
+            oReporte.ShowDialog();
         }
 
         private void btnEliminarRepuestos_Click(object sender, EventArgs e)

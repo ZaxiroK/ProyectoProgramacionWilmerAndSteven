@@ -46,8 +46,8 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             OrdenRepuestoD oOrdenRepuestoD = new OrdenRepuestoD();
             OrdenReparacionD oOrdenReparacionD = new OrdenReparacionD();
             List<OrdenTrabajoE> ordenesTrabajos = new List<OrdenTrabajoE>();
-            
-            
+
+
             DataSet dsetOrdenTrabajos;
 
 
@@ -80,10 +80,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
                                  " where t.id_empleado = e.cedula and e.id_puesto = p.id_puesto and t.id_vehiculo = v.id_vehiculo" +
                                   " and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca and c.cedula = v.id_cliente";
-                                 
+
 
             dsetOrdenTrabajos = this.conexion.ejecutarConsultaSQL(sql);
-            
+
             foreach (DataRow tupla in dsetOrdenTrabajos.Tables[0].Rows)
             {
                 PuestoE oPuesto = new PuestoE(Int32.Parse(tupla[15].ToString()), Convert.ToDouble(tupla[16].ToString())
@@ -165,8 +165,8 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
         }
 
-             public string agregarOrdenDeTrabajoFactura(OrdenTrabajoE pOrdenTrabajo, double costo)
-            {
+        public string agregarOrdenDeTrabajoFactura(OrdenTrabajoE pOrdenTrabajo, double costo)
+        {
             this.limpiarError();
             bool estado = true;
             string numero = "0";
@@ -243,7 +243,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
 
-                string sql = "UPDATE ordendetrabajo"+
+                string sql = "UPDATE ordendetrabajo" +
                 " SET id_vehiculo = @id_vehiculo, id_empleado = @id_empleado, fecha_de_ingreso_de_vehiculo = @fecha_de_ingreso_de_vehiculo," +
                  " fecha_de_salida = @fecha_de_salida, fecha_de_facturacion = @fecha_de_facturacion, costo_total = @costo_total, estado = @estado," +
                   "  factura_numero = @factura_numero" +
@@ -302,7 +302,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 oP.agregarParametro("@factura_numero", NpgsqlDbType.Integer, this.numeroFactura());
                 oP.agregarParametro("@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenTrabajo.IdOrdenDetrabajo);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
-                
+
                 if (this.conexion.IsError)
                 {
 
@@ -335,7 +335,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                     numeroFactura = Convert.ToInt32(dsetOrdenTrabajos.Tables[0].Rows[0][0].ToString());
                 }
             }
-                 return numeroFactura;
+            return numeroFactura;
         }
 
         public bool modificarFechaFinalizar(DateTime pFecha, int pCodigo)
@@ -368,41 +368,41 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             return estado;
         }
         public DataTable consultaOrdenDeTrabajoReporte(int pOrdenDeTrabajo)
-        {   
+        {
             DataSet dsetOrdenTrabajos;
             DataTable tabla = null;
 
             Parametro oParametro = new Parametro();
             oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, pOrdenDeTrabajo);
 
-            string sql = "select t.id_orden_de_trabajo  as Numero_de_orden, " +
-                           "t.fecha_de_ingreso_de_vehiculo as fecha_inicio, t.fecha_de_salida as fecha_fin," +
-                            "t.fecha_de_facturacion as fechaDeFacturacion, t.costo_total as total_apagar," +
-                            "t.estado as estado, t.factura_numero as facturaNumero," +
+            string sql = "select t.id_orden_de_trabajo as NumeroDeOrden, "+
+                           "t.fecha_de_ingreso_de_vehiculo as FechaInicio, t.fecha_de_salida as FechaFin,  " +
+                            /*t.fecha_de_facturacion as fechaDeFacturacion,*/ "t.costo_total as TotalApagar,  " +
+                            "t.estado as estado, t.factura_numero as FacturaNumero,  " +
 
 
-                             "e.cedula as cedula , e.nombre as nombre, e.apellido1 as apellido1, e.apellido2 as apellido2," +
-                              " e.direccion as direccion, e.telefono1 as telefono1, e.telefono2 as telefono2, e.telefono3 as telefono3," +
-                               "p.id_puesto as id_puesto, p.salario as salario," +
-                               "p.puesto as puesto, p.descripcion as descripcion," +
+                                "v.id_vehiculo as idVehiculo,  " +
+                                 "c.cedula as cedula, c.nombre as Cliente,  " +
+                                 "c.apellido1 as ApellidoUno, c.apellido2 as ApellidoDos,  " +
+
+                                "orr.id_orden_repuesto, orr.id_orden_de_trabajo, orr.id_catalogo_de_repuestos , orr.cantidad_de_repuestos as CatidadDeRepuestos, orr.precio as precio, " +
+
+                                "cr.id_catalogo_de_repuesto as catalogorep , cr.nombre_del_repuesto as NombreRepuesto , cr.anio_al_que_pertenece as año, " +
+                                 "cr.precio as precio, " +
+
+                                "cor.id_orden_reparacion  , cor.id_catalogo_reparacion , cor.id_orden_de_trabajo, " +
+                                "cor.id_empleado, cor.horas as HoraRequeridas, cor.Costo, " +
+
+                                 "oe.id_catalogo_reparacion as rep , oe.descripcion as DescripcionReparacion, oe.horas_reparacion as HorasEstimadas, oe.costo_reparacion " +
 
 
-                                "v.id_vehiculo as ID_Vehiculo, v.placa as placa, v.clase_de_vehiculo as claseVehiculo," +
-                                 "v.capacidad_de_personas as capacidadPersonas, v.numero_de_motor as numeroMotor, v.numero_de_chasis as numeroChasis," +
-                                "v.combustible as combustible," +
-
-                                 "c.cedula as cedula, c.nombre as nombre," +
-                                 "c.apellido1 as apellido1, c.apellido2 as apellido2," +
-                                "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3," +
-                                "mo.id_modelo as idModelo, mo.descripcion as descripcion, mo.anio as anno," +
-                                "m.id_marca as idMarca, m.descripcion as descripcion" +
-
-                                " from schtaller.OrdenDeTrabajo t, schtaller.empleado e, schtaller.cliente c, schtaller.modelo mo, schtaller.marca m," +
-                                 "schtaller.puesto p, schtaller.vehiculo v" +
+                                  "from schtaller.OrdenDeTrabajo t, schtaller.cliente c, schtaller.vehiculo v, schtaller.ordenrepuesto orr, " +
+                                  "schtaller.catalogorepuesto cr, schtaller.catalogoreparacion oe, schtaller.ordenreparacion cor " +
 
 
-                                 " where t.id_orden_de_trabajo = "+ pOrdenDeTrabajo + " and t.id_empleado = e.cedula and e.id_puesto = p.id_puesto and t.id_vehiculo = v.ID_Vehiculo" +
-                                  " and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca and c.cedula = v.id_cliente";
+                                   "where t.id_vehiculo = v.id_vehiculo and c.cedula = v.id_cliente and orr.id_orden_de_trabajo = t.id_orden_de_trabajo " +
+                                    "and orr.id_catalogo_de_repuestos = cr.id_catalogo_de_repuesto and t.id_orden_de_trabajo = cor.id_orden_de_trabajo and cor.id_catalogo_reparacion = oe.id_catalogo_reparacion " +
+                     "and t.id_orden_de_trabajo = " + pOrdenDeTrabajo;
             dsetOrdenTrabajos = this.conexion.ejecutarConsultaSQL(sql);
 
             if (!this.conexion.IsError)
