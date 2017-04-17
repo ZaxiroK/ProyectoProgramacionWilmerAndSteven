@@ -94,14 +94,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\dsetOrdenServicio.cs">
-      <DependentUpon>dsetOrdenServicio.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\dsetOrdenServicio.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsetOrdenServicio.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\dsetOrdenTrabajo.cs">
       <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
     </Compile>
@@ -117,12 +109,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsetOrdenTrabajoFactura.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\rpInformeOrdenDeTrabajoFactura.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpInformeOrdenDeTrabajoFactura.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpInformeOrdenTrabajoFactura.cs">
       <AutoGen>True</AutoGen>
@@ -310,10 +296,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\rpInformeOrdenDeTrabajoFactura.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpInformeOrdenDeTrabajoFactura.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpInformeOrdenTrabajoFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpInformeOrdenTrabajoFactura.cs</LastGenOutput>
@@ -423,17 +405,6 @@
     </None>
     <None Include="Reportes\dsetOrdenDeServicio.xss">
       <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dsetOrdenServicio.xsc">
-      <DependentUpon>dsetOrdenServicio.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dsetOrdenServicio.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsetOrdenServicio.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\dsetOrdenServicio.xss">
-      <DependentUpon>dsetOrdenServicio.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dsetOrdenTrabajo.xsc">
       <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>

@@ -117,6 +117,21 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     this.cnx.commitTransaccion();
                     MessageBox.Show("¡Orden de trabajo agregada con exito!");
 
+                    DialogResult result = MessageBox.Show("¿Desea facturar la orden?", "Facturar", MessageBoxButtons.YesNoCancel);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
+                        oReporte.ShowDialog();
+                    }
+                    else if (result == DialogResult.No)
+                    {
+
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                    }
+
                 }
                 else
                 {
@@ -417,16 +432,18 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
+
             if (ordenTrabajo == null)
             {
-                numeroOrdenFactura = numeroOrdenFactura;
+                MessageBox.Show("¡No hay orden de trabajo que facturar!");
             }
             else
             {
                  numeroOrdenFactura = ordenTrabajo.IdOrdenDetrabajo;
+                FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
+                oReporte.ShowDialog();
             }
-            FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
-            oReporte.ShowDialog();
+            
         }
 
         private void btnEliminarRepuestos_Click(object sender, EventArgs e)
