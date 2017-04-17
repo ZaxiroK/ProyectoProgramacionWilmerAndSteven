@@ -181,7 +181,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     oOrdenRepracionD.agregarOrdenReparacion(oR, numeroOrdenTrabajo);
                     if (oOrdenRepracionD.Error)
                     {
-                        estado = false;
+                          estado = false;
                     }
                 }
             }
