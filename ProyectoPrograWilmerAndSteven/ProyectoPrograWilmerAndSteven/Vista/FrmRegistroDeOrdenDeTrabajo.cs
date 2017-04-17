@@ -182,13 +182,14 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     if (oOrdenRepracionD.Error)
                     {
                         estado = false;
-                        MessageBox.Show("¡Error: debe haber almenos una orden de reparación seleccionada!");
                     }
                 }
             }
             else
             {
                 estado = false;
+                MessageBox.Show("¡Error: debe haber almenos una orden de reparación seleccionada!");
+
             }
 
             if (oOrdenTrabajoE.OrdenRepuesto.Count > 0)
