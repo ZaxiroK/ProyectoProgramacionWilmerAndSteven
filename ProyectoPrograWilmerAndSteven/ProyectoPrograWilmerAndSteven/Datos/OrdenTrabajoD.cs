@@ -35,7 +35,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
         public void limpiarError()
         {
-            this.error = true;
+            this.error = false;
             this.errorMsg = "";
         }
 
@@ -149,7 +149,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 if (this.conexion.IsError)
                 {
 
-                    estado = false;
+                    estado = true;
                     this.errorMsg = this.conexion.ErrorDescripcion;
                 }
 
@@ -194,7 +194,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 if (this.conexion.IsError)
                 {
 
-                    estado = false;
+                    estado = true;
                     this.errorMsg = this.conexion.ErrorDescripcion;
                 }
 
@@ -203,14 +203,14 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             catch (Exception e)
             {
-                estado = false;
+                estado = true;
                 this.errorMsg = e.Message;
             }
             return numero;
         }
         public bool borrarOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo)
         {
-            bool estado = true;
+            bool estado = false;
             try
             {
                 string sql = "delete from schtaller.OrdenDeTrabajo where id_orden_de_trabajo = @id_orden_de_trabajo";
@@ -231,7 +231,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             catch (Exception e)
             {
-                estado = false;
+                estado = true;
                 this.errorMsg = e.Message;
             }
             return estado;

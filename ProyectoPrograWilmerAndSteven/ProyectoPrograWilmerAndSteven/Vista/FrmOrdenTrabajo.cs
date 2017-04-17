@@ -25,6 +25,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
              FrmRegistroDeOrdenDeTrabajo oFrm = new FrmRegistroDeOrdenDeTrabajo();
             oFrm.ShowDialog();
+            this.cargarDTGview();
 
         }
 
@@ -63,18 +64,15 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
                 FrmRegistroDeOrdenDeTrabajo oFrm = new FrmRegistroDeOrdenDeTrabajo(this.ordenTrabajos.ElementAt(fila));
                 oFrm.ShowDialog();
-                //if (oFrm.aceptar)
-                //{
 
-                //    if (oMarcaD.modificarMarca(oFrm.oMarcaE, Convert.ToInt32(this.dGVMarcas[0, fila].Value.ToString()))) ;
-                //    {
-                //        this.CargarDGview();
-                //        MessageBox.Show("Marca actualizada");
-                //    }
-
-                //}
+                this.cargarDTGview();
 
             }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            this.cargarDTGview();
         }
     }
 }

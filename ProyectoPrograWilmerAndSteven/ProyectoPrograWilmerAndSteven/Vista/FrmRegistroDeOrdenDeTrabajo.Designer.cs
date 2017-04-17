@@ -59,10 +59,10 @@
             this.idOrdenRepuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminarRepuestos = new System.Windows.Forms.ToolStripButton();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -241,6 +241,7 @@
             this.btnEliminarReparacion.Size = new System.Drawing.Size(54, 35);
             this.btnEliminarReparacion.Text = "Eliminar";
             this.btnEliminarReparacion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnEliminarReparacion.Click += new System.EventHandler(this.btnEliminarReparacion_Click);
             // 
             // tabPage2
             // 
@@ -319,7 +320,7 @@
             // 
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAgregar,
-            this.toolStripButton4,
+            this.btnEliminarRepuestos,
             this.btnEditar});
             this.toolStrip3.Location = new System.Drawing.Point(3, 3);
             this.toolStrip3.Name = "toolStrip3";
@@ -337,23 +338,15 @@
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // toolStripButton4
+            // btnEliminarRepuestos
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(54, 35);
-            this.toolStripButton4.Text = "Eliminar";
-            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(41, 35);
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnEliminarRepuestos.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarRepuestos.Image")));
+            this.btnEliminarRepuestos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminarRepuestos.Name = "btnEliminarRepuestos";
+            this.btnEliminarRepuestos.Size = new System.Drawing.Size(54, 35);
+            this.btnEliminarRepuestos.Text = "Eliminar";
+            this.btnEliminarRepuestos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnEliminarRepuestos.Click += new System.EventHandler(this.btnEliminarRepuestos_Click);
             // 
             // label4
             // 
@@ -371,6 +364,15 @@
             this.cmbEmpleado.Name = "cmbEmpleado";
             this.cmbEmpleado.Size = new System.Drawing.Size(277, 21);
             this.cmbEmpleado.TabIndex = 9;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(41, 35);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
             // FrmRegistroDeOrdenDeTrabajo
             // 
@@ -425,8 +427,7 @@
         private System.Windows.Forms.DataGridView DTGrepuestos;
         private System.Windows.Forms.ToolStrip toolStrip3;
         private System.Windows.Forms.ToolStripButton btnAgregar;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.ToolStripButton btnEliminarRepuestos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRepuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn anno;
@@ -441,5 +442,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn horaTotalReparacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn costoReparacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedulaEmpleado;
+        private System.Windows.Forms.ToolStripButton btnEditar;
     }
 }
