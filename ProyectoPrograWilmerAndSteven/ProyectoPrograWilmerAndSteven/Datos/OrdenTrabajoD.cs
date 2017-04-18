@@ -285,7 +285,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             try
             {
 
-                string sql = "UPDATE ordendetrabajo" +
+                string sql = "UPDATE schtaller.ordendetrabajo" +
                 " SET id_vehiculo = @id_vehiculo, id_empleado = @id_empleado, fecha_de_ingreso_de_vehiculo = @fecha_de_ingreso_de_vehiculo," +
                  " fecha_de_salida = @fecha_de_salida, fecha_de_facturacion = @fecha_de_facturacion, costo_total = @costo_total, estado = @estado," +
                   "  factura_numero = @factura_numero" +
