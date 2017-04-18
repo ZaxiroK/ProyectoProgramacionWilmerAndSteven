@@ -60,7 +60,7 @@ namespace PracticaExamen.Logica
 
         public override string ToString()
         {
-            return base.ToString();
+            return this.cam_modelo;
         }
     }
 }

@@ -113,24 +113,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
                 if (estado == 1)
                 {
-                    numeroOrdenFactura = numeroOrden;
+                    
                     this.cnx.commitTransaccion();
                     MessageBox.Show("¡Orden de trabajo agregada con exito!");
 
-                    DialogResult result = MessageBox.Show("¿Desea facturar la orden?", "Facturar", MessageBoxButtons.YesNoCancel);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
-                        oReporte.ShowDialog();
-                    }
-                    else if (result == DialogResult.No)
-                    {
-
-                    }
-                    else if (result == DialogResult.Cancel)
-                    {
-                    }
+                    
 
                 }
                 else
@@ -423,6 +410,21 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
 
                 MessageBox.Show("¡Orden de trabajo finalizada con exito!");
+                numeroOrdenFactura = numeroOrden;
+                DialogResult result = MessageBox.Show("¿Desea facturar la orden?", "Facturar", MessageBoxButtons.YesNoCancel);
+
+                if (result == DialogResult.Yes)
+                {
+                    FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
+                    oReporte.ShowDialog();
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                }
             }
             else
             {

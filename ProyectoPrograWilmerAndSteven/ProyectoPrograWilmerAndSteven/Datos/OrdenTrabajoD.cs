@@ -431,7 +431,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                                "from schtaller.OrdenDeTrabajo t, schtaller.vehiculo v " +
 
 
-                                   "where t.id_vehiculo = v.id_vehiculo and t.estado = 'N' " ;
+                                   "where t.id_vehiculo = v.id_vehiculo and t.estado = 'S' " ;
             dsetOrdenesFinalizadas = this.conexion.ejecutarConsultaSQL(sql);
 
             if (!this.conexion.IsError)
@@ -444,27 +444,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             
             
         }
-        /*
-        public double consultaOrdenesFinalizadasTotal()
-        {
-            DataSet dsetOrdenesFinalizadasTotal;
-            double total = 0;
-
-            Parametro oParametro = new Parametro();
-            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, 'S');
-
-            string sql = "SELECT SUM(costo_total) "+
-                         "FROM schtaller.ordendetrabajo " +
-                           " WHERE estado = 'S' ";
-
-            dsetOrdenesFinalizadasTotal = this.conexion.ejecutarConsultaSQL(sql);
-            foreach (DataRow tupla in dsetOrdenesFinalizadasTotal.Tables[0].Rows)
-            {
-                total+= total;
-            }
-
-                return total;
-        }*/
+        
     }
 
 }
