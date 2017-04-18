@@ -444,11 +444,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             
             
         }
-
-        public DataTable consultaOrdenesFinalizadasTotal()
+        /*
+        public double consultaOrdenesFinalizadasTotal()
         {
             DataSet dsetOrdenesFinalizadasTotal;
-            DataTable tabla = null;
+            double total = 0;
 
             Parametro oParametro = new Parametro();
             oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, 'S');
@@ -458,14 +458,13 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                            " WHERE estado = 'S' ";
 
             dsetOrdenesFinalizadasTotal = this.conexion.ejecutarConsultaSQL(sql);
-
-            if (!this.conexion.IsError)
+            foreach (DataRow tupla in dsetOrdenesFinalizadasTotal.Tables[0].Rows)
             {
-                tabla = dsetOrdenesFinalizadasTotal.Tables[0].Copy();
+                total+= total;
             }
 
-            return tabla;
-        }
+                return total;
+        }*/
     }
 
 }
