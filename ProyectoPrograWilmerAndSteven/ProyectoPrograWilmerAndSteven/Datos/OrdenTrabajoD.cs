@@ -375,7 +375,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             Parametro oParametro = new Parametro();
             oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, pOrdenDeTrabajo);
 
-            string sql = "select t.id_orden_de_trabajo as NumeroDeOrden, "+
+            string sql = "select t.id_orden_de_trabajo as NumeroDeOrden, " +
                            "t.fecha_de_ingreso_de_vehiculo as FechaInicio, t.fecha_de_salida as FechaFin,  " +
                             /*t.fecha_de_facturacion as fechaDeFacturacion,*/ "t.costo_total as TotalApagar,  " +
                             "t.estado as estado, t.factura_numero as FacturaNumero,  " +
@@ -408,6 +408,60 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             if (!this.conexion.IsError)
             {
                 tabla = dsetOrdenTrabajos.Tables[0].Copy();
+            }
+
+            return tabla;
+        }
+
+        public DataTable consultaOrdenesFinalizadas()
+        {
+            DataSet dsetOrdenesFinalizadas;
+            DataTable tabla = null;
+
+            Parametro oParametro = new Parametro();
+            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, 'S');
+
+            string sql = "select t.id_orden_de_trabajo as NumeroDeOrden, " +
+                            "t.costo_total as TotalApagarPorVehiculo, " +
+                            "t.estado as estado, " +
+
+
+                                "v.id_vehiculo as idVehiculo,  v.placa as PlacaVehiculo " +
+
+                               "from schtaller.OrdenDeTrabajo t, schtaller.vehiculo v " +
+
+
+                                   "where t.id_vehiculo = v.id_vehiculo and t.estado = 'N' " ;
+            dsetOrdenesFinalizadas = this.conexion.ejecutarConsultaSQL(sql);
+
+            if (!this.conexion.IsError)
+            {
+                tabla = dsetOrdenesFinalizadas.Tables[0].Copy();
+                
+            }
+            
+            return tabla;
+            
+            
+        }
+
+        public DataTable consultaOrdenesFinalizadasTotal()
+        {
+            DataSet dsetOrdenesFinalizadasTotal;
+            DataTable tabla = null;
+
+            Parametro oParametro = new Parametro();
+            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, 'S');
+
+            string sql = "SELECT SUM(costo_total) "+
+                         "FROM schtaller.ordendetrabajo " +
+                           " WHERE estado = 'S' ";
+
+            dsetOrdenesFinalizadasTotal = this.conexion.ejecutarConsultaSQL(sql);
+
+            if (!this.conexion.IsError)
+            {
+                tabla = dsetOrdenesFinalizadasTotal.Tables[0].Copy();
             }
 
             return tabla;

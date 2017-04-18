@@ -15,10 +15,16 @@
         <xs:element name="Informe_x0020_ordenes_x0020_finalizadas" msprop:Generator_TableClassName="Informe_ordenes_finalizadasDataTable" msprop:Generator_TableVarName="tableInforme_ordenes_finalizadas" msprop:Generator_TablePropName="Informe_ordenes_finalizadas" msprop:Generator_RowDeletingName="Informe_ordenes_finalizadasRowDeleting" msprop:Generator_RowChangingName="Informe_ordenes_finalizadasRowChanging" msprop:Generator_RowEvHandlerName="Informe_ordenes_finalizadasRowChangeEventHandler" msprop:Generator_RowDeletedName="Informe_ordenes_finalizadasRowDeleted" msprop:Generator_UserTableName="Informe ordenes finalizadas" msprop:Generator_RowChangedName="Informe_ordenes_finalizadasRowChanged" msprop:Generator_RowEvArgName="Informe_ordenes_finalizadasRowChangeEvent" msprop:Generator_RowClassName="Informe_ordenes_finalizadasRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
-              <xs:element name="DataColumn2" msprop:Generator_ColumnVarNameInTable="columnDataColumn2" msprop:Generator_ColumnPropNameInRow="DataColumn2" msprop:Generator_ColumnPropNameInTable="DataColumn2Column" msprop:Generator_UserColumnName="DataColumn2" type="xs:string" minOccurs="0" />
-              <xs:element name="DataColumn3" msprop:Generator_ColumnVarNameInTable="columnDataColumn3" msprop:Generator_ColumnPropNameInRow="DataColumn3" msprop:Generator_ColumnPropNameInTable="DataColumn3Column" msprop:Generator_UserColumnName="DataColumn3" type="xs:string" minOccurs="0" />
-              <xs:element name="DataColumn4" msprop:Generator_ColumnVarNameInTable="columnDataColumn4" msprop:Generator_ColumnPropNameInRow="DataColumn4" msprop:Generator_ColumnPropNameInTable="DataColumn4Column" msprop:Generator_UserColumnName="DataColumn4" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroDeOrden" msprop:Generator_ColumnVarNameInTable="columnNumeroDeOrden" msprop:Generator_ColumnPropNameInRow="NumeroDeOrden" msprop:Generator_ColumnPropNameInTable="NumeroDeOrdenColumn" msprop:Generator_UserColumnName="NumeroDeOrden" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalApagarPorVehiculo" msprop:Generator_ColumnVarNameInTable="columnTotalApagarPorVehiculo" msprop:Generator_ColumnPropNameInRow="TotalApagarPorVehiculo" msprop:Generator_ColumnPropNameInTable="TotalApagarPorVehiculoColumn" msprop:Generator_UserColumnName="TotalApagarPorVehiculo" type="xs:double" minOccurs="0" />
+              <xs:element name="PlacaVehiculo" msprop:Generator_ColumnVarNameInTable="columnPlacaVehiculo" msprop:Generator_ColumnPropNameInRow="PlacaVehiculo" msprop:Generator_ColumnPropNameInTable="PlacaVehiculoColumn" msprop:Generator_UserColumnName="PlacaVehiculo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Total" msprop:Generator_TableClassName="TotalDataTable" msprop:Generator_TableVarName="tableTotal" msprop:Generator_TablePropName="Total" msprop:Generator_RowDeletingName="TotalRowDeleting" msprop:Generator_RowChangingName="TotalRowChanging" msprop:Generator_RowEvHandlerName="TotalRowChangeEventHandler" msprop:Generator_RowDeletedName="TotalRowDeleted" msprop:Generator_UserTableName="Total" msprop:Generator_RowChangedName="TotalRowChanged" msprop:Generator_RowEvArgName="TotalRowChangeEvent" msprop:Generator_RowClassName="TotalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalDelDia" msprop:Generator_ColumnVarNameInTable="columnTotalDelDia" msprop:Generator_ColumnPropNameInRow="TotalDelDia" msprop:Generator_ColumnPropNameInTable="TotalDelDiaColumn" msprop:Generator_UserColumnName="TotalDelDia" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

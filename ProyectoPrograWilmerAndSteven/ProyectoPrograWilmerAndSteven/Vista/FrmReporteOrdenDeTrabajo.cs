@@ -29,14 +29,6 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         private void cargarReporte()
         {
             OrdenTrabajoD pOrdenTrabajoD = new OrdenTrabajoD();
-            /*rpOrdenTrabajo oReporteOrdenTrabajo = new rpOrdenTrabajo();
-            oReporteOrdenTrabajo.SetDataSource(pOrdenTrabajoD.consultaOrdenDeTrabajoReporte(this.numeroFactura));
-
-            this.visorReporteOrden.ReportSource = oReporteOrdenTrabajo;*/
-
-
-
-            ClienteD pClienteD = new ClienteD();
             rpInformeOrdenTrabajoFactura orpInformeOrdenTrabajoFactura = new rpInformeOrdenTrabajoFactura();
             orpInformeOrdenTrabajoFactura.SetDataSource(pOrdenTrabajoD.consultaOrdenDeTrabajoReporte(this.numeroFactura));
             this.visorReporteOrden.ReportSource = orpInformeOrdenTrabajoFactura;

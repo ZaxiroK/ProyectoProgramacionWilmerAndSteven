@@ -87,5 +87,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             FrmOrdenTrabajo oFrm = new FrmOrdenTrabajo();
             oFrm.ShowDialog();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmInformeOrdenesFinalizadas frm = new frmInformeOrdenesFinalizadas();
+            frm.ShowDialog();
+        }
     }
 }
