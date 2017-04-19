@@ -25,7 +25,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             OrdenTrabajoD pOrdenTrabajoD = new OrdenTrabajoD();
             rpInformeOrdenesPendientes oRpInformeOrdenesPendientes = new rpInformeOrdenesPendientes();
-            oRpInformeOrdenesPendientes.SetDataSource(pOrdenTrabajoD.consultaOrdenesFinalizadas());
+            oRpInformeOrdenesPendientes.SetDataSource(pOrdenTrabajoD.consultaInformeOrdenesPendientes());
             this.visorReporteOrden.ReportSource = oRpInformeOrdenesPendientes;
 
         }

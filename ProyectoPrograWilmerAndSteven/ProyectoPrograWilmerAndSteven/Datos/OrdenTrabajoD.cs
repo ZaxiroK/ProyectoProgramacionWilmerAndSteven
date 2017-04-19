@@ -452,19 +452,19 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             DataTable tabla = null;
 
             Parametro oParametro = new Parametro();
-            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, 'S');
+            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, 'N');
 
-            string sql = "select t.id_orden_de_trabajo as NumeroDeOrden, "+
+            string sql = "select t.id_orden_de_trabajo as NumOrden, t.fecha_de_ingreso_de_vehiculo as FechaIngreso, " +
 
                         "t.costo_total as TotalApagar,  " +
                         "t.estado as estado,  " +
 
-                        "v.id_vehiculo as idVehiculo,  v.placa as placa, v.clase_de_vehiculo as claseVehiculo, " +
+                        "v.id_vehiculo as idVehiculo,  v.placa as Placa, v.clase_de_vehiculo as ClaseVehiculo, " +
 
-                        "c.cedula as cedula, c.nombre as nombre, " +
-                        "c.apellido1 as apellido1, c.apellido2 as apellido2, " +
+                        "c.cedula as Cedula, c.nombre as Dueño, " +
+                        "c.apellido1 as Apellido1, c.apellido2 as apellido2, " +
 
-                        "oe.id_catalogo_reparacion as rep , oe.descripcion " +
+                        "oe.id_catalogo_reparacion as rep , oe.Descripcion " +
 
                         "from schtaller.OrdenDeTrabajo t, schtaller.vehiculo v, schtaller.cliente c, schtaller.catalogoreparacion oe, schtaller.ordenreparacion cor " +
 
