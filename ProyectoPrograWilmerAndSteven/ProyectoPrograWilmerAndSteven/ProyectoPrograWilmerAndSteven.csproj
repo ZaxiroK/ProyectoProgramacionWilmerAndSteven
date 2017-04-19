@@ -94,21 +94,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsetInformeOrdenesFinalizadas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\dsetOrdenDeServicio.cs">
-      <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
+    <Compile Include="Reportes\dsetInformeOrdenesPendientes.cs">
+      <DependentUpon>dsetInformeOrdenesPendientes.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\dsetOrdenDeServicio.Designer.cs">
+    <Compile Include="Reportes\dsetInformeOrdenesPendientes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\dsetOrdenTrabajo.cs">
-      <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\dsetOrdenTrabajo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
+      <DependentUpon>dsetInformeOrdenesPendientes.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\dsetOrdenTrabajoFactura.cs">
       <DependentUpon>dsetOrdenTrabajoFactura.xsd</DependentUpon>
@@ -124,22 +116,16 @@
       <DependentUpon>rpInformeOrdenesFinalizadas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\rpInformeOrdenesPendientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpInformeOrdenesPendientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\rpInformeOrdenTrabajoFactura.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpInformeOrdenTrabajoFactura.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\rpOrdenDeServicio.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpOrdenDeServicio.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\rpOrdenTrabajo.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpOrdenTrabajo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Vista\FrmCambioContrasenia.cs">
@@ -185,6 +171,12 @@
     </Compile>
     <Compile Include="Vista\frmInformeOrdenesFinalizadas.Designer.cs">
       <DependentUpon>frmInformeOrdenesFinalizadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmInformeOrdenesSinFinalizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmInformeOrdenesSinFinalizar.Designer.cs">
+      <DependentUpon>FrmInformeOrdenesSinFinalizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmMarca.cs">
       <SubType>Form</SubType>
@@ -320,17 +312,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpInformeOrdenesFinalizadas.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpInformeOrdenesPendientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpInformeOrdenesPendientes.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpInformeOrdenTrabajoFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpInformeOrdenTrabajoFactura.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rpOrdenDeServicio.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpOrdenDeServicio.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rpOrdenTrabajo.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpOrdenTrabajo.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCambioContrasenia.resx">
       <DependentUpon>FrmCambioContrasenia.cs</DependentUpon>
@@ -352,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmInformeOrdenesFinalizadas.resx">
       <DependentUpon>frmInformeOrdenesFinalizadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmInformeOrdenesSinFinalizar.resx">
+      <DependentUpon>FrmInformeOrdenesSinFinalizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmMarca.resx">
       <DependentUpon>FrmMarca.cs</DependentUpon>
@@ -433,27 +424,16 @@
     <None Include="Reportes\dsetInformeOrdenesFinalizadas.xss">
       <DependentUpon>dsetInformeOrdenesFinalizadas.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\dsetOrdenDeServicio.xsc">
-      <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
+    <None Include="Reportes\dsetInformeOrdenesPendientes.xsc">
+      <DependentUpon>dsetInformeOrdenesPendientes.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\dsetOrdenDeServicio.xsd">
+    <None Include="Reportes\dsetInformeOrdenesPendientes.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsetOrdenDeServicio.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsetInformeOrdenesPendientes.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reportes\dsetOrdenDeServicio.xss">
-      <DependentUpon>dsetOrdenDeServicio.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dsetOrdenTrabajo.xsc">
-      <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dsetOrdenTrabajo.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsetOrdenTrabajo.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\dsetOrdenTrabajo.xss">
-      <DependentUpon>dsetOrdenTrabajo.xsd</DependentUpon>
+    <None Include="Reportes\dsetInformeOrdenesPendientes.xss">
+      <DependentUpon>dsetInformeOrdenesPendientes.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dsetOrdenTrabajoFactura.xsc">
       <DependentUpon>dsetOrdenTrabajoFactura.xsd</DependentUpon>

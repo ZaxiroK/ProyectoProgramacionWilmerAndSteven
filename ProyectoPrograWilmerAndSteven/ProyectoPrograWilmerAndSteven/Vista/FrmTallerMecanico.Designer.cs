@@ -46,6 +46,7 @@
             this.menuItemOrdenTrabajo = new System.Windows.Forms.ToolStripMenuItem();
             this.gestíonGerencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,7 +185,8 @@
             // gestíonGerencialToolStripMenuItem
             // 
             this.gestíonGerencialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
             this.gestíonGerencialToolStripMenuItem.Name = "gestíonGerencialToolStripMenuItem";
             this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.gestíonGerencialToolStripMenuItem.Text = "Gestíon gerencial";
@@ -192,9 +194,16 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(218, 26);
             this.toolStripMenuItem1.Text = "Ordenes finalizadas";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(218, 26);
+            this.toolStripMenuItem2.Text = "Ordenes sin finalizar";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // FrmTallerMecanico
             // 
@@ -231,5 +240,6 @@
         public System.Windows.Forms.ToolStripMenuItem gestíonGerencialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuItemOrdenTrabajo;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

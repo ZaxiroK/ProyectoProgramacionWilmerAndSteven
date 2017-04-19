@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsetInformeOrdenesPendientes" targetNamespace="http://tempuri.org/dsetInformeOrdenesPendientes.xsd" xmlns:mstns="http://tempuri.org/dsetInformeOrdenesPendientes.xsd" xmlns="http://tempuri.org/dsetInformeOrdenesPendientes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsetInformeOrdenesPendientes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsetInformeOrdenesPendientes" msprop:Generator_UserDSName="dsetInformeOrdenesPendientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Ordenes_x0020_NO_x0020_finalizadas" msprop:Generator_TableClassName="Ordenes_NO_finalizadasDataTable" msprop:Generator_TableVarName="tableOrdenes_NO_finalizadas" msprop:Generator_TablePropName="Ordenes_NO_finalizadas" msprop:Generator_RowDeletingName="Ordenes_NO_finalizadasRowDeleting" msprop:Generator_RowChangingName="Ordenes_NO_finalizadasRowChanging" msprop:Generator_RowEvHandlerName="Ordenes_NO_finalizadasRowChangeEventHandler" msprop:Generator_RowDeletedName="Ordenes_NO_finalizadasRowDeleted" msprop:Generator_UserTableName="Ordenes NO finalizadas" msprop:Generator_RowChangedName="Ordenes_NO_finalizadasRowChanged" msprop:Generator_RowEvArgName="Ordenes_NO_finalizadasRowChangeEvent" msprop:Generator_RowClassName="Ordenes_NO_finalizadasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FechaIngreso" msprop:Generator_ColumnVarNameInTable="columnFechaIngreso" msprop:Generator_ColumnPropNameInRow="FechaIngreso" msprop:Generator_ColumnPropNameInTable="FechaIngresoColumn" msprop:Generator_UserColumnName="FechaIngreso" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Dueño" msprop:Generator_ColumnVarNameInTable="columnDueño" msprop:Generator_ColumnPropNameInRow="Dueño" msprop:Generator_ColumnPropNameInTable="DueñoColumn" msprop:Generator_UserColumnName="Dueño" type="xs:string" minOccurs="0" />
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa" type="xs:string" minOccurs="0" />
+              <xs:element name="ClaseVehiculo" msprop:Generator_ColumnVarNameInTable="columnClaseVehiculo" msprop:Generator_ColumnPropNameInRow="ClaseVehiculo" msprop:Generator_ColumnPropNameInTable="ClaseVehiculoColumn" msprop:Generator_UserColumnName="ClaseVehiculo" type="xs:string" minOccurs="0" />
+              <xs:element name="Apellido1" msprop:Generator_ColumnVarNameInTable="columnApellido1" msprop:Generator_ColumnPropNameInRow="Apellido1" msprop:Generator_ColumnPropNameInTable="Apellido1Column" msprop:Generator_UserColumnName="Apellido1" type="xs:string" minOccurs="0" />
+              <xs:element name="Cedula" msprop:Generator_ColumnVarNameInTable="columnCedula" msprop:Generator_ColumnPropNameInRow="Cedula" msprop:Generator_ColumnPropNameInTable="CedulaColumn" msprop:Generator_UserColumnName="Cedula" type="xs:int" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="NumOrden" msprop:Generator_ColumnVarNameInTable="columnNumOrden" msprop:Generator_ColumnPropNameInRow="NumOrden" msprop:Generator_ColumnPropNameInTable="NumOrdenColumn" msprop:Generator_UserColumnName="NumOrden" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

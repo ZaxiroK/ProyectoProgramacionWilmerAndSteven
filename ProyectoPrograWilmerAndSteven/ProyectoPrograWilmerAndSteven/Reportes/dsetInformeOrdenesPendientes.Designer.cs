@@ -20,17 +20,17 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsetOrdenDeTrabajo")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsetInformeOrdenesPendientes")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsetOrdenDeTrabajo : global::System.Data.DataSet {
+    public partial class dsetInformeOrdenesPendientes : global::System.Data.DataSet {
         
-        private Orden_de_ServicioDataTable tableOrden_de_Servicio;
+        private Ordenes_NO_finalizadasDataTable tableOrdenes_NO_finalizadas;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public dsetOrdenDeTrabajo() {
+        public dsetInformeOrdenesPendientes() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected dsetOrdenDeTrabajo(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsetInformeOrdenesPendientes(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Orden de Servicio"] != null)) {
-                    base.Tables.Add(new Orden_de_ServicioDataTable(ds.Tables["Orden de Servicio"]));
+                if ((ds.Tables["Ordenes NO finalizadas"] != null)) {
+                    base.Tables.Add(new Ordenes_NO_finalizadasDataTable(ds.Tables["Ordenes NO finalizadas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Orden_de_ServicioDataTable Orden_de_Servicio {
+        public Ordenes_NO_finalizadasDataTable Ordenes_NO_finalizadas {
             get {
-                return this.tableOrden_de_Servicio;
+                return this.tableOrdenes_NO_finalizadas;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsetOrdenDeTrabajo cln = ((dsetOrdenDeTrabajo)(base.Clone()));
+            dsetInformeOrdenesPendientes cln = ((dsetInformeOrdenesPendientes)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Orden de Servicio"] != null)) {
-                    base.Tables.Add(new Orden_de_ServicioDataTable(ds.Tables["Orden de Servicio"]));
+                if ((ds.Tables["Ordenes NO finalizadas"] != null)) {
+                    base.Tables.Add(new Ordenes_NO_finalizadasDataTable(ds.Tables["Ordenes NO finalizadas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableOrden_de_Servicio = ((Orden_de_ServicioDataTable)(base.Tables["Orden de Servicio"]));
+            this.tableOrdenes_NO_finalizadas = ((Ordenes_NO_finalizadasDataTable)(base.Tables["Ordenes NO finalizadas"]));
             if ((initTable == true)) {
-                if ((this.tableOrden_de_Servicio != null)) {
-                    this.tableOrden_de_Servicio.InitVars();
+                if ((this.tableOrdenes_NO_finalizadas != null)) {
+                    this.tableOrdenes_NO_finalizadas.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsetOrdenDeTrabajo";
+            this.DataSetName = "dsetInformeOrdenesPendientes";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsetOrdenDeTrabajo.xsd";
+            this.Namespace = "http://tempuri.org/dsetInformeOrdenesPendientes.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableOrden_de_Servicio = new Orden_de_ServicioDataTable();
-            base.Tables.Add(this.tableOrden_de_Servicio);
+            this.tableOrdenes_NO_finalizadas = new Ordenes_NO_finalizadasDataTable();
+            base.Tables.Add(this.tableOrdenes_NO_finalizadas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeOrden_de_Servicio() {
+        private bool ShouldSerializeOrdenes_NO_finalizadas() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsetOrdenDeTrabajo ds = new dsetOrdenDeTrabajo();
+            dsetInformeOrdenesPendientes ds = new dsetInformeOrdenesPendientes();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,35 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void Orden_de_ServicioRowChangeEventHandler(object sender, Orden_de_ServicioRowChangeEvent e);
+        public delegate void Ordenes_NO_finalizadasRowChangeEventHandler(object sender, Ordenes_NO_finalizadasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Orden_de_ServicioDataTable : global::System.Data.TypedTableBase<Orden_de_ServicioRow> {
+        public partial class Ordenes_NO_finalizadasDataTable : global::System.Data.TypedTableBase<Ordenes_NO_finalizadasRow> {
             
-            private global::System.Data.DataColumn columnCliente;
+            private global::System.Data.DataColumn columnFechaIngreso;
             
-            private global::System.Data.DataColumn columnNumero_de_orden;
+            private global::System.Data.DataColumn columnDueño;
             
-            private global::System.Data.DataColumn columnFecha_inicio;
+            private global::System.Data.DataColumn columnPlaca;
             
-            private global::System.Data.DataColumn columnFecha_fin;
+            private global::System.Data.DataColumn columnClaseVehiculo;
             
-            private global::System.Data.DataColumn columnDetalle_reparaciones;
+            private global::System.Data.DataColumn columnApellido1;
             
-            private global::System.Data.DataColumn columnDetalles_repuestos;
+            private global::System.Data.DataColumn columnCedula;
             
-            private global::System.Data.DataColumn columnTotal_apagar;
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnNumOrden;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Orden_de_ServicioDataTable() {
-                this.TableName = "Orden de Servicio";
+            public Ordenes_NO_finalizadasDataTable() {
+                this.TableName = "Ordenes NO finalizadas";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +306,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Orden_de_ServicioDataTable(global::System.Data.DataTable table) {
+            internal Ordenes_NO_finalizadasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,64 +323,72 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected Orden_de_ServicioDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Ordenes_NO_finalizadasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ClienteColumn {
+            public global::System.Data.DataColumn FechaIngresoColumn {
                 get {
-                    return this.columnCliente;
+                    return this.columnFechaIngreso;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Numero_de_ordenColumn {
+            public global::System.Data.DataColumn DueñoColumn {
                 get {
-                    return this.columnNumero_de_orden;
+                    return this.columnDueño;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Fecha_inicioColumn {
+            public global::System.Data.DataColumn PlacaColumn {
                 get {
-                    return this.columnFecha_inicio;
+                    return this.columnPlaca;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Fecha_finColumn {
+            public global::System.Data.DataColumn ClaseVehiculoColumn {
                 get {
-                    return this.columnFecha_fin;
+                    return this.columnClaseVehiculo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Detalle_reparacionesColumn {
+            public global::System.Data.DataColumn Apellido1Column {
                 get {
-                    return this.columnDetalle_reparaciones;
+                    return this.columnApellido1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Detalles_repuestosColumn {
+            public global::System.Data.DataColumn CedulaColumn {
                 get {
-                    return this.columnDetalles_repuestos;
+                    return this.columnCedula;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Total_apagarColumn {
+            public global::System.Data.DataColumn DescripcionColumn {
                 get {
-                    return this.columnTotal_apagar;
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumOrdenColumn {
+                get {
+                    return this.columnNumOrden;
                 }
             }
             
@@ -393,51 +403,52 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Orden_de_ServicioRow this[int index] {
+            public Ordenes_NO_finalizadasRow this[int index] {
                 get {
-                    return ((Orden_de_ServicioRow)(this.Rows[index]));
+                    return ((Ordenes_NO_finalizadasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Orden_de_ServicioRowChangeEventHandler Orden_de_ServicioRowChanging;
+            public event Ordenes_NO_finalizadasRowChangeEventHandler Ordenes_NO_finalizadasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Orden_de_ServicioRowChangeEventHandler Orden_de_ServicioRowChanged;
+            public event Ordenes_NO_finalizadasRowChangeEventHandler Ordenes_NO_finalizadasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Orden_de_ServicioRowChangeEventHandler Orden_de_ServicioRowDeleting;
+            public event Ordenes_NO_finalizadasRowChangeEventHandler Ordenes_NO_finalizadasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Orden_de_ServicioRowChangeEventHandler Orden_de_ServicioRowDeleted;
+            public event Ordenes_NO_finalizadasRowChangeEventHandler Ordenes_NO_finalizadasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddOrden_de_ServicioRow(Orden_de_ServicioRow row) {
+            public void AddOrdenes_NO_finalizadasRow(Ordenes_NO_finalizadasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Orden_de_ServicioRow AddOrden_de_ServicioRow(string Cliente, int Numero_de_orden, System.DateTime Fecha_inicio, System.DateTime Fecha_fin, string Detalle_reparaciones, string Detalles_repuestos, double Total_apagar) {
-                Orden_de_ServicioRow rowOrden_de_ServicioRow = ((Orden_de_ServicioRow)(this.NewRow()));
+            public Ordenes_NO_finalizadasRow AddOrdenes_NO_finalizadasRow(System.DateTime FechaIngreso, string Dueño, string Placa, string ClaseVehiculo, string Apellido1, int Cedula, string Descripcion, int NumOrden) {
+                Ordenes_NO_finalizadasRow rowOrdenes_NO_finalizadasRow = ((Ordenes_NO_finalizadasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Cliente,
-                        Numero_de_orden,
-                        Fecha_inicio,
-                        Fecha_fin,
-                        Detalle_reparaciones,
-                        Detalles_repuestos,
-                        Total_apagar};
-                rowOrden_de_ServicioRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowOrden_de_ServicioRow);
-                return rowOrden_de_ServicioRow;
+                        FechaIngreso,
+                        Dueño,
+                        Placa,
+                        ClaseVehiculo,
+                        Apellido1,
+                        Cedula,
+                        Descripcion,
+                        NumOrden};
+                rowOrdenes_NO_finalizadasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOrdenes_NO_finalizadasRow);
+                return rowOrdenes_NO_finalizadasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Orden_de_ServicioDataTable cln = ((Orden_de_ServicioDataTable)(base.Clone()));
+                Ordenes_NO_finalizadasDataTable cln = ((Ordenes_NO_finalizadasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -445,64 +456,67 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Orden_de_ServicioDataTable();
+                return new Ordenes_NO_finalizadasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnCliente = base.Columns["Cliente"];
-                this.columnNumero_de_orden = base.Columns["Numero_de_orden"];
-                this.columnFecha_inicio = base.Columns["Fecha_inicio"];
-                this.columnFecha_fin = base.Columns["Fecha_fin"];
-                this.columnDetalle_reparaciones = base.Columns["Detalle_reparaciones"];
-                this.columnDetalles_repuestos = base.Columns["Detalles_repuestos"];
-                this.columnTotal_apagar = base.Columns["Total_apagar"];
+                this.columnFechaIngreso = base.Columns["FechaIngreso"];
+                this.columnDueño = base.Columns["Dueño"];
+                this.columnPlaca = base.Columns["Placa"];
+                this.columnClaseVehiculo = base.Columns["ClaseVehiculo"];
+                this.columnApellido1 = base.Columns["Apellido1"];
+                this.columnCedula = base.Columns["Cedula"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnNumOrden = base.Columns["NumOrden"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnCliente = new global::System.Data.DataColumn("Cliente", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCliente);
-                this.columnNumero_de_orden = new global::System.Data.DataColumn("Numero_de_orden", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumero_de_orden);
-                this.columnFecha_inicio = new global::System.Data.DataColumn("Fecha_inicio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_inicio);
-                this.columnFecha_fin = new global::System.Data.DataColumn("Fecha_fin", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_fin);
-                this.columnDetalle_reparaciones = new global::System.Data.DataColumn("Detalle_reparaciones", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDetalle_reparaciones);
-                this.columnDetalles_repuestos = new global::System.Data.DataColumn("Detalles_repuestos", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDetalles_repuestos);
-                this.columnTotal_apagar = new global::System.Data.DataColumn("Total_apagar", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_apagar);
+                this.columnFechaIngreso = new global::System.Data.DataColumn("FechaIngreso", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaIngreso);
+                this.columnDueño = new global::System.Data.DataColumn("Dueño", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDueño);
+                this.columnPlaca = new global::System.Data.DataColumn("Placa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlaca);
+                this.columnClaseVehiculo = new global::System.Data.DataColumn("ClaseVehiculo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClaseVehiculo);
+                this.columnApellido1 = new global::System.Data.DataColumn("Apellido1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApellido1);
+                this.columnCedula = new global::System.Data.DataColumn("Cedula", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCedula);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnNumOrden = new global::System.Data.DataColumn("NumOrden", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumOrden);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Orden_de_ServicioRow NewOrden_de_ServicioRow() {
-                return ((Orden_de_ServicioRow)(this.NewRow()));
+            public Ordenes_NO_finalizadasRow NewOrdenes_NO_finalizadasRow() {
+                return ((Ordenes_NO_finalizadasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Orden_de_ServicioRow(builder);
+                return new Ordenes_NO_finalizadasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Orden_de_ServicioRow);
+                return typeof(Ordenes_NO_finalizadasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Orden_de_ServicioRowChanged != null)) {
-                    this.Orden_de_ServicioRowChanged(this, new Orden_de_ServicioRowChangeEvent(((Orden_de_ServicioRow)(e.Row)), e.Action));
+                if ((this.Ordenes_NO_finalizadasRowChanged != null)) {
+                    this.Ordenes_NO_finalizadasRowChanged(this, new Ordenes_NO_finalizadasRowChangeEvent(((Ordenes_NO_finalizadasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -510,8 +524,8 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Orden_de_ServicioRowChanging != null)) {
-                    this.Orden_de_ServicioRowChanging(this, new Orden_de_ServicioRowChangeEvent(((Orden_de_ServicioRow)(e.Row)), e.Action));
+                if ((this.Ordenes_NO_finalizadasRowChanging != null)) {
+                    this.Ordenes_NO_finalizadasRowChanging(this, new Ordenes_NO_finalizadasRowChangeEvent(((Ordenes_NO_finalizadasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -519,8 +533,8 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Orden_de_ServicioRowDeleted != null)) {
-                    this.Orden_de_ServicioRowDeleted(this, new Orden_de_ServicioRowChangeEvent(((Orden_de_ServicioRow)(e.Row)), e.Action));
+                if ((this.Ordenes_NO_finalizadasRowDeleted != null)) {
+                    this.Ordenes_NO_finalizadasRowDeleted(this, new Ordenes_NO_finalizadasRowChangeEvent(((Ordenes_NO_finalizadasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -528,14 +542,14 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Orden_de_ServicioRowDeleting != null)) {
-                    this.Orden_de_ServicioRowDeleting(this, new Orden_de_ServicioRowChangeEvent(((Orden_de_ServicioRow)(e.Row)), e.Action));
+                if ((this.Ordenes_NO_finalizadasRowDeleting != null)) {
+                    this.Ordenes_NO_finalizadasRowDeleting(this, new Ordenes_NO_finalizadasRowChangeEvent(((Ordenes_NO_finalizadasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveOrden_de_ServicioRow(Orden_de_ServicioRow row) {
+            public void RemoveOrdenes_NO_finalizadasRow(Ordenes_NO_finalizadasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -544,7 +558,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsetOrdenDeTrabajo ds = new dsetOrdenDeTrabajo();
+                dsetInformeOrdenesPendientes ds = new dsetInformeOrdenesPendientes();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -562,7 +576,7 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Orden_de_ServicioDataTable";
+                attribute2.FixedValue = "Ordenes_NO_finalizadasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -606,214 +620,244 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Orden_de_ServicioRow : global::System.Data.DataRow {
+        public partial class Ordenes_NO_finalizadasRow : global::System.Data.DataRow {
             
-            private Orden_de_ServicioDataTable tableOrden_de_Servicio;
+            private Ordenes_NO_finalizadasDataTable tableOrdenes_NO_finalizadas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Orden_de_ServicioRow(global::System.Data.DataRowBuilder rb) : 
+            internal Ordenes_NO_finalizadasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableOrden_de_Servicio = ((Orden_de_ServicioDataTable)(this.Table));
+                this.tableOrdenes_NO_finalizadas = ((Ordenes_NO_finalizadasDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Cliente {
+            public System.DateTime FechaIngreso {
                 get {
                     try {
-                        return ((string)(this[this.tableOrden_de_Servicio.ClienteColumn]));
+                        return ((global::System.DateTime)(this[this.tableOrdenes_NO_finalizadas.FechaIngresoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cliente\' de la tabla \'Orden de Servicio\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaIngreso\' de la tabla \'Ordenes NO finalizadas\' es DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrden_de_Servicio.ClienteColumn] = value;
+                    this[this.tableOrdenes_NO_finalizadas.FechaIngresoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Numero_de_orden {
+            public string Dueño {
                 get {
                     try {
-                        return ((int)(this[this.tableOrden_de_Servicio.Numero_de_ordenColumn]));
+                        return ((string)(this[this.tableOrdenes_NO_finalizadas.DueñoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Numero_de_orden\' de la tabla \'Orden de Servicio\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Dueño\' de la tabla \'Ordenes NO finalizadas\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrden_de_Servicio.Numero_de_ordenColumn] = value;
+                    this[this.tableOrdenes_NO_finalizadas.DueñoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Fecha_inicio {
+            public string Placa {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableOrden_de_Servicio.Fecha_inicioColumn]));
+                        return ((string)(this[this.tableOrdenes_NO_finalizadas.PlacaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_inicio\' de la tabla \'Orden de Servicio\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Placa\' de la tabla \'Ordenes NO finalizadas\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrden_de_Servicio.Fecha_inicioColumn] = value;
+                    this[this.tableOrdenes_NO_finalizadas.PlacaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Fecha_fin {
+            public string ClaseVehiculo {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableOrden_de_Servicio.Fecha_finColumn]));
+                        return ((string)(this[this.tableOrdenes_NO_finalizadas.ClaseVehiculoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_fin\' de la tabla \'Orden de Servicio\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOrden_de_Servicio.Fecha_finColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Detalle_reparaciones {
-                get {
-                    try {
-                        return ((string)(this[this.tableOrden_de_Servicio.Detalle_reparacionesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Detalle_reparaciones\' de la tabla \'Orden de Servicio\' es " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOrden_de_Servicio.Detalle_reparacionesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Detalles_repuestos {
-                get {
-                    try {
-                        return ((string)(this[this.tableOrden_de_Servicio.Detalles_repuestosColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Detalles_repuestos\' de la tabla \'Orden de Servicio\' es DB" +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ClaseVehiculo\' de la tabla \'Ordenes NO finalizadas\' es DB" +
                                 "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableOrden_de_Servicio.Detalles_repuestosColumn] = value;
+                    this[this.tableOrdenes_NO_finalizadas.ClaseVehiculoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Total_apagar {
+            public string Apellido1 {
                 get {
                     try {
-                        return ((double)(this[this.tableOrden_de_Servicio.Total_apagarColumn]));
+                        return ((string)(this[this.tableOrdenes_NO_finalizadas.Apellido1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Total_apagar\' de la tabla \'Orden de Servicio\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Apellido1\' de la tabla \'Ordenes NO finalizadas\' es DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableOrden_de_Servicio.Total_apagarColumn] = value;
+                    this[this.tableOrdenes_NO_finalizadas.Apellido1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsClienteNull() {
-                return this.IsNull(this.tableOrden_de_Servicio.ClienteColumn);
+            public int Cedula {
+                get {
+                    try {
+                        return ((int)(this[this.tableOrdenes_NO_finalizadas.CedulaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cedula\' de la tabla \'Ordenes NO finalizadas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrdenes_NO_finalizadas.CedulaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetClienteNull() {
-                this[this.tableOrden_de_Servicio.ClienteColumn] = global::System.Convert.DBNull;
+            public string Descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrdenes_NO_finalizadas.DescripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion\' de la tabla \'Ordenes NO finalizadas\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrdenes_NO_finalizadas.DescripcionColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNumero_de_ordenNull() {
-                return this.IsNull(this.tableOrden_de_Servicio.Numero_de_ordenColumn);
+            public int NumOrden {
+                get {
+                    try {
+                        return ((int)(this[this.tableOrdenes_NO_finalizadas.NumOrdenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NumOrden\' de la tabla \'Ordenes NO finalizadas\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableOrdenes_NO_finalizadas.NumOrdenColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNumero_de_ordenNull() {
-                this[this.tableOrden_de_Servicio.Numero_de_ordenColumn] = global::System.Convert.DBNull;
+            public bool IsFechaIngresoNull() {
+                return this.IsNull(this.tableOrdenes_NO_finalizadas.FechaIngresoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFecha_inicioNull() {
-                return this.IsNull(this.tableOrden_de_Servicio.Fecha_inicioColumn);
+            public void SetFechaIngresoNull() {
+                this[this.tableOrdenes_NO_finalizadas.FechaIngresoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFecha_inicioNull() {
-                this[this.tableOrden_de_Servicio.Fecha_inicioColumn] = global::System.Convert.DBNull;
+            public bool IsDueñoNull() {
+                return this.IsNull(this.tableOrdenes_NO_finalizadas.DueñoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFecha_finNull() {
-                return this.IsNull(this.tableOrden_de_Servicio.Fecha_finColumn);
+            public void SetDueñoNull() {
+                this[this.tableOrdenes_NO_finalizadas.DueñoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFecha_finNull() {
-                this[this.tableOrden_de_Servicio.Fecha_finColumn] = global::System.Convert.DBNull;
+            public bool IsPlacaNull() {
+                return this.IsNull(this.tableOrdenes_NO_finalizadas.PlacaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDetalle_reparacionesNull() {
-                return this.IsNull(this.tableOrden_de_Servicio.Detalle_reparacionesColumn);
+            public void SetPlacaNull() {
+                this[this.tableOrdenes_NO_finalizadas.PlacaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDetalle_reparacionesNull() {
-                this[this.tableOrden_de_Servicio.Detalle_reparacionesColumn] = global::System.Convert.DBNull;
+            public bool IsClaseVehiculoNull() {
+                return this.IsNull(this.tableOrdenes_NO_finalizadas.ClaseVehiculoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDetalles_repuestosNull() {
-                return this.IsNull(this.tableOrden_de_Servicio.Detalles_repuestosColumn);
+            public void SetClaseVehiculoNull() {
+                this[this.tableOrdenes_NO_finalizadas.ClaseVehiculoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDetalles_repuestosNull() {
-                this[this.tableOrden_de_Servicio.Detalles_repuestosColumn] = global::System.Convert.DBNull;
+            public bool IsApellido1Null() {
+                return this.IsNull(this.tableOrdenes_NO_finalizadas.Apellido1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTotal_apagarNull() {
-                return this.IsNull(this.tableOrden_de_Servicio.Total_apagarColumn);
+            public void SetApellido1Null() {
+                this[this.tableOrdenes_NO_finalizadas.Apellido1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTotal_apagarNull() {
-                this[this.tableOrden_de_Servicio.Total_apagarColumn] = global::System.Convert.DBNull;
+            public bool IsCedulaNull() {
+                return this.IsNull(this.tableOrdenes_NO_finalizadas.CedulaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCedulaNull() {
+                this[this.tableOrdenes_NO_finalizadas.CedulaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionNull() {
+                return this.IsNull(this.tableOrdenes_NO_finalizadas.DescripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionNull() {
+                this[this.tableOrdenes_NO_finalizadas.DescripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumOrdenNull() {
+                return this.IsNull(this.tableOrdenes_NO_finalizadas.NumOrdenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumOrdenNull() {
+                this[this.tableOrdenes_NO_finalizadas.NumOrdenColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -821,22 +865,22 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class Orden_de_ServicioRowChangeEvent : global::System.EventArgs {
+        public class Ordenes_NO_finalizadasRowChangeEvent : global::System.EventArgs {
             
-            private Orden_de_ServicioRow eventRow;
+            private Ordenes_NO_finalizadasRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Orden_de_ServicioRowChangeEvent(Orden_de_ServicioRow row, global::System.Data.DataRowAction action) {
+            public Ordenes_NO_finalizadasRowChangeEvent(Ordenes_NO_finalizadasRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Orden_de_ServicioRow Row {
+            public Ordenes_NO_finalizadasRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -93,5 +93,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             frmInformeOrdenesFinalizadas frm = new frmInformeOrdenesFinalizadas();
             frm.ShowDialog();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmInformeOrdenesSinFinalizar frm = new FrmInformeOrdenesSinFinalizar();
+            frm.ShowDialog();
+        }
     }
 }

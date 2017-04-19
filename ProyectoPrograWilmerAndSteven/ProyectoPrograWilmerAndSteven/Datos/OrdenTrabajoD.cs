@@ -444,7 +444,47 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             
             
         }
-        
+
+
+        public DataTable consultaInformeOrdenesPendientes()
+        {
+            DataSet dsetInformeOrdenesPendientes;
+            DataTable tabla = null;
+
+            Parametro oParametro = new Parametro();
+            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, 'S');
+
+            string sql = "select t.id_orden_de_trabajo as NumeroDeOrden, "+
+
+                        "t.costo_total as TotalApagar,  " +
+                        "t.estado as estado,  " +
+
+                        "v.id_vehiculo as idVehiculo,  v.placa as placa, v.clase_de_vehiculo as claseVehiculo, " +
+
+                        "c.cedula as cedula, c.nombre as nombre, " +
+                        "c.apellido1 as apellido1, c.apellido2 as apellido2, " +
+
+                        "oe.id_catalogo_reparacion as rep , oe.descripcion " +
+
+                        "from schtaller.OrdenDeTrabajo t, schtaller.vehiculo v, schtaller.cliente c, schtaller.catalogoreparacion oe, schtaller.ordenreparacion cor " +
+
+
+                         " where t.id_vehiculo = v.id_vehiculo and c.cedula = v.id_cliente and " +
+
+                         "t.id_orden_de_trabajo = cor.id_orden_de_trabajo and cor.id_catalogo_reparacion = oe.id_catalogo_reparacion and estado = 'N' ";
+            dsetInformeOrdenesPendientes = this.conexion.ejecutarConsultaSQL(sql);
+
+            if (!this.conexion.IsError)
+            {
+                tabla = dsetInformeOrdenesPendientes.Tables[0].Copy();
+
+            }
+
+            return tabla;
+
+
+        }
+
     }
 
 }
