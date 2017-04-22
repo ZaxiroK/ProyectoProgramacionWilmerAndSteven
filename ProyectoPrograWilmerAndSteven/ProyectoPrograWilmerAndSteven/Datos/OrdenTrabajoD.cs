@@ -423,7 +423,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
             string sql = "select t.id_orden_de_trabajo as NumeroDeOrden, " +
                             "t.costo_total as TotalApagarPorVehiculo, " +
-                            "t.estado as estado, " +
+                            "t.estado as estado, t.fecha_de_ingreso_de_vehiculo as FechaEntrada, t.fecha_de_salida as FechasSalida, " +
 
 
                                 "v.id_vehiculo as idVehiculo,  v.placa as PlacaVehiculo " +
@@ -431,7 +431,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                                "from schtaller.OrdenDeTrabajo t, schtaller.vehiculo v " +
 
 
-                                   "where t.id_vehiculo = v.id_vehiculo and t.estado = 'S' " ;
+                                   "where t.id_vehiculo = v.id_vehiculo and estado = 'S' order by fecha_de_salida ";
             dsetOrdenesFinalizadas = this.conexion.ejecutarConsultaSQL(sql);
 
             if (!this.conexion.IsError)

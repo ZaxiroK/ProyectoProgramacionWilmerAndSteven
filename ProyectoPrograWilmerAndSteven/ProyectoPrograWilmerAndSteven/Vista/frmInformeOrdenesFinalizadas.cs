@@ -28,7 +28,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         private void cargarReporte()
         {
             OrdenTrabajoD pOrdenTrabajoD = new OrdenTrabajoD();
-            rpInformeOrdenesFinalizadas oRpInformeOrdenesFinalizadas = new rpInformeOrdenesFinalizadas();
+            rpInformeOrdenesFinalizadasPorDia oRpInformeOrdenesFinalizadas = new rpInformeOrdenesFinalizadasPorDia();
             oRpInformeOrdenesFinalizadas.SetDataSource(pOrdenTrabajoD.consultaOrdenesFinalizadas());
             this.visorReporteOrden.ReportSource = oRpInformeOrdenesFinalizadas;
 

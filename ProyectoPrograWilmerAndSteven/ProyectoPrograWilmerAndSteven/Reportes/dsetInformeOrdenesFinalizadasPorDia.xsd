@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsetInformeOrdenesFinalizadasPorDia" targetNamespace="http://tempuri.org/dsetInformeOrdenesFinalizadasPorDia.xsd" xmlns:mstns="http://tempuri.org/dsetInformeOrdenesFinalizadasPorDia.xsd" xmlns="http://tempuri.org/dsetInformeOrdenesFinalizadasPorDia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsetInformeOrdenesFinalizadasPorDia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsetInformeOrdenesFinalizadasPorDia" msprop:Generator_UserDSName="dsetInformeOrdenesFinalizadasPorDia">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="InformeOrdenesFinalizadas" msprop:Generator_TableClassName="InformeOrdenesFinalizadasDataTable" msprop:Generator_TableVarName="tableInformeOrdenesFinalizadas" msprop:Generator_TablePropName="InformeOrdenesFinalizadas" msprop:Generator_RowDeletingName="InformeOrdenesFinalizadasRowDeleting" msprop:Generator_RowChangingName="InformeOrdenesFinalizadasRowChanging" msprop:Generator_RowEvHandlerName="InformeOrdenesFinalizadasRowChangeEventHandler" msprop:Generator_RowDeletedName="InformeOrdenesFinalizadasRowDeleted" msprop:Generator_UserTableName="InformeOrdenesFinalizadas" msprop:Generator_RowChangedName="InformeOrdenesFinalizadasRowChanged" msprop:Generator_RowEvArgName="InformeOrdenesFinalizadasRowChangeEvent" msprop:Generator_RowClassName="InformeOrdenesFinalizadasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumeroDeOrden" msprop:Generator_ColumnVarNameInTable="columnNumeroDeOrden" msprop:Generator_ColumnPropNameInRow="NumeroDeOrden" msprop:Generator_ColumnPropNameInTable="NumeroDeOrdenColumn" msprop:Generator_UserColumnName="NumeroDeOrden" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalApagarPorVehiculo" msprop:Generator_ColumnVarNameInTable="columnTotalApagarPorVehiculo" msprop:Generator_ColumnPropNameInRow="TotalApagarPorVehiculo" msprop:Generator_ColumnPropNameInTable="TotalApagarPorVehiculoColumn" msprop:Generator_UserColumnName="TotalApagarPorVehiculo" type="xs:double" minOccurs="0" />
+              <xs:element name="PlacaVehiculo" msprop:Generator_ColumnVarNameInTable="columnPlacaVehiculo" msprop:Generator_ColumnPropNameInRow="PlacaVehiculo" msprop:Generator_ColumnPropNameInTable="PlacaVehiculoColumn" msprop:Generator_UserColumnName="PlacaVehiculo" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaEntrada" msprop:Generator_ColumnVarNameInTable="columnFechaEntrada" msprop:Generator_ColumnPropNameInRow="FechaEntrada" msprop:Generator_ColumnPropNameInTable="FechaEntradaColumn" msprop:Generator_UserColumnName="FechaEntrada" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechasSalida" msprop:Generator_ColumnVarNameInTable="columnFechasSalida" msprop:Generator_ColumnPropNameInRow="FechasSalida" msprop:Generator_ColumnPropNameInTable="FechasSalidaColumn" msprop:Generator_UserColumnName="FechasSalida" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

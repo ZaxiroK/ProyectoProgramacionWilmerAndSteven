@@ -112,28 +112,9 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 " where c.cedula = v.id_cliente and v.id_modelo = mo.id_modelo and m.id_marca = mo.id_marca "+
                 "and v.id_cliente = "+ pCedula;
 
-            //if (pCliente != null)
-            //{
-            //    sql += "and c.cedula = @cliente";
-            //    Parametro oParametro = new Parametro();
-            //    oParametro.agregarParametro("@cliente", NpgsqlDbType.Varchar, pCliente.Cedula);
-            //    dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql, "vehiculo", oParametro.obtenerParametros());
-            //}
-            //else
-            //{
+           
             dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql);
-            //}
-            //if (pModelo != null)
-            ////{
-            //    sql += "and mo.idModelo = @modelo";
-            //    Parametro oParametro = new Parametro();
-            //    oParametro.agregarParametro("@modelo", NpgsqlDbType.Varchar, pCliente.Cedula);
-            //    dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql, "vehiculo", oParametro.obtenerParametros());
-            //}
-            //else
-            //{
-            //    dsetVehiculos = this.conexion.ejecutarConsultaSQL(sql);
-            //}
+            
             foreach (DataRow tupla in dsetVehiculos.Tables[0].Rows)
             {
                 ClienteE oCliente = new ClienteE(Convert.ToInt32(tupla[7].ToString()), tupla[8].ToString(),
