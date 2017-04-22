@@ -86,14 +86,6 @@
     <Compile Include="Logica\PuestoE.cs" />
     <Compile Include="Logica\UsuarioE.cs" />
     <Compile Include="Logica\VehiculoE.cs" />
-    <Compile Include="Reportes\dsetInformeOrdenesFinalizadas.cs">
-      <DependentUpon>dsetInformeOrdenesFinalizadas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\dsetInformeOrdenesFinalizadas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsetInformeOrdenesFinalizadas.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\dsetInformeOrdenesFinalizadasPorDia.cs">
       <DependentUpon>dsetInformeOrdenesFinalizadasPorDia.xsd</DependentUpon>
     </Compile>
@@ -117,12 +109,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsetOrdenTrabajoFactura.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\rpInformeOrdenesFinalizadas.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpInformeOrdenesFinalizadas.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpInformeOrdenesFinalizadasPorDia.cs">
       <AutoGen>True</AutoGen>
@@ -322,10 +308,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\rpInformeOrdenesFinalizadas.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpInformeOrdenesFinalizadas.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpInformeOrdenesFinalizadasPorDia.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpInformeOrdenesFinalizadasPorDia.cs</LastGenOutput>
@@ -431,17 +413,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Reportes\dsetInformeOrdenesFinalizadas.xsc">
-      <DependentUpon>dsetInformeOrdenesFinalizadas.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dsetInformeOrdenesFinalizadas.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsetInformeOrdenesFinalizadas.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\dsetInformeOrdenesFinalizadas.xss">
-      <DependentUpon>dsetInformeOrdenesFinalizadas.xsd</DependentUpon>
-    </None>
     <None Include="Reportes\dsetInformeOrdenesFinalizadasPorDia.xsc">
       <DependentUpon>dsetInformeOrdenesFinalizadasPorDia.xsd</DependentUpon>
     </None>
