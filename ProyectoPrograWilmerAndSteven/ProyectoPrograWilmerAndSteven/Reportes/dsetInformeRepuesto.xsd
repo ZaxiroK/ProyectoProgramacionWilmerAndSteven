@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsetInformeRepuesto" targetNamespace="http://tempuri.org/dsetInformeRepuesto.xsd" xmlns:mstns="http://tempuri.org/dsetInformeRepuesto.xsd" xmlns="http://tempuri.org/dsetInformeRepuesto.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsetInformeRepuesto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsetInformeRepuesto" msprop:Generator_UserDSName="dsetInformeRepuesto">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Repuesto" msprop:Generator_TableClassName="RepuestoDataTable" msprop:Generator_TableVarName="tableRepuesto" msprop:Generator_RowChangedName="RepuestoRowChanged" msprop:Generator_TablePropName="Repuesto" msprop:Generator_RowDeletingName="RepuestoRowDeleting" msprop:Generator_RowChangingName="RepuestoRowChanging" msprop:Generator_RowEvHandlerName="RepuestoRowChangeEventHandler" msprop:Generator_RowDeletedName="RepuestoRowDeleted" msprop:Generator_RowClassName="RepuestoRow" msprop:Generator_UserTableName="Repuesto" msprop:Generator_RowEvArgName="RepuestoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idOrdenRepuesto" msprop:Generator_ColumnVarNameInTable="columnidOrdenRepuesto" msprop:Generator_ColumnPropNameInRow="idOrdenRepuesto" msprop:Generator_ColumnPropNameInTable="idOrdenRepuestoColumn" msprop:Generator_UserColumnName="idOrdenRepuesto" type="xs:int" minOccurs="0" />
+              <xs:element name="idCatalogoRepuesto" msprop:Generator_ColumnVarNameInTable="columnidCatalogoRepuesto" msprop:Generator_ColumnPropNameInRow="idCatalogoRepuesto" msprop:Generator_ColumnPropNameInTable="idCatalogoRepuestoColumn" msprop:Generator_UserColumnName="idCatalogoRepuesto" type="xs:int" minOccurs="0" />
+              <xs:element name="cantidadRepuestos" msprop:Generator_ColumnVarNameInTable="columncantidadRepuestos" msprop:Generator_ColumnPropNameInRow="cantidadRepuestos" msprop:Generator_ColumnPropNameInTable="cantidadRepuestosColumn" msprop:Generator_UserColumnName="cantidadRepuestos" type="xs:int" minOccurs="0" />
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:double" minOccurs="0" />
+              <xs:element name="catalogorep" msprop:Generator_ColumnVarNameInTable="columncatalogorep" msprop:Generator_ColumnPropNameInRow="catalogorep" msprop:Generator_ColumnPropNameInTable="catalogorepColumn" msprop:Generator_UserColumnName="catalogorep" type="xs:int" minOccurs="0" />
+              <xs:element name="NombreRepuesto" msprop:Generator_ColumnVarNameInTable="columnNombreRepuesto" msprop:Generator_ColumnPropNameInRow="NombreRepuesto" msprop:Generator_ColumnPropNameInTable="NombreRepuestoColumn" msprop:Generator_UserColumnName="NombreRepuesto" type="xs:string" minOccurs="0" />
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:int" minOccurs="0" />
+              <xs:element name="preciorepuesto" msprop:Generator_ColumnVarNameInTable="columnpreciorepuesto" msprop:Generator_ColumnPropNameInRow="preciorepuesto" msprop:Generator_ColumnPropNameInTable="preciorepuestoColumn" msprop:Generator_UserColumnName="preciorepuesto" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

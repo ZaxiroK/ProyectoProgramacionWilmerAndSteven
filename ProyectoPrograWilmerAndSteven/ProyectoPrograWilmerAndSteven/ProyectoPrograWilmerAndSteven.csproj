@@ -107,6 +107,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsetInformeRepracionesAtendidasXmecanico.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\dsetInformeRepuesto.cs">
+      <DependentUpon>dsetInformeRepuesto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dsetInformeRepuesto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsetInformeRepuesto.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dsetOrdenTrabajoFactura.cs">
       <DependentUpon>dsetOrdenTrabajoFactura.xsd</DependentUpon>
     </Compile>
@@ -137,6 +145,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpInformeReparacionesAtendidasXmecanico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpInformeRepuesto.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpInformeRepuesto.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Vista\FrmCambioContrasenia.cs">
@@ -194,6 +208,12 @@
     </Compile>
     <Compile Include="Vista\FrmInformeReparacionesAtendidasXmecanico.Designer.cs">
       <DependentUpon>FrmInformeReparacionesAtendidasXmecanico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmInformeRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmInformeRepuesto.Designer.cs">
+      <DependentUpon>FrmInformeRepuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmMarca.cs">
       <SubType>Form</SubType>
@@ -297,6 +317,12 @@
     <Compile Include="Vista\FrmReporteOrdenDeTrabajo.Designer.cs">
       <DependentUpon>FrmReporteOrdenDeTrabajo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmRespuestosInformacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmRespuestosInformacion.Designer.cs">
+      <DependentUpon>FrmRespuestosInformacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmSeleccionarReparaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +373,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpInformeReparacionesAtendidasXmecanico.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpInformeRepuesto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpInformeRepuesto.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCambioContrasenia.resx">
       <DependentUpon>FrmCambioContrasenia.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmInformeReparacionesAtendidasXmecanico.resx">
       <DependentUpon>FrmInformeReparacionesAtendidasXmecanico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmInformeRepuesto.resx">
+      <DependentUpon>FrmInformeRepuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmMarca.resx">
       <DependentUpon>FrmMarca.cs</DependentUpon>
@@ -424,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmReporteOrdenDeTrabajo.resx">
       <DependentUpon>FrmReporteOrdenDeTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmRespuestosInformacion.resx">
+      <DependentUpon>FrmRespuestosInformacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmSeleccionarReparaciones.resx">
       <DependentUpon>FrmSeleccionarReparaciones.cs</DependentUpon>
@@ -478,6 +514,17 @@
     </None>
     <None Include="Reportes\dsetInformeRepracionesAtendidasXmecanico.xss">
       <DependentUpon>dsetInformeRepracionesAtendidasXmecanico.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsetInformeRepuesto.xsc">
+      <DependentUpon>dsetInformeRepuesto.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsetInformeRepuesto.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsetInformeRepuesto.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dsetInformeRepuesto.xss">
+      <DependentUpon>dsetInformeRepuesto.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dsetOrdenTrabajoFactura.xsc">
       <DependentUpon>dsetOrdenTrabajoFactura.xsd</DependentUpon>

@@ -105,5 +105,15 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             FrmReparacionesAtendidasXmecánico frm = new FrmReparacionesAtendidasXmecánico();
             frm.ShowDialog();
         }
+
+        private void gestíonGerencialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
