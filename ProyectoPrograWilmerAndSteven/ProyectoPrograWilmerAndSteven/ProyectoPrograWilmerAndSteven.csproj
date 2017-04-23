@@ -102,6 +102,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsetInformeOrdenesPendientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\dsetInformeRepracionesAtendidasXmecanico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsetInformeRepracionesAtendidasXmecanico.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dsetOrdenTrabajoFactura.cs">
       <DependentUpon>dsetOrdenTrabajoFactura.xsd</DependentUpon>
     </Compile>
@@ -177,6 +182,12 @@
     </Compile>
     <Compile Include="Vista\FrmInformeOrdenesSinFinalizar.Designer.cs">
       <DependentUpon>FrmInformeOrdenesSinFinalizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmInformeReparacionesAtendidasXmecanico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmInformeReparacionesAtendidasXmecanico.Designer.cs">
+      <DependentUpon>FrmInformeReparacionesAtendidasXmecanico.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmMarca.cs">
       <SubType>Form</SubType>
@@ -268,6 +279,12 @@
     <Compile Include="Vista\FrmRegistroModelo.Designer.cs">
       <DependentUpon>FrmRegistroModelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmReparacionesAtendidasXmecánico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmReparacionesAtendidasXmecánico.Designer.cs">
+      <DependentUpon>FrmReparacionesAtendidasXmecánico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmReporteOrdenDeTrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +361,9 @@
     <EmbeddedResource Include="Vista\FrmInformeOrdenesSinFinalizar.resx">
       <DependentUpon>FrmInformeOrdenesSinFinalizar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmInformeReparacionesAtendidasXmecanico.resx">
+      <DependentUpon>FrmInformeReparacionesAtendidasXmecanico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmMarca.resx">
       <DependentUpon>FrmMarca.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroModelo.resx">
       <DependentUpon>FrmRegistroModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmReparacionesAtendidasXmecánico.resx">
+      <DependentUpon>FrmReparacionesAtendidasXmecánico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmReporteOrdenDeTrabajo.resx">
       <DependentUpon>FrmReporteOrdenDeTrabajo.cs</DependentUpon>
@@ -434,6 +457,17 @@
     </None>
     <None Include="Reportes\dsetInformeOrdenesPendientes.xss">
       <DependentUpon>dsetInformeOrdenesPendientes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsetInformeRepracionesAtendidasXmecanico.xsc">
+      <DependentUpon>dsetInformeRepracionesAtendidasXmecanico.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsetInformeRepracionesAtendidasXmecanico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsetInformeRepracionesAtendidasXmecanico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dsetInformeRepracionesAtendidasXmecanico.xss">
+      <DependentUpon>dsetInformeRepracionesAtendidasXmecanico.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dsetOrdenTrabajoFactura.xsc">
       <DependentUpon>dsetOrdenTrabajoFactura.xsd</DependentUpon>

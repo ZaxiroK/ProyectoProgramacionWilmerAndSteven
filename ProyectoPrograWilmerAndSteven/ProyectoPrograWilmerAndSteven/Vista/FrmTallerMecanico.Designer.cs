@@ -47,6 +47,7 @@
             this.gestíonGerencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,7 +187,8 @@
             // 
             this.gestíonGerencialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
             this.gestíonGerencialToolStripMenuItem.Name = "gestíonGerencialToolStripMenuItem";
             this.gestíonGerencialToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.gestíonGerencialToolStripMenuItem.Text = "Gestíon gerencial";
@@ -204,6 +206,13 @@
             this.toolStripMenuItem2.Size = new System.Drawing.Size(218, 26);
             this.toolStripMenuItem2.Text = "Ordenes sin finalizar";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(315, 26);
+            this.toolStripMenuItem3.Text = "Reparaciones atendidas por fechas";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // FrmTallerMecanico
             // 
@@ -241,5 +250,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemOrdenTrabajo;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }

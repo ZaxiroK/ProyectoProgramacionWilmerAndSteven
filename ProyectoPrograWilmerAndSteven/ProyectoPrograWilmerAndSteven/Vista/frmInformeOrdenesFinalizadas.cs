@@ -17,11 +17,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     
     public partial class frmInformeOrdenesFinalizadas : Form
     {
-        //private char estado;
+        
         public frmInformeOrdenesFinalizadas()
         {
             InitializeComponent();
-            //this.estado = 'S';
+            
             this.cargarReporte();
         }
 

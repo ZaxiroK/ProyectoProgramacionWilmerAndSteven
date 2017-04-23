@@ -39,42 +39,49 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 13);
+            this.label1.Location = new System.Drawing.Point(7, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Repuesto:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(217, 12);
+            this.label2.Location = new System.Drawing.Point(289, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cantidad:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cmbRepuestos
             // 
             this.cmbRepuestos.FormattingEnabled = true;
-            this.cmbRepuestos.Location = new System.Drawing.Point(67, 13);
+            this.cmbRepuestos.Location = new System.Drawing.Point(89, 16);
+            this.cmbRepuestos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbRepuestos.Name = "cmbRepuestos";
-            this.cmbRepuestos.Size = new System.Drawing.Size(144, 21);
+            this.cmbRepuestos.Size = new System.Drawing.Size(191, 24);
             this.cmbRepuestos.TabIndex = 2;
             // 
             // cmbCantidad
             // 
             this.cmbCantidad.FormattingEnabled = true;
-            this.cmbCantidad.Location = new System.Drawing.Point(275, 12);
+            this.cmbCantidad.Location = new System.Drawing.Point(367, 15);
+            this.cmbCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbCantidad.Name = "cmbCantidad";
-            this.cmbCantidad.Size = new System.Drawing.Size(121, 21);
+            this.cmbCantidad.Size = new System.Drawing.Size(160, 24);
             this.cmbCantidad.TabIndex = 3;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(220, 46);
+            this.btnAceptar.Location = new System.Drawing.Point(293, 57);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(157, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(209, 28);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -82,24 +89,27 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(47, 46);
+            this.btnSalir.Location = new System.Drawing.Point(63, 57);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(149, 23);
+            this.btnSalir.Size = new System.Drawing.Size(199, 28);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmSeleccionarRepuestos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 81);
+            this.ClientSize = new System.Drawing.Size(544, 100);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cmbCantidad);
             this.Controls.Add(this.cmbRepuestos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmSeleccionarRepuestos";
             this.Text = "Seleccionar repuesto";
             this.ResumeLayout(false);

@@ -99,5 +99,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             FrmInformeOrdenesSinFinalizar frm = new FrmInformeOrdenesSinFinalizar();
             frm.ShowDialog();
         }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmReparacionesAtendidasXmecánico frm = new FrmReparacionesAtendidasXmecánico();
+            frm.ShowDialog();
+        }
     }
 }
