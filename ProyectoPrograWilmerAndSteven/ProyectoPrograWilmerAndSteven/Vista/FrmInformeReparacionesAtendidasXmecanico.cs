@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,13 +15,14 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     {
         private DateTime fechaE;
         private DateTime fechaS;
+        private EmpleadoE empleado;
         public FrmInformeReparacionesAtendidasXmecanico()
         {
             InitializeComponent();
         }
 
 
-        public FrmInformeReparacionesAtendidasXmecanico(DateTime fchEntrada, DateTime fchSalida)
+        public FrmInformeReparacionesAtendidasXmecanico(DateTime fchEntrada, DateTime fchSalida, int emp)
         {
             InitializeComponent();
             this.fechaE = fchEntrada;
