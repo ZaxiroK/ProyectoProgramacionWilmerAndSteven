@@ -153,5 +153,50 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+
+
+        public DataTable reporteReparacionesEmpleado(DateTime fecha1, DateTime fecha2, int empleadoCed)
+        {
+            DataSet dsetInformeOrdenesPendientes;
+            DataTable tabla = null;
+
+            Parametro oParametro = new Parametro();
+            oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, 'N');
+
+            string sql = "select  cr.id_orden_reparacion  , cr.id_catalogo_reparacion , cr.id_orden_de_trabajo, " +
+                                 "cr.id_empleado, cr.horas, cr.costo,  "+
+
+
+        "oe.id_catalogo_reparacion as rep , oe.descripcion, oe.horas_reparacion, oe.costo_reparacion, " +
+
+
+            "t.id_orden_de_trabajo as idOrdenDetrabajo, " +
+                           "t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida, " +
+
+
+            "e.cedula as cedula , e.nombre as nombre, e.apellido1 as apellido1, e.apellido2 as apellido2 " +
+
+
+            "from schtaller.catalogoreparacion oe, schtaller.ordenreparacion cr, schtaller.OrdenDeTrabajo t, schtaller.empleado e " +
+
+
+
+            "where cr.id_catalogo_reparacion = oe.id_catalogo_reparacion and cr.id_orden_de_trabajo = t.id_orden_de_trabajo and cr.id_empleado = "+ empleadoCed +
+
+
+            "and cast(fecha_de_ingreso_de_vehiculo as date) between '" + fecha1 + "' and '"+ fecha2 + "'"; 
+            dsetInformeOrdenesPendientes = this.conexion.ejecutarConsultaSQL(sql);
+
+            if (!this.conexion.IsError)
+            {
+                tabla = dsetInformeOrdenesPendientes.Tables[0].Copy();
+
+            }
+
+            return tabla;
+
+
+        }
+
     }
 }
