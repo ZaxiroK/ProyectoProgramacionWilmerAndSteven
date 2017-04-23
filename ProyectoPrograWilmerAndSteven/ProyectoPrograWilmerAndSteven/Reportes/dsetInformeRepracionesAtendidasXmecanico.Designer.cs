@@ -279,11 +279,27 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class InformeXMecanicoDataTable : global::System.Data.TypedTableBase<InformeXMecanicoRow> {
             
-            private global::System.Data.DataColumn columnDataColumn1;
+            private global::System.Data.DataColumn columnId_orden_reparacion;
             
-            private global::System.Data.DataColumn columnDataColumn2;
+            private global::System.Data.DataColumn columnId_orden_de_trabajo;
             
-            private global::System.Data.DataColumn columnDataColumn3;
+            private global::System.Data.DataColumn columnId_empleado;
+            
+            private global::System.Data.DataColumn columnNombre;
+            
+            private global::System.Data.DataColumn columnApellido1;
+            
+            private global::System.Data.DataColumn columnApellido2;
+            
+            private global::System.Data.DataColumn columnHoras_reparacion;
+            
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnCosto_reparacion;
+            
+            private global::System.Data.DataColumn columnFecha_entrada;
+            
+            private global::System.Data.DataColumn columnFecha_salida;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -320,25 +336,89 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DataColumn1Column {
+            public global::System.Data.DataColumn Id_orden_reparacionColumn {
                 get {
-                    return this.columnDataColumn1;
+                    return this.columnId_orden_reparacion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DataColumn2Column {
+            public global::System.Data.DataColumn Id_orden_de_trabajoColumn {
                 get {
-                    return this.columnDataColumn2;
+                    return this.columnId_orden_de_trabajo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DataColumn3Column {
+            public global::System.Data.DataColumn Id_empleadoColumn {
                 get {
-                    return this.columnDataColumn3;
+                    return this.columnId_empleado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreColumn {
+                get {
+                    return this.columnNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Apellido1Column {
+                get {
+                    return this.columnApellido1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Apellido2Column {
+                get {
+                    return this.columnApellido2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Horas_reparacionColumn {
+                get {
+                    return this.columnHoras_reparacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionColumn {
+                get {
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Costo_reparacionColumn {
+                get {
+                    return this.columnCosto_reparacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Fecha_entradaColumn {
+                get {
+                    return this.columnFecha_entrada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Fecha_salidaColumn {
+                get {
+                    return this.columnFecha_salida;
                 }
             }
             
@@ -379,12 +459,20 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InformeXMecanicoRow AddInformeXMecanicoRow(string DataColumn1, string DataColumn2, string DataColumn3) {
+            public InformeXMecanicoRow AddInformeXMecanicoRow(int Id_orden_reparacion, int Id_orden_de_trabajo, int Id_empleado, string Nombre, string Apellido1, string Apellido2, int Horas_reparacion, string Descripcion, double Costo_reparacion, System.DateTime Fecha_entrada, System.DateTime Fecha_salida) {
                 InformeXMecanicoRow rowInformeXMecanicoRow = ((InformeXMecanicoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        DataColumn1,
-                        DataColumn2,
-                        DataColumn3};
+                        Id_orden_reparacion,
+                        Id_orden_de_trabajo,
+                        Id_empleado,
+                        Nombre,
+                        Apellido1,
+                        Apellido2,
+                        Horas_reparacion,
+                        Descripcion,
+                        Costo_reparacion,
+                        Fecha_entrada,
+                        Fecha_salida};
                 rowInformeXMecanicoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInformeXMecanicoRow);
                 return rowInformeXMecanicoRow;
@@ -407,20 +495,44 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnDataColumn1 = base.Columns["DataColumn1"];
-                this.columnDataColumn2 = base.Columns["DataColumn2"];
-                this.columnDataColumn3 = base.Columns["DataColumn3"];
+                this.columnId_orden_reparacion = base.Columns["Id_orden_reparacion"];
+                this.columnId_orden_de_trabajo = base.Columns["Id_orden_de_trabajo"];
+                this.columnId_empleado = base.Columns["Id_empleado"];
+                this.columnNombre = base.Columns["Nombre"];
+                this.columnApellido1 = base.Columns["Apellido1"];
+                this.columnApellido2 = base.Columns["Apellido2"];
+                this.columnHoras_reparacion = base.Columns["Horas_reparacion"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnCosto_reparacion = base.Columns["Costo_reparacion"];
+                this.columnFecha_entrada = base.Columns["Fecha_entrada"];
+                this.columnFecha_salida = base.Columns["Fecha_salida"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnDataColumn1 = new global::System.Data.DataColumn("DataColumn1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataColumn1);
-                this.columnDataColumn2 = new global::System.Data.DataColumn("DataColumn2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataColumn2);
-                this.columnDataColumn3 = new global::System.Data.DataColumn("DataColumn3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataColumn3);
+                this.columnId_orden_reparacion = new global::System.Data.DataColumn("Id_orden_reparacion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_orden_reparacion);
+                this.columnId_orden_de_trabajo = new global::System.Data.DataColumn("Id_orden_de_trabajo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_orden_de_trabajo);
+                this.columnId_empleado = new global::System.Data.DataColumn("Id_empleado", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_empleado);
+                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombre);
+                this.columnApellido1 = new global::System.Data.DataColumn("Apellido1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApellido1);
+                this.columnApellido2 = new global::System.Data.DataColumn("Apellido2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApellido2);
+                this.columnHoras_reparacion = new global::System.Data.DataColumn("Horas_reparacion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHoras_reparacion);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnCosto_reparacion = new global::System.Data.DataColumn("Costo_reparacion", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCosto_reparacion);
+                this.columnFecha_entrada = new global::System.Data.DataColumn("Fecha_entrada", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha_entrada);
+                this.columnFecha_salida = new global::System.Data.DataColumn("Fecha_salida", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha_salida);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -563,86 +675,314 @@ namespace ProyectoPrograWilmerAndSteven.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DataColumn1 {
+            public int Id_orden_reparacion {
                 get {
                     try {
-                        return ((string)(this[this.tableInformeXMecanico.DataColumn1Column]));
+                        return ((int)(this[this.tableInformeXMecanico.Id_orden_reparacionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DataColumn1\' de la tabla \'InformeXMecanico\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Id_orden_reparacion\' de la tabla \'InformeXMecanico\' es DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableInformeXMecanico.DataColumn1Column] = value;
+                    this[this.tableInformeXMecanico.Id_orden_reparacionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DataColumn2 {
+            public int Id_orden_de_trabajo {
                 get {
                     try {
-                        return ((string)(this[this.tableInformeXMecanico.DataColumn2Column]));
+                        return ((int)(this[this.tableInformeXMecanico.Id_orden_de_trabajoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DataColumn2\' de la tabla \'InformeXMecanico\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Id_orden_de_trabajo\' de la tabla \'InformeXMecanico\' es DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableInformeXMecanico.DataColumn2Column] = value;
+                    this[this.tableInformeXMecanico.Id_orden_de_trabajoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DataColumn3 {
+            public int Id_empleado {
                 get {
                     try {
-                        return ((string)(this[this.tableInformeXMecanico.DataColumn3Column]));
+                        return ((int)(this[this.tableInformeXMecanico.Id_empleadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DataColumn3\' de la tabla \'InformeXMecanico\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Id_empleado\' de la tabla \'InformeXMecanico\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableInformeXMecanico.DataColumn3Column] = value;
+                    this[this.tableInformeXMecanico.Id_empleadoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDataColumn1Null() {
-                return this.IsNull(this.tableInformeXMecanico.DataColumn1Column);
+            public string Nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableInformeXMecanico.NombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre\' de la tabla \'InformeXMecanico\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInformeXMecanico.NombreColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDataColumn1Null() {
-                this[this.tableInformeXMecanico.DataColumn1Column] = global::System.Convert.DBNull;
+            public string Apellido1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableInformeXMecanico.Apellido1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Apellido1\' de la tabla \'InformeXMecanico\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInformeXMecanico.Apellido1Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDataColumn2Null() {
-                return this.IsNull(this.tableInformeXMecanico.DataColumn2Column);
+            public string Apellido2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableInformeXMecanico.Apellido2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Apellido2\' de la tabla \'InformeXMecanico\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInformeXMecanico.Apellido2Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDataColumn2Null() {
-                this[this.tableInformeXMecanico.DataColumn2Column] = global::System.Convert.DBNull;
+            public int Horas_reparacion {
+                get {
+                    try {
+                        return ((int)(this[this.tableInformeXMecanico.Horas_reparacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Horas_reparacion\' de la tabla \'InformeXMecanico\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableInformeXMecanico.Horas_reparacionColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDataColumn3Null() {
-                return this.IsNull(this.tableInformeXMecanico.DataColumn3Column);
+            public string Descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tableInformeXMecanico.DescripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion\' de la tabla \'InformeXMecanico\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInformeXMecanico.DescripcionColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDataColumn3Null() {
-                this[this.tableInformeXMecanico.DataColumn3Column] = global::System.Convert.DBNull;
+            public double Costo_reparacion {
+                get {
+                    try {
+                        return ((double)(this[this.tableInformeXMecanico.Costo_reparacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Costo_reparacion\' de la tabla \'InformeXMecanico\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableInformeXMecanico.Costo_reparacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Fecha_entrada {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableInformeXMecanico.Fecha_entradaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_entrada\' de la tabla \'InformeXMecanico\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInformeXMecanico.Fecha_entradaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Fecha_salida {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableInformeXMecanico.Fecha_salidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_salida\' de la tabla \'InformeXMecanico\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInformeXMecanico.Fecha_salidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsId_orden_reparacionNull() {
+                return this.IsNull(this.tableInformeXMecanico.Id_orden_reparacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetId_orden_reparacionNull() {
+                this[this.tableInformeXMecanico.Id_orden_reparacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsId_orden_de_trabajoNull() {
+                return this.IsNull(this.tableInformeXMecanico.Id_orden_de_trabajoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetId_orden_de_trabajoNull() {
+                this[this.tableInformeXMecanico.Id_orden_de_trabajoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsId_empleadoNull() {
+                return this.IsNull(this.tableInformeXMecanico.Id_empleadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetId_empleadoNull() {
+                this[this.tableInformeXMecanico.Id_empleadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNombreNull() {
+                return this.IsNull(this.tableInformeXMecanico.NombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNombreNull() {
+                this[this.tableInformeXMecanico.NombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsApellido1Null() {
+                return this.IsNull(this.tableInformeXMecanico.Apellido1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetApellido1Null() {
+                this[this.tableInformeXMecanico.Apellido1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsApellido2Null() {
+                return this.IsNull(this.tableInformeXMecanico.Apellido2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetApellido2Null() {
+                this[this.tableInformeXMecanico.Apellido2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHoras_reparacionNull() {
+                return this.IsNull(this.tableInformeXMecanico.Horas_reparacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHoras_reparacionNull() {
+                this[this.tableInformeXMecanico.Horas_reparacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionNull() {
+                return this.IsNull(this.tableInformeXMecanico.DescripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionNull() {
+                this[this.tableInformeXMecanico.DescripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCosto_reparacionNull() {
+                return this.IsNull(this.tableInformeXMecanico.Costo_reparacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCosto_reparacionNull() {
+                this[this.tableInformeXMecanico.Costo_reparacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFecha_entradaNull() {
+                return this.IsNull(this.tableInformeXMecanico.Fecha_entradaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFecha_entradaNull() {
+                this[this.tableInformeXMecanico.Fecha_entradaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFecha_salidaNull() {
+                return this.IsNull(this.tableInformeXMecanico.Fecha_salidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFecha_salidaNull() {
+                this[this.tableInformeXMecanico.Fecha_salidaColumn] = global::System.Convert.DBNull;
             }
         }
         

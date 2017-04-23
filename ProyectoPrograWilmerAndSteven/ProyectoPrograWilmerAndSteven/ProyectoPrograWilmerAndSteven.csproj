@@ -133,6 +133,12 @@
       <DependentUpon>rpInformeOrdenTrabajoFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\rpInformeReparacionesAtendidasXmecanico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpInformeReparacionesAtendidasXmecanico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Vista\FrmCambioContrasenia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +342,10 @@
     <EmbeddedResource Include="Reportes\rpInformeOrdenTrabajoFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpInformeOrdenTrabajoFactura.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpInformeReparacionesAtendidasXmecanico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpInformeReparacionesAtendidasXmecanico.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCambioContrasenia.resx">
       <DependentUpon>FrmCambioContrasenia.cs</DependentUpon>

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoPrograWilmerAndSteven.Reportes;
+using ProyectoPrograWilmerAndSteven.Datos;
 
 namespace ProyectoPrograWilmerAndSteven.Vista
 {
@@ -15,7 +17,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     {
         private DateTime fechaE;
         private DateTime fechaS;
-        private EmpleadoE empleado;
+        private int empleado;
+       
+
         public FrmInformeReparacionesAtendidasXmecanico()
         {
             InitializeComponent();
@@ -27,10 +31,21 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             InitializeComponent();
             this.fechaE = fchEntrada;
             this.fechaS = fchSalida;
+            this.empleado = emp;
+            cargarReporte();
         }
 
+        
 
-        /*FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
-        oReporte.ShowDialog();*/
+
+            private void cargarReporte()
+        {
+            OrdenReparacionD pOrdenReparacionD = new OrdenReparacionD();
+            rpInformeReparacionesAtendidasXmecanico rp = new rpInformeReparacionesAtendidasXmecanico();
+
+            rp.SetDataSource(pOrdenReparacionD.reporteReparacionesEmpleado(fechaE, fechaS, empleado));
+            this.crystalReportViewer1.ReportSource = rp;
+
+        }
     }
 }

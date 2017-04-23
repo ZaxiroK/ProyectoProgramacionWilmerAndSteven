@@ -16,7 +16,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     {
         private DateTime fechEntrada;
         private DateTime fechSalida;
-        private EmpleadoE emp;
+        
         public FrmReparacionesAtendidasXmecánico()
         {
             InitializeComponent();
@@ -26,21 +26,18 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         private void btnInforme_Click(object sender, EventArgs e)
         {
 
-
-            if ((this.cmbEmpleado.SelectedIndex != -1))
-            {
-
-            }
+            EmpleadoE pEmpl = ((EmpleadoE)this.cmbEmpleado.SelectedItem);
+           
                 fechEntrada = fechaEntrada.Value;
             fechSalida = FechaSalida.Value;
-            FrmInformeReparacionesAtendidasXmecanico frm = new FrmInformeReparacionesAtendidasXmecanico(fechEntrada, fechSalida,emp);
+            FrmInformeReparacionesAtendidasXmecanico frm = new FrmInformeReparacionesAtendidasXmecanico(fechEntrada, fechSalida, pEmpl.Cedula);
             frm.ShowDialog();
         }
 
 
         public void llenarComboEmpleado()
         {
-
+            
             EmpleadoD oEmpleadoD = new EmpleadoD();
             List<EmpleadoE> empleados = oEmpleadoD.obtenerEmpleados();
 
@@ -49,7 +46,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 this.cmbEmpleado.Items.Add(oEmpleadoE);
                 this.cmbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
                 cmbEmpleado.SelectedIndex = -1;
-                emp = ((EmpleadoE)this.cmbEmpleado.SelectedItem);
+                
             }
 
         }
