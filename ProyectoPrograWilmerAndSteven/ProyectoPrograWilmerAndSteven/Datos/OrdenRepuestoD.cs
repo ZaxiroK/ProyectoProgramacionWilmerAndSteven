@@ -221,6 +221,35 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        public DataTable reporteRepuestos( int id)
+        {
+            DataSet dsetRepuesto;
+            DataTable tabla = null;
+
+            Parametro oParametro = new Parametro();
+            oParametro.agregarParametro("@idOrdenReparacion", NpgsqlDbType.Numeric, 'N');
+
+            string sql = "SELECT oe.id_orden_repuesto , oe.id_orden_de_trabajo, oe.id_catalogo_de_repuestos , oe.cantidad_de_repuestos , oe.precio, " +
+
+                "cr.id_catalogo_de_repuesto as catalogorep , cr.nombre_del_repuesto , cr.anio_al_que_pertenece , " +
+                                 "cr.precio as preciorepuesto " +
+
+
+                "from schtaller.empleado e, schtaller.ordenrepuesto oe, schtaller.catalogorepuesto cr " +
+
+                "where oe.id_catalogo_de_repuestos = cr.id_catalogo_de_repuesto and cr.id_catalogo_de_repuesto ="+ id;
+            dsetRepuesto = this.conexion.ejecutarConsultaSQL(sql);
+
+            if (!this.conexion.IsError)
+            {
+                tabla = dsetRepuesto.Tables[0].Copy();
+
+            }
+
+            return tabla;
+
+
+        }
     }
 }
 

@@ -232,18 +232,18 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             Parametro oParametro = new Parametro();
             oParametro.agregarParametro("@idOrdenDeTrabajo", NpgsqlDbType.Numeric, 'N');
 
-            string sql = "select  cr.id_orden_reparacion  , cr.id_catalogo_reparacion , cr.id_orden_de_trabajo, " +
-                                 "cr.id_empleado, cr.horas, cr.costo,  " +
+            string sql = "select  cr.id_orden_reparacion as Id_orden_reparacion , cr.id_catalogo_reparacion , cr.id_orden_de_trabajo, " +
+                                 "cr.id_empleado, cr.horas as Horas_reparacion, cr.costo as Costo_reparacion,  " +
 
 
-        "oe.id_catalogo_reparacion as rep , oe.descripcion, oe.horas_reparacion, oe.costo_reparacion, " +
+        "oe.id_catalogo_reparacion as rep , oe.descripcion as Descripcion, oe.horas_reparacion, oe.costo_reparacion, " +
 
 
-            "t.id_orden_de_trabajo as idOrdenDetrabajo, " +
-                           "t.fecha_de_ingreso_de_vehiculo as fechaDeIngreso, t.fecha_de_salida as fechaDeSalida, " +
+            "t.id_orden_de_trabajo as Id_orden_de_trabajo, " +
+                           "t.fecha_de_ingreso_de_vehiculo as Fecha_entrada, t.fecha_de_salida as Fecha_salida, " +
 
 
-            "e.cedula as cedula , e.nombre as nombre, e.apellido1 as apellido1, e.apellido2 as apellido2 " +
+            "e.cedula as Id_empleado , e.nombre as Nombre, e.apellido1 as Apellido1, e.apellido2 as Apellido2 " +
 
 
             "from schtaller.catalogoreparacion oe, schtaller.ordenreparacion cr, schtaller.OrdenDeTrabajo t, schtaller.empleado e " +

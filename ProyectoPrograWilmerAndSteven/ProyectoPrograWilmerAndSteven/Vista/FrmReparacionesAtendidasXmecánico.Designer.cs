@@ -36,7 +36,6 @@
             this.btnInforme = new System.Windows.Forms.Button();
             this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // fechaInicio
@@ -59,7 +58,7 @@
             // 
             // fechaEntrada
             // 
-            this.fechaEntrada.Location = new System.Drawing.Point(150, 12);
+            this.fechaEntrada.Location = new System.Drawing.Point(150, 55);
             this.fechaEntrada.Name = "fechaEntrada";
             this.fechaEntrada.Size = new System.Drawing.Size(281, 22);
             this.fechaEntrada.TabIndex = 14;
@@ -107,20 +106,11 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Empleado";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(150, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(281, 24);
-            this.comboBox1.TabIndex = 20;
-            // 
             // FrmReparacionesAtendidasXmecánico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 253);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbEmpleado);
             this.Controls.Add(this.btnInforme);
@@ -146,6 +136,5 @@
         private System.Windows.Forms.Button btnInforme;
         private System.Windows.Forms.ComboBox cmbEmpleado;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
