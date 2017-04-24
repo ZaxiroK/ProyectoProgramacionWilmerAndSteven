@@ -16,8 +16,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     {
         private string fechEntrada;
         private string fechSalida;
-        private DateTime fcEntrada;
-        private DateTime fcSalida;
+        
         
 
         public FrmReparacionesAtendidasXmecánico()
@@ -25,18 +24,32 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             InitializeComponent();
             llenarComboEmpleado();
             fechEntrada = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
-            fechSalida = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
+            fechSalida = string.Format(FechaSalida.Value.ToString("yyyy-MM-dd"));
         }
 
         private void btnInforme_Click(object sender, EventArgs e)
         {
-
+            
             EmpleadoE pEmpl = ((EmpleadoE)this.cmbEmpleado.SelectedItem);
             fechEntrada = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
-            fechSalida = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
+            fechSalida = string.Format(FechaSalida.Value.ToString("yyyy-MM-dd"));
 
-            FrmInformeReparacionesAtendidasXmecanico frm = new FrmInformeReparacionesAtendidasXmecanico(fechEntrada, fechSalida, pEmpl.Cedula);
-            frm.ShowDialog();
+
+            
+            DateTime fcEntrada = Convert.ToDateTime(fechEntrada);
+            DateTime fcSalida = Convert.ToDateTime(fechSalida);
+
+            if (fcEntrada > fcSalida) // Si la fecha indicada es menor o igual a la fecha actual
+            {
+                MessageBox.Show("La fecha de entrada no puede ser mallor a la de la salida");
+            }
+            else
+            {
+                FrmInformeReparacionesAtendidasXmecanico frm = new FrmInformeReparacionesAtendidasXmecanico(fechEntrada, fechSalida, pEmpl.Cedula);
+                frm.ShowDialog();
+            }
+
+            
         }
 
 
