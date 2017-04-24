@@ -17,7 +17,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     {
         private string fechaE;
         private string fechaS;
-        private int empleado;
+        //private int empleado;
        
 
         public FrmInformeReparacionesAtendidasXmecanico()
@@ -26,12 +26,12 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         }
 
 
-        public FrmInformeReparacionesAtendidasXmecanico(string fchEntrada, string fchSalida, int emp)
+        public FrmInformeReparacionesAtendidasXmecanico(string fchEntrada, string fchSalida/*, int emp*/)
         {
             InitializeComponent();
             this.fechaE = fchEntrada;
             this.fechaS = fchSalida;
-            this.empleado = emp;
+            //this.empleado = emp;
             cargarReporte();
         }
 
@@ -43,7 +43,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             OrdenReparacionD pOrdenReparacionD = new OrdenReparacionD();
             rpInformeReparacionesAtendidasXmecanico rp = new rpInformeReparacionesAtendidasXmecanico();
 
-            rp.SetDataSource(pOrdenReparacionD.reporteReparacionesEmpleado(fechaE, fechaS, empleado));
+            rp.SetDataSource(pOrdenReparacionD.reporteReparacionesEmpleado(fechaE, fechaS/*, empleado*/));
             this.crystalReportViewer1.ReportSource = rp;
 
         }

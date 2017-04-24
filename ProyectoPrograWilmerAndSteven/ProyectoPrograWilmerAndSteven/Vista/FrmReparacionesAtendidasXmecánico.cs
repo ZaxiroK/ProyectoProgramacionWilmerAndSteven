@@ -22,7 +22,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         public FrmReparacionesAtendidasXmecánico()
         {
             InitializeComponent();
-            llenarComboEmpleado();
+            /*llenarComboEmpleado();*/
             
             fechEntrada = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
             fechSalida = string.Format(FechaSalida.Value.ToString("yyyy-MM-dd"));
@@ -30,8 +30,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnInforme_Click(object sender, EventArgs e)
         {
-            
-            EmpleadoE pEmpl = ((EmpleadoE)this.cmbEmpleado.SelectedItem);
+            try
+            {
+                
+
+            /*EmpleadoE pEmpl = ((EmpleadoE)this.cmbEmpleado.SelectedItem);*/
             fechEntrada = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
             fechSalida = string.Format(FechaSalida.Value.ToString("yyyy-MM-dd"));
 
@@ -42,19 +45,25 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             if (fcEntrada > fcSalida) // Si la fecha indicada es menor o igual a la fecha actual
             {
-                MessageBox.Show("La fecha de entrada no puede ser mallor a la de la salida");
+                MessageBox.Show("La fecha de entrada no puede ser mayor a la de la salida");
             }
             else
             {
-                FrmInformeReparacionesAtendidasXmecanico frm = new FrmInformeReparacionesAtendidasXmecanico(fechEntrada, fechSalida, pEmpl.Cedula);
+                FrmInformeReparacionesAtendidasXmecanico frm = new FrmInformeReparacionesAtendidasXmecanico(fechEntrada, fechSalida/*, pEmpl.Cedula*/);
                 frm.ShowDialog();
             }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
-            
+
         }
 
 
-        public void llenarComboEmpleado()
+        /*public void llenarComboEmpleado()
         {
             
             EmpleadoD oEmpleadoD = new EmpleadoD();
@@ -69,7 +78,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
             
 
-        }
+        }*/
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

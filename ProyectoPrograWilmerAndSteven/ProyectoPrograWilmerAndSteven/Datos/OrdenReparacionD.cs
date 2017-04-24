@@ -224,7 +224,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             return estado;
         }
 
-        public DataTable reporteReparacionesEmpleado(string fecha1, string fecha2, int empleadoCed)
+        public DataTable reporteReparacionesEmpleado(string fecha1, string fecha2/*, int empleadoCed*/)
         {
             DataSet dsetInformeOrdenesPendientes;
             DataTable tabla = null;
