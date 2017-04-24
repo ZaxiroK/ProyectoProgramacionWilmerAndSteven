@@ -84,7 +84,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
            
         }
-
+        /// <summary>
+        /// Verifica los permisos del usuario para poner el checkbox en checked o no
+        /// </summary>
+        /// <param name="checkbox">un CheckBox llmado checkbox</param>
+        /// <returns>returna un estod true or false dependiendo el permiso</returns>
         public Boolean permisos(CheckBox checkbox)
         {
             if (checkbox.Checked)

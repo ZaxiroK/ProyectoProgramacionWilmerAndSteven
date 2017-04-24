@@ -50,7 +50,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         }
 
-
+        /// <summary>
+        /// se encarga de asignarle al vehiculo el modeloE que tiene a la hora de editarlo (comboBoxModelos)
+        /// </summary>
+        /// <param name="id">un integer llamado id</param>
         private void setModeloComboActual(int id)
         {
             int i, x = 0;
@@ -66,6 +69,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.comboBoxModelos.SelectedIndex = x;
         }
 
+        /// <summary>
+        /// se encarga de asignarle al vehiculo el clienteE que tiene a la hora de editarlo (comboBoxClientes)
+        /// </summary>
+        /// <param name="id">un integer llamado cedula</param>
         private void setClienteComboActual(int cedula)
         {
             int i, x = 0;
@@ -80,6 +87,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
             this.comboBoxClientes.SelectedIndex = x;
         }
+        /// <summary>
+        /// llena el comboBoxModelos con modeloE
+        /// </summary>
         public void llenarComboModelos()
         {
 
@@ -98,6 +108,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             comboBoxModelos.SelectedIndex = comboBoxModelos.Items.Count - 1;
 
         }
+
+        /// <summary>
+        /// llena el comboBoxClientes con clienteE
+        /// </summary>
         public void llenarComboClientes()
         {
             this.comboBoxClientes.Items.Clear();

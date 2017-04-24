@@ -21,7 +21,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.CargarDGview();
             dGVCatalogoRepuestos.ReadOnly = true;
         }
-
+        /// <summary>
+        /// carga el dGVCatalogoRepuestos
+        /// </summary>
         private void CargarDGview()
         {
             this.dGVCatalogoRepuestos.DataSource = "";

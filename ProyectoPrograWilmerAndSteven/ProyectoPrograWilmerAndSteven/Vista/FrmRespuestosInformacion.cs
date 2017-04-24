@@ -21,7 +21,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             InitializeComponent();
             llenarComboRepuesto();
         }
-
+        /// <summary>
+        /// llena el cmbRepuestos con RepuestosE
+        /// </summary>
         public void llenarComboRepuesto()
         {
 

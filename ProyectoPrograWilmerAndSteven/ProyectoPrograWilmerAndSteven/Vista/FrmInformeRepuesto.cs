@@ -27,6 +27,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             cargarReporte();
         }
 
+
+        /// <summary>
+        /// Carga el rpInformeRepuesto
+        /// </summary>
         private void cargarReporte()
         {
              OrdenRepuestoD pOrdenRepuestoD = new OrdenRepuestoD();

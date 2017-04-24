@@ -20,7 +20,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             InitializeComponent();
             this.cargarReporte();
         }
-
+        /// <summary>
+        /// Carga el rpInformeOrdenesPendientes
+        /// </summary>
         private void cargarReporte()
         {
             OrdenTrabajoD pOrdenTrabajoD = new OrdenTrabajoD();

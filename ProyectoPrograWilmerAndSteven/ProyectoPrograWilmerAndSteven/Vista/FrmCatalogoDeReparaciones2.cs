@@ -102,7 +102,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 }
             }
         }
-
+        /// <summary>
+        /// Carga el dGVCatalogoRepuestos 
+        /// </summary>
         private void CargarDGview()
         {
             this.dGVCatalogoRepuestos.DataSource = "";
@@ -113,7 +115,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 this.dGVCatalogoRepuestos.DataSource = catalogoRepuesto;
             }
         }
-
+        
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             this.CargarDGview();

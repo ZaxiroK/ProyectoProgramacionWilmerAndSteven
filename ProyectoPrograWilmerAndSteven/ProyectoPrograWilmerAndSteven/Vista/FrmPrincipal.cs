@@ -196,7 +196,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
 
         }
-
+       
         private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)

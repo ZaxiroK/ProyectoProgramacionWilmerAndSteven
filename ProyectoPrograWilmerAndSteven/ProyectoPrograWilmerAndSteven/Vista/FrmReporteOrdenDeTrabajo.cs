@@ -25,7 +25,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.oCedula = pCedula;
             this.cargarReporte();
         }
-
+        /// <summary>
+        /// carga el rpInformeOrdenTrabajoFactura
+        /// </summary>
         private void cargarReporte()
         {
             OrdenTrabajoD pOrdenTrabajoD = new OrdenTrabajoD();

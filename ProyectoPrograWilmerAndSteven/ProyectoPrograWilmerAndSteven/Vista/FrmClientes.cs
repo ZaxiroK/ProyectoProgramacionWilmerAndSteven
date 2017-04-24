@@ -42,6 +42,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 }
             }
         }
+        /// <summary>
+        /// carga el dGViewClientes
+        /// </summary>
 
         private void CargarDGview()
         {

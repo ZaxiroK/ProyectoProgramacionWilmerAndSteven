@@ -18,7 +18,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         private string fechaE;
         private string fechaS;
         //private int empleado;
-       
+
 
         public FrmInformeReparacionesAtendidasXmecanico()
         {
@@ -35,10 +35,12 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             cargarReporte();
         }
 
-        
 
 
-            private void cargarReporte()
+        /// <summary>
+        /// Carga el rpInformeReparacionesAtendidasXmecanico
+        /// </summary>
+        private void cargarReporte()
         {
             OrdenReparacionD pOrdenReparacionD = new OrdenReparacionD();
             rpInformeReparacionesAtendidasXmecanico rp = new rpInformeReparacionesAtendidasXmecanico();

@@ -33,7 +33,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             
         }
-
+        /// <summary>
+        /// carga el DTGOrdenTrabajos
+        /// </summary>
         private void cargarDTGview()
         {
             DTGOrdenTrabajos.Rows.Clear();

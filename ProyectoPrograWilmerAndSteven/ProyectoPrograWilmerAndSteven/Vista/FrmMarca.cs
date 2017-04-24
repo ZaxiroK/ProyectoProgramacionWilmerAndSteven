@@ -21,7 +21,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
              this.CargarDGview();
             dGVMarcas.ReadOnly = true;
         }
-
+        /// <summary>
+        /// carga el dGVMarcas
+        /// </summary>
         private void CargarDGview()
         {
             this.dGVMarcas.DataSource = "";

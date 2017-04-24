@@ -22,6 +22,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.CargarDGview();
             dGVVehiculos.ReadOnly = true;
         }
+        /// <summary>
+        /// carga el dGVVehiculos con VehiculosE
+        /// </summary>
         private void CargarDGview()
         {
             this.dGVVehiculos.Rows.Clear(); 

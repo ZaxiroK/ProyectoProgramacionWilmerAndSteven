@@ -57,7 +57,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             
             
         }
-
+        /// <summary>
+        /// llena el comboBoxMarcas con MarcasE
+        /// </summary>
         public void llenarComboMarcas()
         {
             this.comboBoxMarcas.Items.Clear(); 
@@ -72,7 +74,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             }
         }
-
+        /// <summary>
+        /// asiga la marca que le pertenece al modelo a editar
+        /// </summary>
+        /// <param name="id">un integer llamado id</param>
         private void setModeloActual(int id)
         {
             int i, x = 0;

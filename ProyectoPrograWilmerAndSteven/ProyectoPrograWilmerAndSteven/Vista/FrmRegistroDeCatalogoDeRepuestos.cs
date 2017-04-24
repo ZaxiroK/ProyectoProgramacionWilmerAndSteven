@@ -89,7 +89,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 SelectNextControl(ActiveControl, true, true, true, true);
             }
         }
-
+        
         private void txtPrecio_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)

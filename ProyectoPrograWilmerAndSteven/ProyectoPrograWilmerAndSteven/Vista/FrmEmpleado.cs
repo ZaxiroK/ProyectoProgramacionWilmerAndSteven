@@ -21,7 +21,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.CargarDGview();
             dGViewEmpleados.ReadOnly = true;
         }
-
+        /// <summary>
+        /// carga el dGViewEmpleados
+        /// </summary>
         private void CargarDGview()
         {
             this.dGViewEmpleados.Rows.Clear();

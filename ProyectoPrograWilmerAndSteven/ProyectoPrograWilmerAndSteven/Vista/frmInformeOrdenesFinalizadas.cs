@@ -23,7 +23,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             
             this.cargarReporte();
         }
-
+        /// <summary>
+        /// Carga el rpInformeOrdenesFinalizadasPorDia
+        /// </summary>
         private void cargarReporte()
         {
             OrdenTrabajoD pOrdenTrabajoD = new OrdenTrabajoD();

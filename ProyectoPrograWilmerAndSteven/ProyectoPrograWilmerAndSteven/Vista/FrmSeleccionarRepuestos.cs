@@ -144,7 +144,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             return estado;
 
         }
-
+        /// <summary>
+        /// llena el cmbRepuestos CatalogoRepuestoE 
+        /// </summary>
         public void llenarComboRepuesto()
         {
 
@@ -156,7 +158,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 this.cmbRepuestos.Items.Add(oRespuestoE);
             }
         }
-
+        
         public void llenarComboCantidad()
         {
           for (int i = 1; i < 300; i++)

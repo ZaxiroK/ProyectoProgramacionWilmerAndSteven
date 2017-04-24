@@ -21,6 +21,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.CargarDGview();
             dGVModelos.ReadOnly = true;
         }
+        /// <summary>
+        /// carga el dGVModelos
+        /// </summary>
         private void CargarDGview()
         {
             

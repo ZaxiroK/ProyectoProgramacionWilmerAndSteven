@@ -134,6 +134,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
 
         }
+        
         public void validarEstado(OrdenTrabajoE pOrdenTrabajoE)
         {
             if (pOrdenTrabajoE.Estado.Equals('S'))

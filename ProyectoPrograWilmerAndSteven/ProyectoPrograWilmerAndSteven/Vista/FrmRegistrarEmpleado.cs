@@ -43,6 +43,9 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             setPuestoActual(puestoEActual.IdPuesto);
 
         }
+        /// <summary>
+        /// llena el comboBoxPuesto con PuestosE
+        /// </summary>
         public void llenarComboPuestos()
         {
             this.comboBoxPuesto.Items.Clear();

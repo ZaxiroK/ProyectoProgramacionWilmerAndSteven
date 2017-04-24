@@ -103,19 +103,23 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 MessageBox.Show("¡Por favor ingrese todos los datos!");
             }
         }
-
+        /// <summary>
+        /// llena el cmbReparacion con ReparacionE
+        /// </summary>
         public void llenarComboReparacion()
         {
 
             CatalogoReparacionD oReparacionD = new CatalogoReparacionD();
             List<CatalogoReparacionE> reparacion = oReparacionD.obtenerCatalogoReaparaciones();
 
-            foreach (CatalogoReparacionE oRespuestoE in reparacion)
+            foreach (CatalogoReparacionE oReparacionE in reparacion)
             {
-                this.cmbReparacion.Items.Add(oRespuestoE);
+                this.cmbReparacion.Items.Add(oReparacionE);
             }
         }
-
+        /// <summary>
+        /// llena el cmbEmpleado con EmpleadoE
+        /// </summary>
         public void llenarComboEmpleado()
         {
 
