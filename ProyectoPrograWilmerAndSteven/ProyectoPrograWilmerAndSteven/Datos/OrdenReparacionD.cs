@@ -250,7 +250,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
 
 
-            "where cr.id_catalogo_reparacion = oe.id_catalogo_reparacion and cr.id_orden_de_trabajo = t.id_orden_de_trabajo and cr.id_empleado = " + empleadoCed +
+            "where cr.id_catalogo_reparacion = oe.id_catalogo_reparacion and cr.id_orden_de_trabajo = t.id_orden_de_trabajo and cr.id_empleado = e.cedula " /*+ empleadoCed*/ +
 
 
             "and cast(fecha_de_ingreso_de_vehiculo as date) between '" + fecha1.ToString() + "' and '" + fecha2.ToString() + "'";

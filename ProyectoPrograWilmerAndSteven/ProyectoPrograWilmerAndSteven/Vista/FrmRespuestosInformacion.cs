@@ -38,9 +38,29 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            CatalogoRepuestoE pCata = ((CatalogoRepuestoE)this.cmbRepuestos.SelectedItem);
-            FrmInformeRepuesto frm = new FrmInformeRepuesto(pCata.IdCatalogoRepuesto);
-            frm.ShowDialog();
+            try
+            {
+                CatalogoRepuestoE pCata = ((CatalogoRepuestoE)this.cmbRepuestos.SelectedItem);
+                FrmInformeRepuesto frm = new FrmInformeRepuesto(pCata.IdCatalogoRepuesto);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 

@@ -23,6 +23,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
             llenarComboEmpleado();
+            
             fechEntrada = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
             fechSalida = string.Format(FechaSalida.Value.ToString("yyyy-MM-dd"));
         }
@@ -63,10 +64,23 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             {
                 this.cmbEmpleado.Items.Add(oEmpleadoE);
                 this.cmbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbEmpleado.SelectedIndex = -1;
-                
-            }
+                cmbEmpleado.SelectedIndex = cmbEmpleado.Items.Count - 1;
 
+            }
+            
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
