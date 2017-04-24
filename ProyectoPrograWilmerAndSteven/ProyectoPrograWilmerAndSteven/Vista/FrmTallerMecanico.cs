@@ -111,9 +111,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         }
 
-        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        private void btnRepuestos_Click(object sender, EventArgs e)
         {
-
+            FrmRespuestosInformacion frm = new FrmRespuestosInformacion();
+            frm.ShowDialog();
         }
     }
 }

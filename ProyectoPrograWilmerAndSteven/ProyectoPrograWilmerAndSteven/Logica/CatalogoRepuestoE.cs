@@ -104,7 +104,7 @@ namespace Logica
 
         public override string ToString()
         {
-            return (this.nombreDelRepuesto +"-"+ this.annoAlQuePertenece + "= ₡" + this.precio);
+            return (this.nombreDelRepuesto);
         }
     }
 }

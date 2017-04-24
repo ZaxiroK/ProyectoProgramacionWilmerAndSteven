@@ -222,7 +222,7 @@
             this.btnRepuestos.Name = "btnRepuestos";
             this.btnRepuestos.Size = new System.Drawing.Size(315, 26);
             this.btnRepuestos.Text = "Repuestos Informacion";
-            this.btnRepuestos.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            this.btnRepuestos.Click += new System.EventHandler(this.btnRepuestos_Click);
             // 
             // FrmTallerMecanico
             // 

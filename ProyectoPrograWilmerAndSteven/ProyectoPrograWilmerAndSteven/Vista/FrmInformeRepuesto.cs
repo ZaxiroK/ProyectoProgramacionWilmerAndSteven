@@ -24,6 +24,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
             InitializeComponent();
             this.id_cata = id;
+            cargarReporte();
         }
 
         private void cargarReporte()
