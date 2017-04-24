@@ -15,8 +15,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmInformeReparacionesAtendidasXmecanico : Form
     {
-        private DateTime fechaE;
-        private DateTime fechaS;
+        private string fechaE;
+        private string fechaS;
         private int empleado;
        
 
@@ -26,7 +26,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         }
 
 
-        public FrmInformeReparacionesAtendidasXmecanico(DateTime fchEntrada, DateTime fchSalida, int emp)
+        public FrmInformeReparacionesAtendidasXmecanico(string fchEntrada, string fchSalida, int emp)
         {
             InitializeComponent();
             this.fechaE = fchEntrada;

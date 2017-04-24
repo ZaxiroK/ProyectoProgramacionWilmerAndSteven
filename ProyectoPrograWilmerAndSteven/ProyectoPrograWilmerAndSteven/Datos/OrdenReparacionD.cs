@@ -224,7 +224,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             return estado;
         }
 
-        public DataTable reporteReparacionesEmpleado(DateTime fecha1, DateTime fecha2, int empleadoCed)
+        public DataTable reporteReparacionesEmpleado(string fecha1, string fecha2, int empleadoCed)
         {
             DataSet dsetInformeOrdenesPendientes;
             DataTable tabla = null;
@@ -253,7 +253,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             "where cr.id_catalogo_reparacion = oe.id_catalogo_reparacion and cr.id_orden_de_trabajo = t.id_orden_de_trabajo and cr.id_empleado = " + empleadoCed +
 
 
-            "and cast(fecha_de_ingreso_de_vehiculo as date) between '" + fecha1 + "' and '" + fecha2 + "'";
+            "and cast(fecha_de_ingreso_de_vehiculo as date) between '" + fecha1.ToString() + "' and '" + fecha2.ToString() + "'";
             dsetInformeOrdenesPendientes = this.conexion.ejecutarConsultaSQL(sql);
 
             if (!this.conexion.IsError)

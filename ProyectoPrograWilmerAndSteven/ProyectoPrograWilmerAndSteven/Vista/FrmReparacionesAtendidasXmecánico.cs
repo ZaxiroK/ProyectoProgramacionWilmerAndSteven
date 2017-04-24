@@ -14,22 +14,27 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmReparacionesAtendidasXmecánico : Form
     {
-        private DateTime fechEntrada;
-        private DateTime fechSalida;
+        private string fechEntrada;
+        private string fechSalida;
+        private DateTime fcEntrada;
+        private DateTime fcSalida;
         
+
         public FrmReparacionesAtendidasXmecánico()
         {
             InitializeComponent();
             llenarComboEmpleado();
+            fechEntrada = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
+            fechSalida = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
         }
 
         private void btnInforme_Click(object sender, EventArgs e)
         {
 
             EmpleadoE pEmpl = ((EmpleadoE)this.cmbEmpleado.SelectedItem);
-           
-                fechEntrada = fechaEntrada.Value;
-            fechSalida = FechaSalida.Value;
+            fechEntrada = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
+            fechSalida = string.Format(fechaEntrada.Value.ToString("yyyy-MM-dd"));
+
             FrmInformeReparacionesAtendidasXmecanico frm = new FrmInformeReparacionesAtendidasXmecanico(fechEntrada, fechSalida, pEmpl.Cedula);
             frm.ShowDialog();
         }

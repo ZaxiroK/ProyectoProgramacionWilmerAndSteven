@@ -31,6 +31,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (CatalogoRepuestoE oRespuestoE in repuestos)
             {
                 this.cmbRepuestos.Items.Add(oRespuestoE);
+                this.cmbRepuestos.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbRepuestos.SelectedIndex = cmbRepuestos.Items.Count - 1;
             }
         }
 
