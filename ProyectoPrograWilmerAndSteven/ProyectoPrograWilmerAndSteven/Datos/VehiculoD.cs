@@ -38,7 +38,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.error = false;
             this.errorMsg = "";
         }
-
+        /// <summary>
+        /// obtiene todos los VehiculoE de la bd
+        /// </summary>
+        /// <returns>un lista de VehiculoE</returns>
         public List<VehiculoE> obtenerVehiculos()
         {
             this.limpiarError();
@@ -94,7 +97,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return vehiculos;
         }
-
+        /// <summary>
+        /// obtiene los VehiculoE de una orden de trabajo
+        /// </summary>
+        /// <param name="pCedula">un integer llamado pCedula refiriendose al id_cliente</param>
+        /// <returns>los vehiculos de un cliente de en especifico</returns>
         public List<VehiculoE> obtenerVehiculosOrdenTrabajo(int pCedula)
         {
             this.limpiarError();
@@ -132,7 +139,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return vehiculos;
         }
-
+        /// <summary>
+        /// agrega un VehiculoE a la bd
+        /// </summary>
+        /// <param name="pVehiculo">un VehiculoE llamado pVehiculo</param>
+        /// <returns>retorna un boleano dando a conocer si se agrego la VehiculoE en la bd o no</returns>
         public bool agregarVehiculo(VehiculoE pVehiculo)
         {
             this.limpiarError();
@@ -174,6 +185,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// borra un VehiculoE de la bd
+        /// </summary>
+        /// <param name="pVehiculo">un VehiculoE llamado pVehiculo</param>
+        /// <returns>retorna un boleano dando a conocer si se borro el VehiculoE en la bd o no</returns>
         public bool borrarVehiculo(VehiculoE pVehiculo)
         {
             bool estado = true;
@@ -202,6 +218,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// modifica un VehiculoE de la bd
+        /// </summary>
+        /// <param name="pVehiculo">un VehiculoE llamado pVehiculo</param>
+        /// <param name="id">un integer llamado id</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico el VehiculoE en la bd o no</returns>
         public bool modificarVehiculo(VehiculoE pVehiculo, int id)
         {
             bool estado = true;

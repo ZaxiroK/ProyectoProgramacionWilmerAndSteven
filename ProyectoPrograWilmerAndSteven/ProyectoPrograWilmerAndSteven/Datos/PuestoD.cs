@@ -38,7 +38,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.error = false;
             this.errorMsg = "";
         }
-
+        /// <summary>
+        /// obtiene los PuestoE de la bd
+        /// </summary>
+        /// <returns>una lista de PuestoE</returns>
         public List<PuestoE> obtenerPuestos()
         {
 
@@ -59,7 +62,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return puestos;
         }
-         public bool agregarPuesto(PuestoE pPuesto)
+        /// <summary>
+        /// agrega un PuestoE en la bd
+        /// </summary>
+        /// <param name="pPuesto">un PuestoE llamado pPuesto</param>
+        /// <returns>retorna un boleano dando a conocer si se agrego el PuestoE a la bd o no</returns>
+        public bool agregarPuesto(PuestoE pPuesto)
         {
             this.limpiarError();
             bool estado = true;
@@ -91,6 +99,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// borra un PuestoE de la bd
+        /// </summary>
+        /// <param name="pPuesto">un PuestoE llamado pPuesto</param>
+        /// <returns>retorna un boleano dando a conocer si se borro el PuestoE en la bd o no</returns>
         public bool borrarPuesto(PuestoE pPuesto)
         {
             bool estado = true;
@@ -119,6 +132,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// modifica un PuestoE en la bd
+        /// </summary>
+        /// <param name="pPuesto">un PuestoE llamado pPuesto</param>
+        /// <param name="puesto">un integer llamado puesto refiriendose al id</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico el PuestoE en la bd o no</returns>
         public bool modificarPuesto(PuestoE pPuesto, int puesto)
         {
             bool estado = true;

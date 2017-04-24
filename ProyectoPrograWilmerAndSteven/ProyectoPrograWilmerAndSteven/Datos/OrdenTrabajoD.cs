@@ -38,7 +38,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.error = false;
             this.errorMsg = "";
         }
-
+        /// <summary>
+        /// obtiene una todas las OrdenTrabajoE de la bd
+        /// </summary>
+        /// <returns>una lista de OrdenTrabajoE</returns>
         public List<OrdenTrabajoE> obtenerOrdenTrabajos()
         {
 
@@ -119,6 +122,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
             return ordenesTrabajos;
         }
+        /// <summary>
+        /// agerga una OrdenTrabajoE a la bd
+        /// </summary>
+        /// <param name="pOrdenTrabajo">una OrdenTrabajoE llamada pOrdenTrabajo</param>
+        /// <param name="costo">un double llamado costo </param>
+        /// <returns>retorna un numero dando a conocer si se agrego la OrdenTrabajoE a la bd o no</returns>
         public string agregarOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo, double costo)
         {
             this.limpiarError();
@@ -165,6 +174,13 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
         }
 
+        /// <summary>
+        ///  agrega una OrdenTrabajoE a la bd   
+        /// </summary>
+        /// <param name="pOrdenTrabajo">una OrdenTrabajoE llamada pOrdenTrabajo</param>
+        /// <param name="costo">un double llamado costo</param>
+        /// <returns>retorna un numero a la factura de OrdenTrabajoE en la bd o no</returns>
+
         public string agregarOrdenDeTrabajoFactura(OrdenTrabajoE pOrdenTrabajo, double costo)
         {
             this.limpiarError();
@@ -208,6 +224,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return numero;
         }
+        /// <summary>
+        /// borra una OrdenTrabajoE de la bd
+        /// </summary>
+        /// <param name="pOrdenTrabajo">una OrdenTrabajoE llamada pOrdenTrabajo</param>
+        /// <returns>retorna un boleano dando a conocer si se borro la OrdenTrabajoE en la bd o no</returns>
         public bool borrarOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo)
         {
             bool estado = false;
@@ -236,6 +257,13 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+
+        /// <summary>
+        ///  modifica una OrdenTrabajoE de la bd
+        /// </summary>
+        /// <param name="pOrdenTrabajo">una OrdenTrabajoE llamada pOrdenTrabajo </param>
+        /// <param name="costoTotal">un double llamado costoTotal</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico la OrdenTrabajoE en la bd o no</returns>
         public bool modificarOrdenDeTrabajo(OrdenTrabajoE pOrdenTrabajo, double costoTotal)
         {
             bool estado = true;
@@ -277,7 +305,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-
+        /// <summary>
+        /// modifica una  OrdenTrabajoE factura
+        /// </summary>
+        /// <param name="pOrdenTrabajo">una OrdenTrabajoE llamada pOrdenTrabajo</param>
+        /// <param name="costoTotal">un double llamado costoTotal</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico la OrdenTrabajoE factura en la bd o no</returns>
         public bool modificarOrdenDeTrabajoFactura(OrdenTrabajoE pOrdenTrabajo, double costoTotal)
         {
             bool estado = true;
@@ -318,7 +351,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private int numeroFactura()
         {
             int numeroFactura = 0;
@@ -337,7 +373,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return numeroFactura;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pFecha"></param>
+        /// <param name="pCodigo"></param>
+        /// <returns></returns>
         public bool modificarFechaFinalizar(DateTime pFecha, int pCodigo)
         {
             bool estado = true;
@@ -367,6 +408,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// trae una OrdenTrabajoE de la bd con sus respectivos datos 
+        /// </summary>
+        /// <param name="pOrdenDeTrabajo">un integer llamado pOrdenDeTrabajo</param>
+        /// <returns> una tabla con la OrdenTrabajoE</returns>
         public DataTable consultaOrdenDeTrabajoReporte(int pOrdenDeTrabajo)
         {
             DataSet dsetOrdenTrabajos;
@@ -412,7 +458,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
             return tabla;
         }
-
+        /// <summary>
+        /// trae las OrdenTrabajoE en estado finalizads de la bd con respectivos datos 
+        /// </summary>
+        /// <returns> una tabla con la OrdenTrabajoE finalizadas</returns>
         public DataTable consultaOrdenesFinalizadas()
         {
             DataSet dsetOrdenesFinalizadas;
@@ -445,7 +494,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             
         }
 
-
+        /// <summary>
+        /// trae las OrdenTrabajoE en estado pendientes de la bd con respectivos datos 
+        /// </summary>
+        /// <returns>una tabla con la OrdenTrabajoE pendientes</returns>
         public DataTable consultaInformeOrdenesPendientes()
         {
             DataSet dsetInformeOrdenesPendientes;

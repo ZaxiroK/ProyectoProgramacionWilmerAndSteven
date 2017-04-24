@@ -39,6 +39,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.errorMsg = "";
         }
 
+
+        
+        /// <summary>
+        /// obtiene un catalgo de repuesto
+        /// </summary>
+        /// <returns>una lista de catalogos de repuestos</returns>
         public List<CatalogoRepuestoE> obtenerCatalogoRepuestos()
         {
 
@@ -58,6 +64,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return catalogoRepuestos;
         }
+        /// <summary>
+        /// agrega un catalogo de repuesto a la bd
+        /// </summary>
+        /// <param name="pCatalogoRepuesto">un CatalogoRepuestoE llamado pCatalogoRepuesto</param>
+        /// <returns>retorna un boleano dando a conocer si se guardo en la bd o no</returns>
         public bool agregarCatalogoRepuesto(CatalogoRepuestoE pCatalogoRepuesto)
         {
             this.limpiarError();
@@ -92,6 +103,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// borra un CatalogoRepuestoE de la bd
+        /// </summary>
+        /// <param name="pCatalogoRepuesto">un CatalogoRepuestoE llamado pCatalogoRepuesto</param>
+        /// <returns>retorna un boleano dando a conocer si se borro de la bd o no</returns>
         public bool borrarCatalogoRepuesto(CatalogoRepuestoE pCatalogoRepuesto)
         {
             bool estado = true;
@@ -120,6 +136,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        ///  borra un CatalogoRepuestoE de la bd
+        /// </summary>
+        /// <param name="pCatalogoRepuesto">un CatalogoRepuestoE llamado pCatalogoRepuesto</param>
+        /// <param name="codigo">un integer llamado codigo refiriendose a el id</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico de la bd o no</returns>
         public bool modificarCatalogoRepuesto(CatalogoRepuestoE pCatalogoRepuesto , int codigo)
         {
             bool estado = true;

@@ -38,7 +38,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.error = false;
             this.errorMsg = "";
         }
-
+        /// <summary>
+        /// obtiene un ModeloE de la bd
+        /// </summary>
+        /// <returns>una lista de ModeloE</returns>
         public List<ModeloE> obtenerModelos()
         {
 
@@ -60,6 +63,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return modelos;
         }
+        /// <summary>
+        /// agrega un ModeloE a la bd
+        /// </summary>
+        /// <param name="pModelo">un ModeloE llamada pModelo</param>
+        /// <returns>retorna un boleano dando a conocer si se agrego el ModeloE a la bd o no</returns>
         public bool agregarModelo(ModeloE pModelo)
         {
             this.limpiarError();
@@ -93,6 +101,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// borra un ModeloE de la bd
+        /// </summary>
+        /// <param name="pModelo">un ModeloE llamada pModelo</param>
+        /// <returns>retorna un boleano dando a conocer si se agrego el ModeloE a la bd o no</returns>
         public bool borrarModelo(ModeloE pModelo)
         {
             bool estado = true;
@@ -121,6 +134,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// modifica un ModeloE de la bd
+        /// </summary>
+        /// <param name="pModelo">un ModeloE llamada pModelo</param>
+        /// <param name="codigo">un integer llamado codigo refiriendose al id</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico el ModeloE en la bd o no</returns>
         public bool modificarModelo(ModeloE pModelo, int codigo)
         {
             bool estado = true;

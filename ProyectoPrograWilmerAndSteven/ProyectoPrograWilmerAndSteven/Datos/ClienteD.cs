@@ -38,7 +38,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.error = false;
             this.errorMsg = "";
         }
-
+        /// <summary>
+        /// obtiene un ClienteE de la bd
+        /// </summary>
+        /// <returns>retorna una lista de ClienteE</returns>
         public List<ClienteE> obtenerClientes()
         {
 
@@ -61,6 +64,13 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return clientes;
         }
+
+       
+        /// <summary>
+        /// agrega un ClienteE a la bd
+        /// </summary>
+        /// <param name="pCliente">un ClienteE llamado pCliente</param>
+        /// <returns>retorna un boleano dando a conocer si se guardo en la bd o no</returns>
         public bool agregarCliente(ClienteE pCliente)
         {
             this.limpiarError();
@@ -100,6 +110,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// borra un ClienteE de la bd
+        /// </summary>
+        /// <param name="pCliente">un ClienteE llamado pCliente</param>
+        /// <returns>retorna un boleano dando a conocer si se borro en la bd o no</returns>
         public bool borrarCliente(ClienteE pCliente)
         {
             bool estado = true;
@@ -128,6 +143,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// modifica un ClienteE de la bd
+        /// </summary>
+        /// <param name="pCliente">un ClienteE llamado pCliente</param>
+        /// <param name="cliente">un integer llamado cliente refiriendose a la cedula o id</param>
+        /// <returns>retorna un boleano dando a conocer si se borro en la bd o no</returns>
         public bool modificarCliente(ClienteE pCliente, int cliente)
         {
             bool estado = true;
@@ -166,7 +187,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-
+        /// <summary>
+        /// comprueba si un ClienteE de la bd existe
+        /// </summary>
+        /// <param name="cedula">un integer llamado cedula refiriendose al id</param>
+        /// <returns>un cliente si se encuentra en la bd</returns>
         public ClienteE comprobarDueño(int cedula)
         {
 
@@ -190,30 +215,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return cliente;
         }
-
-        public DataTable consultaClienteReporte(int cedula)
-        {
-            DataSet dsetClienteReporte;
-            DataTable tabla = null;
-
-            Parametro oParametro = new Parametro();
-            oParametro.agregarParametro("@cedula", NpgsqlDbType.Numeric, cedula);
-
-            string sql = "select c.cedula as cedula, c.nombre as nombre," +
-                            "c.apellido1 as apellido1, c.apellido2 as apellido2," +
-                             "c.direccion as direccion, c.telefono1 as telefono1, c.telefono2 as telefono2,c.telefono3 as telefono3" +
-                               " from schtaller.cliente c " +
-
-            " where c.cedula = " + cedula;
-            dsetClienteReporte = this.conexion.ejecutarConsultaSQL(sql);
-
-            if (!this.conexion.IsError)
-            {
-                tabla = dsetClienteReporte.Tables[0].Copy();
-            }
-
-            return tabla;
-        }
+        
 
     }
 }

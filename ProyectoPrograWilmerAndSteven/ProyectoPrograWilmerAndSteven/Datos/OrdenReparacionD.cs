@@ -39,7 +39,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.error = false;
             this.errorMsg = "";
         }
-
+        /// <summary>
+        /// obtiene todas las  OrdenReparacionE de la bd
+        /// </summary>
+        /// <param name="pOrdenTrabajo"></param>
+        /// <returns>una lista de OrdenReparacionE</returns>
         public List<OrdenReparacionE> obtenerOredenesReaparaciones(int pOrdenTrabajo)
         {
 
@@ -125,6 +129,14 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return ordenesReparaciones;
         }
+        /// <summary>
+        /// agrega un OrdenReparacionE a la bd
+        /// </summary>
+        /// <param name="pOrdenReparacionE">una OrdenReparacionE llamada pOrdenReparacionE</param>
+        /// <param name="pOrdenReparacion">un integer llamado pOrdenReparacion refiriendose al id</param>
+        /// <returns>retorna un boleano dando a conocer si se agrego la OrdenReparacionE en la bd o no</returns>
+        /// 
+
         public bool agregarOrdenReparacion(OrdenReparacionE pOrdenReparacionE, int pOrdenReparacion)
         {
             this.limpiarError();
@@ -161,6 +173,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+
+        /// <summary>
+        /// borra una OrdenTrabajoE de la bd
+        /// </summary>
+        /// <param name="pOrdenTrabajoE">un integer llamado pOrdenTrabajoE refiriendose al id</param>
+        /// <returns>retorna un boleano dando a conocer si se elimino la OrdenReparacionE en la bd o no</returns>
         public bool borrarOrdenReparacion(OrdenTrabajoE pOrdenTrabajoE)
         {
             bool estado = true;
@@ -189,6 +207,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// modifica una OrdenReparacionE en la bd
+        /// </summary>
+        /// <param name="pOrdenReparacionE">un integer llamado pOrdenReparacion refiriendose al id</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico la OrdenReparacionE en la bd o no</returns>
         public bool modificarOrdenReparacion(OrdenReparacionE pOrdenReparacionE)
         {
             bool estado = true;
@@ -223,7 +246,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
-
+        /// <summary>
+        /// estrae las OrdenReparacionE que estan pendientes
+        /// </summary>
+        /// <param name="fecha1">un string llamado fecha1 refiriendose al inicio de un rango de fechas</param>
+        /// <param name="fecha2">un string llamado fecha2 refiriendose al fin de un rango de fechas</param>
+        /// <returns>una tabla de OrdenReparacionE de </returns>
         public DataTable reporteReparacionesEmpleado(string fecha1, string fecha2/*, int empleadoCed*/)
         {
             DataSet dsetInformeOrdenesPendientes;

@@ -38,7 +38,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.error = false;
             this.errorMsg = "";
         }
-
+        /// <summary>
+        /// obtiene un EmpleadoE de la bd
+        /// </summary>
+        /// <returns>una lista de EmpleadoE </returns>
         public List<EmpleadoE> obtenerEmpleados()
         {
 
@@ -72,6 +75,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return empleados;
         }
+        /// <summary>
+        /// agrega un EmpleadoE a la bd
+        /// </summary>
+        /// <param name="pEmpleado"> un EmpleadoE llamado pEmpleado</param>
+        /// <returns>retorna un boleano dando a conocer si se agrego en la bd o no </returns>
         public bool agregarEmpleado(EmpleadoE pEmpleado)
         {
             this.limpiarError();
@@ -111,6 +119,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// borra un EmpleadoE de la bd
+        /// </summary>
+        /// <param name="pEmpleado"> un Empleado llamado p Empleado</param>
+        /// <returns>retorna un boleano dando a conocer si se borro de la bd o no</returns>
         public bool borrarEmpleado(EmpleadoE pEmpleado)
         {
             bool estado = true;
@@ -139,6 +152,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// modifica un EmpleadoE de la bd
+        /// </summary>
+        /// <param name="pEmpleado">un EmpleadoE llamado pEmpleado</param>
+        /// <param name="cedula">un integer llamdo cedula refiriendose al id</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico en la bd o no</returns>
         public bool modificarEmpleado(EmpleadoE pEmpleado, int cedula)
         {
             bool estado = true;

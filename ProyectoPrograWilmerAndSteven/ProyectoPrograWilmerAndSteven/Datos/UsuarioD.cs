@@ -38,7 +38,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.error = false;
             this.errorMsg = "";
         }
-
+        /// <summary>
+        /// obtiene todos los UsuarioE de la bd
+        /// </summary>
+        /// <returns>una lista de UsuarioE</returns>
         public List<UsuarioE> obtenerUsuarios()
         {
 
@@ -61,7 +64,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return usuarios;
         }
-
+        /// <summary>
+        /// comprueba los permisos del UsuarioE en el sistema
+        /// </summary>
+        /// <param name="login">un string llamado login</param>
+        /// <param name="password">un string llamado password</param>
+        /// <returns>los permisos del UsuarioE</returns>
         public UsuarioE comprobarUsuario(string login, string password)
         {
 
@@ -89,6 +97,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             
             return usuario;
         }
+        /// <summary>
+        /// agrega un UsuarioE a la bd
+        /// </summary>
+        /// <param name="pUsuario">us UsuarioE llamado pUsuario</param>
+        /// <returns>retorna un boleano dando a conocer si se agrego el UsuarioE a la bd o no</returns>
         public bool agregarUsuario(UsuarioE pUsuario)
         {
             this.limpiarError();
@@ -125,6 +138,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// borra un UsuarioE de la bd
+        /// </summary>
+        /// <param name="pUsuario">un UsuarioE llamado pUsuario</param>
+        /// <returns>retorna un boleano dando a conocer si se borro el UsuarioE a la bd o no</returns>
         public bool borrarUsuario(UsuarioE pUsuario)
         {
             bool estado = true;
@@ -153,6 +171,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// modifica un UsuarioE de la bd
+        /// </summary>
+        /// <param name="pUsuario">un UsuarioE llamado pUsuario</param>
+        /// <param name="login">un string llamado login</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico el UsuarioE a la bd o no</returns>
         public bool modificarUsuario(UsuarioE pUsuario, string login)
         {
             bool estado = true;

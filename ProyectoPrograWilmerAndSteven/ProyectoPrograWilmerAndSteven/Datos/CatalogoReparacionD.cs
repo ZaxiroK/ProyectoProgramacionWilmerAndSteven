@@ -39,6 +39,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.errorMsg = "";
         }
 
+        /// <summary>
+        /// Obtiene los catalagos de reparaciones almacenados en la bd
+        /// </summary>
+        /// <returns>retorna una list de los catalogos Reparacion</returns> 
         public List<CatalogoReparacionE> obtenerCatalogoReaparaciones()
         {
 
@@ -60,6 +64,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
             return catalogoReparaciones;
         }
+
+        /// <summary>
+        /// agrega un catalogo de reparacion a la bd
+        /// </summary>
+        /// <param name="pCatalogoReparacion">un CatalogoReparacionE llamado pCatalogoReparacion </param>
+        /// <returns>retorna un estado boleano de si se guardo o no en la bd</returns> 
         public bool agregarCatalogoReparacion(CatalogoReparacionE pCatalogoReparacion)
         {
             this.limpiarError();
@@ -92,6 +102,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+
+        /// <summary>
+        /// borra un catalgo especificado en la bd
+        /// </summary>
+        /// <param name="pCatalogoReparacion">un CatalogoReparacionE llamado pCatalogoReparacion</param>
+        /// <returns>retorna un estado boleano de si se borro o no en la bd</returns>
         public bool borrarCatalogoReparacion(CatalogoReparacionE pCatalogoReparacion)
         {
             bool estado = true;
@@ -120,6 +136,13 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+
+        /// <summary>
+        /// modifica un catalogo de repacion
+        /// </summary>
+        /// <param name="pCatalogoReparacion">un CatalogoReparacionE llamado pCatalogoReparacion</param>
+        /// <param name="codigo">un entero llamado codigo refiriendose al id</param>
+        /// <returns>retorna un estado boleano de si se modifico o no en la bd</returns>
         public bool modificarCatalogoReparacion(CatalogoReparacionE pCatalogoReparacion, int codigo)
         {
             bool estado = true;

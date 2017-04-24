@@ -38,7 +38,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             this.error = false;
             this.errorMsg = "";
         }
-
+        /// <summary>
+        /// obtiene una MarcaE de la bd
+        /// </summary>
+        /// <returns>retorna una listas de MarcaE</returns>
         public List<MarcaE> obtenerMarcas()
         {
 
@@ -57,6 +60,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return marcas;
         }
+        /// <summary>
+        /// agrega una MarcaE a la bd
+        /// </summary>
+        /// <param name="pMarca">una MarcaE llamada pMarca</param>
+        /// <returns>retorna un boleano dando a conocer si se agrego a la MarcaE a la bd o no </returns>
         public bool agregarMarca(MarcaE pMarca)
         {
             this.limpiarError();
@@ -87,6 +95,11 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        ///  borra una MarcaE de la bd
+        /// </summary>
+        /// <param name="pMarca">una MarcaE llamada pMarca</param>
+        /// <returns>retorna un boleano dando a conocer si se borro la MarcaE de la bd o no</returns>
         public bool borrarMarca(MarcaE pMarca)
         {
             bool estado = true;
@@ -115,6 +128,12 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+        /// <summary>
+        /// modifica una MarcaE de la bd
+        /// </summary>
+        /// <param name="pMarca">una MarcaE llamada pMarca</param>
+        /// <param name="codigo">un integer llamado codigo refiriendose al id</param>
+        /// <returns>retorna un boleano dando a conocer si se modifico la MarcaE de la bd o no</returns>
         public bool modificarMarca(MarcaE pMarca, int codigo)
         {
             bool estado = true;
