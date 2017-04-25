@@ -42,7 +42,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 {
                     if (oUsuario != null)
                     {
-                        FrmTallerMecanico oFrm = new FrmTallerMecanico();
+                        FrmTallerMecanico oFrm = new FrmTallerMecanico(oUsuario);
                         if (oUsuario.Administrador)
                         {
                             oFrm.Show();

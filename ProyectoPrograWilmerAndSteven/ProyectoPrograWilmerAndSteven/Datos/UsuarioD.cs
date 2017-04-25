@@ -51,14 +51,14 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             string sql = "select u.id_login as login, u.contrasenia as contrasenia, " +
                         " u.administrador as administrador, u.sistema as sistema," +
                         "u.parametros as parametros, u.administracion_de_ordenes as administracionOrdenes," +
-                        "u.gestion_gerencial as gestionGerencial "+
+                        "u.gestion_gerencial as gestionGerencial " +
                          "from schtaller.usuario u";
 
             dsetUsuarios = this.conexion.ejecutarConsultaSQL(sql);
             foreach (DataRow tupla in dsetUsuarios.Tables[0].Rows)
             {
-                UsuarioE oUsuario = new UsuarioE(tupla["login"].ToString(),tupla["contrasenia"].ToString(),Convert.ToBoolean(tupla["administrador"].ToString()),
-                    Convert.ToBoolean(tupla["sistema"].ToString()),Convert.ToBoolean(tupla["parametros"].ToString()),Convert.ToBoolean(tupla["administracionOrdenes"].ToString()),
+                UsuarioE oUsuario = new UsuarioE(tupla["login"].ToString(), tupla["contrasenia"].ToString(), Convert.ToBoolean(tupla["administrador"].ToString()),
+                    Convert.ToBoolean(tupla["sistema"].ToString()), Convert.ToBoolean(tupla["parametros"].ToString()), Convert.ToBoolean(tupla["administracionOrdenes"].ToString()),
                     Convert.ToBoolean(tupla["gestionGerencial"].ToString()));
                 usuarios.Add(oUsuario);
             }
@@ -81,7 +81,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                         "u.parametros as parametros, u.administracion_de_ordenes as administracionOrdenes," +
                         "u.gestion_gerencial as gestionGerencial " +
                          "from schtaller.usuario u " +
-                         "where id_login = " + "'"+ login + "' and contrasenia = " +"'"+ password +"'"  ;
+                         "where id_login = " + "'" + login + "' and contrasenia = " + "'" + password + "'";
 
             dsetUsuarios = this.conexion.ejecutarConsultaSQL(sql);
 
@@ -94,7 +94,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                     Convert.ToBoolean(dsetUsuarios.Tables[0].Rows[0]["gestionGerencial"].ToString()));
                 }
             }
-            
+
             return usuario;
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@login", NpgsqlDbType.Varchar, pUsuario.Login);
-                oP.agregarParametro("@contrasenia", NpgsqlDbType.Integer, pUsuario.Contrasenia);
+                oP.agregarParametro("@contrasenia", NpgsqlDbType.Varchar, pUsuario.Contrasenia);
                 oP.agregarParametro("@administrador", NpgsqlDbType.Boolean, pUsuario.Administrador);
                 oP.agregarParametro("@sistema", NpgsqlDbType.Boolean, pUsuario.Sistema);
                 oP.agregarParametro("@parametros", NpgsqlDbType.Boolean, pUsuario.Parametros);
@@ -183,7 +183,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
 
             try
             {
-                
+
 
 
                 string sql = "update schtaller.usuario set id_login = @login, contrasenia = @contrasenia, administrador = @administrador, sistema = @sistema, parametros = @parametros," +
@@ -191,7 +191,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 NpgsqlParameter oParametro = new NpgsqlParameter();
                 Parametro oP = new Parametro();
                 oP.agregarParametro("@login", NpgsqlDbType.Varchar, pUsuario.Login);
-                oP.agregarParametro("@contrasenia", NpgsqlDbType.Integer, pUsuario.Contrasenia);
+                oP.agregarParametro("@contrasenia", NpgsqlDbType.Varchar, pUsuario.Contrasenia);
                 oP.agregarParametro("@administrador", NpgsqlDbType.Boolean, pUsuario.Administrador);
                 oP.agregarParametro("@sistema", NpgsqlDbType.Boolean, pUsuario.Sistema);
                 oP.agregarParametro("@parametros", NpgsqlDbType.Boolean, pUsuario.Parametros);
@@ -213,5 +213,51 @@ namespace ProyectoPrograWilmerAndSteven.Datos
             }
             return estado;
         }
+
+        public bool cambioDeContrasenia(  string pw, string login, string nuevapw)
+        {
+            bool estado = true;
+
+            try
+            {
+
+               
+
+                string sql = "UPDATE schtaller.usuario SET contrasenia = " + nuevapw + " WHERE id_login = '" + login + "' and contrasenia = '" + pw + "';";
+                NpgsqlParameter oParametro = new NpgsqlParameter();
+                Parametro oP = new Parametro();
+                oP.agregarParametro("@login", NpgsqlDbType.Varchar, login);
+                oP.agregarParametro("@contrasenia", NpgsqlDbType.Varchar, nuevapw);
+                /*oP.agregarParametro("@administrador", NpgsqlDbType.Boolean, pUsuario.Administrador);
+                oP.agregarParametro("@sistema", NpgsqlDbType.Boolean, pUsuario.Sistema);
+                oP.agregarParametro("@parametros", NpgsqlDbType.Boolean, pUsuario.Parametros);
+                oP.agregarParametro("@administracionOrdenes", NpgsqlDbType.Boolean, pUsuario.AdministracionDeOrdenes);
+                oP.agregarParametro("@gestionGerencial", NpgsqlDbType.Boolean, pUsuario.GestionGerencial);*/
+                this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
+                if (this.conexion.IsError)
+                {
+
+                    estado = false;
+                    this.errorMsg = this.conexion.ErrorDescripcion;
+                }
+
+            }
+            catch (Exception e)
+            {
+                estado = false;
+                this.errorMsg = e.Message;
+            }
+            return estado;
+        }
     }
+
+
+
 }
+
+
+    
+
+
+
+

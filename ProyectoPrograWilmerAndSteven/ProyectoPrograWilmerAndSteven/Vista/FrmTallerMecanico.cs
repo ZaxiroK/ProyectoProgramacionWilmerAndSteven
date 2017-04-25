@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,18 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 {
     public partial class FrmTallerMecanico : Form
     {
+        UsuarioE usuario;
         public FrmTallerMecanico()
         {
             InitializeComponent();
         }
-        
+
+        public FrmTallerMecanico(UsuarioE pUsuarioE)
+        {
+            InitializeComponent();
+            usuario = pUsuarioE;
+        }
+
 
         private void ItemRegistroEmpleados(object sender, EventArgs e)
         {
@@ -74,7 +82,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void itemCambioContrasenia_Click(object sender, EventArgs e)
         {
-
+            Form1 frm = new Form1(usuario);
+            frm.ShowDialog();
         }
 
         private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
