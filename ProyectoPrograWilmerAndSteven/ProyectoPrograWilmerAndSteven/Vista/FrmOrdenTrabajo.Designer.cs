@@ -32,6 +32,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.DTGOrdenTrabajos = new System.Windows.Forms.DataGridView();
             this.IdOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +42,11 @@
             this.FechaFacturacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnRestablecer = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DTGOrdenTrabajos)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +83,16 @@
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(63, 35);
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // DTGOrdenTrabajos
             // 
             this.DTGOrdenTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -93,7 +108,7 @@
             this.DTGOrdenTrabajos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGOrdenTrabajos.Location = new System.Drawing.Point(0, 38);
             this.DTGOrdenTrabajos.Name = "DTGOrdenTrabajos";
-            this.DTGOrdenTrabajos.Size = new System.Drawing.Size(848, 298);
+            this.DTGOrdenTrabajos.Size = new System.Drawing.Size(848, 347);
             this.DTGOrdenTrabajos.TabIndex = 1;
             // 
             // IdOrden
@@ -136,21 +151,62 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             // 
-            // btnActualizar
+            // cmbCliente
             // 
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(63, 35);
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(266, 12);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(178, 21);
+            this.cmbCliente.TabIndex = 2;
+            this.cmbCliente.SelectionChangeCommitted += new System.EventHandler(this.cmbCliente_SelectionChangeCommitted);
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(513, 12);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(172, 21);
+            this.cmbEstado.TabIndex = 3;
+            this.cmbEstado.SelectionChangeCommitted += new System.EventHandler(this.cmbEstado_SelectionChangeCommitted);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(218, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Cliente:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(464, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Estado:";
+            // 
+            // btnRestablecer
+            // 
+            this.btnRestablecer.Location = new System.Drawing.Point(699, 9);
+            this.btnRestablecer.Name = "btnRestablecer";
+            this.btnRestablecer.Size = new System.Drawing.Size(137, 23);
+            this.btnRestablecer.TabIndex = 6;
+            this.btnRestablecer.Text = "Restablecer busqueda";
+            this.btnRestablecer.UseVisualStyleBackColor = true;
+            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
             // 
             // FrmOrdenTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 336);
+            this.ClientSize = new System.Drawing.Size(848, 385);
+            this.Controls.Add(this.btnRestablecer);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.DTGOrdenTrabajos);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmOrdenTrabajo";
@@ -179,5 +235,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnRestablecer;
     }
 }

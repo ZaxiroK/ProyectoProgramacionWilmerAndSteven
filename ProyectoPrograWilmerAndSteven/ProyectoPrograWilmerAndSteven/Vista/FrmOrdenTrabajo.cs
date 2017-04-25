@@ -15,15 +15,23 @@ namespace ProyectoPrograWilmerAndSteven.Vista
     public partial class FrmOrdenTrabajo : Form
     {
         List<OrdenTrabajoE> ordenTrabajos = new List<OrdenTrabajoE>();
+        string queryEstado = "";
+        string queryCedula = "";
         public FrmOrdenTrabajo()
         {
             InitializeComponent();
+            this.llenarCombos();
+            this.cmbEstado.SelectedIndex = -1;
+            this.cmbCliente.SelectedIndex = -1;
+            this.queryEstado = "";
+            this.queryCedula = "";
             this.cargarDTGview();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-             FrmRegistroDeOrdenDeTrabajo oFrm = new FrmRegistroDeOrdenDeTrabajo();
+            this.btnRestablecer_Click(sender,  e);
+            FrmRegistroDeOrdenDeTrabajo oFrm = new FrmRegistroDeOrdenDeTrabajo();
             oFrm.ShowDialog();
             this.cargarDTGview();
 
@@ -43,7 +51,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             OrdenTrabajoD oTrabajoD = new OrdenTrabajoD();
 
-            this.ordenTrabajos = oTrabajoD.obtenerOrdenTrabajos();
+            this.ordenTrabajos = oTrabajoD.obtenerOrdenTrabajos(this.queryCedula + this.queryEstado);
 
             foreach (OrdenTrabajoE oE in ordenTrabajos)
             {
@@ -78,6 +86,61 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            this.cmbEstado.SelectedIndex = -1;
+            this.cmbCliente.SelectedIndex = -1;
+            this.queryEstado = "";
+            this.queryCedula = "";
+            this.cargarDTGview();
+        }
+
+        public void llenarCombos()
+        {
+            this.cmbCliente.Items.Clear();
+            ClienteD oClienteD = new ClienteD();
+
+            List<ClienteE> clientes = oClienteD.obtenerClientes();
+
+            foreach (ClienteE oClienteE in clientes)
+            {
+                this.cmbCliente.Items.Add(oClienteE);
+                this.cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+                this.cmbCliente.SelectedIndex = -1;
+            }
+
+            this.cmbEstado.Items.Add("S");
+            this.cmbEstado.Items.Add("N");
+            this.cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cmbEstado.SelectedIndex = -1;
+        }
+
+        private void cmbCliente_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.queryCedula = "";
+            this.queryCedula = " and c.cedula =" + (((ClienteE)this.cmbCliente.SelectedItem).Cedula).ToString();
+            this.cargarDTGview();
+        }
+
+        private void cmbEstado_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.queryEstado = "";
+            if (this.cmbEstado.SelectedIndex == 0)
+            {
+                this.queryEstado = " and t.estado = 'S'";
+                this.cargarDTGview();
+            }
+            else if(this.cmbEstado.SelectedIndex == 1)
+            {
+                this.queryEstado = " and t.estado = 'N'";
+                this.cargarDTGview();
+            }
+        }
+
+        private void btnRestablecer_Click(object sender, EventArgs e)
+        {
+            this.cmbEstado.SelectedIndex = -1;
+            this.cmbCliente.SelectedIndex = -1;
+            this.queryEstado = "";
+            this.queryCedula = "";
             this.cargarDTGview();
         }
     }

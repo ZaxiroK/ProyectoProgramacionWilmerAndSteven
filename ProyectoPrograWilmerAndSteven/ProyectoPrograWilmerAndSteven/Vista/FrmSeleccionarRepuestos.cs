@@ -77,7 +77,6 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
             InitializeComponent();
             this.CompararRepuesto = pComparacion;
-            this.llenarComboCantidad();
             this.llenarComboRepuesto();
         }
 
@@ -85,11 +84,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         {
 
 
-            if ((this.cmbCantidad.SelectedItem != null) && (this.cmbRepuestos.SelectedItem != null))
+            if ((this.cmbRepuestos.SelectedItem != null) && (this.numericCantidad.Value > 0))
             {
                 this.oRepuesto = ((CatalogoRepuestoE)this.cmbRepuestos.SelectedItem);
 
-                this.oOrdenRepuesto = new OrdenRepuestoE(((Int32)this.cmbCantidad.SelectedItem),
+                this.oOrdenRepuesto = new OrdenRepuestoE(((Int32)this.numericCantidad.Value),
                    this.oRepuesto.IdCatalogoRepuesto, this.oRepuesto.NombreDelRepuesto, this.oRepuesto.AnnoAlQuePertenece,
                     this.oRepuesto.Precio);
 
@@ -105,8 +104,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     this.CompararRepuesto.Add(oOrdenRepuesto);
                     MessageBox.Show("¡Repuesto agregado!" + "\n" + "Presione salir para volver al menu principal " + "\n" + " o continue seleccionando más repuestos.");
                 }
-                this.cmbCantidad.SelectedIndex = -1;
                 this.cmbRepuestos.SelectedIndex = -1;
+                this.numericCantidad.Value = 0;
             }
             else
             {
@@ -161,16 +160,6 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             }
         }
         
-        public void llenarComboCantidad()
-        {
-          for (int i = 1; i < 300; i++)
-            {
-                this.cmbCantidad.Items.Add(i);
-                this.cmbCantidad.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbCantidad.SelectedIndex = -1;
-            }
-
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
