@@ -115,6 +115,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (CatalogoReparacionE oReparacionE in reparacion)
             {
                 this.cmbReparacion.Items.Add(oReparacionE);
+                this.cmbReparacion.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbReparacion.SelectedIndex = -1;
             }
         }
         /// <summary>
@@ -129,6 +131,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             foreach (EmpleadoE oEmpleadoE in empleados)
             {
                 this.cmbEmpleado.Items.Add(oEmpleadoE);
+                this.cmbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbEmpleado.SelectedIndex = -1;
             }
         }
 

@@ -34,6 +34,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.cnx = AccesoDatosPostgre.Instance;
             this.llenarComboClientes();
             this.llenarComboEmpleado();
+            this.cmbVehiculo.DropDownStyle = ComboBoxStyle.DropDownList;
             this.estado = 1;
 
         }
