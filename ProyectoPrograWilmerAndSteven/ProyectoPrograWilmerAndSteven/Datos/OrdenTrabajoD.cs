@@ -311,10 +311,10 @@ namespace ProyectoPrograWilmerAndSteven.Datos
         /// <param name="pOrdenTrabajo">una OrdenTrabajoE llamada pOrdenTrabajo</param>
         /// <param name="costoTotal">un double llamado costoTotal</param>
         /// <returns>retorna un boleano dando a conocer si se modifico la OrdenTrabajoE factura en la bd o no</returns>
-        public bool modificarOrdenDeTrabajoFactura(OrdenTrabajoE pOrdenTrabajo, double costoTotal)
+        public bool modificarOrdenDeTrabajoFactura(OrdenTrabajoE pOrdenTrabajo, double costoTotal, ref int numeroFactura)
         {
             bool estado = true;
-
+            numeroFactura = this.numeroFactura();
             try
             {
 
@@ -332,7 +332,7 @@ namespace ProyectoPrograWilmerAndSteven.Datos
                 oP.agregarParametro("@id_empleado", NpgsqlDbType.Integer, pOrdenTrabajo.OMecanicoResponsable.Cedula);
                 oP.agregarParametro("@id_vehiculo", NpgsqlDbType.Integer, pOrdenTrabajo.OVehiculo.IdVehiculo);
                 oP.agregarParametro("@estado", NpgsqlDbType.Varchar, pOrdenTrabajo.Estado);
-                oP.agregarParametro("@factura_numero", NpgsqlDbType.Integer, this.numeroFactura());
+                oP.agregarParametro("@factura_numero", NpgsqlDbType.Integer, numeroFactura);
                 oP.agregarParametro("@id_orden_de_trabajo", NpgsqlDbType.Integer, pOrdenTrabajo.IdOrdenDetrabajo);
                 this.conexion.ejecutarSQL(sql, oP.obtenerParametros());
 

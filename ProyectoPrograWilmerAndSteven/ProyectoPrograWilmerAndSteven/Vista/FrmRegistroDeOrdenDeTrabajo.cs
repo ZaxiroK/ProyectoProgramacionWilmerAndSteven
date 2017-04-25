@@ -36,6 +36,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
             this.llenarComboEmpleado();
             this.cmbVehiculo.DropDownStyle = ComboBoxStyle.DropDownList;
             this.estado = 1;
+            this.btnFinalizar.Enabled = false;
+            this.btnReimprimirFactura.Enabled = false;
+            this.btnRevertirOrden.Enabled = false;
+            this.btnFacturar.Enabled = false;
 
         }
 
@@ -117,14 +121,21 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     
                     this.cnx.commitTransaccion();
                     MessageBox.Show("¡Orden de trabajo agregada con exito!");
+                    this.btnFinalizar.Enabled = false;
+                    this.btnReimprimirFactura.Enabled = false;
+                    this.btnRevertirOrden.Enabled = false;
+                    this.btnFacturar.Enabled = false;
 
-                    
 
                 }
                 else
                 {
                     this.cnx.commitTransaccion();
                     MessageBox.Show("¡Orden de trabajo editada con exito!");
+                    this.btnFinalizar.Enabled = false;
+                    this.btnReimprimirFactura.Enabled = false;
+                    this.btnRevertirOrden.Enabled = false;
+                    this.btnFacturar.Enabled = false;
                 }
 
                 this.restablecerValores();
@@ -138,8 +149,25 @@ namespace ProyectoPrograWilmerAndSteven.Vista
         
         public void validarEstado(OrdenTrabajoE pOrdenTrabajoE)
         {
-            if (pOrdenTrabajoE.Estado.Equals('S'))
+            if ((pOrdenTrabajoE.Estado.Equals('S')) && (pOrdenTrabajoE.FacturaNumero != 0 ))
             {
+                this.btnFinalizar.Enabled = false;
+                this.btnSalvar.Enabled = false;
+                this.cmbCliente.Enabled = false;
+                this.cmbVehiculo.Enabled = false;
+                this.cmbEmpleado.Enabled = false;
+                this.btnAgregar.Enabled = false;
+                this.btnAgregarReparacion.Enabled = false;
+                this.btnEditar.Enabled = false;
+                this.btnFacturar.Enabled = false;
+                this.btnRevertirOrden.Enabled = false;
+                this.btnEliminarReparacion.Enabled = false;
+                this.btnEliminarRepuestos.Enabled = false;
+                this.DTGreparaciones.Enabled = false;
+                this.DTGrepuestos.Enabled = false;
+            }
+            else if(pOrdenTrabajoE.Estado.Equals('S'))
+             {
                 this.btnFinalizar.Enabled = false;
                 this.btnSalvar.Enabled = false;
                 this.cmbCliente.Enabled = false;
@@ -152,9 +180,26 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 this.btnEliminarRepuestos.Enabled = false;
                 this.DTGreparaciones.Enabled = false;
                 this.DTGrepuestos.Enabled = false;
-            }
+              }
         }
 
+        public void revertirValores()
+        {
+            
+                this.btnFinalizar.Enabled = true;
+                this.btnSalvar.Enabled = true;
+                this.cmbCliente.Enabled = true;
+                this.cmbVehiculo.Enabled = true;
+                this.cmbEmpleado.Enabled = true;
+                this.btnAgregar.Enabled = true;
+                this.btnAgregarReparacion.Enabled = true;
+                this.btnEditar.Enabled = true;
+                this.btnEliminarReparacion.Enabled = true;
+                this.btnEliminarRepuestos.Enabled = true;
+                this.DTGreparaciones.Enabled = true;
+                this.DTGrepuestos.Enabled = true;
+            
+        }
         public void restablecerValores()
         {
             DTGrepuestos.Rows.Clear();
@@ -354,6 +399,8 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
+            
+
             OrdenTrabajoE oOrdenTrabajoE = null;
             int numeroOrden = 0;
 
@@ -385,7 +432,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     numeroOrden = this.ordenTrabajo.IdOrdenDetrabajo;
                     oOrdenTrabajoE.IdOrdenDetrabajo = this.ordenTrabajo.IdOrdenDetrabajo;
 
-                    this.oOrdenTrabajoD.modificarOrdenDeTrabajoFactura(oOrdenTrabajoE, oOrdenTrabajoE.CalculoCostoTotal());
+                    this.oOrdenTrabajoD.modificarOrdenDeTrabajo(oOrdenTrabajoE, oOrdenTrabajoE.CalculoCostoTotal());
 
                 }
                 if (oOrdenTrabajoD.Error)
@@ -409,24 +456,11 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                 this.cnx.commitTransaccion();//commit
 
                 this.validarEstado(oOrdenTrabajoE);
-
+                this.ordenTrabajo = oOrdenTrabajoE;
 
                 MessageBox.Show("¡Orden de trabajo finalizada con exito!");
-                numeroOrdenFactura = numeroOrden;
-                DialogResult result = MessageBox.Show("¿Desea facturar la orden?", "Facturar", MessageBoxButtons.YesNoCancel);
-
-                if (result == DialogResult.Yes)
-                {
-                    FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
-                    oReporte.ShowDialog();
-                }
-                else if (result == DialogResult.No)
-                {
-
-                }
-                else if (result == DialogResult.Cancel)
-                {
-                }
+                
+                
             }
             else
             {
@@ -436,18 +470,86 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-
-            if (ordenTrabajo == null)
+            if (this.ordenTrabajo.Estado.Equals('S'))
             {
-                MessageBox.Show("¡No hay orden de trabajo que facturar!");
+                OrdenTrabajoE oOrdenTrabajoE = null;
+                int numeroOrden = 0;
+                int numeroFactura = 0;
+
+
+                if ((this.cmbCliente.SelectedIndex != -1) && (this.cmbEmpleado.SelectedIndex != -1)
+                    && (this.cmbVehiculo.SelectedIndex != -1))
+                {
+                    this.cnx.iniciarTransaccion();//Comienza transaccion
+                    if (estado == 1)
+                    {
+
+                        oOrdenTrabajoE = new OrdenTrabajoE(DateTime.Now, DateTime.Now, DateTime.Now,
+                            ((EmpleadoE)this.cmbEmpleado.SelectedItem), ((VehiculoE)this.cmbVehiculo.SelectedItem), 'S', 0,
+                            this.listOredenRepuesto, this.listOredenReparacion);
+
+
+                        String strNumeroOrden = oOrdenTrabajoD.agregarOrdenDeTrabajoFactura(oOrdenTrabajoE,
+                            oOrdenTrabajoE.CalculoCostoTotal());
+
+                        numeroOrden = Convert.ToInt32(strNumeroOrden);
+
+                    }
+                    if (estado == 2)
+                    {
+                        oOrdenTrabajoE = new OrdenTrabajoE(this.ordenTrabajo.FechaDeIngreso, DateTime.Now,
+                            this.ordenTrabajo.FechaDeFacturacion, ((EmpleadoE)this.cmbEmpleado.SelectedItem), ((VehiculoE)this.cmbVehiculo.SelectedItem),
+                            'S', 0, this.listOredenRepuesto, this.listOredenReparacion);
+
+                        numeroOrden = this.ordenTrabajo.IdOrdenDetrabajo;
+                        oOrdenTrabajoE.IdOrdenDetrabajo = this.ordenTrabajo.IdOrdenDetrabajo;
+
+                        this.oOrdenTrabajoD.modificarOrdenDeTrabajoFactura(oOrdenTrabajoE, oOrdenTrabajoE.CalculoCostoTotal(), ref numeroFactura);
+
+                    }
+                    if (oOrdenTrabajoD.Error)
+                    {
+                        MessageBox.Show(oOrdenTrabajoD.ErrorMsg);
+                        this.cnx.rollbackTransaccion();//en caso de error "rollback"
+                        MessageBox.Show("¡Ha ocurrido un error al facturar orden de trabajo!");
+                        return;
+                    }
+                    else
+                    {
+                        bool estado = this.AgregarOrdenes(numeroOrden, oOrdenTrabajoE);
+                        if (!estado)
+                        {
+                            this.cnx.rollbackTransaccion();//en caso de error "rollback"
+                            MessageBox.Show("¡Ha ocurrido un error al facturar orden de trabajo!");
+                            return;
+                        }
+                    }
+
+                    this.cnx.commitTransaccion();//commit
+                    oOrdenTrabajoE.FacturaNumero = numeroFactura;
+                    this.ordenTrabajo = oOrdenTrabajoE;
+                    this.validarEstado(oOrdenTrabajoE);
+
+
+                    //MessageBox.Show("¡Orden de trabajo finalizada con exito!");
+                    numeroOrdenFactura = numeroOrden;
+                    //DialogResult result = MessageBox.Show("¿Desea facturar la orden?", "Facturar", MessageBoxButtons.YesNoCancel);
+
+
+                    FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
+                    oReporte.ShowDialog();
+
+                }
+                else
+                {
+                    MessageBox.Show("¡Debe seleccionar todos los datos!");
+                }
             }
             else
             {
-                 numeroOrdenFactura = ordenTrabajo.IdOrdenDetrabajo;
-                FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(numeroOrdenFactura, pClienteE.Cedula);
-                oReporte.ShowDialog();
+                MessageBox.Show("¡Antes de realizar la facturación, primero debe finalizar la orden de trabajo!");
             }
-            
+
         }
 
         private void btnEliminarRepuestos_Click(object sender, EventArgs e)
@@ -491,6 +593,72 @@ namespace ProyectoPrograWilmerAndSteven.Vista
                     this.CargarDGviewReparacion(this.listOredenReparacion);
                     MessageBox.Show("Reparación borrada");
                 }
+            }
+        }
+
+        private void btnRevertirOrden_Click(object sender, EventArgs e)
+        {
+            if (this.ordenTrabajo.Estado.Equals('S'))
+            {
+                OrdenTrabajoE oOrdenTrabajoE = null;
+            int numeroOrden = 0;
+            this.cnx.iniciarTransaccion();// inicia transaccion
+            if (estado == 2)
+                {
+                    oOrdenTrabajoE = new OrdenTrabajoE(this.ordenTrabajo.FechaDeIngreso, this.ordenTrabajo.FechaDeSalida,
+                        this.ordenTrabajo.FechaDeFacturacion, ((EmpleadoE)this.cmbEmpleado.SelectedItem), ((VehiculoE)this.cmbVehiculo.SelectedItem),
+                        'N', 0, this.listOredenRepuesto, this.listOredenReparacion);
+
+                    numeroOrden = this.ordenTrabajo.IdOrdenDetrabajo;
+                    oOrdenTrabajoE.IdOrdenDetrabajo = this.ordenTrabajo.IdOrdenDetrabajo;
+
+                    this.oOrdenTrabajoD.modificarOrdenDeTrabajo(oOrdenTrabajoE, oOrdenTrabajoE.CalculoCostoTotal());
+
+                }
+
+                if (oOrdenTrabajoD.Error)
+                {
+                    MessageBox.Show(oOrdenTrabajoD.ErrorMsg);
+                    this.cnx.rollbackTransaccion();//en caso de error "rollback"
+                    MessageBox.Show("¡Ha ocurrido un error al revertir orden de trabajo!");
+                    return;
+                }
+                else
+                {
+                    bool estado = this.AgregarOrdenes(numeroOrden, oOrdenTrabajoE);
+                    if (!estado)
+                    {
+                        this.cnx.rollbackTransaccion();//en caso de error "rollback"
+                        MessageBox.Show("¡Ha ocurrido un error al revertir orden de trabajo!");
+                        return;
+                    }
+                }
+
+
+
+                    this.cnx.commitTransaccion();
+                    MessageBox.Show("¡Orden de trabajo revertida con exito!");
+                     this.ordenTrabajo = oOrdenTrabajoE;
+
+                this.revertirValores();
+            }
+            else
+            {
+                MessageBox.Show("¡Para revertir la orden de trabajo primero debe finalizarla!");
+            }
+
+        }
+
+        private void btnReimprimirFactura_Click(object sender, EventArgs e)
+        {
+            if ((this.ordenTrabajo.Estado.Equals('S')) && (this.ordenTrabajo.FacturaNumero != 0))
+            {
+                FrmReporteOrdenDeTrabajo oReporte = new FrmReporteOrdenDeTrabajo(this.ordenTrabajo.IdOrdenDetrabajo, this.ordenTrabajo.OVehiculo.OClienteE.Cedula);
+                oReporte.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("¡Para obtener una reimpresión de la factura primero debe facturar la orden de trabajo!");
             }
         }
     }

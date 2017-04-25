@@ -60,9 +60,11 @@
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminarRepuestos = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbEmpleado = new System.Windows.Forms.ComboBox();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnRevertirOrden = new System.Windows.Forms.ToolStripButton();
+            this.btnReimprimirFactura = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -78,7 +80,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnSalvar,
             this.btnFinalizar,
-            this.btnFacturar});
+            this.btnFacturar,
+            this.btnRevertirOrden,
+            this.btnReimprimirFactura});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(738, 38);
@@ -348,6 +352,15 @@
             this.btnEliminarRepuestos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnEliminarRepuestos.Click += new System.EventHandler(this.btnEliminarRepuestos_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(41, 35);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -365,14 +378,25 @@
             this.cmbEmpleado.Size = new System.Drawing.Size(277, 21);
             this.cmbEmpleado.TabIndex = 9;
             // 
-            // btnEditar
+            // btnRevertirOrden
             // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(41, 35);
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnRevertirOrden.Image = ((System.Drawing.Image)(resources.GetObject("btnRevertirOrden.Image")));
+            this.btnRevertirOrden.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRevertirOrden.Name = "btnRevertirOrden";
+            this.btnRevertirOrden.Size = new System.Drawing.Size(85, 35);
+            this.btnRevertirOrden.Text = "Revertir orden";
+            this.btnRevertirOrden.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnRevertirOrden.Click += new System.EventHandler(this.btnRevertirOrden_Click);
+            // 
+            // btnReimprimirFactura
+            // 
+            this.btnReimprimirFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnReimprimirFactura.Image")));
+            this.btnReimprimirFactura.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReimprimirFactura.Name = "btnReimprimirFactura";
+            this.btnReimprimirFactura.Size = new System.Drawing.Size(110, 35);
+            this.btnReimprimirFactura.Text = "Reimprimir factura";
+            this.btnReimprimirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnReimprimirFactura.Click += new System.EventHandler(this.btnReimprimirFactura_Click);
             // 
             // FrmRegistroDeOrdenDeTrabajo
             // 
@@ -443,5 +467,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn costoReparacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedulaEmpleado;
         private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.ToolStripButton btnRevertirOrden;
+        private System.Windows.Forms.ToolStripButton btnReimprimirFactura;
     }
 }

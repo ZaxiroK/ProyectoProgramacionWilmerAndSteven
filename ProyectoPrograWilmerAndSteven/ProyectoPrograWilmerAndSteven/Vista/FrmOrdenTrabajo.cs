@@ -57,7 +57,7 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (this.DTGOrdenTrabajos.Rows.Count > 0)
+            if (this.ordenTrabajos.Count > 0)
             {
 
                 int fila = this.DTGOrdenTrabajos.CurrentRow.Index;
@@ -69,6 +69,10 @@ namespace ProyectoPrograWilmerAndSteven.Vista
 
                 this.cargarDTGview();
 
+            }
+            else
+            {
+                MessageBox.Show("¡No hay ordenes de trabajo para editar!");
             }
         }
 
